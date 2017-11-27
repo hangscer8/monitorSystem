@@ -1,6 +1,4 @@
-package nathan
-
-import nathan.Protocols.top.mac.ProcessesInfo
+package nathan.os
 
 import scala.sys.process._
 
