@@ -1,0 +1,11 @@
+*.class
+*.log
+*.jar
+*.xml
+*.iml
+centerRouter/project/project/*
+centerRouter/project/target/*
+centerRouter/target/*
+agent/project/project/*
+agent/project/target/*
+agent/target/*
