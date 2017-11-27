@@ -1,5 +1,6 @@
 *.class
 *.log
+<<<<<<< HEAD
 *.jar
 *.xml
 *.iml
@@ -9,3 +10,5 @@ centerRouter/target/*
 agent/project/project/*
 agent/project/target/*
 agent/target/*
+=======
+>>>>>>> a36561f09de2466282eb24cddb8eb3d1d77d5edf
