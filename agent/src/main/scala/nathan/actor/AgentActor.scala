@@ -8,7 +8,7 @@ class AgentActor extends Actor with AgentActorBaseTrait {
       withMsg(str)
   }
 }
-trait AgentActorBaseTrait{ self:Actor=>
+trait AgentActorBaseTrait{ i:Actor=>
   def withMsg(str: String)={
     
   }

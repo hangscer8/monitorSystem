@@ -1,15 +1,18 @@
 package nathan.actor
 
-import java.util.concurrent.ConcurrentHashMap
-
 import akka.actor.{Actor, ActorRef}
 
-class CenterRouterActor extends Actor {
+class CenterRouterActor extends Actor with RouterActorTrait {
+  var agentOnLine = List.empty[ActorRef] //在线的agent
   override def receive: Receive = {
-    case str:String =>
-      
+    case str: String =>
+      withMsg(str)
   }
 }
-object AgentActorStorge{
-  val agentActorMap=new ConcurrentHashMap[String,ActorRef]()
+
+trait RouterActorTrait {
+  i: Actor =>
+  def withMsg(str: String) = {
+    
+  }
 }

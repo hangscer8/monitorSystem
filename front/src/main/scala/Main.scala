@@ -1,10 +1,13 @@
 package nathan
 import org.scalajs.dom
 import org.scalajs.dom.html
+import service.AgentService
+import json.Protocol.Agent
+
 import scala.scalajs.js.annotation.JSExport
 import scalatags.JsDom.all._
 @JSExport
-object MainApp {
+object MainApp extends AgentService{
   val box=input(
     `type`:="text",
     placeholder:="Type1234 here!"
@@ -15,7 +18,7 @@ object MainApp {
   }
   @JSExport
   def test()={
-    1 to 100 foreach(i=> dom.console.log(i))
+    agentPost(Agent("127.0.0.1",2552))
   }
   @JSExport
   def hello(target:html.Div)={
