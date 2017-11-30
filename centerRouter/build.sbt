@@ -17,5 +17,7 @@ libraryDependencies ++= Seq(
   "io.circe" %% "circe-core" % "0.8.0",
   "io.circe" %% "circe-generic" % "0.8.0",
   "io.circe" %% "circe-parser" % "0.8.0",
-  "com.typesafe.akka" %% "akka-http-spray-json" % "10.0.10"
+  "com.typesafe.akka" %% "akka-http-spray-json" % "10.0.10",
+  "junit" % "junit" % "4.12",
+  "com.typesafe.slick" %% "slick-codegen" % "3.2.0"
 )
