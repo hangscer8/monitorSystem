@@ -1,6 +1,7 @@
 package nathan
 
 import akka.http.scaladsl.Http
+import akka.http.scaladsl.server.Route
 import nathan.ec.ExecutorService
 import nathan.router.IndexRouter
 
@@ -9,9 +10,9 @@ object Main extends App {
   implicit val mat = ExecutorService.mat
   implicit val ec = ExecutorService.ec
 
-  def route = {
+  def route: Route = {
     val indexRouter = new IndexRouter()
-    indexRouter.route
+     indexRouter.route
   }
 
   Http().bindAndHandle(route, "127.0.0.1", 8888)
