@@ -1,7 +1,6 @@
 package json
-
 object Protocol {
-
-  case class Agent(host: String, port: Int)
+  sealed trait Base
+  case class Agent(host: String, port: Int) extends Base
 
 }

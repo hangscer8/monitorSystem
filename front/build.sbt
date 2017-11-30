@@ -11,9 +11,9 @@ libraryDependencies ++= Seq(
   "com.thoughtworks.binding" %%% "dom" % "latest.release",
   "com.thoughtworks.binding" %%% "binding" % "latest.release",
   "com.lihaoyi" % "scalatags_2.12" % "0.6.7",
-  "io.circe" %% "circe-core" % "0.8.0",
-  "io.circe" %% "circe-generic" % "0.8.0",
-  "io.circe" %% "circe-parser" % "0.8.0",
-  "io.circe" %%% "circe-scalajs" % "0.8.0"
+  "io.circe" %%% "circe-scalajs" % "0.8.0",
+  "io.circe" %%% "circe-core" % "0.8.0",
+  "io.circe" %%% "circe-generic" % "0.8.0",
+  "io.circe" %%% "circe-parser" % "0.8.0"
 )
 crossTarget in fastOptJS := baseDirectory.value/"web"/"js"
