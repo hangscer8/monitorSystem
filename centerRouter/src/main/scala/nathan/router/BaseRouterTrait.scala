@@ -5,7 +5,6 @@ import akka.http.scaladsl.model.StatusCodes.OK
 import akka.http.scaladsl.model.headers._
 import akka.http.scaladsl.model.{HttpResponse, StatusCodes}
 import akka.http.scaladsl.server.Directives.{complete, _}
-import akka.http.scaladsl.server.directives.MethodDirectives
 import akka.http.scaladsl.server.{Directive0, Directive1, Route}
 
 trait BaseRouterTrait extends JsonSupport {
@@ -15,7 +14,7 @@ trait BaseRouterTrait extends JsonSupport {
       headers
   }
 
-  def preflightRequestHandler = MethodDirectives.options {
+  def preflightRequestHandler:Route = options {
     complete(HttpResponse(OK).withHeaders(`Access-Control-Allow-Methods`(POST, GET, DELETE, PUT)))
   }
 
