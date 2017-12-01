@@ -1,8 +1,11 @@
 package nathan.dbentity
 
-import slick.jdbc.H2Profile.api._
-
 object EntityTable {
+  val h2 = slick.jdbc.H2Profile
+
+  import h2.api._
+
+  val db = Database.forConfig("h2local")
 
   case class UserEntity(id: Long, username: String, password: String, `type`: String, lastLoginTime: Long)
 
