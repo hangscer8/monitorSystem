@@ -21,7 +21,10 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-http-spray-json" % "10.0.10",
   "junit" % "junit" % "4.12",
   "com.typesafe.slick" %% "slick-codegen" % "3.2.0",
-  "com.h2database" % "h2" % "1.4.186"
+  "com.h2database" % "h2" % "1.4.186",
+  "com.fasterxml.jackson.core" % "jackson-databind" % "2.9.2",
+  "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.9.2",
+  "com.typesafe.akka" %% "akka-http-jackson" % "10.0.10"
 )
 lazy val commonSettings = Seq(
   version := "0.1",

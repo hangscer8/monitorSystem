@@ -1,13 +1,14 @@
 package nathan
-import entity.Protocol.Agent
+import entity.Agent
 import org.scalajs.dom
 import org.scalajs.dom.html
 import service.user.AgentService
+import util.LoginSupport
 
 import scala.scalajs.js.annotation.JSExport
 import scalatags.JsDom.all._
 @JSExport
-object MainApp extends AgentService{
+object MainApp extends AgentService with LoginSupport{
   val box=input(
     `type`:="text",
     placeholder:="Type1234 here!"
@@ -17,8 +18,8 @@ object MainApp extends AgentService{
     output.textContent=box.value.toUpperCase
   }
   @JSExport
-  def test()={
-    agentPost(Agent("127.0.0.1",2552))
+  def init()={
+    setAuth()
   }
   @JSExport
   def hello(target:html.Div)={

@@ -1,9 +1,8 @@
 package util
-
-import service.user.Protocol.{DefaultAuth, authHead}
-
+import org.scalajs.dom._
+import util.CommonConst._
 trait HttpHeadSupport {
   val `Content-Type` = "Content-Type"
   val `"application/json` = "application/json"
-  val header = Map("Content-Type" -> "application/json", authHead -> DefaultAuth.authValue)
+  def header = Map("Content-Type" -> "application/json", authHead -> window.localStorage.getItem(authHead))
 }
