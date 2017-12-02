@@ -1,13 +1,13 @@
 package util
 
+import entity.UserEntity
 import io.circe.generic.auto._
 import io.circe.syntax._
-import json.Protocol._
 import org.scalajs.dom._
 import org.scalajs.dom.ext.Ajax
 import org.scalajs.dom.ext.Ajax.InputData
-import service.Protocol._
-
+import util.CommonUtil._
+import util.CommonConst._
 trait LoginSupport {
   def setAuth(authOption: Option[String] = None) = authOption match {
     case _: Some[_] =>

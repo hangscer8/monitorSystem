@@ -1,12 +1,13 @@
-package service
+package service.user
 
+import entity.Agent
 import io.circe.generic.auto._
 import io.circe.syntax._
-import json.Protocol._
 import org.scalajs.dom._
 import org.scalajs.dom.ext.Ajax
 import org.scalajs.dom.ext.Ajax.InputData
-import service.Protocol._
+import util.CommonConst._
+import util.CommonUtil._
 
 import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
 trait AgentService {

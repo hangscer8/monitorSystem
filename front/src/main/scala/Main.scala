@@ -1,8 +1,8 @@
 package nathan
-import json.Protocol.Agent
+import entity.Protocol.Agent
 import org.scalajs.dom
 import org.scalajs.dom.html
-import service.AgentService
+import service.user.AgentService
 
 import scala.scalajs.js.annotation.JSExport
 import scalatags.JsDom.all._

@@ -1,6 +1,6 @@
-package service
+package util
 
-object Protocol {
+object CommonConst {
   val host = "127.0.0.1"
   val port = 8888
   val baseUrl = s"http://$host:$port"
@@ -9,8 +9,4 @@ object Protocol {
   object DefaultAuth{
     val authValue="qazwsxedc"
   }
-  implicit class SlashString(prefixStr: String) {
-    def /(string: String) = prefixStr + "/" + string
-  }
-
 }

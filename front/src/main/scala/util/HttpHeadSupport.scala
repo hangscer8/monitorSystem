@@ -1,6 +1,6 @@
 package util
 
-import service.Protocol.{DefaultAuth, authHead}
+import service.user.Protocol.{DefaultAuth, authHead}
 
 trait HttpHeadSupport {
   val `Content-Type` = "Content-Type"
