@@ -5,19 +5,17 @@ import nathan.router.Protocol.Agent
 
 class IndexRouter extends BaseRouterTrait {
 
-  val route = {
-   val r= pathPrefix(Protocol.prefix) {
-      apiAuthentication { auth =>
-        path("agent") {
-          post {
-            entity(as[Agent]) { req =>
-              println(req)
-              complete(auth + ":asdas")
-            }
+  val route = pathPrefix(Protocol.prefix) {
+    apiAuthentication { auth =>
+      path("agent") {
+        post {
+          entity(as[Agent]) { req =>
+            println(req)
+            complete(List(Map("1"->req)))
           }
         }
       }
     }
-    corsHandler(r)
   }
+
 }

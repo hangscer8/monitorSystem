@@ -5,7 +5,7 @@ import spray.json.DefaultJsonProtocol
 
 object Protocol {
   val prefix = "monitorSystem"
-  val auth = "MONITORSYSTEM"
+  val auth = "MONITORSYSTEM-AUTH"
 
   case class Agent(host: String, port: Int)
 

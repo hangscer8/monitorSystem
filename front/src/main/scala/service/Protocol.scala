@@ -5,8 +5,10 @@ object Protocol {
   val port = 8888
   val baseUrl = s"http://$host:$port"
   val prefix = "monitorSystem"
-  val auth = "MONITORSYSTEM"
-
+  val authHead = "MONITORSYSTEM-AUTH"
+  object DefaultAuth{
+    val authValue="qazwsxedc"
+  }
   implicit class SlashString(prefixStr: String) {
     def /(string: String) = prefixStr + "/" + string
   }

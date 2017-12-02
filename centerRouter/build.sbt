@@ -23,3 +23,15 @@ libraryDependencies ++= Seq(
   "com.typesafe.slick" %% "slick-codegen" % "3.2.0",
   "com.h2database" % "h2" % "1.4.186"
 )
+lazy val commonSettings = Seq(
+  version := "0.1",
+  organization := "hangscer.win",
+  scalaVersion := "2.12.4",
+  test in assembly := {}
+)
+lazy val app = (project in file("centerRouter")).
+  settings(commonSettings: _*).
+  settings(
+    mainClass in assembly := Some("nathan.Main"),
+    assemblyJarName in assembly := "centerRouter.jar"
+  )
