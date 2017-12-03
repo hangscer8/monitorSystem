@@ -6,7 +6,7 @@ import nathan.protocol.Protocol.UserReq
 class UserRouter extends BaseRouterTrait{
   val route = pathPrefix(Protocol.prefix) {
     apiAuthentication{auth=>
-      path("monitorSystem" / "login"){
+      path("login"){
         post{
           entity(as[UserReq]){userReq=>
             complete("haha:"+auth+" ;;"+userReq)

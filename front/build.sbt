@@ -14,4 +14,4 @@ libraryDependencies ++= Seq(
   "io.circe" %%% "circe-parser" % "0.8.0",
   "be.doeraene" %%% "scalajs-jquery" % "0.9.1"
 )
-crossTarget in fastOptJS := baseDirectory.value/"web"/"js"
+crossTarget in fastOptJS := baseDirectory.value / "frontWeb" / "js"

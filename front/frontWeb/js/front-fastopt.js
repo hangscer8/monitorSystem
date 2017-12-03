@@ -1110,21 +1110,20 @@ function $f_Lutil_HttpHeadSupport__$$init$__V($thiz) {
   $thiz.$$u0022application$divjson$1 = "application/json"
 }
 function $f_Lutil_HttpHeadSupport__header__sci_Map($thiz) {
-  var jsx$2 = new $c_T2().init___O__O("Access-Control-Allow-Origin", "*");
   var jsx$1 = new $c_T2().init___O__O("Content-Type", "application/json");
   var self = $m_Lutil_CommonConst$().authHead$1;
   var y = $as_T($m_Lorg_scalajs_dom_package$().window__Lorg_scalajs_dom_raw_Window().localStorage.getItem($m_Lutil_CommonConst$().authHead$1));
-  var array = [jsx$2, jsx$1, new $c_T2().init___O__O(self, y)];
-  var this$8 = new $c_scm_MapBuilder().init___sc_GenMap($m_sci_Map$EmptyMap$());
+  var array = [jsx$1, new $c_T2().init___O__O(self, y)];
+  var this$6 = new $c_scm_MapBuilder().init___sc_GenMap($m_sci_Map$EmptyMap$());
   var i = 0;
   var len = $uI(array.length);
   while ((i < len)) {
     var index = i;
     var arg1 = array[index];
-    this$8.$$plus$eq__T2__scm_MapBuilder($as_T2(arg1));
+    this$6.$$plus$eq__T2__scm_MapBuilder($as_T2(arg1));
     i = ((1 + i) | 0)
   };
-  return $as_sci_Map(this$8.elems$1)
+  return $as_sci_Map(this$6.elems$1)
 }
 /** @constructor */
 function $c_O() {
@@ -6257,7 +6256,7 @@ $c_Lnathan_LoginService$.prototype.login__Lentity_UserReq__s_concurrent_Future =
   var s = $m_Lio_circe_Printer$().spaces2$1.pretty__Lio_circe_Json__T(this$8);
   var x$8 = $f_Lutil_HttpHeadSupport__header__sci_Map(this);
   var this$10 = $m_Lorg_scalajs_dom_ext_Ajax$();
-  return this$10.apply__T__T__Lorg_scalajs_dom_ext_Ajax$InputData__I__sci_Map__Z__T__s_concurrent_Future("POST", x$6, s, 0, x$8, false, "")
+  return this$10.apply__T__T__Lorg_scalajs_dom_ext_Ajax$InputData__I__sci_Map__Z__T__s_concurrent_Future("POST", x$6, s, 0, x$8, false, "text")
 });
 $c_Lnathan_LoginService$.prototype.setAuth__s_Option__V = (function(authOption) {
   if ($is_s_Some(authOption)) {
@@ -6370,8 +6369,18 @@ $c_Lnathan_LoginService$.prototype.loginForm__Lorg_scalajs_dom_raw_HTMLFormEleme
         var x2 = $as_s_util_Success(x0$1);
         var xhr = x2.value$2;
         var jsx$4 = $m_Lorg_scalajs_dom_package$().console__Lorg_scalajs_dom_raw_Console();
-        var s = $as_T(xhr.responseText);
-        jsx$4.log(s)
+        var s = $as_T(xhr.responseType);
+        jsx$4.log(s);
+        $m_Lorg_scalajs_dom_package$().console__Lorg_scalajs_dom_raw_Console().log(xhr.response);
+        var jsx$5 = $m_Lorg_scalajs_dom_package$().console__Lorg_scalajs_dom_raw_Console();
+        var s$1 = $as_T(xhr.responseText);
+        jsx$5.log(s$1)
+      } else if ($is_s_util_Failure(x0$1)) {
+        var x3 = $as_s_util_Failure(x0$1);
+        var ex = x3.exception$2;
+        var jsx$6 = $m_Lorg_scalajs_dom_package$().console__Lorg_scalajs_dom_raw_Console();
+        var s$2 = ex.getMessage__T();
+        jsx$6.error(s$2)
       } else {
         throw new $c_s_MatchError().init___O(x0$1)
       }

@@ -13,7 +13,7 @@ import util.HttpHeadSupport
 
 import scalajs.concurrent.JSExecutionContext.Implicits.queue
 import scala.scalajs.js.annotation.JSExport
-import scala.util.Success
+import scala.util.{Failure, Success}
 
 @JSExport
 object LoginService extends HttpHeadSupport {
@@ -36,11 +36,15 @@ object LoginService extends HttpHeadSupport {
     val `type` = inputs.filter(_.name == "type").filter(_.checked == true).head.value
     login(UserReq(username,password,`type`)).onComplete{
       case  Success(xhr)=>
+        console.log(xhr.responseType)
+        console.log(xhr.response)
         console.log(xhr.responseText)
+      case Failure(ex)=>
+        console.error(ex.getMessage)
     }
   }
 
   def login(user: UserReq) = {
-    Ajax.post(url = baseUrl / "monitorSystem" / "login", data = InputData.str2ajax(user.asJson.spaces2), headers = header)
+    Ajax.post(url = baseUrl / "monitorSystem" / "login", data = InputData.str2ajax(user.asJson.spaces2), headers = header,responseType = "text")
   }
 }

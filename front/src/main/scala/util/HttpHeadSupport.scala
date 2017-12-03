@@ -4,5 +4,5 @@ import util.CommonConst._
 trait HttpHeadSupport {
   val `Content-Type` = "Content-Type"
   val `"application/json` = "application/json"
-  def header = Map("Access-Control-Allow-Origin"->"*", "Content-Type" -> "application/json", authHead -> window.localStorage.getItem(authHead))
+  def header = Map( "Content-Type" -> "application/json", authHead -> window.localStorage.getItem(authHead))
 }
