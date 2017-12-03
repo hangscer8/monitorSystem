@@ -10,9 +10,12 @@ trait BaseRouterTrait {
     extractRequest.flatMap { case request =>
       request.uri.toString() match {
         case "/monitorSystem/login" =>
-          provide(None)
-        case "/hah" => //非法访问
-          complete(StatusCodes.BadRequest)
+          optionalHeaderValueByName(Protocol.auth).flatMap{
+            case Some(auth)=>
+              provide(Some(auth))
+            case None =>
+              complete(StatusCodes.BadRequest)
+          }
         case _ =>
           optionalHeaderValueByName(Protocol.auth).flatMap {
             case Some(id) =>

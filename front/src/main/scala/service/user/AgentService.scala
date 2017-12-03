@@ -11,9 +11,9 @@ import util.CommonUtil._
 
 import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
 trait AgentService {
-  def agentPost(agent: Agent) = {
-    Ajax.post(baseUrl / prefix / "agent", InputData.str2ajax(agent.asJson.spaces2),headers = Map("Content-Type"->"application/json",authHead->DefaultAuth.authValue)).onSuccess { case xhr =>
-      console.log(xhr.responseText)
-    }
-  }
+//  def agentPost(agent: Agent) = {
+//    Ajax.post(baseUrl / prefix / "agent", InputData.str2ajax(agent.asJson.spaces2),headers = Map("Content-Type"->"application/json",authHead->)).onSuccess { case xhr =>
+//      console.log(xhr.responseText)
+//    }
+//  }
 }
