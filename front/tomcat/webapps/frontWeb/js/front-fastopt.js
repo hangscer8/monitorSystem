@@ -1110,20 +1110,21 @@ function $f_Lutil_HttpHeadSupport__$$init$__V($thiz) {
   $thiz.$$u0022application$divjson$1 = "application/json"
 }
 function $f_Lutil_HttpHeadSupport__header__sci_Map($thiz) {
+  var jsx$2 = new $c_T2().init___O__O("Access-Control-Allow-Origin", "*");
   var jsx$1 = new $c_T2().init___O__O("Content-Type", "application/json");
   var self = $m_Lutil_CommonConst$().authHead$1;
   var y = $as_T($m_Lorg_scalajs_dom_package$().window__Lorg_scalajs_dom_raw_Window().localStorage.getItem($m_Lutil_CommonConst$().authHead$1));
-  var array = [jsx$1, new $c_T2().init___O__O(self, y)];
-  var this$6 = new $c_scm_MapBuilder().init___sc_GenMap($m_sci_Map$EmptyMap$());
+  var array = [jsx$2, jsx$1, new $c_T2().init___O__O(self, y)];
+  var this$8 = new $c_scm_MapBuilder().init___sc_GenMap($m_sci_Map$EmptyMap$());
   var i = 0;
   var len = $uI(array.length);
   while ((i < len)) {
     var index = i;
     var arg1 = array[index];
-    this$6.$$plus$eq__T2__scm_MapBuilder($as_T2(arg1));
+    this$8.$$plus$eq__T2__scm_MapBuilder($as_T2(arg1));
     i = ((1 + i) | 0)
   };
-  return $as_sci_Map(this$6.elems$1)
+  return $as_sci_Map(this$8.elems$1)
 }
 /** @constructor */
 function $c_O() {
@@ -5472,6 +5473,31 @@ $c_sjsr_StackTrace$.prototype.normalizeStackTraceLines__p1__sjs_js_Dynamic__sjs_
     }
   }
 });
+$c_sjsr_StackTrace$.prototype.extractOpera9__p1__sjs_js_Dynamic__sjs_js_Array = (function(e) {
+  var lineRE = $m_sjsr_StackTrace$StringRE$().re$extension1__T__T__sjs_js_RegExp("Line (\\d+).*script (?:in )?(\\S+)", "i");
+  var x = $as_T(e.message);
+  var lines = x.split("\n");
+  var result = [];
+  var i = 2;
+  var len = $uI(lines.length);
+  while ((i < len)) {
+    var mtch = lineRE.exec($as_T(lines[i]));
+    if ((mtch !== null)) {
+      var value = mtch[2];
+      if ((value === (void 0))) {
+        throw new $c_ju_NoSuchElementException().init___T("undefined.get")
+      };
+      var value$1 = mtch[1];
+      if ((value$1 === (void 0))) {
+        throw new $c_ju_NoSuchElementException().init___T("undefined.get")
+      };
+      var jsx$1 = result.push(((("{anonymous}()@" + value) + ":") + value$1));
+      $uI(jsx$1)
+    };
+    i = ((2 + i) | 0)
+  };
+  return result
+});
 $c_sjsr_StackTrace$.prototype.normalizedLinesToStackTrace__p1__sjs_js_Array__Ajl_StackTraceElement = (function(lines) {
   var NormalizedFrameLine = $m_sjsr_StackTrace$StringRE$().re$extension0__T__sjs_js_RegExp("^([^\\@]*)\\@(.*):([0-9]+)$");
   var NormalizedFrameLineWithColumn = $m_sjsr_StackTrace$StringRE$().re$extension0__T__sjs_js_RegExp("^([^\\@]*)\\@(.*):([0-9]+):([0-9]+)$");
@@ -5588,31 +5614,6 @@ $c_sjsr_StackTrace$.prototype.normalizedLinesToStackTrace__p1__sjs_js_Array__Ajl
     };
     result.set(i, ste);
     i = ((1 + i) | 0)
-  };
-  return result
-});
-$c_sjsr_StackTrace$.prototype.extractOpera9__p1__sjs_js_Dynamic__sjs_js_Array = (function(e) {
-  var lineRE = $m_sjsr_StackTrace$StringRE$().re$extension1__T__T__sjs_js_RegExp("Line (\\d+).*script (?:in )?(\\S+)", "i");
-  var x = $as_T(e.message);
-  var lines = x.split("\n");
-  var result = [];
-  var i = 2;
-  var len = $uI(lines.length);
-  while ((i < len)) {
-    var mtch = lineRE.exec($as_T(lines[i]));
-    if ((mtch !== null)) {
-      var value = mtch[2];
-      if ((value === (void 0))) {
-        throw new $c_ju_NoSuchElementException().init___T("undefined.get")
-      };
-      var value$1 = mtch[1];
-      if ((value$1 === (void 0))) {
-        throw new $c_ju_NoSuchElementException().init___T("undefined.get")
-      };
-      var jsx$1 = result.push(((("{anonymous}()@" + value) + ":") + value$1));
-      $uI(jsx$1)
-    };
-    i = ((2 + i) | 0)
   };
   return result
 });
@@ -6266,7 +6267,7 @@ $c_Lnathan_LoginService$.prototype.setAuth__s_Option__V = (function(authOption) 
     if ((x === authOption)) {
       var jsx$2 = $m_Lorg_scalajs_dom_package$().window__Lorg_scalajs_dom_raw_Window().localStorage;
       var jsx$1 = $m_Lutil_CommonConst$().authHead$1;
-      var this$1 = $m_s_util_Random$().alphanumeric__sci_Stream().take__I__sci_Stream(10);
+      var this$1 = $m_s_util_Random$().alphanumeric__sci_Stream().take__I__sci_Stream(20);
       jsx$2.setItem(jsx$1, this$1.mkString__T__T__T__T("", "", ""))
     } else {
       throw new $c_s_MatchError().init___O(authOption)
@@ -6632,6 +6633,12 @@ $c_jl_Throwable.prototype.getStackTrace__Ajl_StackTraceElement = (function() {
   };
   return this.stackTrace$1
 });
+$c_jl_Throwable.prototype.init___T__jl_Throwable = (function(s, e) {
+  this.s$1 = s;
+  this.e$1 = e;
+  this.fillInStackTrace__jl_Throwable();
+  return this
+});
 $c_jl_Throwable.prototype.printStackTrace__Ljava_io_PrintStream__V = (function(s) {
   var f = (function($this, s$1) {
     return (function(x$1$2) {
@@ -6708,12 +6715,6 @@ $c_jl_Throwable.prototype.printStackTrace__Ljava_io_PrintStream__V = (function(s
       break
     }
   }
-});
-$c_jl_Throwable.prototype.init___T__jl_Throwable = (function(s, e) {
-  this.s$1 = s;
-  this.e$1 = e;
-  this.fillInStackTrace__jl_Throwable();
-  return this
 });
 function $is_jl_Throwable(obj) {
   return (!(!((obj && obj.$classData) && obj.$classData.ancestors.jl_Throwable)))
@@ -8537,11 +8538,11 @@ function $h_jl_Double$() {
   /*<skip>*/
 }
 $h_jl_Double$.prototype = $c_jl_Double$.prototype;
-$c_jl_Double$.prototype.doubleStrPat__p1__sjs_js_RegExp = (function() {
-  return ((!this.bitmap$0$1) ? this.doubleStrPat$lzycompute__p1__sjs_js_RegExp() : this.doubleStrPat$1)
-});
 $c_jl_Double$.prototype.init___ = (function() {
   return this
+});
+$c_jl_Double$.prototype.doubleStrPat__p1__sjs_js_RegExp = (function() {
+  return ((!this.bitmap$0$1) ? this.doubleStrPat$lzycompute__p1__sjs_js_RegExp() : this.doubleStrPat$1)
 });
 $c_jl_Double$.prototype.doubleStrPat$lzycompute__p1__sjs_js_RegExp = (function() {
   if ((!this.bitmap$0$1)) {
@@ -8721,6 +8722,9 @@ $h_jl_Long$.prototype = $c_jl_Long$.prototype;
 $c_jl_Long$.prototype.init___ = (function() {
   return this
 });
+$c_jl_Long$.prototype.StringRadixInfos__p1__sjs_js_Array = (function() {
+  return ((!this.bitmap$0$1) ? this.StringRadixInfos$lzycompute__p1__sjs_js_Array() : this.StringRadixInfos$1)
+});
 $c_jl_Long$.prototype.parseLong__T__I__J = (function(s, radix) {
   if ((s === "")) {
     this.parseLongError__p1__T__sr_Nothing$(s)
@@ -8755,9 +8759,6 @@ $c_jl_Long$.prototype.parseLong__T__I__J = (function(s, radix) {
     };
     return new $c_sjsr_RuntimeLong().init___I__I(lo, hi)
   }
-});
-$c_jl_Long$.prototype.StringRadixInfos__p1__sjs_js_Array = (function() {
-  return ((!this.bitmap$0$1) ? this.StringRadixInfos$lzycompute__p1__sjs_js_Array() : this.StringRadixInfos$1)
 });
 $c_jl_Long$.prototype.toOctalString__J__T = (function(l) {
   var lo = l.lo$2;
@@ -12734,9 +12735,6 @@ $c_jl_StringBuilder.prototype.substring__I__I__T = (function(start, end) {
   var thiz = this.java$lang$StringBuilder$$content$f;
   return $as_T(thiz.substring(start, end))
 });
-$c_jl_StringBuilder.prototype.append__C__jl_Appendable = (function(c) {
-  return this.append__C__jl_StringBuilder(c)
-});
 $c_jl_StringBuilder.prototype.init___T = (function(str) {
   $c_jl_StringBuilder.prototype.init___.call(this);
   if ((str === null)) {
@@ -12744,6 +12742,9 @@ $c_jl_StringBuilder.prototype.init___T = (function(str) {
   };
   this.java$lang$StringBuilder$$content$f = str;
   return this
+});
+$c_jl_StringBuilder.prototype.append__C__jl_Appendable = (function(c) {
+  return this.append__C__jl_StringBuilder(c)
 });
 $c_jl_StringBuilder.prototype.charAt__I__C = (function(index) {
   var thiz = this.java$lang$StringBuilder$$content$f;
@@ -19591,9 +19592,6 @@ function $h_jl_JSConsoleBasedPrintStream() {
   /*<skip>*/
 }
 $h_jl_JSConsoleBasedPrintStream.prototype = $c_jl_JSConsoleBasedPrintStream.prototype;
-$c_jl_JSConsoleBasedPrintStream.prototype.print__T__V = (function(s) {
-  this.java$lang$JSConsoleBasedPrintStream$$printString__T__V(((s === null) ? "null" : s))
-});
 $c_jl_JSConsoleBasedPrintStream.prototype.init___jl_Boolean = (function(isErr) {
   this.isErr$4 = isErr;
   var out = new $c_jl_JSConsoleBasedPrintStream$DummyOutputStream().init___();
@@ -19601,6 +19599,9 @@ $c_jl_JSConsoleBasedPrintStream.prototype.init___jl_Boolean = (function(isErr) {
   this.flushed$4 = true;
   this.buffer$4 = "";
   return this
+});
+$c_jl_JSConsoleBasedPrintStream.prototype.print__T__V = (function(s) {
+  this.java$lang$JSConsoleBasedPrintStream$$printString__T__V(((s === null) ? "null" : s))
 });
 $c_jl_JSConsoleBasedPrintStream.prototype.java$lang$JSConsoleBasedPrintStream$$printString__T__V = (function(s) {
   var rest = s;
@@ -26015,11 +26016,11 @@ $c_scm_AbstractBuffer.prototype.companion__scg_GenericCompanion = (function() {
 $c_scm_AbstractBuffer.prototype.seq__sc_Seq = (function() {
   return this.seq__scm_Seq()
 });
-$c_scm_AbstractBuffer.prototype.stringPrefix__T = (function() {
-  return "Buffer"
-});
 $c_scm_AbstractBuffer.prototype.$$plus$plus$eq__sc_TraversableOnce__scg_Growable = (function(xs) {
   return $f_scg_Growable__$$plus$plus$eq__sc_TraversableOnce__scg_Growable(this, xs)
+});
+$c_scm_AbstractBuffer.prototype.stringPrefix__T = (function() {
+  return "Buffer"
 });
 /** @constructor */
 function $c_scm_HashMap() {
