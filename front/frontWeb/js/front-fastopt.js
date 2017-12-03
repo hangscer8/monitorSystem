@@ -6253,10 +6253,10 @@ $c_Lnathan_LoginService$.prototype.login__Lentity_UserReq__s_concurrent_Future =
   var lv = new $c_Lshapeless_Lazy$$anon$1().init___F0(t);
   var exported = $as_Lio_circe_ObjectEncoder(lv.value__O());
   var this$8 = $f_Lio_circe_ObjectEncoder__apply__O__Lio_circe_Json(exported, user);
-  var s = $m_Lio_circe_Printer$().spaces2$1.pretty__Lio_circe_Json__T(this$8);
+  var s = $m_Lio_circe_Printer$().noSpaces$1.pretty__Lio_circe_Json__T(this$8);
   var x$8 = $f_Lutil_HttpHeadSupport__header__sci_Map(this);
   var this$10 = $m_Lorg_scalajs_dom_ext_Ajax$();
-  return this$10.apply__T__T__Lorg_scalajs_dom_ext_Ajax$InputData__I__sci_Map__Z__T__s_concurrent_Future("POST", x$6, s, 0, x$8, false, "text")
+  return this$10.apply__T__T__Lorg_scalajs_dom_ext_Ajax$InputData__I__sci_Map__Z__T__s_concurrent_Future("POST", x$6, s, 0, x$8, false, "")
 });
 $c_Lnathan_LoginService$.prototype.setAuth__s_Option__V = (function(authOption) {
   if ($is_s_Some(authOption)) {
@@ -6371,16 +6371,13 @@ $c_Lnathan_LoginService$.prototype.loginForm__Lorg_scalajs_dom_raw_HTMLFormEleme
         var jsx$4 = $m_Lorg_scalajs_dom_package$().console__Lorg_scalajs_dom_raw_Console();
         var s = $as_T(xhr.responseType);
         jsx$4.log(s);
-        $m_Lorg_scalajs_dom_package$().console__Lorg_scalajs_dom_raw_Console().log(xhr.response);
-        var jsx$5 = $m_Lorg_scalajs_dom_package$().console__Lorg_scalajs_dom_raw_Console();
-        var s$1 = $as_T(xhr.responseText);
-        jsx$5.log(s$1)
+        $m_Lorg_scalajs_dom_package$().console__Lorg_scalajs_dom_raw_Console().log(xhr.response)
       } else if ($is_s_util_Failure(x0$1)) {
         var x3 = $as_s_util_Failure(x0$1);
         var ex = x3.exception$2;
-        var jsx$6 = $m_Lorg_scalajs_dom_package$().console__Lorg_scalajs_dom_raw_Console();
-        var s$2 = ex.getMessage__T();
-        jsx$6.error(s$2)
+        var jsx$5 = $m_Lorg_scalajs_dom_package$().console__Lorg_scalajs_dom_raw_Console();
+        var s$1 = $m_s_Predef$any2stringadd$().$$plus$extension__O__T__T(ex, "");
+        jsx$5.error(s$1)
       } else {
         throw new $c_s_MatchError().init___O(x0$1)
       }
@@ -8320,7 +8317,7 @@ $c_Lnathan_LoginService$anon$exportEncoder$macro$15$1.prototype.inst$macro$1$lzy
     var zipWithKeys = $m_Lshapeless_ops_hlist$ZipWithKeys$().hnilZipWithKeys$1;
     $m_Lshapeless_Witness$();
     var this$1 = $m_s_Symbol$();
-    var value0 = $as_s_Symbol($c_s_JSUniquenessCache.prototype.apply__T__O.call(this$1, "type"));
+    var value0 = $as_s_Symbol($c_s_JSUniquenessCache.prototype.apply__T__O.call(this$1, "type1"));
     new $c_Lshapeless_Witness$$anon$1().init___O(value0);
     var zipWithKeys$1 = new $c_Lshapeless_ops_hlist$ZipWithKeys$$anon$109().init___Lshapeless_ops_hlist$ZipWithKeys(zipWithKeys);
     $m_Lshapeless_Witness$();
@@ -12278,7 +12275,7 @@ $c_Lnathan_LoginService$anon$exportEncoder$macro$15$1$anon$macro$9$1.prototype.t
   if ((p !== null)) {
     var pat$macro$6 = p.username$1;
     var pat$macro$7 = p.password$1;
-    var pat$macro$8 = p.type$1;
+    var pat$macro$8 = p.type1$1;
     return new $c_Lshapeless_$colon$colon().init___O__Lshapeless_HList(pat$macro$6, new $c_Lshapeless_$colon$colon().init___O__Lshapeless_HList(pat$macro$7, new $c_Lshapeless_$colon$colon().init___O__Lshapeless_HList(pat$macro$8, $m_Lshapeless_HNil$())))
   } else {
     throw new $c_s_MatchError().init___O(p)
@@ -14155,7 +14152,7 @@ function $c_Lentity_UserReq() {
   $c_O.call(this);
   this.username$1 = null;
   this.password$1 = null;
-  this.type$1 = null
+  this.type1$1 = null
 }
 $c_Lentity_UserReq.prototype = new $h_O();
 $c_Lentity_UserReq.prototype.constructor = $c_Lentity_UserReq;
@@ -14175,7 +14172,7 @@ $c_Lentity_UserReq.prototype.equals__O__Z = (function(x$1) {
     return true
   } else if ($is_Lentity_UserReq(x$1)) {
     var UserReq$1 = $as_Lentity_UserReq(x$1);
-    return (((this.username$1 === UserReq$1.username$1) && (this.password$1 === UserReq$1.password$1)) && (this.type$1 === UserReq$1.type$1))
+    return (((this.username$1 === UserReq$1.username$1) && (this.password$1 === UserReq$1.password$1)) && (this.type1$1 === UserReq$1.type1$1))
   } else {
     return false
   }
@@ -14191,7 +14188,7 @@ $c_Lentity_UserReq.prototype.productElement__I__O = (function(x$1) {
       break
     }
     case 2: {
-      return this.type$1;
+      return this.type1$1;
       break
     }
     default: {
@@ -14202,10 +14199,10 @@ $c_Lentity_UserReq.prototype.productElement__I__O = (function(x$1) {
 $c_Lentity_UserReq.prototype.toString__T = (function() {
   return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
 });
-$c_Lentity_UserReq.prototype.init___T__T__T = (function(username, password, type) {
+$c_Lentity_UserReq.prototype.init___T__T__T = (function(username, password, type1) {
   this.username$1 = username;
   this.password$1 = password;
-  this.type$1 = type;
+  this.type1$1 = type1;
   return this
 });
 $c_Lentity_UserReq.prototype.hashCode__I = (function() {
@@ -18971,7 +18968,7 @@ $c_Lnathan_LoginService$anon$exportEncoder$macro$15$1$$anon$1.prototype.encodeOb
         if ((x === p4)) {
           var jsx$2 = $m_Lio_circe_JsonObject$();
           var this$1 = $m_sci_Vector$();
-          var array = [new $c_T2().init___O__O("username", this.fresh$macro$11$2.apply__O__Lio_circe_Json(fresh$macro$14)), new $c_T2().init___O__O("password", this.fresh$macro$11$2.apply__O__Lio_circe_Json(fresh$macro$13)), new $c_T2().init___O__O("type", this.fresh$macro$11$2.apply__O__Lio_circe_Json(fresh$macro$12))];
+          var array = [new $c_T2().init___O__O("username", this.fresh$macro$11$2.apply__O__Lio_circe_Json(fresh$macro$14)), new $c_T2().init___O__O("password", this.fresh$macro$11$2.apply__O__Lio_circe_Json(fresh$macro$13)), new $c_T2().init___O__O("type1", this.fresh$macro$11$2.apply__O__Lio_circe_Json(fresh$macro$12))];
           if (($uI(array.length) === 0)) {
             var jsx$1 = this$1.NIL$6
           } else {

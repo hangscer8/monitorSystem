@@ -1,4 +1,4 @@
-package entity
+package protocol
 
 object UserTypeConst {
   val common = "common"

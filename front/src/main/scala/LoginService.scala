@@ -38,13 +38,13 @@ object LoginService extends HttpHeadSupport {
       case  Success(xhr)=>
         console.log(xhr.responseType)
         console.log(xhr.response)
-        console.log(xhr.responseText)
+//        console.log(xhr.responseText)
       case Failure(ex)=>
-        console.error(ex.getMessage)
+        console.error(ex+"")
     }
   }
 
   def login(user: UserReq) = {
-    Ajax.post(url = baseUrl / "monitorSystem" / "login", data = InputData.str2ajax(user.asJson.spaces2), headers = header,responseType = "text")
+    Ajax.post(url = baseUrl / "monitorSystem" / "login", data = InputData.str2ajax(user.asJson.noSpaces), headers = header)
   }
 }
