@@ -5,3 +5,4 @@ object CommonUtil {
     def /(string: String) = prefixStr + "/" + string
   }
 }
+

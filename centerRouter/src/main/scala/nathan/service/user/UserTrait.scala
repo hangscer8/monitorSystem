@@ -1,5 +1,5 @@
 package nathan.service.user
 
-class UserService {
-  
+trait UserTrait {
+
 }
