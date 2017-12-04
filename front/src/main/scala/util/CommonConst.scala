@@ -6,5 +6,4 @@ object CommonConst {
   val baseUrl = s"http://$host:$port"
   val prefix = "monitorSystem"
   val authHead = "MONITORSYSTEM-AUTH"
-
 }

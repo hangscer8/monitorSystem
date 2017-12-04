@@ -11,28 +11,28 @@ trait BaseRouterTrait {
     extractRequest.flatMap { case request =>
       request.uri.toString() match {
         case "/monitorSystem/login" =>
-          optionalHeaderValueByName(Protocol.auth).flatMap{
+          optionalHeaderValueByName(Protocol.authHead).flatMap{
             case Some(auth)=>
               provide(Some(auth))
             case None =>
-              complete(StatusCodes.BadRequest)
+              complete(StatusCodes.Forbidden)
           }
         case _ =>
-          optionalHeaderValueByName(Protocol.auth).flatMap {
+          optionalHeaderValueByName(Protocol.authHead).flatMap {
             case Some(auth) =>
               UserSupport.isLoginUser(Some(auth)) match {
                 case false =>
-                  complete(StatusCodes.BadRequest)
+                  complete(StatusCodes.Forbidden)
                 case _ =>
                   provide(Some(auth))
               }
             case None =>
               parameterMap.flatMap { paramsKV => //从get参数中获取
-                paramsKV.get(Protocol.auth) match {
+                paramsKV.get(Protocol.authHead) match {
                   case Some(auth) =>
                     provide(Some(auth))
                   case None =>
-                    provide(None)
+                    complete(StatusCodes.Forbidden)
                 }
               }
           }

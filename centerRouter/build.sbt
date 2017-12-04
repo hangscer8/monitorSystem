@@ -38,3 +38,4 @@ lazy val app = (project in file("centerRouter")).
     mainClass in assembly := Some("nathan.Main"),
     assemblyJarName in assembly := "centerRouter.jar"
   )
+cancelable in Global := true

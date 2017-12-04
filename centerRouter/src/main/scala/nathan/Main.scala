@@ -7,7 +7,7 @@ import nathan.dbentity.DbInit
 import nathan.ec.ExecutorService
 import nathan.router.{IndexRouter, UserRouter}
 import nathan.util.CorsSupport
-
+import nathan.dbentity.EntityTable.db
 object Main extends App with CorsSupport {
   implicit val system = ExecutorService.system
   implicit val mat = ExecutorService.mat
@@ -25,12 +25,10 @@ object Main extends App with CorsSupport {
     println("server started!!")
     println("input any key to stop server")
     Console.readLine()
+    db.close()
     hander.unbind()
   }.flatMap { _ =>
     mat.shutdown()
     system.terminate()
-  }.map { _ =>
-    println("system stoped")
-    System.exit(0)
   }
 }
