@@ -9,7 +9,8 @@ trait BaseRouterTrait {
 
   def apiAuthentication: Directive1[Option[String]] = {
     extractRequest.flatMap { case request =>
-      request.uri.toString() match {
+     val url= request.uri.path.toString() //request.uri.toString => request.uri.path.toString 一个天大的bug
+     url match {
         case "/monitorSystem/login" =>
           optionalHeaderValueByName(Protocol.authHead).flatMap{
             case Some(auth)=>
