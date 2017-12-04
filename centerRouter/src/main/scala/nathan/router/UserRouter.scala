@@ -4,7 +4,7 @@ import akka.http.scaladsl.server.Directives.{path, pathPrefix}
 import nathan.util.JsonUtil._
 import akka.http.scaladsl.server.Directives._
 import nathan.ec.ExecutorService
-import nathan.protocol.Protocol.UserReq
+import nathan.protocol.Protocol.{LoginReq, UserReq}
 import nathan.service.user.UserTrait
 
 class UserRouter extends BaseRouterTrait with UserTrait {
@@ -17,7 +17,14 @@ class UserRouter extends BaseRouterTrait with UserTrait {
             complete(createUser(userReq, auth))
           }
         }
-      }
+      } ~
+        path("login") {
+          post {
+            entity(as[LoginReq]) { loginReq =>
+              complete(login(loginReq, auth))
+            }
+          }
+        }
     }
   }
 }

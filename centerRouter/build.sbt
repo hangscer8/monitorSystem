@@ -24,7 +24,8 @@ libraryDependencies ++= Seq(
   "com.h2database" % "h2" % "1.4.186",
   "com.fasterxml.jackson.core" % "jackson-databind" % "2.9.2",
   "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.9.2",
-  "com.typesafe.akka" %% "akka-http-jackson" % "10.0.10"
+  "com.typesafe.akka" %% "akka-http-jackson" % "10.0.10",
+  "io.monix" %% "monix" % "2.3.0"
 )
 lazy val commonSettings = Seq(
   version := "0.1",

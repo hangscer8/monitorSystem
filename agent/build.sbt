@@ -15,5 +15,7 @@ libraryDependencies ++= Seq(
   "com.typesafe.slick" % "slick_2.12" % "3.2.0",
   "io.circe" %% "circe-core" % "0.8.0",
   "io.circe" %% "circe-generic" % "0.8.0",
-  "io.circe" %% "circe-parser" % "0.8.0"
+  "io.circe" %% "circe-parser" % "0.8.0",
+  "io.monix" %% "monix" % "2.3.0"
 )
+cancelable in Global := true

@@ -1,7 +1,10 @@
 package nathan
 
-import entity.UserReq
+import entity.{LoginReq, RetMsg}
+import io.circe.Decoder
 import io.circe.generic.auto._
+import io.circe.generic.semiauto._
+import io.circe.parser.decode
 import io.circe.syntax._
 import org.scalajs.dom._
 import org.scalajs.dom.ext.Ajax
@@ -11,10 +14,9 @@ import util.CommonConst.{authHead, baseUrl}
 import util.CommonUtil._
 import util.HttpHeadSupport
 
-import scalajs.concurrent.JSExecutionContext.Implicits.queue
+import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
 import scala.scalajs.js.annotation.JSExport
 import scala.util.{Failure, Success}
-
 @JSExport
 object UserService extends HttpHeadSupport {
   @JSExport
@@ -34,17 +36,24 @@ object UserService extends HttpHeadSupport {
     val username = inputs.filter(_.name == "username").head.value
     val password = inputs.filter(_.name == "password").head.value
     val `type` = inputs.filter(_.name == "type").filter(_.checked == true).head.value
-    login(UserReq(username,password,`type`)).onComplete{
-      case  Success(xhr)=>
+    login(LoginReq(username, password, `type`)).onComplete {
+      case Success(xhr) =>
         console.log(xhr.responseType)
-        console.log(xhr.response)
-//        console.log(xhr.responseText)
-      case Failure(ex)=>
-        console.error(ex+"")
+        //        console.log(xhr.response)
+        decode[RetMsg](xhr.responseText.toString) match {
+          case Right(msg) =>
+            console.log(msg.code)
+          case Left(ex) =>
+            console.log(ex.getMessage)
+        }
+      case Failure(ex) =>
+        console.error(ex + "")
     }
   }
 
-  def login(user: UserReq) = {
+  def login(user: LoginReq) = {
     Ajax.post(url = baseUrl / "monitorSystem" / "login", data = InputData.str2ajax(user.asJson.noSpaces), headers = header)
   }
+  implicit val retSuccessDecoder: Decoder[RetMsg] = deriveDecoder[RetMsg]
+
 }

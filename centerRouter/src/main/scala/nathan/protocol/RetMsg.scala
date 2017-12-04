@@ -1,10 +1,6 @@
 package nathan.protocol
 
-trait RetMsg
-
-case class RetSuccess(code: String, entity: Any) extends RetMsg
-
-case class RetFail(code: String, msg: String) extends RetMsg
+case class RetMsg(code: String, entity: String)
 
 object CustomerCodes {
   val success = "0000"
