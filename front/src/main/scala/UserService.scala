@@ -16,7 +16,7 @@ import scala.scalajs.js.annotation.JSExport
 import scala.util.{Failure, Success}
 
 @JSExport
-object LoginService extends HttpHeadSupport {
+object UserService extends HttpHeadSupport {
   @JSExport
   def setAuth(authOption: Option[String] = None) = authOption match {
     case _: Some[_] =>
