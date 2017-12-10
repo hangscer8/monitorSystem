@@ -1,3 +1,4 @@
+
 name := "front"
 
 version := "0.1"
@@ -12,6 +13,9 @@ libraryDependencies ++= Seq(
   "io.circe" %%% "circe-core" % "0.8.0",
   "io.circe" %%% "circe-generic" % "0.8.0",
   "io.circe" %%% "circe-parser" % "0.8.0",
-  "be.doeraene" %%% "scalajs-jquery" % "0.9.1"
+  "be.doeraene" %%% "scalajs-jquery" % "0.9.1",
+  "org.ensime" %% "api" % "2.0.0"
 )
 crossTarget in fastOptJS := baseDirectory.value / "frontWeb" / "js"
+
+ensimeScalaVersion in ThisBuild := "2.12.4"

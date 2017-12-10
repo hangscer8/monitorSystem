@@ -3,6 +3,8 @@
 *.jar
 *.xml
 *.iml
+*.DS_Store
+*.ensime
 centerRouter/project/project/*
 centerRouter/project/target/*
 centerRouter/target/*
@@ -12,3 +14,10 @@ agent/target/*
 front/project/project/*
 front/project/target/*
 front/target/*
+
+centerRouter/centerRouter/*
+agent/agent/*
+front/front/*
+centerRouter/.ensime_cache/*
+agent/.ensime_cache/*
+front/.ensime_cache/*
