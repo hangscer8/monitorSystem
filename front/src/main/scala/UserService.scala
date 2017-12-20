@@ -44,6 +44,7 @@ object UserService extends HttpHeadSupport {
           case Right(msg) =>
             console.log(msg.code)
           case Left(ex) =>
+            console.error("asd")
             console.log(ex.getMessage)
         }
       case Failure(ex) =>
