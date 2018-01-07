@@ -6753,6 +6753,7 @@ $c_Lnathan_UserService$.prototype.loginForm__Lorg_scalajs_dom_raw_HTMLFormElemen
           };
           var x3 = $as_s_util_Left(x1$2);
           var ex = $as_Lio_circe_Error(x3.value$2);
+          $m_Lorg_scalajs_dom_package$().console__Lorg_scalajs_dom_raw_Console().error("asd");
           var jsx$6 = $m_Lorg_scalajs_dom_package$().console__Lorg_scalajs_dom_raw_Console();
           var s$2 = ex.getMessage__T();
           jsx$6.log(s$2)

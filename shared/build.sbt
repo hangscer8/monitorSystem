@@ -1,5 +1,5 @@
 
-name := "agent"
+name := "shared"
 
 version := "0.1"
 
@@ -31,10 +31,10 @@ lazy val commonSettings = Seq(
   test in assembly := {}
 )
 
-lazy val app = (project in file("agent")).
+lazy val app = (project in file("shared")).
   settings(commonSettings: _*).
   settings(
     mainClass in assembly := Some("nathan.Main"),
-    assemblyJarName in assembly := "agent.jar"
+    assemblyJarName in assembly := "shared.jar"
   )
 cancelable in Global := true

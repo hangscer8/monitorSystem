@@ -41,5 +41,3 @@ lazy val app = (project in file("centerRouter")).
     assemblyJarName in assembly := "centerRouter.jar"
   )
 cancelable in Global := true
-
-ensimeScalaVersion in ThisBuild := "2.12.3"

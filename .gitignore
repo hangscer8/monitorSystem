@@ -5,6 +5,8 @@
 *.iml
 *.DS_Store
 *.ensime
+*export
+*out
 centerRouter/project/project/*
 centerRouter/project/target/*
 centerRouter/target/*
@@ -14,6 +16,9 @@ agent/target/*
 front/project/project/*
 front/project/target/*
 front/target/*
+shared/project/project/*
+shared/project/target/*
+shared/target/*
 
 centerRouter/centerRouter/*
 agent/agent/*
