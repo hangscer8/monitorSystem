@@ -30,8 +30,12 @@ object OS {
       JpsItem(pid.toInt, name)
     }.toList
   }
-}
 
+  def `jmap -heap pid`(pid: Int) = {
+    s"jmap -heap $pid".!!.trim.split("\n").map(_.trim).filter(_.nonEmpty)
+  }
+
+}
 
 // uname -a
 //top -l 1
