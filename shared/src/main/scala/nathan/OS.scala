@@ -1,6 +1,7 @@
 package nathan
 
-import nathan.Protocols.top.mac.{JpsItem, ProcessesInfo}
+import nathan.Main.list
+import nathan.Protocols.monitorJdk.{JHeap, JpsItem, Usege}
 
 import scala.sys.process._
 
@@ -32,7 +33,25 @@ object OS {
   }
 
   def `jmap -heap pid`(pid: Int) = {
-    s"jmap -heap $pid".!!.trim.split("\n").map(_.trim).filter(_.nonEmpty)
+    val list = s"jmap -heap $pid".!!.trim.split("\n").toList.map(_.trim).filter(_.nonEmpty)
+    list.foreach(println)
+    val _edenArray = list.dropWhile(!_.startsWith("Eden Space")).takeWhile(!_.startsWith("From Space")).toArray
+    val _fromArray = list.dropWhile(!_.startsWith("From Space")).takeWhile(!_.startsWith("To Space")).toArray
+    val _toArray = list.dropWhile(!_.startsWith("To Space")).toArray
+    val _oldArray = list.dropWhile(!_.contains("PS Old")).toArray
+    val array = Array(_edenArray, _fromArray, _toArray, _oldArray)
+
+    val Capacity = """capacity\s*=\s*(\d+)\s*\(.*\)""".r
+    val Used = """used\s*=\s*(\d+)\s*\(.*\)""".r
+    val Free ="""free\s*=\s*(\d+)\s*\(.*\)""".r
+
+    val temp = array.map { space =>
+      val Capacity(cap) = space(1)
+      val Used(used) = space(2)
+      val Free(free) = space(3)
+      Usege(cap.toLong, used.toLong, free.toLong)
+    }
+    JHeap(temp(0), temp(1), temp(2), temp(3))
   }
 
 }

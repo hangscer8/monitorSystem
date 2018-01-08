@@ -1,7 +1,8 @@
 package nathan
 
 object Main extends App {
-  OS.`jmap -heap pid`(4886).foreach(println)
+  val list = OS.`jmap -heap pid`(7434)
+  println(list)
 }
 
 //jmap -histo:live 2131

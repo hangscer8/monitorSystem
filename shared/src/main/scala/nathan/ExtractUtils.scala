@@ -1,8 +1,7 @@
 package nathan
-
-import nathan.Protocols.top.mac.ProcessesInfo
 package ExtractUtils {
 
+  import nathan.Protocols.monitorJdk.JpsItem
   import nathan.Protocols.top.mac._
 
   object mac {
