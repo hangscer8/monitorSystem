@@ -1,6 +1,5 @@
 package nathan
 
-import nathan.Main.list
 import nathan.Protocols.monitorJdk.{JHeap, JpsItem, Usege}
 
 import scala.sys.process._
@@ -34,7 +33,6 @@ object OS {
 
   def `jmap -heap pid`(pid: Int) = {
     val list = s"jmap -heap $pid".!!.trim.split("\n").toList.map(_.trim).filter(_.nonEmpty)
-    list.foreach(println)
     val _edenArray = list.dropWhile(!_.startsWith("Eden Space")).takeWhile(!_.startsWith("From Space")).toArray
     val _fromArray = list.dropWhile(!_.startsWith("From Space")).takeWhile(!_.startsWith("To Space")).toArray
     val _toArray = list.dropWhile(!_.startsWith("To Space")).toArray
