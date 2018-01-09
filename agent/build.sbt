@@ -23,7 +23,6 @@ libraryDependencies ++= Seq(
   "org.ensime" %% "api" % "2.0.0",
   "org.typelevel" %% "cats-core" % "1.0.0-RC1"
 )
-cancelable in Global := true
 
 lazy val commonSettings = Seq(
   version := "0.1",
