@@ -7,6 +7,14 @@
 *.ensime
 *export
 *out
+*.cache
+*.xsl
+*output
+*inputs
+*input_dsp
+*output_dsp
+*.history
+*data
 centerRouter/project/project/*
 centerRouter/project/target/*
 centerRouter/target/*
