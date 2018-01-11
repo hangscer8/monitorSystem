@@ -52,8 +52,21 @@ object OS {
     JHeap(temp(0), temp(1), temp(2), temp(3))
   }
 
+  def top1(listStr: List[String]) = {
+    val cpuNum = Runtime.getRuntime.availableProcessors()
+    whichOS match {
+      case OSX =>
+
+      case Linux =>
+        val ExtractLoadAverage=""".*load\s+average[:]?\s+(\d*[.]?\d*)\s*[,]?\s*(\d*[.]?\d*)\s*[,]?\s*(\d*[.]?\d*)\s*""".r
+        
+    }
+  }
 }
 
 // uname -a
 //top -l 1
 //top -b -n 1
+// * 0次 1次 多次
+// ? 0次 1次
+// + 1次 多次
