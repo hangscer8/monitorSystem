@@ -14,7 +14,12 @@ package monitorMac {
 
 package monitorSystem {
 
-  case class LoadAvg(every1Min: Double, every5Min: Double, every15Min: Double, cpuNum: Int)
+  case class SystemLoadAvg(every1Min: Double) //0.0-1.0,除以cpu核数
+  case class CPULoad(load: Double) //0.0-1.0，如果无法获取，即NaN
+  case class PhyMem(total: Double, free: Double) // 单位GB 总共、空闲
+  case class SwapMem(total: Double, free: Double) //单位GB 总共、空闲
+  case class FileSpace(total: Double, free: Double) //单位 GB 总共、空闲
+  case class FileDescriptor(max: Long, opened: Long) //最大可打开的文件描述符 已打开的
 
 }
 

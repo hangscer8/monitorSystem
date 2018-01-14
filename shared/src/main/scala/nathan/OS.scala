@@ -1,6 +1,11 @@
 package nathan
 
+import java.io.File
+import java.lang.management.ManagementFactory
+
+import com.sun.management.{OperatingSystemMXBean, UnixOperatingSystemMXBean}
 import nathan.Protocols.monitorJdk.{JHeap, JpsItem, Usege}
+import nathan.Protocols.monitorSystem._
 
 import scala.sys.process._
 
@@ -11,6 +16,8 @@ case object OSX extends OS
 case object Linux extends OS
 
 object OS {
+  val osBean = ManagementFactory.getPlatformMXBean(classOf[OperatingSystemMXBean])
+
   def whichOS: OS = {
     "uname".!!.trim match { // must "Darwin\n" trim去掉换行
       case "Darwin" => OSX
@@ -52,15 +59,15 @@ object OS {
     JHeap(temp(0), temp(1), temp(2), temp(3))
   }
 
-  def top1(listStr: List[String]) = {
-    val cpuNum = Runtime.getRuntime.availableProcessors()
-    whichOS match {
-      case OSX =>
-
-      case Linux =>
-        val ExtractLoadAverage=""".*load\s+average[:]?\s+(\d*[.]?\d*)\s*[,]?\s*(\d*[.]?\d*)\s*[,]?\s*(\d*[.]?\d*)\s*""".r
-        
-    }
+  def systemInfo() = {
+    val systemLoadAvg = SystemLoadAvg(osBean.getSystemLoadAverage / osBean.getAvailableProcessors)
+    val cpuLoad = CPULoad(osBean.getSystemCpuLoad)
+    val phyMem = PhyMem(osBean.getTotalPhysicalMemorySize.toDouble / 1024 / 1024 / 1024, osBean.getFreePhysicalMemorySize.toDouble / 1024 / 1024 / 1024)
+    val swapMem = SwapMem(osBean.getTotalSwapSpaceSize.toDouble / 1024 / 1024 / 1024, osBean.getFreeSwapSpaceSize.toDouble / 1024 / 1024 / 1024)
+    val fileSpace = FileSpace(total = File.listRoots().foldRight(0.0)((root, total) => root.getTotalSpace + total), free = File.listRoots().foldRight(0.0)((root, free) => root.getFreeSpace + free))
+    val fileDescriptor = (osBean match {
+      case _osBean: UnixOperatingSystemMXBean => Option((_osBean.getMaxFileDescriptorCount, _osBean.getOpenFileDescriptorCount))
+    }).map(tuple => FileDescriptor(max = tuple._1, opened = tuple._2)).get
   }
 }
 
