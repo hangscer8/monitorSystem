@@ -1,7 +1,9 @@
 package nathan
-import nathan.ec.ExecutorServiceUtil.{agentActor}
-object Main extends App{
-  println(agentActor)
+
+import nathan.sigarUtil.SigarUtils.sigar
+
+object Main extends App {
+  println(sigar.getCpuInfoList.toList)
+  println(sigar.getNetInfo)
+  println(sigar.getCpuPerc)
 }
-//jmap -histo:live 2131
-// jmap -heap 2131
