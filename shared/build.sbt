@@ -19,10 +19,7 @@ libraryDependencies ++= Seq(
   "io.circe" %% "circe-parser" % "0.9.0-M2",
   "junit" % "junit" % "4.12",
   "com.fasterxml.jackson.core" % "jackson-databind" % "2.9.2",
-  "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.9.2",
-  "org.ensime" %% "api" % "2.0.0",
-  "org.typelevel" %% "cats-core" % "1.0.0-RC1",
-  "org.hyperic" % "sigar" % "1.6.4"
+  "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.9.2"
 )
 
 lazy val commonSettings = Seq(
