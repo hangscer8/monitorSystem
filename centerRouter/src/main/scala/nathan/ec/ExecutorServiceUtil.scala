@@ -6,16 +6,18 @@ import akka.actor.{ActorSystem, Props}
 import akka.stream.ActorMaterializer
 import com.typesafe.config.ConfigFactory
 import nathan.actor.CenterRouterActor
+import nathan.monitorSystem.akkaSystemConst._
 
 import scala.concurrent.ExecutionContext
 
 object ExecutorService {
-  implicit lazy val  system = ActorSystem(Protocol.center_system_name,ConfigFactory.load())
+  implicit val system = ActorSystem(center_system_name, ConfigFactory.load().withFallback(ConfigFactory.parseString(s"akka.remote.netty.tcp.port=$center_port")))
   private[this] lazy val ecFixThreadPoll = Executors.newFixedThreadPool(20)
   implicit lazy val ec = ExecutionContext.fromExecutor(ecFixThreadPoll)
   lazy val mat = ActorMaterializer()
-  lazy val centerRouterActor=system.actorOf(Props(classOf[CenterRouterActor]),Protocol.center_actor_name)
-  def getActorPath(targetSystem:String,host:String,targetPort:Int,actorPath:String)={
+  val centerRouterActor = system.actorOf(Props(classOf[CenterRouterActor]), center_actor_name)
+
+  def getActorPath(targetSystem: String, host: String, targetPort: Int, actorPath: String) = {
     s"akka.tcp://$targetSystem@$host:$targetPort/user/$actorPath"
   }
 }
