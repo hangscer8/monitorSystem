@@ -1,29 +1,18 @@
 package nathan.actor
 
-import akka.actor.Actor
-import nathan.OS
+import akka.actor.{Actor, ActorRef}
+import nathan.monitorSystem.akkaAction.AgentActorJoinCenter
 import nathan.monitorSystem.akkaSystemConst._
 
-import scala.concurrent.duration._
+class AgentActor extends Actor {
 
-class AgentActor extends Actor with AgentActorBaseTrait {
-
-  import context.dispatcher
-
-  context.system.scheduler.schedule(2 seconds, 2 second) {
+  override def preStart(): Unit = {
     val path = s"akka.tcp://$center_system_name@127.0.0.1:$center_port/user/$center_actor_name"
-    context.actorSelection(path) ! OS.getCPUPerc()
+    context.actorSelection(path) ! AgentActorJoinCenter(self)
   }
 
   override def receive: Receive = {
-    case str: String =>
-
-  }
-}
-
-trait AgentActorBaseTrait {
-  i: Actor =>
-  def withMsg(str: String) = {
-
+    case (`peerToAgentActor`, peerActor: ActorRef) =>
+      
   }
 }

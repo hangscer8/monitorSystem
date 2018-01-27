@@ -24,15 +24,5 @@ object Main extends App with CorsSupport {
     val route = indexRouter.route ~ userRouter.route
     corsHandler(route)
   }
-
-  Http().bindAndHandle(route, "127.0.0.1", 8888).flatMap { hander =>
-    println("server started!!")
-    println("input any key to stop server")
-    Console.readLine()
-    db.close()
-    hander.unbind()
-  }.flatMap { _ =>
-    mat.shutdown()
-    system.terminate()
-  }
+  
 }
