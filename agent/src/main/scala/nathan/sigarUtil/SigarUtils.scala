@@ -13,5 +13,5 @@ object SigarUtils {
     new Sigar()
   }
 
-  private[this] def isWinos() = System.getProperty("os.name").toLowerCase.contains("win")
+  def isWinos() = System.getProperty("os.name").toLowerCase.contains("win")
 }

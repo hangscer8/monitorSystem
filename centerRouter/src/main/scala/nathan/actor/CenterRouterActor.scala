@@ -15,9 +15,8 @@ trait RouterActorTrait {
   i: Actor =>
   def withAkkaEventAction(akkaEventAction: AkkaEventAction) = {
     akkaEventAction match {
-      case AgentActorJoinCenter(agentActor) =>
-        println(agentActor)
-        context.actorOf(Props(classOf[PeerToAgentActor])) ! (`agentActorJoined`, agentActor)
+      case AgentActorJoinCenter(agentActor, agentId) =>
+        context.actorOf(Props(classOf[PeerToAgentActor])) ! (`agentActorJoined`, agentActor, agentId)
     }
   }
 }

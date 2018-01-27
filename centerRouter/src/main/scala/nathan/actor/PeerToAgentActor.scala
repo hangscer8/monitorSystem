@@ -1,21 +1,21 @@
 package nathan.actor
 
-import akka.actor.{Actor, ActorRef}
+import akka.actor.{Actor, ActorRef, Terminated}
 import nathan.monitorSystem.Protocols.BaseAgentInfo
 import nathan.monitorSystem.akkaSystemConst._
 
-import scala.concurrent.duration._
-
 class PeerToAgentActor extends Actor {
   override def receive: Receive = {
-    case (`agentActorJoined`, agent: ActorRef) =>
+    case (`agentActorJoined`, agent: ActorRef, agentId: String) =>
       agent ! (peerToAgentActor, self)
-      context.setReceiveTimeout(3 seconds)
-      context.become(running(agent))
+      context.watch(agent)
+      context.become(running(agent, agentId))
   }
 
-  def running(agent: ActorRef): Receive = {
+  def running(agent: ActorRef, agentId: String): Receive = {
     case any: BaseAgentInfo =>
       println(any)
+    case Terminated(`agent`) =>
+      println(agent + "挂了")
   }
 }

@@ -29,6 +29,6 @@ object akkaAction {
 
   trait AkkaEventAction
 
-  case class AgentActorJoinCenter(agentActor: ActorRef) extends AkkaEventAction
+  case class AgentActorJoinCenter(agentActor: ActorRef, agentId: String) extends AkkaEventAction
 
 }
