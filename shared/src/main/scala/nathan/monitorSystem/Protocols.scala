@@ -28,6 +28,7 @@ object akkaSystemConst {
   val agent_port = 2552
   val center_system_name = "centerRouterActor"
   val center_actor_name = "centerSystem"
+  val dao_actor_name = "daoActor"
   val agent_system_name = "agentSystem"
   val agent_actor_name = "agentActor"
   val agentActorJoined = "agentActor"

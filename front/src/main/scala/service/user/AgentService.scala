@@ -6,8 +6,6 @@ import io.circe.syntax._
 import org.scalajs.dom._
 import org.scalajs.dom.ext.Ajax
 import org.scalajs.dom.ext.Ajax.InputData
-import util.CommonConst._
-import util.CommonUtil._
 
 import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
 trait AgentService {

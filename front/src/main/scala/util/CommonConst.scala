@@ -1,4 +1,4 @@
-package util
+package nathan.util
 
 object CommonConst {
   val host = "127.0.0.1"

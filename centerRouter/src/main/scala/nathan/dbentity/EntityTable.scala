@@ -25,7 +25,7 @@ object EntityTable {
 
   val users = new TableQuery(tag => new User(tag))
 
-  class CPUPerc(_tableTag: Tag) extends Table[CPUPercEntity](_tableTag, "cpuperc") {
+  class CPUPerc(_tableTag: Tag) extends Table[CPUPercEntity](_tableTag, "cPUPerc") {
     def * = (user, sys, _wait, idle, combined, create, agentId) <> (CPUPercEntity.tupled, CPUPercEntity.unapply)
 
     val user: Rep[Double] = column[Double]("user")
@@ -39,7 +39,7 @@ object EntityTable {
 
   val cpuPercs = new TableQuery(tag => new CPUPerc(tag))
 
-  class AgentMachine(_tableTag: Tag) extends Table[AgentMachineEntity](_tableTag, "agentmachineentity") {
+  class AgentMachine(_tableTag: Tag) extends Table[AgentMachineEntity](_tableTag, "agentMachine") {
     def * = (ip, akkaPort, agentId) <> (AgentMachineEntity.tupled, AgentMachineEntity.unapply)
 
     val ip: Rep[String] = column[String]("ip")

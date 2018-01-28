@@ -13,6 +13,7 @@ libraryDependencies ++= Seq(
   "io.circe" %%% "circe-core" % "0.8.0",
   "io.circe" %%% "circe-generic" % "0.8.0",
   "io.circe" %%% "circe-parser" % "0.8.0",
-  "be.doeraene" %%% "scalajs-jquery" % "0.9.1"
+  "be.doeraene" %%% "scalajs-jquery" % "0.9.1",
+  "com.github.karasiq" %%% "scalajs-highcharts" % "1.2.1"
 )
 crossTarget in fastOptJS := baseDirectory.value / "frontWeb" / "js"

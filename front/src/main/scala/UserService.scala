@@ -1,5 +1,6 @@
 package nathan
 
+import scalajs.js, js.UndefOr
 import entity.{LoginReq, RetMsg}
 import io.circe.Decoder
 import io.circe.generic.auto._
@@ -13,10 +14,14 @@ import org.scalajs.dom.html.Input
 import util.CommonConst.{authHead, baseUrl}
 import util.CommonUtil._
 import util.HttpHeadSupport
-
+import org.scalajs.jquery.jQuery
 import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
 import scala.scalajs.js.annotation.JSExport
 import scala.util.{Failure, Success}
+import com.highcharts.HighchartsUtils._
+import com.highcharts.HighchartsAliases._
+import com.highcharts.config._
+
 @JSExport
 object UserService extends HttpHeadSupport {
   @JSExport
@@ -55,6 +60,29 @@ object UserService extends HttpHeadSupport {
   def login(user: LoginReq) = {
     Ajax.post(url = baseUrl / "monitorSystem" / "login", data = InputData.str2ajax(user.asJson.noSpaces), headers = header)
   }
+
   implicit val retSuccessDecoder: Decoder[RetMsg] = deriveDecoder[RetMsg]
 
+  @JSExport
+  def testHc() = {
+    jQuery("#container").highcharts(new HighchartsConfig {
+      // Chart config
+      override val chart: Cfg[Chart] = Chart(`type` = "bar")
+
+      // Chart title
+      override val title: Cfg[Title] = Title(text = "Demo bar chart")
+
+      // X Axis settings
+      override val xAxis = js.Array(XAxis(categories = js.Array("Apples", "Bananas", "Oranges")))
+
+      // Y Axis settings
+      override val yAxis = js.Array(YAxis(title = YAxisTitle(text = "Fruit eaten")))
+
+      // Series
+      override val series: SeriesCfg = js.Array[AnySeries](
+        SeriesBar(name = "Jane", data = js.Array[Double](1, 0, 4)),
+        SeriesBar(name = "John", data = js.Array[Double](5, 7, 3))
+      )
+    })
+  }
 }

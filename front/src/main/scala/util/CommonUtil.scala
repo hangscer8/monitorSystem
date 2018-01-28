@@ -1,4 +1,4 @@
-package util
+package nathan.util
 
 object CommonUtil {
   implicit class SlashString(prefixStr: String) {
