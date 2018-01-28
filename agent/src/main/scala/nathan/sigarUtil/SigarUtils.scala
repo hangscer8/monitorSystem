@@ -1,7 +1,6 @@
 package nathan.sigarUtil
 
-import java.io.{File, FileOutputStream}
-import java.nio.file.Paths
+import java.io.File
 
 import com.typesafe.config.ConfigFactory
 import org.hyperic.sigar.Sigar

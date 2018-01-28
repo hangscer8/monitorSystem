@@ -4,19 +4,11 @@ import akka.actor.{Actor, Props}
 import nathan.monitorSystem.akkaAction.{AgentActorJoinCenter, AkkaEventAction}
 import nathan.monitorSystem.akkaSystemConst._
 
-class CenterRouterActor extends Actor with RouterActorTrait {
+class CenterRouterActor extends Actor {
   override def receive: Receive = {
-    case any: AkkaEventAction =>
-      withAkkaEventAction(any)
-  }
-}
-
-trait RouterActorTrait {
-  i: Actor =>
-  def withAkkaEventAction(akkaEventAction: AkkaEventAction) = {
-    akkaEventAction match {
-      case AgentActorJoinCenter(agentActor, agentId) =>
-        context.actorOf(Props(classOf[PeerToAgentActor])) ! (`agentActorJoined`, agentActor, agentId)
-    }
+    case AgentActorJoinCenter(agentActor, agentMachineEntity) =>
+      context.actorOf(Props(classOf[PeerToAgentActor])) ! (`agentActorJoined`, agentActor, agentMachineEntity)
+    case (`agentTimeout`, agentId: String) =>
+      println(agentId + "退出了")
   }
 }
