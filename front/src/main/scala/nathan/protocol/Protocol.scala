@@ -1,4 +1,4 @@
-package protocol
+package nathan.protocol
 
 object UserTypeConst {
   val common = "common"

@@ -4,7 +4,6 @@ import nathan.dbentity.EntityTable._
 import nathan.dbentity.EntityTable.h2.api._
 import nathan.dbentity.Protocol.{DefaultAuth, UserTypeConst}
 import nathan.ec.ExecutorService.ec
-import nathan.util.s.com.eoi.util.Snowflake
 
 import scala.concurrent.duration._
 import scala.concurrent.{Await, Future}

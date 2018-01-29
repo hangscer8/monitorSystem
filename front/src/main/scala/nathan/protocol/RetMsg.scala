@@ -1,4 +1,4 @@
-package protocol
+package nathan.protocol
 
 trait RetMsg
 

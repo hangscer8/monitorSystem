@@ -1,26 +1,26 @@
-package nathan
+package nathan.service
 
-import scalajs.js, js.UndefOr
-import entity.{LoginReq, RetMsg}
+import com.highcharts.HighchartsAliases._
+import com.highcharts.HighchartsUtils._
+import com.highcharts.config._
 import io.circe.Decoder
 import io.circe.generic.auto._
 import io.circe.generic.semiauto._
 import io.circe.parser.decode
 import io.circe.syntax._
+import nathan.entity.{LoginReq, RetMsg}
+import nathan.util.CommonConst._
+import nathan.util.HttpHeadSupport
 import org.scalajs.dom._
 import org.scalajs.dom.ext.Ajax
 import org.scalajs.dom.ext.Ajax.InputData
 import org.scalajs.dom.html.Input
-import util.CommonConst.{authHead, baseUrl}
-import util.CommonUtil._
-import util.HttpHeadSupport
 import org.scalajs.jquery.jQuery
+
 import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
+import scala.scalajs.js
 import scala.scalajs.js.annotation.JSExport
 import scala.util.{Failure, Success}
-import com.highcharts.HighchartsUtils._
-import com.highcharts.HighchartsAliases._
-import com.highcharts.config._
 
 @JSExport
 object UserService extends HttpHeadSupport {

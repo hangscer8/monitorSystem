@@ -1,4 +1,4 @@
-package entity
+package nathan.entity
 
 sealed trait Base
 

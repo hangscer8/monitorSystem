@@ -1081,6 +1081,48 @@ var $asArrayOf_J = $makeAsArrayOfPrimitive($isArrayOf_J, "J");
 var $asArrayOf_F = $makeAsArrayOfPrimitive($isArrayOf_F, "F");
 var $asArrayOf_D = $makeAsArrayOfPrimitive($isArrayOf_D, "D");
 
+function $f_Lcom_highcharts_AnySeriesDef__anySeriesArrayConvert__sjs_js_Array__sjs_js_UndefOr($thiz, arr) {
+  var array = [];
+  var x1 = $uI(arr.length);
+  switch (x1) {
+    case (-1): {
+      break
+    }
+  };
+  var i = 0;
+  var len = $uI(arr.length);
+  while ((i < len)) {
+    var index = i;
+    var arg1 = arr[index];
+    var elem = $m_Lcom_highcharts_CleanJsObject$().apply__sjs_js_Object__sjs_js_Object(arg1);
+    array.push(elem);
+    i = ((1 + i) | 0)
+  };
+  return array
+}
+function $f_Lcom_highcharts_HighchartsImplicits__highchartsCleanData__sjs_js_Array__sjs_js_$bar$Evidence__sjs_js_UndefOr($thiz, obj, ev) {
+  var array = [];
+  var x1 = $uI(obj.length);
+  switch (x1) {
+    case (-1): {
+      break
+    }
+  };
+  var i = 0;
+  var len = $uI(obj.length);
+  while ((i < len)) {
+    var index = i;
+    var arg1 = obj[index];
+    var elem = $m_Lcom_highcharts_CleanJsObject$().apply__sjs_js_Object__sjs_js_Object(arg1);
+    array.push(elem);
+    i = ((1 + i) | 0)
+  };
+  return array
+}
+function $f_Lcom_highcharts_HighchartsImplicits__highchartsCfg__sjs_js_Object__sjs_js_UndefOr($thiz, obj) {
+  var value = $m_Lcom_highcharts_CleanJsObject$().apply__sjs_js_Object__sjs_js_Object(obj);
+  return value
+}
 function $is_Lio_circe_CursorOp$Selection(obj) {
   return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lio_circe_CursorOp$Selection)))
 }
@@ -1092,6 +1134,26 @@ function $isArrayOf_Lio_circe_CursorOp$Selection(obj, depth) {
 }
 function $asArrayOf_Lio_circe_CursorOp$Selection(obj, depth) {
   return (($isArrayOf_Lio_circe_CursorOp$Selection(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lio.circe.CursorOp$Selection;", depth))
+}
+function $f_Lnathan_util_HttpHeadSupport__$$init$__V($thiz) {
+  $thiz.Content$minusType$1 = "Content-Type";
+  $thiz.$$u0022application$divjson$1 = "application/json"
+}
+function $f_Lnathan_util_HttpHeadSupport__header__sci_Map($thiz) {
+  var jsx$1 = new $c_T2().init___O__O("Content-Type", "application/json");
+  var self = $m_Lnathan_util_CommonConst$().authHead$1;
+  var y = $as_T($m_Lorg_scalajs_dom_package$().window__Lorg_scalajs_dom_raw_Window().localStorage.getItem($m_Lnathan_util_CommonConst$().authHead$1));
+  var array = [jsx$1, new $c_T2().init___O__O(self, y)];
+  var this$6 = new $c_scm_MapBuilder().init___sc_GenMap($m_sci_Map$EmptyMap$());
+  var i = 0;
+  var len = $uI(array.length);
+  while ((i < len)) {
+    var index = i;
+    var arg1 = array[index];
+    this$6.$$plus$eq__T2__scm_MapBuilder($as_T2(arg1));
+    i = ((1 + i) | 0)
+  };
+  return $as_sci_Map(this$6.elems$1)
 }
 function $f_Lshapeless_Nats__$$init$__V($thiz) {
   $thiz.$$und1$1 = new $c_Lshapeless_Succ().init___();
@@ -1116,26 +1178,6 @@ function $f_Lshapeless_Nats__$$init$__V($thiz) {
   $thiz.$$und20$1 = new $c_Lshapeless_Succ().init___();
   $thiz.$$und21$1 = new $c_Lshapeless_Succ().init___();
   $thiz.$$und22$1 = new $c_Lshapeless_Succ().init___()
-}
-function $f_Lutil_HttpHeadSupport__$$init$__V($thiz) {
-  $thiz.Content$minusType$1 = "Content-Type";
-  $thiz.$$u0022application$divjson$1 = "application/json"
-}
-function $f_Lutil_HttpHeadSupport__header__sci_Map($thiz) {
-  var jsx$1 = new $c_T2().init___O__O("Content-Type", "application/json");
-  var self = $m_Lutil_CommonConst$().authHead$1;
-  var y = $as_T($m_Lorg_scalajs_dom_package$().window__Lorg_scalajs_dom_raw_Window().localStorage.getItem($m_Lutil_CommonConst$().authHead$1));
-  var array = [jsx$1, new $c_T2().init___O__O(self, y)];
-  var this$6 = new $c_scm_MapBuilder().init___sc_GenMap($m_sci_Map$EmptyMap$());
-  var i = 0;
-  var len = $uI(array.length);
-  while ((i < len)) {
-    var index = i;
-    var arg1 = array[index];
-    this$6.$$plus$eq__T2__scm_MapBuilder($as_T2(arg1));
-    i = ((1 + i) | 0)
-  };
-  return $as_sci_Map(this$6.elems$1)
 }
 /** @constructor */
 function $c_O() {
@@ -1674,6 +1716,876 @@ function $m_Lcats_package$() {
     $n_Lcats_package$ = new $c_Lcats_package$().init___()
   };
   return $n_Lcats_package$
+}
+/** @constructor */
+function $c_Lcom_highcharts_CleanJsObject$() {
+  $c_O.call(this)
+}
+$c_Lcom_highcharts_CleanJsObject$.prototype = new $h_O();
+$c_Lcom_highcharts_CleanJsObject$.prototype.constructor = $c_Lcom_highcharts_CleanJsObject$;
+/** @constructor */
+function $h_Lcom_highcharts_CleanJsObject$() {
+  /*<skip>*/
+}
+$h_Lcom_highcharts_CleanJsObject$.prototype = $c_Lcom_highcharts_CleanJsObject$.prototype;
+$c_Lcom_highcharts_CleanJsObject$.prototype.init___ = (function() {
+  return this
+});
+$c_Lcom_highcharts_CleanJsObject$.prototype.apply__sjs_js_Object__sjs_js_Object = (function(v) {
+  if ((v === null)) {
+    return null
+  } else if ((v === (void 0))) {
+    return (void 0)
+  } else {
+    var newObj = {};
+    var array = $g.Object.keys(v);
+    var array$1 = [];
+    var i = 0;
+    var len = $uI(array.length);
+    while ((i < len)) {
+      var index = i;
+      var arg1 = array[index];
+      var key = $as_T(arg1);
+      var v$1 = v[key];
+      if (((v$1 === (void 0)) !== true)) {
+        array$1.push(arg1)
+      };
+      i = ((1 + i) | 0)
+    };
+    var array$2 = [];
+    var x1 = $uI(array$1.length);
+    switch (x1) {
+      case (-1): {
+        break
+      }
+    };
+    var i$1 = 0;
+    var len$1 = $uI(array$1.length);
+    while ((i$1 < len$1)) {
+      var index$1 = i$1;
+      var arg1$1 = array$1[index$1];
+      var key$3 = $as_T(arg1$1);
+      var y = this.cleanProperty$1__p1__sjs_js_Any__sjs_js_Any(v[key$3]);
+      var elem = new $c_T2().init___O__O(key$3, y);
+      array$2.push(elem);
+      i$1 = ((1 + i$1) | 0)
+    };
+    var i$2 = 0;
+    var len$2 = $uI(array$2.length);
+    while ((i$2 < len$2)) {
+      var index$2 = i$2;
+      var arg1$2 = array$2[index$2];
+      var x0$1 = $as_T2(arg1$2);
+      if ((x0$1 !== null)) {
+        var key$1 = $as_T(x0$1.$$und1__O());
+        var value = x0$1.$$und2__O();
+        newObj[key$1] = value
+      } else {
+        throw new $c_s_MatchError().init___O(x0$1)
+      };
+      i$2 = ((1 + i$2) | 0)
+    };
+    return newObj
+  }
+});
+$c_Lcom_highcharts_CleanJsObject$.prototype.cleanProperty$1__p1__sjs_js_Any__sjs_js_Any = (function(p) {
+  if ($uZ($g.Array.isArray(p))) {
+    var array = [];
+    var i = 0;
+    var len = $uI(p.length);
+    while ((i < len)) {
+      var index = i;
+      var arg1 = p[index];
+      if (((arg1 === (void 0)) !== true)) {
+        array.push(arg1)
+      };
+      i = ((1 + i) | 0)
+    };
+    var array$1 = [];
+    var x1 = $uI(array.length);
+    switch (x1) {
+      case (-1): {
+        break
+      }
+    };
+    var i$1 = 0;
+    var len$1 = $uI(array.length);
+    while ((i$1 < len$1)) {
+      var index$1 = i$1;
+      var arg1$1 = array[index$1];
+      var elem = this.cleanProperty$1__p1__sjs_js_Any__sjs_js_Any(arg1$1);
+      array$1.push(elem);
+      i$1 = ((1 + i$1) | 0)
+    };
+    return array$1
+  } else {
+    return p
+  }
+});
+var $d_Lcom_highcharts_CleanJsObject$ = new $TypeData().initClass({
+  Lcom_highcharts_CleanJsObject$: 0
+}, false, "com.highcharts.CleanJsObject$", {
+  Lcom_highcharts_CleanJsObject$: 1,
+  O: 1
+});
+$c_Lcom_highcharts_CleanJsObject$.prototype.$classData = $d_Lcom_highcharts_CleanJsObject$;
+var $n_Lcom_highcharts_CleanJsObject$ = (void 0);
+function $m_Lcom_highcharts_CleanJsObject$() {
+  if ((!$n_Lcom_highcharts_CleanJsObject$)) {
+    $n_Lcom_highcharts_CleanJsObject$ = new $c_Lcom_highcharts_CleanJsObject$().init___()
+  };
+  return $n_Lcom_highcharts_CleanJsObject$
+}
+/** @constructor */
+function $c_Lcom_highcharts_HighchartsUtils$HighchartsJQuery$() {
+  $c_O.call(this)
+}
+$c_Lcom_highcharts_HighchartsUtils$HighchartsJQuery$.prototype = new $h_O();
+$c_Lcom_highcharts_HighchartsUtils$HighchartsJQuery$.prototype.constructor = $c_Lcom_highcharts_HighchartsUtils$HighchartsJQuery$;
+/** @constructor */
+function $h_Lcom_highcharts_HighchartsUtils$HighchartsJQuery$() {
+  /*<skip>*/
+}
+$h_Lcom_highcharts_HighchartsUtils$HighchartsJQuery$.prototype = $c_Lcom_highcharts_HighchartsUtils$HighchartsJQuery$.prototype;
+$c_Lcom_highcharts_HighchartsUtils$HighchartsJQuery$.prototype.init___ = (function() {
+  return this
+});
+$c_Lcom_highcharts_HighchartsUtils$HighchartsJQuery$.prototype.highcharts$extension1__Lorg_scalajs_jquery_JQuery__Lcom_highcharts_CleanJsObject__Lorg_scalajs_jquery_JQuery = (function($$this, config) {
+  return $$this.highcharts(config)
+});
+var $d_Lcom_highcharts_HighchartsUtils$HighchartsJQuery$ = new $TypeData().initClass({
+  Lcom_highcharts_HighchartsUtils$HighchartsJQuery$: 0
+}, false, "com.highcharts.HighchartsUtils$HighchartsJQuery$", {
+  Lcom_highcharts_HighchartsUtils$HighchartsJQuery$: 1,
+  O: 1
+});
+$c_Lcom_highcharts_HighchartsUtils$HighchartsJQuery$.prototype.$classData = $d_Lcom_highcharts_HighchartsUtils$HighchartsJQuery$;
+var $n_Lcom_highcharts_HighchartsUtils$HighchartsJQuery$ = (void 0);
+function $m_Lcom_highcharts_HighchartsUtils$HighchartsJQuery$() {
+  if ((!$n_Lcom_highcharts_HighchartsUtils$HighchartsJQuery$)) {
+    $n_Lcom_highcharts_HighchartsUtils$HighchartsJQuery$ = new $c_Lcom_highcharts_HighchartsUtils$HighchartsJQuery$().init___()
+  };
+  return $n_Lcom_highcharts_HighchartsUtils$HighchartsJQuery$
+}
+/** @constructor */
+function $c_Lcom_highcharts_config_Chart$() {
+  $c_O.call(this)
+}
+$c_Lcom_highcharts_config_Chart$.prototype = new $h_O();
+$c_Lcom_highcharts_config_Chart$.prototype.constructor = $c_Lcom_highcharts_config_Chart$;
+/** @constructor */
+function $h_Lcom_highcharts_config_Chart$() {
+  /*<skip>*/
+}
+$h_Lcom_highcharts_config_Chart$.prototype = $c_Lcom_highcharts_config_Chart$.prototype;
+$c_Lcom_highcharts_config_Chart$.prototype.apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_Chart = (function(alignTicks, animation, backgroundColor, borderColor, borderRadius, borderWidth, className, colorCount, defaultSeriesType, description, events, height, ignoreHiddenSeries, inverted, margin, marginBottom, marginLeft, marginRight, marginTop, options3d, panKey, panning, pinchType, plotBackgroundColor, plotBackgroundImage, plotBorderColor, plotBorderWidth, plotShadow, polar, reflow, renderTo, resetZoomButton, selectionMarkerFill, shadow, showAxes, spacing, spacingBottom, spacingLeft, spacingRight, spacingTop, style, type, typeDescription, width, zoomType) {
+  var $this = new ($a_Lcom_highcharts_config_Chart())();
+  $this.alignTicks = null;
+  $this.animation = null;
+  $this.backgroundColor = null;
+  $this.borderColor = null;
+  $this.borderRadius = null;
+  $this.borderWidth = null;
+  $this.className = null;
+  $this.colorCount = null;
+  $this.defaultSeriesType = null;
+  $this.description = null;
+  $this.events = null;
+  $this.height = null;
+  $this.ignoreHiddenSeries = null;
+  $this.inverted = null;
+  $this.margin = null;
+  $this.marginBottom = null;
+  $this.marginLeft = null;
+  $this.marginRight = null;
+  $this.marginTop = null;
+  $this.options3d = null;
+  $this.panKey = null;
+  $this.panning = null;
+  $this.pinchType = null;
+  $this.plotBackgroundColor = null;
+  $this.plotBackgroundImage = null;
+  $this.plotBorderColor = null;
+  $this.plotBorderWidth = null;
+  $this.plotShadow = null;
+  $this.polar = null;
+  $this.reflow = null;
+  $this.renderTo = null;
+  $this.resetZoomButton = null;
+  $this.selectionMarkerFill = null;
+  $this.shadow = null;
+  $this.showAxes = null;
+  $this.spacing = null;
+  $this.spacingBottom = null;
+  $this.spacingLeft = null;
+  $this.spacingRight = null;
+  $this.spacingTop = null;
+  $this.style = null;
+  $this.type = null;
+  $this.typeDescription = null;
+  $this.width = null;
+  $this.zoomType = null;
+  $this.alignTicks = alignTicks;
+  $this.animation = animation;
+  $this.backgroundColor = backgroundColor;
+  $this.borderColor = borderColor;
+  $this.borderRadius = borderRadius;
+  $this.borderWidth = borderWidth;
+  $this.className = className;
+  $this.colorCount = colorCount;
+  $this.defaultSeriesType = defaultSeriesType;
+  $this.description = description;
+  $this.events = events;
+  $this.height = height;
+  $this.ignoreHiddenSeries = ignoreHiddenSeries;
+  $this.inverted = inverted;
+  $this.margin = margin;
+  $this.marginBottom = marginBottom;
+  $this.marginLeft = marginLeft;
+  $this.marginRight = marginRight;
+  $this.marginTop = marginTop;
+  $this.options3d = options3d;
+  $this.panKey = panKey;
+  $this.panning = panning;
+  $this.pinchType = pinchType;
+  $this.plotBackgroundColor = plotBackgroundColor;
+  $this.plotBackgroundImage = plotBackgroundImage;
+  $this.plotBorderColor = plotBorderColor;
+  $this.plotBorderWidth = plotBorderWidth;
+  $this.plotShadow = plotShadow;
+  $this.polar = polar;
+  $this.reflow = reflow;
+  $this.renderTo = renderTo;
+  $this.resetZoomButton = resetZoomButton;
+  $this.selectionMarkerFill = selectionMarkerFill;
+  $this.shadow = shadow;
+  $this.showAxes = showAxes;
+  $this.spacing = spacing;
+  $this.spacingBottom = spacingBottom;
+  $this.spacingLeft = spacingLeft;
+  $this.spacingRight = spacingRight;
+  $this.spacingTop = spacingTop;
+  $this.style = style;
+  $this.type = type;
+  $this.typeDescription = typeDescription;
+  $this.width = width;
+  $this.zoomType = zoomType;
+  return $this
+});
+$c_Lcom_highcharts_config_Chart$.prototype.init___ = (function() {
+  return this
+});
+var $d_Lcom_highcharts_config_Chart$ = new $TypeData().initClass({
+  Lcom_highcharts_config_Chart$: 0
+}, false, "com.highcharts.config.Chart$", {
+  Lcom_highcharts_config_Chart$: 1,
+  O: 1
+});
+$c_Lcom_highcharts_config_Chart$.prototype.$classData = $d_Lcom_highcharts_config_Chart$;
+var $n_Lcom_highcharts_config_Chart$ = (void 0);
+function $m_Lcom_highcharts_config_Chart$() {
+  if ((!$n_Lcom_highcharts_config_Chart$)) {
+    $n_Lcom_highcharts_config_Chart$ = new $c_Lcom_highcharts_config_Chart$().init___()
+  };
+  return $n_Lcom_highcharts_config_Chart$
+}
+/** @constructor */
+function $c_Lcom_highcharts_config_SeriesBar$() {
+  $c_O.call(this)
+}
+$c_Lcom_highcharts_config_SeriesBar$.prototype = new $h_O();
+$c_Lcom_highcharts_config_SeriesBar$.prototype.constructor = $c_Lcom_highcharts_config_SeriesBar$;
+/** @constructor */
+function $h_Lcom_highcharts_config_SeriesBar$() {
+  /*<skip>*/
+}
+$h_Lcom_highcharts_config_SeriesBar$.prototype = $c_Lcom_highcharts_config_SeriesBar$.prototype;
+$c_Lcom_highcharts_config_SeriesBar$.prototype.init___ = (function() {
+  return this
+});
+$c_Lcom_highcharts_config_SeriesBar$.prototype.apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__T__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_SeriesBar = (function(allowPointSelect, animation, animationLimit, borderColor, borderRadius, borderWidth, className, color, colorByPoint, colorIndex, colors, crisp, cropThreshold, cursor, data, dataLabels, depth, description, edgeColor, edgeWidth, enableMouseTracking, events, exposeElementToA11y, findNearestPointBy, getExtremesFromAll, groupPadding, groupZPadding, grouping, id, index, keys, legendIndex, linkedTo, maxPointWidth, minPointLength, name, negativeColor, point, pointDescriptionFormatter, pointInterval, pointIntervalUnit, pointPadding, pointPlacement, pointRange, pointStart, pointWidth, selected, shadow, showCheckbox, showInLegend, skipKeyboardNavigation, softThreshold, stack, stacking, states, stickyTracking, threshold, tooltip, turboThreshold, type, visible, xAxis, yAxis, zIndex, zoneAxis, zones) {
+  var $this = new ($a_Lcom_highcharts_config_SeriesBar())();
+  $this.allowPointSelect = null;
+  $this.animation = null;
+  $this.animationLimit = null;
+  $this.borderColor = null;
+  $this.borderRadius = null;
+  $this.borderWidth = null;
+  $this.className = null;
+  $this.color = null;
+  $this.colorByPoint = null;
+  $this.colorIndex = null;
+  $this.colors = null;
+  $this.crisp = null;
+  $this.cropThreshold = null;
+  $this.cursor = null;
+  $this.data = null;
+  $this.dataLabels = null;
+  $this.depth = null;
+  $this.description = null;
+  $this.edgeColor = null;
+  $this.edgeWidth = null;
+  $this.enableMouseTracking = null;
+  $this.events = null;
+  $this.exposeElementToA11y = null;
+  $this.findNearestPointBy = null;
+  $this.getExtremesFromAll = null;
+  $this.groupPadding = null;
+  $this.groupZPadding = null;
+  $this.grouping = null;
+  $this.id = null;
+  $this.index = null;
+  $this.keys = null;
+  $this.legendIndex = null;
+  $this.linkedTo = null;
+  $this.maxPointWidth = null;
+  $this.minPointLength = null;
+  $this.name = null;
+  $this.negativeColor = null;
+  $this.point = null;
+  $this.pointDescriptionFormatter = null;
+  $this.pointInterval = null;
+  $this.pointIntervalUnit = null;
+  $this.pointPadding = null;
+  $this.pointPlacement = null;
+  $this.pointRange = null;
+  $this.pointStart = null;
+  $this.pointWidth = null;
+  $this.selected = null;
+  $this.shadow = null;
+  $this.showCheckbox = null;
+  $this.showInLegend = null;
+  $this.skipKeyboardNavigation = null;
+  $this.softThreshold = null;
+  $this.stack = null;
+  $this.stacking = null;
+  $this.states = null;
+  $this.stickyTracking = null;
+  $this.threshold = null;
+  $this.tooltip = null;
+  $this.turboThreshold = null;
+  $this.type = null;
+  $this.visible = null;
+  $this.xAxis = null;
+  $this.yAxis = null;
+  $this.zIndex = null;
+  $this.zoneAxis = null;
+  $this.zones = null;
+  $this.allowPointSelect = allowPointSelect;
+  $this.animation = animation;
+  $this.animationLimit = animationLimit;
+  $this.borderColor = borderColor;
+  $this.borderRadius = borderRadius;
+  $this.borderWidth = borderWidth;
+  $this.className = className;
+  $this.color = color;
+  $this.colorByPoint = colorByPoint;
+  $this.colorIndex = colorIndex;
+  $this.colors = colors;
+  $this.crisp = crisp;
+  $this.cropThreshold = cropThreshold;
+  $this.cursor = cursor;
+  $this.data = data;
+  $this.dataLabels = dataLabels;
+  $this.depth = depth;
+  $this.description = description;
+  $this.edgeColor = edgeColor;
+  $this.edgeWidth = edgeWidth;
+  $this.enableMouseTracking = enableMouseTracking;
+  $this.events = events;
+  $this.exposeElementToA11y = exposeElementToA11y;
+  $this.findNearestPointBy = findNearestPointBy;
+  $this.getExtremesFromAll = getExtremesFromAll;
+  $this.groupPadding = groupPadding;
+  $this.groupZPadding = groupZPadding;
+  $this.grouping = grouping;
+  $this.id = id;
+  $this.index = index;
+  $this.keys = keys;
+  $this.legendIndex = legendIndex;
+  $this.linkedTo = linkedTo;
+  $this.maxPointWidth = maxPointWidth;
+  $this.minPointLength = minPointLength;
+  $this.name = name;
+  $this.negativeColor = negativeColor;
+  $this.point = point;
+  $this.pointDescriptionFormatter = pointDescriptionFormatter;
+  $this.pointInterval = pointInterval;
+  $this.pointIntervalUnit = pointIntervalUnit;
+  $this.pointPadding = pointPadding;
+  $this.pointPlacement = pointPlacement;
+  $this.pointRange = pointRange;
+  $this.pointStart = pointStart;
+  $this.pointWidth = pointWidth;
+  $this.selected = selected;
+  $this.shadow = shadow;
+  $this.showCheckbox = showCheckbox;
+  $this.showInLegend = showInLegend;
+  $this.skipKeyboardNavigation = skipKeyboardNavigation;
+  $this.softThreshold = softThreshold;
+  $this.stack = stack;
+  $this.stacking = stacking;
+  $this.states = states;
+  $this.stickyTracking = stickyTracking;
+  $this.threshold = threshold;
+  $this.tooltip = tooltip;
+  $this.turboThreshold = turboThreshold;
+  $this.type = type;
+  $this.visible = visible;
+  $this.xAxis = xAxis;
+  $this.yAxis = yAxis;
+  $this.zIndex = zIndex;
+  $this.zoneAxis = zoneAxis;
+  $this.zones = zones;
+  return $this
+});
+var $d_Lcom_highcharts_config_SeriesBar$ = new $TypeData().initClass({
+  Lcom_highcharts_config_SeriesBar$: 0
+}, false, "com.highcharts.config.SeriesBar$", {
+  Lcom_highcharts_config_SeriesBar$: 1,
+  O: 1
+});
+$c_Lcom_highcharts_config_SeriesBar$.prototype.$classData = $d_Lcom_highcharts_config_SeriesBar$;
+var $n_Lcom_highcharts_config_SeriesBar$ = (void 0);
+function $m_Lcom_highcharts_config_SeriesBar$() {
+  if ((!$n_Lcom_highcharts_config_SeriesBar$)) {
+    $n_Lcom_highcharts_config_SeriesBar$ = new $c_Lcom_highcharts_config_SeriesBar$().init___()
+  };
+  return $n_Lcom_highcharts_config_SeriesBar$
+}
+/** @constructor */
+function $c_Lcom_highcharts_config_Title$() {
+  $c_O.call(this)
+}
+$c_Lcom_highcharts_config_Title$.prototype = new $h_O();
+$c_Lcom_highcharts_config_Title$.prototype.constructor = $c_Lcom_highcharts_config_Title$;
+/** @constructor */
+function $h_Lcom_highcharts_config_Title$() {
+  /*<skip>*/
+}
+$h_Lcom_highcharts_config_Title$.prototype = $c_Lcom_highcharts_config_Title$.prototype;
+$c_Lcom_highcharts_config_Title$.prototype.init___ = (function() {
+  return this
+});
+$c_Lcom_highcharts_config_Title$.prototype.apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_Title = (function(align, floating, margin, style, text, useHTML, verticalAlign, widthAdjust, x, y) {
+  var $this = new ($a_Lcom_highcharts_config_Title())();
+  $this.align = null;
+  $this.floating = null;
+  $this.margin = null;
+  $this.style = null;
+  $this.text = null;
+  $this.useHTML = null;
+  $this.verticalAlign = null;
+  $this.widthAdjust = null;
+  $this.x = null;
+  $this.y = null;
+  $this.align = align;
+  $this.floating = floating;
+  $this.margin = margin;
+  $this.style = style;
+  $this.text = text;
+  $this.useHTML = useHTML;
+  $this.verticalAlign = verticalAlign;
+  $this.widthAdjust = widthAdjust;
+  $this.x = x;
+  $this.y = y;
+  return $this
+});
+var $d_Lcom_highcharts_config_Title$ = new $TypeData().initClass({
+  Lcom_highcharts_config_Title$: 0
+}, false, "com.highcharts.config.Title$", {
+  Lcom_highcharts_config_Title$: 1,
+  O: 1
+});
+$c_Lcom_highcharts_config_Title$.prototype.$classData = $d_Lcom_highcharts_config_Title$;
+var $n_Lcom_highcharts_config_Title$ = (void 0);
+function $m_Lcom_highcharts_config_Title$() {
+  if ((!$n_Lcom_highcharts_config_Title$)) {
+    $n_Lcom_highcharts_config_Title$ = new $c_Lcom_highcharts_config_Title$().init___()
+  };
+  return $n_Lcom_highcharts_config_Title$
+}
+/** @constructor */
+function $c_Lcom_highcharts_config_XAxis$() {
+  $c_O.call(this)
+}
+$c_Lcom_highcharts_config_XAxis$.prototype = new $h_O();
+$c_Lcom_highcharts_config_XAxis$.prototype.constructor = $c_Lcom_highcharts_config_XAxis$;
+/** @constructor */
+function $h_Lcom_highcharts_config_XAxis$() {
+  /*<skip>*/
+}
+$h_Lcom_highcharts_config_XAxis$.prototype = $c_Lcom_highcharts_config_XAxis$.prototype;
+$c_Lcom_highcharts_config_XAxis$.prototype.init___ = (function() {
+  return this
+});
+$c_Lcom_highcharts_config_XAxis$.prototype.apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_XAxis = (function(allowDecimals, alternateGridColor, breaks, categories, ceiling, className, crosshair, dateTimeLabelFormats, description, endOnTick, events, floor, gridLineColor, gridLineDashStyle, gridLineWidth, gridZIndex, id, labels, lineColor, lineWidth, linkedTo, max, maxPadding, maxZoom, min, minPadding, minRange, minTickInterval, minorGridLineColor, minorGridLineDashStyle, minorGridLineWidth, minorTickColor, minorTickInterval, minorTickLength, minorTickPosition, minorTickWidth, offset, opposite, plotBands, plotLines, reversed, showEmpty, showFirstLabel, showLastLabel, softMax, softMin, startOfWeek, startOnTick, tickAmount, tickColor, tickInterval, tickLength, tickPixelInterval, tickPosition, tickPositioner, tickPositions, tickWidth, tickmarkPlacement, title, type, uniqueNames, units, visible) {
+  var $this = new ($a_Lcom_highcharts_config_XAxis())();
+  $this.allowDecimals = null;
+  $this.alternateGridColor = null;
+  $this.breaks = null;
+  $this.categories = null;
+  $this.ceiling = null;
+  $this.className = null;
+  $this.crosshair = null;
+  $this.dateTimeLabelFormats = null;
+  $this.description = null;
+  $this.endOnTick = null;
+  $this.events = null;
+  $this.floor = null;
+  $this.gridLineColor = null;
+  $this.gridLineDashStyle = null;
+  $this.gridLineWidth = null;
+  $this.gridZIndex = null;
+  $this.id = null;
+  $this.labels = null;
+  $this.lineColor = null;
+  $this.lineWidth = null;
+  $this.linkedTo = null;
+  $this.max = null;
+  $this.maxPadding = null;
+  $this.maxZoom = null;
+  $this.min = null;
+  $this.minPadding = null;
+  $this.minRange = null;
+  $this.minTickInterval = null;
+  $this.minorGridLineColor = null;
+  $this.minorGridLineDashStyle = null;
+  $this.minorGridLineWidth = null;
+  $this.minorTickColor = null;
+  $this.minorTickInterval = null;
+  $this.minorTickLength = null;
+  $this.minorTickPosition = null;
+  $this.minorTickWidth = null;
+  $this.offset = null;
+  $this.opposite = null;
+  $this.plotBands = null;
+  $this.plotLines = null;
+  $this.reversed = null;
+  $this.showEmpty = null;
+  $this.showFirstLabel = null;
+  $this.showLastLabel = null;
+  $this.softMax = null;
+  $this.softMin = null;
+  $this.startOfWeek = null;
+  $this.startOnTick = null;
+  $this.tickAmount = null;
+  $this.tickColor = null;
+  $this.tickInterval = null;
+  $this.tickLength = null;
+  $this.tickPixelInterval = null;
+  $this.tickPosition = null;
+  $this.tickPositioner = null;
+  $this.tickPositions = null;
+  $this.tickWidth = null;
+  $this.tickmarkPlacement = null;
+  $this.title = null;
+  $this.type = null;
+  $this.uniqueNames = null;
+  $this.units = null;
+  $this.visible = null;
+  $this.allowDecimals = allowDecimals;
+  $this.alternateGridColor = alternateGridColor;
+  $this.breaks = breaks;
+  $this.categories = categories;
+  $this.ceiling = ceiling;
+  $this.className = className;
+  $this.crosshair = crosshair;
+  $this.dateTimeLabelFormats = dateTimeLabelFormats;
+  $this.description = description;
+  $this.endOnTick = endOnTick;
+  $this.events = events;
+  $this.floor = floor;
+  $this.gridLineColor = gridLineColor;
+  $this.gridLineDashStyle = gridLineDashStyle;
+  $this.gridLineWidth = gridLineWidth;
+  $this.gridZIndex = gridZIndex;
+  $this.id = id;
+  $this.labels = labels;
+  $this.lineColor = lineColor;
+  $this.lineWidth = lineWidth;
+  $this.linkedTo = linkedTo;
+  $this.max = max;
+  $this.maxPadding = maxPadding;
+  $this.maxZoom = maxZoom;
+  $this.min = min;
+  $this.minPadding = minPadding;
+  $this.minRange = minRange;
+  $this.minTickInterval = minTickInterval;
+  $this.minorGridLineColor = minorGridLineColor;
+  $this.minorGridLineDashStyle = minorGridLineDashStyle;
+  $this.minorGridLineWidth = minorGridLineWidth;
+  $this.minorTickColor = minorTickColor;
+  $this.minorTickInterval = minorTickInterval;
+  $this.minorTickLength = minorTickLength;
+  $this.minorTickPosition = minorTickPosition;
+  $this.minorTickWidth = minorTickWidth;
+  $this.offset = offset;
+  $this.opposite = opposite;
+  $this.plotBands = plotBands;
+  $this.plotLines = plotLines;
+  $this.reversed = reversed;
+  $this.showEmpty = showEmpty;
+  $this.showFirstLabel = showFirstLabel;
+  $this.showLastLabel = showLastLabel;
+  $this.softMax = softMax;
+  $this.softMin = softMin;
+  $this.startOfWeek = startOfWeek;
+  $this.startOnTick = startOnTick;
+  $this.tickAmount = tickAmount;
+  $this.tickColor = tickColor;
+  $this.tickInterval = tickInterval;
+  $this.tickLength = tickLength;
+  $this.tickPixelInterval = tickPixelInterval;
+  $this.tickPosition = tickPosition;
+  $this.tickPositioner = tickPositioner;
+  $this.tickPositions = tickPositions;
+  $this.tickWidth = tickWidth;
+  $this.tickmarkPlacement = tickmarkPlacement;
+  $this.title = title;
+  $this.type = type;
+  $this.uniqueNames = uniqueNames;
+  $this.units = units;
+  $this.visible = visible;
+  return $this
+});
+var $d_Lcom_highcharts_config_XAxis$ = new $TypeData().initClass({
+  Lcom_highcharts_config_XAxis$: 0
+}, false, "com.highcharts.config.XAxis$", {
+  Lcom_highcharts_config_XAxis$: 1,
+  O: 1
+});
+$c_Lcom_highcharts_config_XAxis$.prototype.$classData = $d_Lcom_highcharts_config_XAxis$;
+var $n_Lcom_highcharts_config_XAxis$ = (void 0);
+function $m_Lcom_highcharts_config_XAxis$() {
+  if ((!$n_Lcom_highcharts_config_XAxis$)) {
+    $n_Lcom_highcharts_config_XAxis$ = new $c_Lcom_highcharts_config_XAxis$().init___()
+  };
+  return $n_Lcom_highcharts_config_XAxis$
+}
+/** @constructor */
+function $c_Lcom_highcharts_config_YAxis$() {
+  $c_O.call(this)
+}
+$c_Lcom_highcharts_config_YAxis$.prototype = new $h_O();
+$c_Lcom_highcharts_config_YAxis$.prototype.constructor = $c_Lcom_highcharts_config_YAxis$;
+/** @constructor */
+function $h_Lcom_highcharts_config_YAxis$() {
+  /*<skip>*/
+}
+$h_Lcom_highcharts_config_YAxis$.prototype = $c_Lcom_highcharts_config_YAxis$.prototype;
+$c_Lcom_highcharts_config_YAxis$.prototype.init___ = (function() {
+  return this
+});
+$c_Lcom_highcharts_config_YAxis$.prototype.apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_YAxis = (function(allowDecimals, alternateGridColor, angle, breaks, categories, ceiling, className, crosshair, dateTimeLabelFormats, description, endOnTick, events, floor, gridLineColor, gridLineDashStyle, gridLineInterpolation, gridLineWidth, gridZIndex, id, labels, lineColor, lineWidth, linkedTo, max, maxColor, maxPadding, maxZoom, min, minColor, minPadding, minRange, minTickInterval, minorGridLineColor, minorGridLineDashStyle, minorGridLineWidth, minorTickColor, minorTickInterval, minorTickLength, minorTickPosition, minorTickWidth, offset, opposite, plotBands, plotLines, reversed, reversedStacks, showEmpty, showFirstLabel, showLastLabel, softMax, softMin, stackLabels, startOfWeek, startOnTick, stops, tickAmount, tickColor, tickInterval, tickLength, tickPixelInterval, tickPosition, tickPositioner, tickPositions, tickWidth, tickmarkPlacement, title, type, uniqueNames, units, visible) {
+  var $this = new ($a_Lcom_highcharts_config_YAxis())();
+  $this.allowDecimals = null;
+  $this.alternateGridColor = null;
+  $this.angle = null;
+  $this.breaks = null;
+  $this.categories = null;
+  $this.ceiling = null;
+  $this.className = null;
+  $this.crosshair = null;
+  $this.dateTimeLabelFormats = null;
+  $this.description = null;
+  $this.endOnTick = null;
+  $this.events = null;
+  $this.floor = null;
+  $this.gridLineColor = null;
+  $this.gridLineDashStyle = null;
+  $this.gridLineInterpolation = null;
+  $this.gridLineWidth = null;
+  $this.gridZIndex = null;
+  $this.id = null;
+  $this.labels = null;
+  $this.lineColor = null;
+  $this.lineWidth = null;
+  $this.linkedTo = null;
+  $this.max = null;
+  $this.maxColor = null;
+  $this.maxPadding = null;
+  $this.maxZoom = null;
+  $this.min = null;
+  $this.minColor = null;
+  $this.minPadding = null;
+  $this.minRange = null;
+  $this.minTickInterval = null;
+  $this.minorGridLineColor = null;
+  $this.minorGridLineDashStyle = null;
+  $this.minorGridLineWidth = null;
+  $this.minorTickColor = null;
+  $this.minorTickInterval = null;
+  $this.minorTickLength = null;
+  $this.minorTickPosition = null;
+  $this.minorTickWidth = null;
+  $this.offset = null;
+  $this.opposite = null;
+  $this.plotBands = null;
+  $this.plotLines = null;
+  $this.reversed = null;
+  $this.reversedStacks = null;
+  $this.showEmpty = null;
+  $this.showFirstLabel = null;
+  $this.showLastLabel = null;
+  $this.softMax = null;
+  $this.softMin = null;
+  $this.stackLabels = null;
+  $this.startOfWeek = null;
+  $this.startOnTick = null;
+  $this.stops = null;
+  $this.tickAmount = null;
+  $this.tickColor = null;
+  $this.tickInterval = null;
+  $this.tickLength = null;
+  $this.tickPixelInterval = null;
+  $this.tickPosition = null;
+  $this.tickPositioner = null;
+  $this.tickPositions = null;
+  $this.tickWidth = null;
+  $this.tickmarkPlacement = null;
+  $this.title = null;
+  $this.type = null;
+  $this.uniqueNames = null;
+  $this.units = null;
+  $this.visible = null;
+  $this.allowDecimals = allowDecimals;
+  $this.alternateGridColor = alternateGridColor;
+  $this.angle = angle;
+  $this.breaks = breaks;
+  $this.categories = categories;
+  $this.ceiling = ceiling;
+  $this.className = className;
+  $this.crosshair = crosshair;
+  $this.dateTimeLabelFormats = dateTimeLabelFormats;
+  $this.description = description;
+  $this.endOnTick = endOnTick;
+  $this.events = events;
+  $this.floor = floor;
+  $this.gridLineColor = gridLineColor;
+  $this.gridLineDashStyle = gridLineDashStyle;
+  $this.gridLineInterpolation = gridLineInterpolation;
+  $this.gridLineWidth = gridLineWidth;
+  $this.gridZIndex = gridZIndex;
+  $this.id = id;
+  $this.labels = labels;
+  $this.lineColor = lineColor;
+  $this.lineWidth = lineWidth;
+  $this.linkedTo = linkedTo;
+  $this.max = max;
+  $this.maxColor = maxColor;
+  $this.maxPadding = maxPadding;
+  $this.maxZoom = maxZoom;
+  $this.min = min;
+  $this.minColor = minColor;
+  $this.minPadding = minPadding;
+  $this.minRange = minRange;
+  $this.minTickInterval = minTickInterval;
+  $this.minorGridLineColor = minorGridLineColor;
+  $this.minorGridLineDashStyle = minorGridLineDashStyle;
+  $this.minorGridLineWidth = minorGridLineWidth;
+  $this.minorTickColor = minorTickColor;
+  $this.minorTickInterval = minorTickInterval;
+  $this.minorTickLength = minorTickLength;
+  $this.minorTickPosition = minorTickPosition;
+  $this.minorTickWidth = minorTickWidth;
+  $this.offset = offset;
+  $this.opposite = opposite;
+  $this.plotBands = plotBands;
+  $this.plotLines = plotLines;
+  $this.reversed = reversed;
+  $this.reversedStacks = reversedStacks;
+  $this.showEmpty = showEmpty;
+  $this.showFirstLabel = showFirstLabel;
+  $this.showLastLabel = showLastLabel;
+  $this.softMax = softMax;
+  $this.softMin = softMin;
+  $this.stackLabels = stackLabels;
+  $this.startOfWeek = startOfWeek;
+  $this.startOnTick = startOnTick;
+  $this.stops = stops;
+  $this.tickAmount = tickAmount;
+  $this.tickColor = tickColor;
+  $this.tickInterval = tickInterval;
+  $this.tickLength = tickLength;
+  $this.tickPixelInterval = tickPixelInterval;
+  $this.tickPosition = tickPosition;
+  $this.tickPositioner = tickPositioner;
+  $this.tickPositions = tickPositions;
+  $this.tickWidth = tickWidth;
+  $this.tickmarkPlacement = tickmarkPlacement;
+  $this.title = title;
+  $this.type = type;
+  $this.uniqueNames = uniqueNames;
+  $this.units = units;
+  $this.visible = visible;
+  return $this
+});
+var $d_Lcom_highcharts_config_YAxis$ = new $TypeData().initClass({
+  Lcom_highcharts_config_YAxis$: 0
+}, false, "com.highcharts.config.YAxis$", {
+  Lcom_highcharts_config_YAxis$: 1,
+  O: 1
+});
+$c_Lcom_highcharts_config_YAxis$.prototype.$classData = $d_Lcom_highcharts_config_YAxis$;
+var $n_Lcom_highcharts_config_YAxis$ = (void 0);
+function $m_Lcom_highcharts_config_YAxis$() {
+  if ((!$n_Lcom_highcharts_config_YAxis$)) {
+    $n_Lcom_highcharts_config_YAxis$ = new $c_Lcom_highcharts_config_YAxis$().init___()
+  };
+  return $n_Lcom_highcharts_config_YAxis$
+}
+/** @constructor */
+function $c_Lcom_highcharts_config_YAxisTitle$() {
+  $c_O.call(this)
+}
+$c_Lcom_highcharts_config_YAxisTitle$.prototype = new $h_O();
+$c_Lcom_highcharts_config_YAxisTitle$.prototype.constructor = $c_Lcom_highcharts_config_YAxisTitle$;
+/** @constructor */
+function $h_Lcom_highcharts_config_YAxisTitle$() {
+  /*<skip>*/
+}
+$h_Lcom_highcharts_config_YAxisTitle$.prototype = $c_Lcom_highcharts_config_YAxisTitle$.prototype;
+$c_Lcom_highcharts_config_YAxisTitle$.prototype.init___ = (function() {
+  return this
+});
+$c_Lcom_highcharts_config_YAxisTitle$.prototype.apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_YAxisTitle = (function(align, enabled, margin, offset, reserveSpace, rotation, style, text, x, y) {
+  var $this = new ($a_Lcom_highcharts_config_YAxisTitle())();
+  $this.align = null;
+  $this.enabled = null;
+  $this.margin = null;
+  $this.offset = null;
+  $this.reserveSpace = null;
+  $this.rotation = null;
+  $this.style = null;
+  $this.text = null;
+  $this.x = null;
+  $this.y = null;
+  $this.align = align;
+  $this.enabled = enabled;
+  $this.margin = margin;
+  $this.offset = offset;
+  $this.reserveSpace = reserveSpace;
+  $this.rotation = rotation;
+  $this.style = style;
+  $this.text = text;
+  $this.x = x;
+  $this.y = y;
+  return $this
+});
+var $d_Lcom_highcharts_config_YAxisTitle$ = new $TypeData().initClass({
+  Lcom_highcharts_config_YAxisTitle$: 0
+}, false, "com.highcharts.config.YAxisTitle$", {
+  Lcom_highcharts_config_YAxisTitle$: 1,
+  O: 1
+});
+$c_Lcom_highcharts_config_YAxisTitle$.prototype.$classData = $d_Lcom_highcharts_config_YAxisTitle$;
+var $n_Lcom_highcharts_config_YAxisTitle$ = (void 0);
+function $m_Lcom_highcharts_config_YAxisTitle$() {
+  if ((!$n_Lcom_highcharts_config_YAxisTitle$)) {
+    $n_Lcom_highcharts_config_YAxisTitle$ = new $c_Lcom_highcharts_config_YAxisTitle$().init___()
+  };
+  return $n_Lcom_highcharts_config_YAxisTitle$
 }
 /** @constructor */
 function $c_Lio_circe_scalajs_package$() {
@@ -3405,6 +4317,71 @@ function $m_Ljava_math_Multiplication$() {
   return $n_Ljava_math_Multiplication$
 }
 /** @constructor */
+function $c_Lnathan_util_CommonConst$() {
+  $c_O.call(this);
+  this.host$1 = null;
+  this.port$1 = 0;
+  this.baseUrl$1 = null;
+  this.prefix$1 = null;
+  this.authHead$1 = null
+}
+$c_Lnathan_util_CommonConst$.prototype = new $h_O();
+$c_Lnathan_util_CommonConst$.prototype.constructor = $c_Lnathan_util_CommonConst$;
+/** @constructor */
+function $h_Lnathan_util_CommonConst$() {
+  /*<skip>*/
+}
+$h_Lnathan_util_CommonConst$.prototype = $c_Lnathan_util_CommonConst$.prototype;
+$c_Lnathan_util_CommonConst$.prototype.init___ = (function() {
+  $n_Lnathan_util_CommonConst$ = this;
+  this.host$1 = "127.0.0.1";
+  this.port$1 = 8888;
+  this.baseUrl$1 = new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["http://", ":", ""])).s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this.host$1, this.port$1]));
+  this.prefix$1 = "monitorSystem";
+  this.authHead$1 = "MONITORSYSTEM-AUTH";
+  return this
+});
+var $d_Lnathan_util_CommonConst$ = new $TypeData().initClass({
+  Lnathan_util_CommonConst$: 0
+}, false, "nathan.util.CommonConst$", {
+  Lnathan_util_CommonConst$: 1,
+  O: 1
+});
+$c_Lnathan_util_CommonConst$.prototype.$classData = $d_Lnathan_util_CommonConst$;
+var $n_Lnathan_util_CommonConst$ = (void 0);
+function $m_Lnathan_util_CommonConst$() {
+  if ((!$n_Lnathan_util_CommonConst$)) {
+    $n_Lnathan_util_CommonConst$ = new $c_Lnathan_util_CommonConst$().init___()
+  };
+  return $n_Lnathan_util_CommonConst$
+}
+/** @constructor */
+function $c_Lnathan_util_CommonUtil$SlashString() {
+  $c_O.call(this);
+  this.prefixStr$1 = null
+}
+$c_Lnathan_util_CommonUtil$SlashString.prototype = new $h_O();
+$c_Lnathan_util_CommonUtil$SlashString.prototype.constructor = $c_Lnathan_util_CommonUtil$SlashString;
+/** @constructor */
+function $h_Lnathan_util_CommonUtil$SlashString() {
+  /*<skip>*/
+}
+$h_Lnathan_util_CommonUtil$SlashString.prototype = $c_Lnathan_util_CommonUtil$SlashString.prototype;
+$c_Lnathan_util_CommonUtil$SlashString.prototype.$$div__T__T = (function(string) {
+  return ((this.prefixStr$1 + "/") + string)
+});
+$c_Lnathan_util_CommonUtil$SlashString.prototype.init___T = (function(prefixStr) {
+  this.prefixStr$1 = prefixStr;
+  return this
+});
+var $d_Lnathan_util_CommonUtil$SlashString = new $TypeData().initClass({
+  Lnathan_util_CommonUtil$SlashString: 0
+}, false, "nathan.util.CommonUtil$SlashString", {
+  Lnathan_util_CommonUtil$SlashString: 1,
+  O: 1
+});
+$c_Lnathan_util_CommonUtil$SlashString.prototype.$classData = $d_Lnathan_util_CommonUtil$SlashString;
+/** @constructor */
 function $c_Lorg_scalajs_dom_ext_Ajax$() {
   $c_O.call(this)
 }
@@ -3549,6 +4526,37 @@ function $m_Lorg_scalajs_dom_package$() {
   return $n_Lorg_scalajs_dom_package$
 }
 /** @constructor */
+function $c_Lorg_scalajs_jquery_package$() {
+  $c_O.call(this);
+  this.jQuery$1 = null
+}
+$c_Lorg_scalajs_jquery_package$.prototype = new $h_O();
+$c_Lorg_scalajs_jquery_package$.prototype.constructor = $c_Lorg_scalajs_jquery_package$;
+/** @constructor */
+function $h_Lorg_scalajs_jquery_package$() {
+  /*<skip>*/
+}
+$h_Lorg_scalajs_jquery_package$.prototype = $c_Lorg_scalajs_jquery_package$.prototype;
+$c_Lorg_scalajs_jquery_package$.prototype.init___ = (function() {
+  $n_Lorg_scalajs_jquery_package$ = this;
+  this.jQuery$1 = $g.jQuery;
+  return this
+});
+var $d_Lorg_scalajs_jquery_package$ = new $TypeData().initClass({
+  Lorg_scalajs_jquery_package$: 0
+}, false, "org.scalajs.jquery.package$", {
+  Lorg_scalajs_jquery_package$: 1,
+  O: 1
+});
+$c_Lorg_scalajs_jquery_package$.prototype.$classData = $d_Lorg_scalajs_jquery_package$;
+var $n_Lorg_scalajs_jquery_package$ = (void 0);
+function $m_Lorg_scalajs_jquery_package$() {
+  if ((!$n_Lorg_scalajs_jquery_package$)) {
+    $n_Lorg_scalajs_jquery_package$ = new $c_Lorg_scalajs_jquery_package$().init___()
+  };
+  return $n_Lorg_scalajs_jquery_package$
+}
+/** @constructor */
 function $c_Lshapeless_labelled$FieldBuilder() {
   $c_O.call(this)
 }
@@ -3569,71 +4577,6 @@ var $d_Lshapeless_labelled$FieldBuilder = new $TypeData().initClass({
   O: 1
 });
 $c_Lshapeless_labelled$FieldBuilder.prototype.$classData = $d_Lshapeless_labelled$FieldBuilder;
-/** @constructor */
-function $c_Lutil_CommonConst$() {
-  $c_O.call(this);
-  this.host$1 = null;
-  this.port$1 = 0;
-  this.baseUrl$1 = null;
-  this.prefix$1 = null;
-  this.authHead$1 = null
-}
-$c_Lutil_CommonConst$.prototype = new $h_O();
-$c_Lutil_CommonConst$.prototype.constructor = $c_Lutil_CommonConst$;
-/** @constructor */
-function $h_Lutil_CommonConst$() {
-  /*<skip>*/
-}
-$h_Lutil_CommonConst$.prototype = $c_Lutil_CommonConst$.prototype;
-$c_Lutil_CommonConst$.prototype.init___ = (function() {
-  $n_Lutil_CommonConst$ = this;
-  this.host$1 = "127.0.0.1";
-  this.port$1 = 8888;
-  this.baseUrl$1 = new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["http://", ":", ""])).s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this.host$1, this.port$1]));
-  this.prefix$1 = "monitorSystem";
-  this.authHead$1 = "MONITORSYSTEM-AUTH";
-  return this
-});
-var $d_Lutil_CommonConst$ = new $TypeData().initClass({
-  Lutil_CommonConst$: 0
-}, false, "util.CommonConst$", {
-  Lutil_CommonConst$: 1,
-  O: 1
-});
-$c_Lutil_CommonConst$.prototype.$classData = $d_Lutil_CommonConst$;
-var $n_Lutil_CommonConst$ = (void 0);
-function $m_Lutil_CommonConst$() {
-  if ((!$n_Lutil_CommonConst$)) {
-    $n_Lutil_CommonConst$ = new $c_Lutil_CommonConst$().init___()
-  };
-  return $n_Lutil_CommonConst$
-}
-/** @constructor */
-function $c_Lutil_CommonUtil$SlashString() {
-  $c_O.call(this);
-  this.prefixStr$1 = null
-}
-$c_Lutil_CommonUtil$SlashString.prototype = new $h_O();
-$c_Lutil_CommonUtil$SlashString.prototype.constructor = $c_Lutil_CommonUtil$SlashString;
-/** @constructor */
-function $h_Lutil_CommonUtil$SlashString() {
-  /*<skip>*/
-}
-$h_Lutil_CommonUtil$SlashString.prototype = $c_Lutil_CommonUtil$SlashString.prototype;
-$c_Lutil_CommonUtil$SlashString.prototype.$$div__T__T = (function(string) {
-  return ((this.prefixStr$1 + "/") + string)
-});
-$c_Lutil_CommonUtil$SlashString.prototype.init___T = (function(prefixStr) {
-  this.prefixStr$1 = prefixStr;
-  return this
-});
-var $d_Lutil_CommonUtil$SlashString = new $TypeData().initClass({
-  Lutil_CommonUtil$SlashString: 0
-}, false, "util.CommonUtil$SlashString", {
-  Lutil_CommonUtil$SlashString: 1,
-  O: 1
-});
-$c_Lutil_CommonUtil$SlashString.prototype.$classData = $d_Lutil_CommonUtil$SlashString;
 /** @constructor */
 function $c_jl_Class() {
   $c_O.call(this);
@@ -5210,6 +6153,37 @@ function $m_sjs_js_WrappedDictionary$Cache$() {
   return $n_sjs_js_WrappedDictionary$Cache$
 }
 /** @constructor */
+function $c_sjs_js_package$() {
+  $c_O.call(this)
+}
+$c_sjs_js_package$.prototype = new $h_O();
+$c_sjs_js_package$.prototype.constructor = $c_sjs_js_package$;
+/** @constructor */
+function $h_sjs_js_package$() {
+  /*<skip>*/
+}
+$h_sjs_js_package$.prototype = $c_sjs_js_package$.prototype;
+$c_sjs_js_package$.prototype.init___ = (function() {
+  return this
+});
+$c_sjs_js_package$.prototype.$undefined__sjs_js_UndefOr = (function() {
+  return (void 0)
+});
+var $d_sjs_js_package$ = new $TypeData().initClass({
+  sjs_js_package$: 0
+}, false, "scala.scalajs.js.package$", {
+  sjs_js_package$: 1,
+  O: 1
+});
+$c_sjs_js_package$.prototype.$classData = $d_sjs_js_package$;
+var $n_sjs_js_package$ = (void 0);
+function $m_sjs_js_package$() {
+  if ((!$n_sjs_js_package$)) {
+    $n_sjs_js_package$ = new $c_sjs_js_package$().init___()
+  };
+  return $n_sjs_js_package$
+}
+/** @constructor */
 function $c_sjsr_Bits$() {
   $c_O.call(this);
   this.scala$scalajs$runtime$Bits$$$undareTypedArraysSupported$f = false;
@@ -6531,6 +7505,64 @@ function $h_Lcats_kernel_PartialOrderFunctions() {
   /*<skip>*/
 }
 $h_Lcats_kernel_PartialOrderFunctions.prototype = $c_Lcats_kernel_PartialOrderFunctions.prototype;
+/** @constructor */
+function $c_Lcom_highcharts_HighchartsAliases$() {
+  $c_O.call(this)
+}
+$c_Lcom_highcharts_HighchartsAliases$.prototype = new $h_O();
+$c_Lcom_highcharts_HighchartsAliases$.prototype.constructor = $c_Lcom_highcharts_HighchartsAliases$;
+/** @constructor */
+function $h_Lcom_highcharts_HighchartsAliases$() {
+  /*<skip>*/
+}
+$h_Lcom_highcharts_HighchartsAliases$.prototype = $c_Lcom_highcharts_HighchartsAliases$.prototype;
+$c_Lcom_highcharts_HighchartsAliases$.prototype.init___ = (function() {
+  return this
+});
+var $d_Lcom_highcharts_HighchartsAliases$ = new $TypeData().initClass({
+  Lcom_highcharts_HighchartsAliases$: 0
+}, false, "com.highcharts.HighchartsAliases$", {
+  Lcom_highcharts_HighchartsAliases$: 1,
+  O: 1,
+  Lcom_highcharts_AnySeriesDef: 1
+});
+$c_Lcom_highcharts_HighchartsAliases$.prototype.$classData = $d_Lcom_highcharts_HighchartsAliases$;
+var $n_Lcom_highcharts_HighchartsAliases$ = (void 0);
+function $m_Lcom_highcharts_HighchartsAliases$() {
+  if ((!$n_Lcom_highcharts_HighchartsAliases$)) {
+    $n_Lcom_highcharts_HighchartsAliases$ = new $c_Lcom_highcharts_HighchartsAliases$().init___()
+  };
+  return $n_Lcom_highcharts_HighchartsAliases$
+}
+/** @constructor */
+function $c_Lcom_highcharts_HighchartsUtils$() {
+  $c_O.call(this)
+}
+$c_Lcom_highcharts_HighchartsUtils$.prototype = new $h_O();
+$c_Lcom_highcharts_HighchartsUtils$.prototype.constructor = $c_Lcom_highcharts_HighchartsUtils$;
+/** @constructor */
+function $h_Lcom_highcharts_HighchartsUtils$() {
+  /*<skip>*/
+}
+$h_Lcom_highcharts_HighchartsUtils$.prototype = $c_Lcom_highcharts_HighchartsUtils$.prototype;
+$c_Lcom_highcharts_HighchartsUtils$.prototype.init___ = (function() {
+  return this
+});
+var $d_Lcom_highcharts_HighchartsUtils$ = new $TypeData().initClass({
+  Lcom_highcharts_HighchartsUtils$: 0
+}, false, "com.highcharts.HighchartsUtils$", {
+  Lcom_highcharts_HighchartsUtils$: 1,
+  O: 1,
+  Lcom_highcharts_HighchartsImplicits: 1
+});
+$c_Lcom_highcharts_HighchartsUtils$.prototype.$classData = $d_Lcom_highcharts_HighchartsUtils$;
+var $n_Lcom_highcharts_HighchartsUtils$ = (void 0);
+function $m_Lcom_highcharts_HighchartsUtils$() {
+  if ((!$n_Lcom_highcharts_HighchartsUtils$)) {
+    $n_Lcom_highcharts_HighchartsUtils$ = new $c_Lcom_highcharts_HighchartsUtils$().init___()
+  };
+  return $n_Lcom_highcharts_HighchartsUtils$
+}
 function $f_Lio_circe_Decoder__tryDecode__Lio_circe_ACursor__s_util_Either($thiz, c) {
   if ($is_Lio_circe_HCursor(c)) {
     var x2 = $as_Lio_circe_HCursor(c);
@@ -6594,7 +7626,7 @@ function $h_Lnathan_UserService$() {
 $h_Lnathan_UserService$.prototype = $c_Lnathan_UserService$.prototype;
 $c_Lnathan_UserService$.prototype.init___ = (function() {
   $n_Lnathan_UserService$ = this;
-  $f_Lutil_HttpHeadSupport__$$init$__V(this);
+  $f_Lnathan_util_HttpHeadSupport__$$init$__V(this);
   var inst$macro$27 = new $c_Lnathan_UserService$anon$lazy$macro$26$1().init___().inst$macro$17__Lio_circe_generic_decoding_DerivedDecoder();
   var t = new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this, inst$macro$27$1) {
     return (function() {
@@ -6605,14 +7637,17 @@ $c_Lnathan_UserService$.prototype.init___ = (function() {
   this.retSuccessDecoder$1 = $as_Lio_circe_Decoder(decode.value__O());
   return this
 });
+$c_Lnathan_UserService$.prototype.$$js$exported$meth$testHc__O = (function() {
+  return this.testHc__Lorg_scalajs_jquery_JQuery()
+});
 $c_Lnathan_UserService$.prototype.setAuth__s_Option__V = (function(authOption) {
   if ($is_s_Some(authOption)) {
-    $m_Lorg_scalajs_dom_package$().window__Lorg_scalajs_dom_raw_Window().localStorage.setItem($m_Lutil_CommonConst$().authHead$1, $as_T(authOption.get__O()))
+    $m_Lorg_scalajs_dom_package$().window__Lorg_scalajs_dom_raw_Window().localStorage.setItem($m_Lnathan_util_CommonConst$().authHead$1, $as_T(authOption.get__O()))
   } else {
     var x = $m_s_None$();
     if ((x === authOption)) {
       var jsx$2 = $m_Lorg_scalajs_dom_package$().window__Lorg_scalajs_dom_raw_Window().localStorage;
-      var jsx$1 = $m_Lutil_CommonConst$().authHead$1;
+      var jsx$1 = $m_Lnathan_util_CommonConst$().authHead$1;
       var this$1 = $m_s_util_Random$().alphanumeric__sci_Stream().take__I__sci_Stream(20);
       jsx$2.setItem(jsx$1, this$1.mkString__T__T__T__T("", "", ""))
     } else {
@@ -6626,15 +7661,51 @@ $c_Lnathan_UserService$.prototype.$$js$exported$meth$setAuth__s_Option__O = (fun
 $c_Lnathan_UserService$.prototype.$$js$exported$meth$loginForm__Lorg_scalajs_dom_raw_HTMLFormElement__O = (function(form) {
   this.loginForm__Lorg_scalajs_dom_raw_HTMLFormElement__V(form)
 });
+$c_Lnathan_UserService$.prototype.testHc__Lorg_scalajs_jquery_JQuery = (function() {
+  var jsx$1 = $m_Lcom_highcharts_HighchartsUtils$HighchartsJQuery$();
+  var jq = (0, $m_Lorg_scalajs_jquery_package$().jQuery$1)("#container");
+  var $this = new ($a_Lcom_highcharts_config_HighchartsConfig())();
+  $this.chart = null;
+  $this.title = null;
+  $this.xAxis = null;
+  $this.yAxis = null;
+  $this.series = null;
+  var this$47 = $m_Lcom_highcharts_HighchartsUtils$();
+  var obj = $m_Lcom_highcharts_config_Chart$().apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_Chart((void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), "bar", (void 0), (void 0), (void 0));
+  $this.chart = $f_Lcom_highcharts_HighchartsImplicits__highchartsCfg__sjs_js_Object__sjs_js_UndefOr(this$47, obj);
+  var this$58 = $m_Lcom_highcharts_HighchartsUtils$();
+  var obj$1 = $m_Lcom_highcharts_config_Title$().apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_Title((void 0), (void 0), (void 0), (void 0), "Demo bar chart", (void 0), (void 0), (void 0), (void 0), (void 0));
+  $this.title = $f_Lcom_highcharts_HighchartsImplicits__highchartsCfg__sjs_js_Object__sjs_js_UndefOr(this$58, obj$1);
+  var this$123 = $m_Lcom_highcharts_HighchartsUtils$();
+  var value = ["Apples", "Bananas", "Oranges"];
+  var obj$2 = [$m_Lcom_highcharts_config_XAxis$().apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_XAxis((void 0), (void 0), (void 0), value, (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0))];
+  var ev = $m_sjs_js_$bar$ReusableEvidence$();
+  $this.xAxis = $f_Lcom_highcharts_HighchartsImplicits__highchartsCleanData__sjs_js_Array__sjs_js_$bar$Evidence__sjs_js_UndefOr(this$123, obj$2, ev);
+  var this$205 = $m_Lcom_highcharts_HighchartsUtils$();
+  var this$134 = $m_Lcom_highcharts_HighchartsUtils$();
+  var obj$3 = $m_Lcom_highcharts_config_YAxisTitle$().apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_YAxisTitle((void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), "Fruit eaten", (void 0), (void 0));
+  var x$85 = $f_Lcom_highcharts_HighchartsImplicits__highchartsCfg__sjs_js_Object__sjs_js_UndefOr(this$134, obj$3);
+  var obj$4 = [$m_Lcom_highcharts_config_YAxis$().apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_YAxis((void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), x$85, (void 0), (void 0), (void 0), (void 0))];
+  var ev$1 = $m_sjs_js_$bar$ReusableEvidence$();
+  $this.yAxis = $f_Lcom_highcharts_HighchartsImplicits__highchartsCleanData__sjs_js_Array__sjs_js_$bar$Evidence__sjs_js_UndefOr(this$205, obj$4, ev$1);
+  var this$382 = $m_Lcom_highcharts_HighchartsAliases$();
+  var obj$5 = [1.0, 0.0, 4.0];
+  var a = $m_Lcom_highcharts_config_SeriesBar$().apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__T__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_SeriesBar((void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), obj$5, (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), "Jane", (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), "bar", (void 0), (void 0), (void 0), (void 0), (void 0), (void 0));
+  var obj$6 = [5.0, 7.0, 3.0];
+  var a$1 = $m_Lcom_highcharts_config_SeriesBar$().apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__T__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_SeriesBar((void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), obj$6, (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), "John", (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), "bar", (void 0), (void 0), (void 0), (void 0), (void 0), (void 0));
+  var arr = [a, a$1];
+  $this.series = $f_Lcom_highcharts_AnySeriesDef__anySeriesArrayConvert__sjs_js_Array__sjs_js_UndefOr(this$382, arr);
+  return jsx$1.highcharts$extension1__Lorg_scalajs_jquery_JQuery__Lcom_highcharts_CleanJsObject__Lorg_scalajs_jquery_JQuery(jq, $m_Lcom_highcharts_CleanJsObject$().apply__sjs_js_Object__sjs_js_Object($this))
+});
 $c_Lnathan_UserService$.prototype.$$js$exported$meth$setAuth$default$1__s_Option = (function() {
   return $m_s_None$()
 });
 $c_Lnathan_UserService$.prototype.login__Lentity_LoginReq__s_concurrent_Future = (function(user) {
-  var prefixStr = $m_Lutil_CommonConst$().baseUrl$1;
-  var prefixStr$1 = new $c_Lutil_CommonUtil$SlashString().init___T(prefixStr).$$div__T__T("monitorSystem");
-  var x$6 = new $c_Lutil_CommonUtil$SlashString().init___T(prefixStr$1).$$div__T__T("login");
+  var prefixStr = $m_Lnathan_util_CommonConst$().baseUrl$1;
+  var prefixStr$1 = new $c_Lnathan_util_CommonUtil$SlashString().init___T(prefixStr).$$div__T__T("monitorSystem");
+  var x$6 = new $c_Lnathan_util_CommonUtil$SlashString().init___T(prefixStr$1).$$div__T__T("login");
   $m_Lio_circe_Encoder$();
-  var inst$macro$16 = new $c_Lnathan_UserService$anon$exportEncoder$macro$15$1().init___().inst$macro$1__Lio_circe_generic_encoding_DerivedObjectEncoder();
+  var inst$macro$16 = new $c_Lnathan_UserService$anon$importedEncoder$macro$15$1().init___().inst$macro$1__Lio_circe_generic_encoding_DerivedObjectEncoder();
   var t = new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this, inst$macro$16$1) {
     return (function() {
       return inst$macro$16$1
@@ -6644,7 +7715,7 @@ $c_Lnathan_UserService$.prototype.login__Lentity_LoginReq__s_concurrent_Future =
   var exported = $as_Lio_circe_ObjectEncoder(lv.value__O());
   var this$8 = $f_Lio_circe_ObjectEncoder__apply__O__Lio_circe_Json(exported, user);
   var s = $m_Lio_circe_Printer$().noSpaces$1.pretty__Lio_circe_Json__T(this$8);
-  var x$8 = $f_Lutil_HttpHeadSupport__header__sci_Map(this);
+  var x$8 = $f_Lnathan_util_HttpHeadSupport__header__sci_Map(this);
   var this$10 = $m_Lorg_scalajs_dom_ext_Ajax$();
   return this$10.apply__T__T__Lorg_scalajs_dom_ext_Ajax$InputData__I__sci_Map__Z__T__s_concurrent_Future("POST", x$6, s, 0, x$8, false, "")
 });
@@ -6770,6 +7841,9 @@ $c_Lnathan_UserService$.prototype.loginForm__Lorg_scalajs_dom_raw_HTMLFormElemen
     })
   })(this)), $m_sjs_concurrent_JSExecutionContext$Implicits$().queue$1)
 });
+$c_Lnathan_UserService$.prototype.testHc = (function() {
+  return this.$$js$exported$meth$testHc__O()
+});
 $c_Lnathan_UserService$.prototype.loginForm = (function(arg$1) {
   var prep0 = arg$1;
   return this.$$js$exported$meth$loginForm__Lorg_scalajs_dom_raw_HTMLFormElement__O(prep0)
@@ -6790,7 +7864,7 @@ var $d_Lnathan_UserService$ = new $TypeData().initClass({
 }, false, "nathan.UserService$", {
   Lnathan_UserService$: 1,
   O: 1,
-  Lutil_HttpHeadSupport: 1
+  Lnathan_util_HttpHeadSupport: 1
 });
 $c_Lnathan_UserService$.prototype.$classData = $d_Lnathan_UserService$;
 var $n_Lnathan_UserService$ = (void 0);
@@ -7668,6 +8742,35 @@ function $asArrayOf_scm_Builder(obj, depth) {
   return (($isArrayOf_scm_Builder(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.collection.mutable.Builder;", depth))
 }
 /** @constructor */
+function $c_sjs_js_$bar$ReusableEvidence$() {
+  $c_O.call(this)
+}
+$c_sjs_js_$bar$ReusableEvidence$.prototype = new $h_O();
+$c_sjs_js_$bar$ReusableEvidence$.prototype.constructor = $c_sjs_js_$bar$ReusableEvidence$;
+/** @constructor */
+function $h_sjs_js_$bar$ReusableEvidence$() {
+  /*<skip>*/
+}
+$h_sjs_js_$bar$ReusableEvidence$.prototype = $c_sjs_js_$bar$ReusableEvidence$.prototype;
+$c_sjs_js_$bar$ReusableEvidence$.prototype.init___ = (function() {
+  return this
+});
+var $d_sjs_js_$bar$ReusableEvidence$ = new $TypeData().initClass({
+  sjs_js_$bar$ReusableEvidence$: 0
+}, false, "scala.scalajs.js.$bar$ReusableEvidence$", {
+  sjs_js_$bar$ReusableEvidence$: 1,
+  O: 1,
+  sjs_js_$bar$Evidence: 1
+});
+$c_sjs_js_$bar$ReusableEvidence$.prototype.$classData = $d_sjs_js_$bar$ReusableEvidence$;
+var $n_sjs_js_$bar$ReusableEvidence$ = (void 0);
+function $m_sjs_js_$bar$ReusableEvidence$() {
+  if ((!$n_sjs_js_$bar$ReusableEvidence$)) {
+    $n_sjs_js_$bar$ReusableEvidence$ = new $c_sjs_js_$bar$ReusableEvidence$().init___()
+  };
+  return $n_sjs_js_$bar$ReusableEvidence$
+}
+/** @constructor */
 function $c_sr_AbstractFunction0() {
   $c_O.call(this)
 }
@@ -7938,6 +9041,2155 @@ function $h_Lcats_kernel_OrderFunctions() {
   /*<skip>*/
 }
 $h_Lcats_kernel_OrderFunctions.prototype = $c_Lcats_kernel_OrderFunctions.prototype;
+var $b_Lcom_highcharts_config_Chart = (void 0);
+function $a_Lcom_highcharts_config_Chart() {
+  if ((!$b_Lcom_highcharts_config_Chart)) {
+    /** @constructor */
+    var $c_Lcom_highcharts_config_Chart = (function $c_Lcom_highcharts_config_Chart() {
+      $g.Object.call(this);
+      $g.Object.defineProperty(this, "alignTicks", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "animation", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "backgroundColor", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "borderColor", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "borderRadius", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "borderWidth", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "className", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "colorCount", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "defaultSeriesType", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "description", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "events", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "height", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "ignoreHiddenSeries", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "inverted", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "margin", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "marginBottom", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "marginLeft", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "marginRight", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "marginTop", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "options3d", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "panKey", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "panning", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "pinchType", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "plotBackgroundColor", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "plotBackgroundImage", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "plotBorderColor", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "plotBorderWidth", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "plotShadow", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "polar", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "reflow", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "renderTo", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "resetZoomButton", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "selectionMarkerFill", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "shadow", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "showAxes", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "spacing", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "spacingBottom", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "spacingLeft", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "spacingRight", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "spacingTop", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "style", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "type", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "typeDescription", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "width", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "zoomType", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      this.alignTicks = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.animation = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.backgroundColor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.borderColor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.borderRadius = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.borderWidth = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.className = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.colorCount = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.defaultSeriesType = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.description = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.events = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.height = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.ignoreHiddenSeries = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.inverted = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.margin = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.marginBottom = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.marginLeft = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.marginRight = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.marginTop = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.options3d = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.panKey = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.panning = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.pinchType = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.plotBackgroundColor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.plotBackgroundImage = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.plotBorderColor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.plotBorderWidth = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.plotShadow = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.polar = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.reflow = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.renderTo = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.resetZoomButton = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.selectionMarkerFill = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.shadow = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.showAxes = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.spacing = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.spacingBottom = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.spacingLeft = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.spacingRight = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.spacingTop = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.style = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.type = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.typeDescription = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.width = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.zoomType = $m_sjs_js_package$().$undefined__sjs_js_UndefOr()
+    });
+    /** @constructor */
+    var $h_Lcom_highcharts_config_Chart = (function $h_Lcom_highcharts_config_Chart() {
+      /*<skip>*/
+    });
+    $h_Lcom_highcharts_config_Chart.prototype = $g.Object.prototype;
+    $c_Lcom_highcharts_config_Chart.prototype = new $h_Lcom_highcharts_config_Chart();
+    $c_Lcom_highcharts_config_Chart.prototype.constructor = $c_Lcom_highcharts_config_Chart;
+    $b_Lcom_highcharts_config_Chart = $c_Lcom_highcharts_config_Chart
+  };
+  return $b_Lcom_highcharts_config_Chart
+}
+var $b_Lcom_highcharts_config_HighchartsConfig = (void 0);
+function $a_Lcom_highcharts_config_HighchartsConfig() {
+  if ((!$b_Lcom_highcharts_config_HighchartsConfig)) {
+    /** @constructor */
+    var $c_Lcom_highcharts_config_HighchartsConfig = (function $c_Lcom_highcharts_config_HighchartsConfig() {
+      $g.Object.call(this);
+      $g.Object.defineProperty(this, "series", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "accessibility", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "chart", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "colors", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "credits", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "data", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "defs", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "drilldown", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "exporting", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "global", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "labels", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "lang", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "legend", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "loading", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "navigation", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "noData", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "pane", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "plotOptions", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "responsive", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "subtitle", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "title", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "tooltip", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "xAxis", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "yAxis", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "zAxis", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      this.series = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.accessibility = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.chart = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.colors = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.credits = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.data = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.defs = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.drilldown = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.exporting = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.global = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.labels = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.lang = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.legend = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.loading = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.navigation = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.noData = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.pane = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.plotOptions = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.responsive = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.subtitle = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.title = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.tooltip = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.xAxis = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.yAxis = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.zAxis = $m_sjs_js_package$().$undefined__sjs_js_UndefOr()
+    });
+    /** @constructor */
+    var $h_Lcom_highcharts_config_HighchartsConfig = (function $h_Lcom_highcharts_config_HighchartsConfig() {
+      /*<skip>*/
+    });
+    $h_Lcom_highcharts_config_HighchartsConfig.prototype = $g.Object.prototype;
+    $c_Lcom_highcharts_config_HighchartsConfig.prototype = new $h_Lcom_highcharts_config_HighchartsConfig();
+    $c_Lcom_highcharts_config_HighchartsConfig.prototype.constructor = $c_Lcom_highcharts_config_HighchartsConfig;
+    $b_Lcom_highcharts_config_HighchartsConfig = $c_Lcom_highcharts_config_HighchartsConfig
+  };
+  return $b_Lcom_highcharts_config_HighchartsConfig
+}
+var $b_Lcom_highcharts_config_SeriesBar = (void 0);
+function $a_Lcom_highcharts_config_SeriesBar() {
+  if ((!$b_Lcom_highcharts_config_SeriesBar)) {
+    /** @constructor */
+    var $c_Lcom_highcharts_config_SeriesBar = (function $c_Lcom_highcharts_config_SeriesBar() {
+      $g.Object.call(this);
+      $g.Object.defineProperty(this, "allowPointSelect", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "animation", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "animationLimit", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "borderColor", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "borderRadius", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "borderWidth", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "className", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "color", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "colorByPoint", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "colorIndex", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "colors", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "crisp", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "cropThreshold", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "cursor", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "data", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "dataLabels", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "depth", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "description", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "edgeColor", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "edgeWidth", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "enableMouseTracking", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "events", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "exposeElementToA11y", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "findNearestPointBy", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "getExtremesFromAll", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "groupPadding", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "groupZPadding", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "grouping", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "id", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "index", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "keys", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "legendIndex", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "linkedTo", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "maxPointWidth", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "minPointLength", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "name", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "negativeColor", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "point", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "pointDescriptionFormatter", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "pointInterval", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "pointIntervalUnit", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "pointPadding", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "pointPlacement", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "pointRange", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "pointStart", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "pointWidth", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "selected", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "shadow", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "showCheckbox", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "showInLegend", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "skipKeyboardNavigation", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "softThreshold", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "stack", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "stacking", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "states", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "stickyTracking", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "threshold", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "tooltip", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "turboThreshold", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "type", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "visible", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "xAxis", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "yAxis", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "zIndex", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "zoneAxis", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "zones", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      this.allowPointSelect = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.animation = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.animationLimit = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.borderColor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.borderRadius = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.borderWidth = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.className = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.color = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.colorByPoint = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.colorIndex = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.colors = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.crisp = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.cropThreshold = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.cursor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.data = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.dataLabels = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.depth = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.description = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.edgeColor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.edgeWidth = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.enableMouseTracking = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.events = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.exposeElementToA11y = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.findNearestPointBy = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.getExtremesFromAll = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.groupPadding = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.groupZPadding = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.grouping = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.id = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.index = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.keys = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.legendIndex = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.linkedTo = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.maxPointWidth = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.minPointLength = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.name = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.negativeColor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.point = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.pointDescriptionFormatter = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.pointInterval = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.pointIntervalUnit = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.pointPadding = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.pointPlacement = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.pointRange = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.pointStart = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.pointWidth = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.selected = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.shadow = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.showCheckbox = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.showInLegend = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.skipKeyboardNavigation = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.softThreshold = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.stack = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.stacking = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.states = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.stickyTracking = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.threshold = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.tooltip = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.turboThreshold = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.type = "bar";
+      this.visible = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.xAxis = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.yAxis = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.zIndex = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.zoneAxis = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.zones = $m_sjs_js_package$().$undefined__sjs_js_UndefOr()
+    });
+    /** @constructor */
+    var $h_Lcom_highcharts_config_SeriesBar = (function $h_Lcom_highcharts_config_SeriesBar() {
+      /*<skip>*/
+    });
+    $h_Lcom_highcharts_config_SeriesBar.prototype = $g.Object.prototype;
+    $c_Lcom_highcharts_config_SeriesBar.prototype = new $h_Lcom_highcharts_config_SeriesBar();
+    $c_Lcom_highcharts_config_SeriesBar.prototype.constructor = $c_Lcom_highcharts_config_SeriesBar;
+    $b_Lcom_highcharts_config_SeriesBar = $c_Lcom_highcharts_config_SeriesBar
+  };
+  return $b_Lcom_highcharts_config_SeriesBar
+}
+var $b_Lcom_highcharts_config_Title = (void 0);
+function $a_Lcom_highcharts_config_Title() {
+  if ((!$b_Lcom_highcharts_config_Title)) {
+    /** @constructor */
+    var $c_Lcom_highcharts_config_Title = (function $c_Lcom_highcharts_config_Title() {
+      $g.Object.call(this);
+      $g.Object.defineProperty(this, "align", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "floating", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "margin", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "style", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "text", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "useHTML", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "verticalAlign", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "widthAdjust", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "x", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "y", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      this.align = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.floating = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.margin = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.style = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.text = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.useHTML = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.verticalAlign = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.widthAdjust = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.x = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.y = $m_sjs_js_package$().$undefined__sjs_js_UndefOr()
+    });
+    /** @constructor */
+    var $h_Lcom_highcharts_config_Title = (function $h_Lcom_highcharts_config_Title() {
+      /*<skip>*/
+    });
+    $h_Lcom_highcharts_config_Title.prototype = $g.Object.prototype;
+    $c_Lcom_highcharts_config_Title.prototype = new $h_Lcom_highcharts_config_Title();
+    $c_Lcom_highcharts_config_Title.prototype.constructor = $c_Lcom_highcharts_config_Title;
+    $b_Lcom_highcharts_config_Title = $c_Lcom_highcharts_config_Title
+  };
+  return $b_Lcom_highcharts_config_Title
+}
+var $b_Lcom_highcharts_config_XAxis = (void 0);
+function $a_Lcom_highcharts_config_XAxis() {
+  if ((!$b_Lcom_highcharts_config_XAxis)) {
+    /** @constructor */
+    var $c_Lcom_highcharts_config_XAxis = (function $c_Lcom_highcharts_config_XAxis() {
+      $g.Object.call(this);
+      $g.Object.defineProperty(this, "allowDecimals", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "alternateGridColor", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "breaks", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "categories", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "ceiling", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "className", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "crosshair", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "dateTimeLabelFormats", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "description", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "endOnTick", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "events", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "floor", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "gridLineColor", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "gridLineDashStyle", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "gridLineWidth", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "gridZIndex", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "id", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "labels", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "lineColor", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "lineWidth", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "linkedTo", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "max", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "maxPadding", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "maxZoom", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "min", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "minPadding", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "minRange", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "minTickInterval", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "minorGridLineColor", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "minorGridLineDashStyle", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "minorGridLineWidth", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "minorTickColor", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "minorTickInterval", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "minorTickLength", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "minorTickPosition", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "minorTickWidth", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "offset", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "opposite", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "plotBands", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "plotLines", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "reversed", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "showEmpty", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "showFirstLabel", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "showLastLabel", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "softMax", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "softMin", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "startOfWeek", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "startOnTick", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "tickAmount", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "tickColor", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "tickInterval", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "tickLength", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "tickPixelInterval", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "tickPosition", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "tickPositioner", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "tickPositions", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "tickWidth", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "tickmarkPlacement", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "title", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "type", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "uniqueNames", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "units", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "visible", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      this.allowDecimals = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.alternateGridColor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.breaks = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.categories = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.ceiling = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.className = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.crosshair = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.dateTimeLabelFormats = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.description = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.endOnTick = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.events = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.floor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.gridLineColor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.gridLineDashStyle = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.gridLineWidth = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.gridZIndex = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.id = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.labels = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.lineColor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.lineWidth = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.linkedTo = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.max = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.maxPadding = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.maxZoom = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.min = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.minPadding = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.minRange = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.minTickInterval = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.minorGridLineColor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.minorGridLineDashStyle = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.minorGridLineWidth = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.minorTickColor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.minorTickInterval = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.minorTickLength = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.minorTickPosition = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.minorTickWidth = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.offset = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.opposite = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.plotBands = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.plotLines = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.reversed = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.showEmpty = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.showFirstLabel = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.showLastLabel = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.softMax = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.softMin = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.startOfWeek = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.startOnTick = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.tickAmount = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.tickColor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.tickInterval = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.tickLength = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.tickPixelInterval = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.tickPosition = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.tickPositioner = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.tickPositions = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.tickWidth = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.tickmarkPlacement = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.title = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.type = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.uniqueNames = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.units = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.visible = $m_sjs_js_package$().$undefined__sjs_js_UndefOr()
+    });
+    /** @constructor */
+    var $h_Lcom_highcharts_config_XAxis = (function $h_Lcom_highcharts_config_XAxis() {
+      /*<skip>*/
+    });
+    $h_Lcom_highcharts_config_XAxis.prototype = $g.Object.prototype;
+    $c_Lcom_highcharts_config_XAxis.prototype = new $h_Lcom_highcharts_config_XAxis();
+    $c_Lcom_highcharts_config_XAxis.prototype.constructor = $c_Lcom_highcharts_config_XAxis;
+    $b_Lcom_highcharts_config_XAxis = $c_Lcom_highcharts_config_XAxis
+  };
+  return $b_Lcom_highcharts_config_XAxis
+}
+var $b_Lcom_highcharts_config_YAxis = (void 0);
+function $a_Lcom_highcharts_config_YAxis() {
+  if ((!$b_Lcom_highcharts_config_YAxis)) {
+    /** @constructor */
+    var $c_Lcom_highcharts_config_YAxis = (function $c_Lcom_highcharts_config_YAxis() {
+      $g.Object.call(this);
+      $g.Object.defineProperty(this, "allowDecimals", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "alternateGridColor", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "angle", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "breaks", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "categories", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "ceiling", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "className", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "crosshair", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "dateTimeLabelFormats", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "description", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "endOnTick", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "events", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "floor", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "gridLineColor", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "gridLineDashStyle", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "gridLineInterpolation", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "gridLineWidth", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "gridZIndex", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "id", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "labels", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "lineColor", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "lineWidth", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "linkedTo", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "max", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "maxColor", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "maxPadding", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "maxZoom", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "min", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "minColor", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "minPadding", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "minRange", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "minTickInterval", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "minorGridLineColor", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "minorGridLineDashStyle", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "minorGridLineWidth", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "minorTickColor", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "minorTickInterval", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "minorTickLength", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "minorTickPosition", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "minorTickWidth", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "offset", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "opposite", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "plotBands", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "plotLines", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "reversed", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "reversedStacks", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "showEmpty", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "showFirstLabel", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "showLastLabel", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "softMax", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "softMin", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "stackLabels", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "startOfWeek", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "startOnTick", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "stops", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "tickAmount", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "tickColor", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "tickInterval", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "tickLength", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "tickPixelInterval", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "tickPosition", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "tickPositioner", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "tickPositions", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "tickWidth", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "tickmarkPlacement", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "title", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "type", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "uniqueNames", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "units", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "visible", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      this.allowDecimals = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.alternateGridColor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.angle = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.breaks = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.categories = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.ceiling = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.className = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.crosshair = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.dateTimeLabelFormats = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.description = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.endOnTick = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.events = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.floor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.gridLineColor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.gridLineDashStyle = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.gridLineInterpolation = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.gridLineWidth = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.gridZIndex = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.id = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.labels = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.lineColor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.lineWidth = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.linkedTo = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.max = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.maxColor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.maxPadding = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.maxZoom = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.min = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.minColor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.minPadding = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.minRange = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.minTickInterval = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.minorGridLineColor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.minorGridLineDashStyle = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.minorGridLineWidth = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.minorTickColor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.minorTickInterval = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.minorTickLength = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.minorTickPosition = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.minorTickWidth = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.offset = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.opposite = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.plotBands = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.plotLines = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.reversed = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.reversedStacks = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.showEmpty = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.showFirstLabel = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.showLastLabel = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.softMax = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.softMin = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.stackLabels = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.startOfWeek = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.startOnTick = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.stops = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.tickAmount = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.tickColor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.tickInterval = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.tickLength = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.tickPixelInterval = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.tickPosition = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.tickPositioner = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.tickPositions = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.tickWidth = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.tickmarkPlacement = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.title = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.type = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.uniqueNames = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.units = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.visible = $m_sjs_js_package$().$undefined__sjs_js_UndefOr()
+    });
+    /** @constructor */
+    var $h_Lcom_highcharts_config_YAxis = (function $h_Lcom_highcharts_config_YAxis() {
+      /*<skip>*/
+    });
+    $h_Lcom_highcharts_config_YAxis.prototype = $g.Object.prototype;
+    $c_Lcom_highcharts_config_YAxis.prototype = new $h_Lcom_highcharts_config_YAxis();
+    $c_Lcom_highcharts_config_YAxis.prototype.constructor = $c_Lcom_highcharts_config_YAxis;
+    $b_Lcom_highcharts_config_YAxis = $c_Lcom_highcharts_config_YAxis
+  };
+  return $b_Lcom_highcharts_config_YAxis
+}
+var $b_Lcom_highcharts_config_YAxisTitle = (void 0);
+function $a_Lcom_highcharts_config_YAxisTitle() {
+  if ((!$b_Lcom_highcharts_config_YAxisTitle)) {
+    /** @constructor */
+    var $c_Lcom_highcharts_config_YAxisTitle = (function $c_Lcom_highcharts_config_YAxisTitle() {
+      $g.Object.call(this);
+      $g.Object.defineProperty(this, "align", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "enabled", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "margin", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "offset", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "reserveSpace", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "rotation", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "style", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "text", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "x", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "y", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      this.align = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.enabled = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.margin = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.offset = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.reserveSpace = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.rotation = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.style = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.text = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.x = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.y = $m_sjs_js_package$().$undefined__sjs_js_UndefOr()
+    });
+    /** @constructor */
+    var $h_Lcom_highcharts_config_YAxisTitle = (function $h_Lcom_highcharts_config_YAxisTitle() {
+      /*<skip>*/
+    });
+    $h_Lcom_highcharts_config_YAxisTitle.prototype = $g.Object.prototype;
+    $c_Lcom_highcharts_config_YAxisTitle.prototype = new $h_Lcom_highcharts_config_YAxisTitle();
+    $c_Lcom_highcharts_config_YAxisTitle.prototype.constructor = $c_Lcom_highcharts_config_YAxisTitle;
+    $b_Lcom_highcharts_config_YAxisTitle = $c_Lcom_highcharts_config_YAxisTitle
+  };
+  return $b_Lcom_highcharts_config_YAxisTitle
+}
 /** @constructor */
 function $c_Lio_circe_ACursor() {
   $c_O.call(this);
@@ -9586,32 +12838,32 @@ function $m_Ljava_math_RoundingMode$() {
   return $n_Ljava_math_RoundingMode$
 }
 /** @constructor */
-function $c_Lnathan_UserService$anon$exportEncoder$macro$15$1() {
+function $c_Lnathan_UserService$anon$importedEncoder$macro$15$1() {
   $c_O.call(this);
   this.inst$macro$10$1 = null;
   this.inst$macro$1$1 = null;
   this.bitmap$0$1 = 0
 }
-$c_Lnathan_UserService$anon$exportEncoder$macro$15$1.prototype = new $h_O();
-$c_Lnathan_UserService$anon$exportEncoder$macro$15$1.prototype.constructor = $c_Lnathan_UserService$anon$exportEncoder$macro$15$1;
+$c_Lnathan_UserService$anon$importedEncoder$macro$15$1.prototype = new $h_O();
+$c_Lnathan_UserService$anon$importedEncoder$macro$15$1.prototype.constructor = $c_Lnathan_UserService$anon$importedEncoder$macro$15$1;
 /** @constructor */
-function $h_Lnathan_UserService$anon$exportEncoder$macro$15$1() {
+function $h_Lnathan_UserService$anon$importedEncoder$macro$15$1() {
   /*<skip>*/
 }
-$h_Lnathan_UserService$anon$exportEncoder$macro$15$1.prototype = $c_Lnathan_UserService$anon$exportEncoder$macro$15$1.prototype;
-$c_Lnathan_UserService$anon$exportEncoder$macro$15$1.prototype.init___ = (function() {
+$h_Lnathan_UserService$anon$importedEncoder$macro$15$1.prototype = $c_Lnathan_UserService$anon$importedEncoder$macro$15$1.prototype;
+$c_Lnathan_UserService$anon$importedEncoder$macro$15$1.prototype.init___ = (function() {
   return this
 });
-$c_Lnathan_UserService$anon$exportEncoder$macro$15$1.prototype.inst$macro$1__Lio_circe_generic_encoding_DerivedObjectEncoder = (function() {
+$c_Lnathan_UserService$anon$importedEncoder$macro$15$1.prototype.inst$macro$1__Lio_circe_generic_encoding_DerivedObjectEncoder = (function() {
   return (((2 & this.bitmap$0$1) === 0) ? this.inst$macro$1$lzycompute__p1__Lio_circe_generic_encoding_DerivedObjectEncoder() : this.inst$macro$1$1)
 });
-$c_Lnathan_UserService$anon$exportEncoder$macro$15$1.prototype.inst$macro$10__Lio_circe_generic_encoding_ReprObjectEncoder = (function() {
+$c_Lnathan_UserService$anon$importedEncoder$macro$15$1.prototype.inst$macro$10__Lio_circe_generic_encoding_ReprObjectEncoder = (function() {
   return (((1 & this.bitmap$0$1) === 0) ? this.inst$macro$10$lzycompute__p1__Lio_circe_generic_encoding_ReprObjectEncoder() : this.inst$macro$10$1)
 });
-$c_Lnathan_UserService$anon$exportEncoder$macro$15$1.prototype.inst$macro$1$lzycompute__p1__Lio_circe_generic_encoding_DerivedObjectEncoder = (function() {
+$c_Lnathan_UserService$anon$importedEncoder$macro$15$1.prototype.inst$macro$1$lzycompute__p1__Lio_circe_generic_encoding_DerivedObjectEncoder = (function() {
   if (((2 & this.bitmap$0$1) === 0)) {
-    new $c_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$2().init___Lnathan_UserService$anon$exportEncoder$macro$15$1(this);
-    var gen = new $c_Lnathan_UserService$anon$exportEncoder$macro$15$1$anon$macro$9$1().init___Lnathan_UserService$anon$exportEncoder$macro$15$1(this);
+    new $c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2().init___Lnathan_UserService$anon$importedEncoder$macro$15$1(this);
+    var gen = new $c_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1().init___Lnathan_UserService$anon$importedEncoder$macro$15$1(this);
     $m_Lshapeless_ops_hlist$ZipWithKeys$();
     $m_Lshapeless_ops_hlist$ZipWithKeys$();
     $m_Lshapeless_ops_hlist$ZipWithKeys$();
@@ -9644,22 +12896,22 @@ $c_Lnathan_UserService$anon$exportEncoder$macro$15$1.prototype.inst$macro$1$lzyc
   };
   return this.inst$macro$1$1
 });
-$c_Lnathan_UserService$anon$exportEncoder$macro$15$1.prototype.inst$macro$10$lzycompute__p1__Lio_circe_generic_encoding_ReprObjectEncoder = (function() {
+$c_Lnathan_UserService$anon$importedEncoder$macro$15$1.prototype.inst$macro$10$lzycompute__p1__Lio_circe_generic_encoding_ReprObjectEncoder = (function() {
   if (((1 & this.bitmap$0$1) === 0)) {
-    this.inst$macro$10$1 = new $c_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$1().init___Lnathan_UserService$anon$exportEncoder$macro$15$1(this);
+    this.inst$macro$10$1 = new $c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1().init___Lnathan_UserService$anon$importedEncoder$macro$15$1(this);
     this.bitmap$0$1 = (1 | this.bitmap$0$1)
   };
   return this.inst$macro$10$1
 });
-var $d_Lnathan_UserService$anon$exportEncoder$macro$15$1 = new $TypeData().initClass({
-  Lnathan_UserService$anon$exportEncoder$macro$15$1: 0
-}, false, "nathan.UserService$anon$exportEncoder$macro$15$1", {
-  Lnathan_UserService$anon$exportEncoder$macro$15$1: 1,
+var $d_Lnathan_UserService$anon$importedEncoder$macro$15$1 = new $TypeData().initClass({
+  Lnathan_UserService$anon$importedEncoder$macro$15$1: 0
+}, false, "nathan.UserService$anon$importedEncoder$macro$15$1", {
+  Lnathan_UserService$anon$importedEncoder$macro$15$1: 1,
   O: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lnathan_UserService$anon$exportEncoder$macro$15$1.prototype.$classData = $d_Lnathan_UserService$anon$exportEncoder$macro$15$1;
+$c_Lnathan_UserService$anon$importedEncoder$macro$15$1.prototype.$classData = $d_Lnathan_UserService$anon$importedEncoder$macro$15$1;
 /** @constructor */
 function $c_Lnathan_UserService$anon$lazy$macro$26$1() {
   $c_O.call(this);
@@ -9679,7 +12931,7 @@ $c_Lnathan_UserService$anon$lazy$macro$26$1.prototype.init___ = (function() {
 });
 $c_Lnathan_UserService$anon$lazy$macro$26$1.prototype.inst$macro$24$lzycompute__p1__Lio_circe_generic_decoding_ReprDecoder = (function() {
   if (((1 & this.bitmap$0$1) === 0)) {
-    this.inst$macro$24$1 = new $c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3().init___Lnathan_UserService$anon$lazy$macro$26$1(this);
+    this.inst$macro$24$1 = new $c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4().init___Lnathan_UserService$anon$lazy$macro$26$1(this);
     this.bitmap$0$1 = (1 | this.bitmap$0$1)
   };
   return this.inst$macro$24$1
@@ -9692,7 +12944,7 @@ $c_Lnathan_UserService$anon$lazy$macro$26$1.prototype.inst$macro$17__Lio_circe_g
 });
 $c_Lnathan_UserService$anon$lazy$macro$26$1.prototype.inst$macro$17$lzycompute__p1__Lio_circe_generic_decoding_DerivedDecoder = (function() {
   if (((2 & this.bitmap$0$1) === 0)) {
-    new $c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4().init___Lnathan_UserService$anon$lazy$macro$26$1(this);
+    new $c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3().init___Lnathan_UserService$anon$lazy$macro$26$1(this);
     var gen = new $c_Lnathan_UserService$anon$lazy$macro$26$1$anon$macro$23$1().init___Lnathan_UserService$anon$lazy$macro$26$1(this);
     $m_Lshapeless_ops_hlist$ZipWithKeys$();
     $m_Lshapeless_ops_hlist$ZipWithKeys$();
@@ -15615,17 +18867,17 @@ var $d_Ljava_math_RoundingMode = new $TypeData().initClass({
 });
 $c_Ljava_math_RoundingMode.prototype.$classData = $d_Ljava_math_RoundingMode;
 /** @constructor */
-function $c_Lnathan_UserService$anon$exportEncoder$macro$15$1$anon$macro$9$1() {
+function $c_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1() {
   $c_O.call(this)
 }
-$c_Lnathan_UserService$anon$exportEncoder$macro$15$1$anon$macro$9$1.prototype = new $h_O();
-$c_Lnathan_UserService$anon$exportEncoder$macro$15$1$anon$macro$9$1.prototype.constructor = $c_Lnathan_UserService$anon$exportEncoder$macro$15$1$anon$macro$9$1;
+$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype = new $h_O();
+$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype.constructor = $c_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1;
 /** @constructor */
-function $h_Lnathan_UserService$anon$exportEncoder$macro$15$1$anon$macro$9$1() {
+function $h_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1() {
   /*<skip>*/
 }
-$h_Lnathan_UserService$anon$exportEncoder$macro$15$1$anon$macro$9$1.prototype = $c_Lnathan_UserService$anon$exportEncoder$macro$15$1$anon$macro$9$1.prototype;
-$c_Lnathan_UserService$anon$exportEncoder$macro$15$1$anon$macro$9$1.prototype.to__Lentity_LoginReq__Lshapeless_$colon$colon = (function(p) {
+$h_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype = $c_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype;
+$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype.to__Lentity_LoginReq__Lshapeless_$colon$colon = (function(p) {
   if ((p !== null)) {
     var pat$macro$6 = p.username$1;
     var pat$macro$7 = p.password$1;
@@ -15635,16 +18887,16 @@ $c_Lnathan_UserService$anon$exportEncoder$macro$15$1$anon$macro$9$1.prototype.to
     throw new $c_s_MatchError().init___O(p)
   }
 });
-$c_Lnathan_UserService$anon$exportEncoder$macro$15$1$anon$macro$9$1.prototype.from__O__O = (function(r) {
-  return this.from__Lshapeless_$colon$colon__Lentity_LoginReq($as_Lshapeless_$colon$colon(r))
-});
-$c_Lnathan_UserService$anon$exportEncoder$macro$15$1$anon$macro$9$1.prototype.init___Lnathan_UserService$anon$exportEncoder$macro$15$1 = (function($$outer) {
+$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype.init___Lnathan_UserService$anon$importedEncoder$macro$15$1 = (function($$outer) {
   return this
 });
-$c_Lnathan_UserService$anon$exportEncoder$macro$15$1$anon$macro$9$1.prototype.to__O__O = (function(t) {
+$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype.from__O__O = (function(r) {
+  return this.from__Lshapeless_$colon$colon__Lentity_LoginReq($as_Lshapeless_$colon$colon(r))
+});
+$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype.to__O__O = (function(t) {
   return this.to__Lentity_LoginReq__Lshapeless_$colon$colon($as_Lentity_LoginReq(t))
 });
-$c_Lnathan_UserService$anon$exportEncoder$macro$15$1$anon$macro$9$1.prototype.from__Lshapeless_$colon$colon__Lentity_LoginReq = (function(p) {
+$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype.from__Lshapeless_$colon$colon__Lentity_LoginReq = (function(p) {
   if ((p !== null)) {
     var pat$macro$6 = $as_T(p.head$1);
     var p2 = $as_Lshapeless_$colon$colon(p.tail$1);
@@ -15663,16 +18915,16 @@ $c_Lnathan_UserService$anon$exportEncoder$macro$15$1$anon$macro$9$1.prototype.fr
   };
   throw new $c_s_MatchError().init___O(p)
 });
-var $d_Lnathan_UserService$anon$exportEncoder$macro$15$1$anon$macro$9$1 = new $TypeData().initClass({
-  Lnathan_UserService$anon$exportEncoder$macro$15$1$anon$macro$9$1: 0
-}, false, "nathan.UserService$anon$exportEncoder$macro$15$1$anon$macro$9$1", {
-  Lnathan_UserService$anon$exportEncoder$macro$15$1$anon$macro$9$1: 1,
+var $d_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1 = new $TypeData().initClass({
+  Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1: 0
+}, false, "nathan.UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1", {
+  Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1: 1,
   O: 1,
   Lshapeless_Generic: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lnathan_UserService$anon$exportEncoder$macro$15$1$anon$macro$9$1.prototype.$classData = $d_Lnathan_UserService$anon$exportEncoder$macro$15$1$anon$macro$9$1;
+$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype.$classData = $d_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1;
 /** @constructor */
 function $c_Lnathan_UserService$anon$lazy$macro$26$1$anon$macro$23$1() {
   $c_O.call(this)
@@ -19426,36 +22678,35 @@ $c_Ljava_io_FilterOutputStream.prototype.init___Ljava_io_OutputStream = (functio
   return this
 });
 /** @constructor */
-function $c_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$2() {
+function $c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2() {
   $c_O.call(this)
 }
-$c_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$2.prototype = new $h_O();
-$c_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$2.prototype.constructor = $c_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$2;
+$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2.prototype = new $h_O();
+$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2.prototype.constructor = $c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2;
 /** @constructor */
-function $h_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$2() {
+function $h_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2() {
   /*<skip>*/
 }
-$h_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$2.prototype = $c_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$2.prototype;
-$c_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$2.prototype.init___Lnathan_UserService$anon$exportEncoder$macro$15$1 = (function($$outer) {
+$h_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2.prototype = $c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2.prototype;
+$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2.prototype.init___Lnathan_UserService$anon$importedEncoder$macro$15$1 = (function($$outer) {
   return this
 });
-var $d_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$2 = new $TypeData().initClass({
-  Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$2: 0
-}, false, "nathan.UserService$anon$exportEncoder$macro$15$1$$anon$2", {
-  Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$2: 1,
+var $d_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2 = new $TypeData().initClass({
+  Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2: 0
+}, false, "nathan.UserService$anon$importedEncoder$macro$15$1$$anon$2", {
+  Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2: 1,
   O: 1,
   Lshapeless_DefaultSymbolicLabelling: 1,
   Lshapeless_package$DepFn0: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$2.prototype.$classData = $d_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$2;
+$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2.prototype.$classData = $d_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2;
 /** @constructor */
 function $c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3() {
-  $c_Lio_circe_generic_decoding_ReprDecoder.call(this);
-  this.fresh$macro$25$2 = null
+  $c_O.call(this)
 }
-$c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3.prototype = new $h_Lio_circe_generic_decoding_ReprDecoder();
+$c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3.prototype = new $h_O();
 $c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3.prototype.constructor = $c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3;
 /** @constructor */
 function $h_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3() {
@@ -19463,28 +22714,25 @@ function $h_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3() {
 }
 $h_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3.prototype = $c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3.prototype;
 $c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3.prototype.init___Lnathan_UserService$anon$lazy$macro$26$1 = (function($$outer) {
-  this.fresh$macro$25$2 = $m_Lio_circe_Decoder$().decodeString$1;
   return this
-});
-$c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3.prototype.apply__Lio_circe_HCursor__s_util_Either = (function(c) {
-  return $as_s_util_Either($m_Lio_circe_generic_decoding_ReprDecoder$().consResults__O__O__Lcats_Apply__O(this.fresh$macro$25$2.tryDecode__Lio_circe_ACursor__s_util_Either(c.downField__T__Lio_circe_ACursor("code")), $m_Lio_circe_generic_decoding_ReprDecoder$().consResults__O__O__Lcats_Apply__O(this.fresh$macro$25$2.tryDecode__Lio_circe_ACursor__s_util_Either(c.downField__T__Lio_circe_ACursor("entity")), $m_Lio_circe_generic_decoding_ReprDecoder$().hnilResult$1, $m_Lio_circe_Decoder$().resultInstance$1), $m_Lio_circe_Decoder$().resultInstance$1))
 });
 var $d_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3 = new $TypeData().initClass({
   Lnathan_UserService$anon$lazy$macro$26$1$$anon$3: 0
 }, false, "nathan.UserService$anon$lazy$macro$26$1$$anon$3", {
   Lnathan_UserService$anon$lazy$macro$26$1$$anon$3: 1,
-  Lio_circe_generic_decoding_ReprDecoder: 1,
   O: 1,
-  Lio_circe_Decoder: 1,
+  Lshapeless_DefaultSymbolicLabelling: 1,
+  Lshapeless_package$DepFn0: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
 $c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3.prototype.$classData = $d_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3;
 /** @constructor */
 function $c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4() {
-  $c_O.call(this)
+  $c_Lio_circe_generic_decoding_ReprDecoder.call(this);
+  this.fresh$macro$25$2 = null
 }
-$c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4.prototype = new $h_O();
+$c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4.prototype = new $h_Lio_circe_generic_decoding_ReprDecoder();
 $c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4.prototype.constructor = $c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4;
 /** @constructor */
 function $h_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4() {
@@ -19492,15 +22740,19 @@ function $h_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4() {
 }
 $h_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4.prototype = $c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4.prototype;
 $c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4.prototype.init___Lnathan_UserService$anon$lazy$macro$26$1 = (function($$outer) {
+  this.fresh$macro$25$2 = $m_Lio_circe_Decoder$().decodeString$1;
   return this
+});
+$c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4.prototype.apply__Lio_circe_HCursor__s_util_Either = (function(c) {
+  return $as_s_util_Either($m_Lio_circe_generic_decoding_ReprDecoder$().consResults__O__O__Lcats_Apply__O(this.fresh$macro$25$2.tryDecode__Lio_circe_ACursor__s_util_Either(c.downField__T__Lio_circe_ACursor("code")), $m_Lio_circe_generic_decoding_ReprDecoder$().consResults__O__O__Lcats_Apply__O(this.fresh$macro$25$2.tryDecode__Lio_circe_ACursor__s_util_Either(c.downField__T__Lio_circe_ACursor("entity")), $m_Lio_circe_generic_decoding_ReprDecoder$().hnilResult$1, $m_Lio_circe_Decoder$().resultInstance$1), $m_Lio_circe_Decoder$().resultInstance$1))
 });
 var $d_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4 = new $TypeData().initClass({
   Lnathan_UserService$anon$lazy$macro$26$1$$anon$4: 0
 }, false, "nathan.UserService$anon$lazy$macro$26$1$$anon$4", {
   Lnathan_UserService$anon$lazy$macro$26$1$$anon$4: 1,
+  Lio_circe_generic_decoding_ReprDecoder: 1,
   O: 1,
-  Lshapeless_DefaultSymbolicLabelling: 1,
-  Lshapeless_package$DepFn0: 1,
+  Lio_circe_Decoder: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
@@ -25488,18 +28740,18 @@ $c_Ljava_io_PrintStream.prototype.println__T__V = (function(s) {
   this.java$lang$JSConsoleBasedPrintStream$$printString__T__V("\n")
 });
 /** @constructor */
-function $c_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$1() {
+function $c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1() {
   $c_Lio_circe_generic_encoding_ReprObjectEncoder.call(this);
   this.fresh$macro$11$2 = null
 }
-$c_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$1.prototype = new $h_Lio_circe_generic_encoding_ReprObjectEncoder();
-$c_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$1.prototype.constructor = $c_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$1;
+$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1.prototype = new $h_Lio_circe_generic_encoding_ReprObjectEncoder();
+$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1.prototype.constructor = $c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1;
 /** @constructor */
-function $h_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$1() {
+function $h_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1() {
   /*<skip>*/
 }
-$h_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$1.prototype = $c_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$1.prototype;
-$c_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$1.prototype.encodeObject__Lshapeless_$colon$colon__Lio_circe_JsonObject = (function(a) {
+$h_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1.prototype = $c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1.prototype;
+$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1.prototype.encodeObject__Lshapeless_$colon$colon__Lio_circe_JsonObject = (function(a) {
   if ((a !== null)) {
     var fresh$macro$14 = $as_T(a.head$1);
     var p2 = $as_Lshapeless_$colon$colon(a.tail$1);
@@ -25535,17 +28787,17 @@ $c_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$1.prototype.encodeObj
   };
   throw new $c_s_MatchError().init___O(a)
 });
-$c_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$1.prototype.init___Lnathan_UserService$anon$exportEncoder$macro$15$1 = (function($$outer) {
+$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1.prototype.init___Lnathan_UserService$anon$importedEncoder$macro$15$1 = (function($$outer) {
   this.fresh$macro$11$2 = $m_Lio_circe_Encoder$().encodeString$1;
   return this
 });
-$c_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$1.prototype.encodeObject__O__Lio_circe_JsonObject = (function(a) {
+$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1.prototype.encodeObject__O__Lio_circe_JsonObject = (function(a) {
   return this.encodeObject__Lshapeless_$colon$colon__Lio_circe_JsonObject($as_Lshapeless_$colon$colon(a))
 });
-var $d_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$1 = new $TypeData().initClass({
-  Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$1: 0
-}, false, "nathan.UserService$anon$exportEncoder$macro$15$1$$anon$1", {
-  Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$1: 1,
+var $d_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1 = new $TypeData().initClass({
+  Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1: 0
+}, false, "nathan.UserService$anon$importedEncoder$macro$15$1$$anon$1", {
+  Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1: 1,
   Lio_circe_generic_encoding_ReprObjectEncoder: 1,
   O: 1,
   Lio_circe_ObjectEncoder: 1,
@@ -25554,7 +28806,7 @@ var $d_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$1 = new $TypeData
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$1.prototype.$classData = $d_Lnathan_UserService$anon$exportEncoder$macro$15$1$$anon$1;
+$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1.prototype.$classData = $d_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1;
 /** @constructor */
 function $c_Lorg_scalajs_dom_ext_AjaxException() {
   $c_jl_Exception.call(this);

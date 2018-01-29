@@ -1,6 +1,6 @@
 package nathan.util
 import org.scalajs.dom._
-import nathan.util.CommonConst._
+
 trait HttpHeadSupport {
   val `Content-Type` = "Content-Type"
   val `"application/json` = "application/json"
