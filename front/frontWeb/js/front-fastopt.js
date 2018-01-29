@@ -1990,67 +1990,204 @@ function $m_Lcom_highcharts_config_Chart$() {
   return $n_Lcom_highcharts_config_Chart$
 }
 /** @constructor */
-function $c_Lcom_highcharts_config_SeriesBar$() {
+function $c_Lcom_highcharts_config_Credits$() {
   $c_O.call(this)
 }
-$c_Lcom_highcharts_config_SeriesBar$.prototype = new $h_O();
-$c_Lcom_highcharts_config_SeriesBar$.prototype.constructor = $c_Lcom_highcharts_config_SeriesBar$;
+$c_Lcom_highcharts_config_Credits$.prototype = new $h_O();
+$c_Lcom_highcharts_config_Credits$.prototype.constructor = $c_Lcom_highcharts_config_Credits$;
 /** @constructor */
-function $h_Lcom_highcharts_config_SeriesBar$() {
+function $h_Lcom_highcharts_config_Credits$() {
   /*<skip>*/
 }
-$h_Lcom_highcharts_config_SeriesBar$.prototype = $c_Lcom_highcharts_config_SeriesBar$.prototype;
-$c_Lcom_highcharts_config_SeriesBar$.prototype.init___ = (function() {
+$h_Lcom_highcharts_config_Credits$.prototype = $c_Lcom_highcharts_config_Credits$.prototype;
+$c_Lcom_highcharts_config_Credits$.prototype.init___ = (function() {
   return this
 });
-$c_Lcom_highcharts_config_SeriesBar$.prototype.apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__T__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_SeriesBar = (function(allowPointSelect, animation, animationLimit, borderColor, borderRadius, borderWidth, className, color, colorByPoint, colorIndex, colors, crisp, cropThreshold, cursor, data, dataLabels, depth, description, edgeColor, edgeWidth, enableMouseTracking, events, exposeElementToA11y, findNearestPointBy, getExtremesFromAll, groupPadding, groupZPadding, grouping, id, index, keys, legendIndex, linkedTo, maxPointWidth, minPointLength, name, negativeColor, point, pointDescriptionFormatter, pointInterval, pointIntervalUnit, pointPadding, pointPlacement, pointRange, pointStart, pointWidth, selected, shadow, showCheckbox, showInLegend, skipKeyboardNavigation, softThreshold, stack, stacking, states, stickyTracking, threshold, tooltip, turboThreshold, type, visible, xAxis, yAxis, zIndex, zoneAxis, zones) {
-  var $this = new ($a_Lcom_highcharts_config_SeriesBar())();
-  $this.allowPointSelect = null;
-  $this.animation = null;
-  $this.animationLimit = null;
+$c_Lcom_highcharts_config_Credits$.prototype.apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_Credits = (function(enabled, href, position, style, text) {
+  var $this = new ($a_Lcom_highcharts_config_Credits())();
+  $this.enabled = null;
+  $this.href = null;
+  $this.position = null;
+  $this.style = null;
+  $this.text = null;
+  $this.enabled = enabled;
+  $this.href = href;
+  $this.position = position;
+  $this.style = style;
+  $this.text = text;
+  return $this
+});
+var $d_Lcom_highcharts_config_Credits$ = new $TypeData().initClass({
+  Lcom_highcharts_config_Credits$: 0
+}, false, "com.highcharts.config.Credits$", {
+  Lcom_highcharts_config_Credits$: 1,
+  O: 1
+});
+$c_Lcom_highcharts_config_Credits$.prototype.$classData = $d_Lcom_highcharts_config_Credits$;
+var $n_Lcom_highcharts_config_Credits$ = (void 0);
+function $m_Lcom_highcharts_config_Credits$() {
+  if ((!$n_Lcom_highcharts_config_Credits$)) {
+    $n_Lcom_highcharts_config_Credits$ = new $c_Lcom_highcharts_config_Credits$().init___()
+  };
+  return $n_Lcom_highcharts_config_Credits$
+}
+/** @constructor */
+function $c_Lcom_highcharts_config_Legend$() {
+  $c_O.call(this)
+}
+$c_Lcom_highcharts_config_Legend$.prototype = new $h_O();
+$c_Lcom_highcharts_config_Legend$.prototype.constructor = $c_Lcom_highcharts_config_Legend$;
+/** @constructor */
+function $h_Lcom_highcharts_config_Legend$() {
+  /*<skip>*/
+}
+$h_Lcom_highcharts_config_Legend$.prototype = $c_Lcom_highcharts_config_Legend$.prototype;
+$c_Lcom_highcharts_config_Legend$.prototype.init___ = (function() {
+  return this
+});
+$c_Lcom_highcharts_config_Legend$.prototype.apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_Legend = (function(align, backgroundColor, borderColor, borderRadius, borderWidth, enabled, floating, itemDistance, itemHiddenStyle, itemHoverStyle, itemMarginBottom, itemMarginTop, itemStyle, itemWidth, labelFormat, labelFormatter, layout, lineHeight, margin, maxHeight, navigation, padding, reversed, rtl, shadow, squareSymbol, style, symbolHeight, symbolPadding, symbolRadius, symbolWidth, title, useHTML, verticalAlign, width, x, y) {
+  var $this = new ($a_Lcom_highcharts_config_Legend())();
+  $this.align = null;
+  $this.backgroundColor = null;
   $this.borderColor = null;
   $this.borderRadius = null;
   $this.borderWidth = null;
+  $this.enabled = null;
+  $this.floating = null;
+  $this.itemDistance = null;
+  $this.itemHiddenStyle = null;
+  $this.itemHoverStyle = null;
+  $this.itemMarginBottom = null;
+  $this.itemMarginTop = null;
+  $this.itemStyle = null;
+  $this.itemWidth = null;
+  $this.labelFormat = null;
+  $this.labelFormatter = null;
+  $this.layout = null;
+  $this.lineHeight = null;
+  $this.margin = null;
+  $this.maxHeight = null;
+  $this.navigation = null;
+  $this.padding = null;
+  $this.reversed = null;
+  $this.rtl = null;
+  $this.shadow = null;
+  $this.squareSymbol = null;
+  $this.style = null;
+  $this.symbolHeight = null;
+  $this.symbolPadding = null;
+  $this.symbolRadius = null;
+  $this.symbolWidth = null;
+  $this.title = null;
+  $this.useHTML = null;
+  $this.verticalAlign = null;
+  $this.width = null;
+  $this.x = null;
+  $this.y = null;
+  $this.align = align;
+  $this.backgroundColor = backgroundColor;
+  $this.borderColor = borderColor;
+  $this.borderRadius = borderRadius;
+  $this.borderWidth = borderWidth;
+  $this.enabled = enabled;
+  $this.floating = floating;
+  $this.itemDistance = itemDistance;
+  $this.itemHiddenStyle = itemHiddenStyle;
+  $this.itemHoverStyle = itemHoverStyle;
+  $this.itemMarginBottom = itemMarginBottom;
+  $this.itemMarginTop = itemMarginTop;
+  $this.itemStyle = itemStyle;
+  $this.itemWidth = itemWidth;
+  $this.labelFormat = labelFormat;
+  $this.labelFormatter = labelFormatter;
+  $this.layout = layout;
+  $this.lineHeight = lineHeight;
+  $this.margin = margin;
+  $this.maxHeight = maxHeight;
+  $this.navigation = navigation;
+  $this.padding = padding;
+  $this.reversed = reversed;
+  $this.rtl = rtl;
+  $this.shadow = shadow;
+  $this.squareSymbol = squareSymbol;
+  $this.style = style;
+  $this.symbolHeight = symbolHeight;
+  $this.symbolPadding = symbolPadding;
+  $this.symbolRadius = symbolRadius;
+  $this.symbolWidth = symbolWidth;
+  $this.title = title;
+  $this.useHTML = useHTML;
+  $this.verticalAlign = verticalAlign;
+  $this.width = width;
+  $this.x = x;
+  $this.y = y;
+  return $this
+});
+var $d_Lcom_highcharts_config_Legend$ = new $TypeData().initClass({
+  Lcom_highcharts_config_Legend$: 0
+}, false, "com.highcharts.config.Legend$", {
+  Lcom_highcharts_config_Legend$: 1,
+  O: 1
+});
+$c_Lcom_highcharts_config_Legend$.prototype.$classData = $d_Lcom_highcharts_config_Legend$;
+var $n_Lcom_highcharts_config_Legend$ = (void 0);
+function $m_Lcom_highcharts_config_Legend$() {
+  if ((!$n_Lcom_highcharts_config_Legend$)) {
+    $n_Lcom_highcharts_config_Legend$ = new $c_Lcom_highcharts_config_Legend$().init___()
+  };
+  return $n_Lcom_highcharts_config_Legend$
+}
+/** @constructor */
+function $c_Lcom_highcharts_config_SeriesLine$() {
+  $c_O.call(this)
+}
+$c_Lcom_highcharts_config_SeriesLine$.prototype = new $h_O();
+$c_Lcom_highcharts_config_SeriesLine$.prototype.constructor = $c_Lcom_highcharts_config_SeriesLine$;
+/** @constructor */
+function $h_Lcom_highcharts_config_SeriesLine$() {
+  /*<skip>*/
+}
+$h_Lcom_highcharts_config_SeriesLine$.prototype = $c_Lcom_highcharts_config_SeriesLine$.prototype;
+$c_Lcom_highcharts_config_SeriesLine$.prototype.init___ = (function() {
+  return this
+});
+$c_Lcom_highcharts_config_SeriesLine$.prototype.apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__T__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_SeriesLine = (function(allowPointSelect, animation, animationLimit, className, color, colorIndex, connectEnds, connectNulls, cropThreshold, cursor, dashStyle, data, dataLabels, description, enableMouseTracking, events, exposeElementToA11y, findNearestPointBy, getExtremesFromAll, id, index, keys, legendIndex, lineWidth, linecap, linkedTo, marker, name, negativeColor, point, pointDescriptionFormatter, pointInterval, pointIntervalUnit, pointPlacement, pointStart, selected, shadow, showCheckbox, showInLegend, skipKeyboardNavigation, softThreshold, stack, stacking, states, step, stickyTracking, threshold, tooltip, turboThreshold, type, visible, xAxis, yAxis, zIndex, zoneAxis, zones) {
+  var $this = new ($a_Lcom_highcharts_config_SeriesLine())();
+  $this.allowPointSelect = null;
+  $this.animation = null;
+  $this.animationLimit = null;
   $this.className = null;
   $this.color = null;
-  $this.colorByPoint = null;
   $this.colorIndex = null;
-  $this.colors = null;
-  $this.crisp = null;
+  $this.connectEnds = null;
+  $this.connectNulls = null;
   $this.cropThreshold = null;
   $this.cursor = null;
+  $this.dashStyle = null;
   $this.data = null;
   $this.dataLabels = null;
-  $this.depth = null;
   $this.description = null;
-  $this.edgeColor = null;
-  $this.edgeWidth = null;
   $this.enableMouseTracking = null;
   $this.events = null;
   $this.exposeElementToA11y = null;
   $this.findNearestPointBy = null;
   $this.getExtremesFromAll = null;
-  $this.groupPadding = null;
-  $this.groupZPadding = null;
-  $this.grouping = null;
   $this.id = null;
   $this.index = null;
   $this.keys = null;
   $this.legendIndex = null;
+  $this.lineWidth = null;
+  $this.linecap = null;
   $this.linkedTo = null;
-  $this.maxPointWidth = null;
-  $this.minPointLength = null;
+  $this.marker = null;
   $this.name = null;
   $this.negativeColor = null;
   $this.point = null;
   $this.pointDescriptionFormatter = null;
   $this.pointInterval = null;
   $this.pointIntervalUnit = null;
-  $this.pointPadding = null;
   $this.pointPlacement = null;
-  $this.pointRange = null;
   $this.pointStart = null;
-  $this.pointWidth = null;
   $this.selected = null;
   $this.shadow = null;
   $this.showCheckbox = null;
@@ -2060,6 +2197,7 @@ $c_Lcom_highcharts_config_SeriesBar$.prototype.apply__sjs_js_UndefOr__sjs_js_Und
   $this.stack = null;
   $this.stacking = null;
   $this.states = null;
+  $this.step = null;
   $this.stickyTracking = null;
   $this.threshold = null;
   $this.tooltip = null;
@@ -2074,49 +2212,38 @@ $c_Lcom_highcharts_config_SeriesBar$.prototype.apply__sjs_js_UndefOr__sjs_js_Und
   $this.allowPointSelect = allowPointSelect;
   $this.animation = animation;
   $this.animationLimit = animationLimit;
-  $this.borderColor = borderColor;
-  $this.borderRadius = borderRadius;
-  $this.borderWidth = borderWidth;
   $this.className = className;
   $this.color = color;
-  $this.colorByPoint = colorByPoint;
   $this.colorIndex = colorIndex;
-  $this.colors = colors;
-  $this.crisp = crisp;
+  $this.connectEnds = connectEnds;
+  $this.connectNulls = connectNulls;
   $this.cropThreshold = cropThreshold;
   $this.cursor = cursor;
+  $this.dashStyle = dashStyle;
   $this.data = data;
   $this.dataLabels = dataLabels;
-  $this.depth = depth;
   $this.description = description;
-  $this.edgeColor = edgeColor;
-  $this.edgeWidth = edgeWidth;
   $this.enableMouseTracking = enableMouseTracking;
   $this.events = events;
   $this.exposeElementToA11y = exposeElementToA11y;
   $this.findNearestPointBy = findNearestPointBy;
   $this.getExtremesFromAll = getExtremesFromAll;
-  $this.groupPadding = groupPadding;
-  $this.groupZPadding = groupZPadding;
-  $this.grouping = grouping;
   $this.id = id;
   $this.index = index;
   $this.keys = keys;
   $this.legendIndex = legendIndex;
+  $this.lineWidth = lineWidth;
+  $this.linecap = linecap;
   $this.linkedTo = linkedTo;
-  $this.maxPointWidth = maxPointWidth;
-  $this.minPointLength = minPointLength;
+  $this.marker = marker;
   $this.name = name;
   $this.negativeColor = negativeColor;
   $this.point = point;
   $this.pointDescriptionFormatter = pointDescriptionFormatter;
   $this.pointInterval = pointInterval;
   $this.pointIntervalUnit = pointIntervalUnit;
-  $this.pointPadding = pointPadding;
   $this.pointPlacement = pointPlacement;
-  $this.pointRange = pointRange;
   $this.pointStart = pointStart;
-  $this.pointWidth = pointWidth;
   $this.selected = selected;
   $this.shadow = shadow;
   $this.showCheckbox = showCheckbox;
@@ -2126,6 +2253,7 @@ $c_Lcom_highcharts_config_SeriesBar$.prototype.apply__sjs_js_UndefOr__sjs_js_Und
   $this.stack = stack;
   $this.stacking = stacking;
   $this.states = states;
+  $this.step = step;
   $this.stickyTracking = stickyTracking;
   $this.threshold = threshold;
   $this.tooltip = tooltip;
@@ -2139,19 +2267,19 @@ $c_Lcom_highcharts_config_SeriesBar$.prototype.apply__sjs_js_UndefOr__sjs_js_Und
   $this.zones = zones;
   return $this
 });
-var $d_Lcom_highcharts_config_SeriesBar$ = new $TypeData().initClass({
-  Lcom_highcharts_config_SeriesBar$: 0
-}, false, "com.highcharts.config.SeriesBar$", {
-  Lcom_highcharts_config_SeriesBar$: 1,
+var $d_Lcom_highcharts_config_SeriesLine$ = new $TypeData().initClass({
+  Lcom_highcharts_config_SeriesLine$: 0
+}, false, "com.highcharts.config.SeriesLine$", {
+  Lcom_highcharts_config_SeriesLine$: 1,
   O: 1
 });
-$c_Lcom_highcharts_config_SeriesBar$.prototype.$classData = $d_Lcom_highcharts_config_SeriesBar$;
-var $n_Lcom_highcharts_config_SeriesBar$ = (void 0);
-function $m_Lcom_highcharts_config_SeriesBar$() {
-  if ((!$n_Lcom_highcharts_config_SeriesBar$)) {
-    $n_Lcom_highcharts_config_SeriesBar$ = new $c_Lcom_highcharts_config_SeriesBar$().init___()
+$c_Lcom_highcharts_config_SeriesLine$.prototype.$classData = $d_Lcom_highcharts_config_SeriesLine$;
+var $n_Lcom_highcharts_config_SeriesLine$ = (void 0);
+function $m_Lcom_highcharts_config_SeriesLine$() {
+  if ((!$n_Lcom_highcharts_config_SeriesLine$)) {
+    $n_Lcom_highcharts_config_SeriesLine$ = new $c_Lcom_highcharts_config_SeriesLine$().init___()
   };
-  return $n_Lcom_highcharts_config_SeriesBar$
+  return $n_Lcom_highcharts_config_SeriesLine$
 }
 /** @constructor */
 function $c_Lcom_highcharts_config_Title$() {
@@ -7611,23 +7739,23 @@ function $f_Lio_circe_Parser__finishDecode__s_util_Either__Lio_circe_Decoder__s_
   }
 }
 /** @constructor */
-function $c_Lnathan_UserService$() {
+function $c_Lnathan_service_UserService$() {
   $c_O.call(this);
   this.retSuccessDecoder$1 = null;
   this.Content$minusType$1 = null;
   this.$$u0022application$divjson$1 = null
 }
-$c_Lnathan_UserService$.prototype = new $h_O();
-$c_Lnathan_UserService$.prototype.constructor = $c_Lnathan_UserService$;
+$c_Lnathan_service_UserService$.prototype = new $h_O();
+$c_Lnathan_service_UserService$.prototype.constructor = $c_Lnathan_service_UserService$;
 /** @constructor */
-function $h_Lnathan_UserService$() {
+function $h_Lnathan_service_UserService$() {
   /*<skip>*/
 }
-$h_Lnathan_UserService$.prototype = $c_Lnathan_UserService$.prototype;
-$c_Lnathan_UserService$.prototype.init___ = (function() {
-  $n_Lnathan_UserService$ = this;
+$h_Lnathan_service_UserService$.prototype = $c_Lnathan_service_UserService$.prototype;
+$c_Lnathan_service_UserService$.prototype.init___ = (function() {
+  $n_Lnathan_service_UserService$ = this;
   $f_Lnathan_util_HttpHeadSupport__$$init$__V(this);
-  var inst$macro$27 = new $c_Lnathan_UserService$anon$lazy$macro$26$1().init___().inst$macro$17__Lio_circe_generic_decoding_DerivedDecoder();
+  var inst$macro$27 = new $c_Lnathan_service_UserService$anon$lazy$macro$26$1().init___().inst$macro$17__Lio_circe_generic_decoding_DerivedDecoder();
   var t = new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this, inst$macro$27$1) {
     return (function() {
       return inst$macro$27$1
@@ -7637,10 +7765,29 @@ $c_Lnathan_UserService$.prototype.init___ = (function() {
   this.retSuccessDecoder$1 = $as_Lio_circe_Decoder(decode.value__O());
   return this
 });
-$c_Lnathan_UserService$.prototype.$$js$exported$meth$testHc__O = (function() {
+$c_Lnathan_service_UserService$.prototype.$$js$exported$meth$testHc__O = (function() {
   return this.testHc__Lorg_scalajs_jquery_JQuery()
 });
-$c_Lnathan_UserService$.prototype.setAuth__s_Option__V = (function(authOption) {
+$c_Lnathan_service_UserService$.prototype.login__Lnathan_entity_LoginReq__s_concurrent_Future = (function(user) {
+  var prefixStr = $m_Lnathan_util_CommonConst$().baseUrl$1;
+  var prefixStr$1 = new $c_Lnathan_util_CommonUtil$SlashString().init___T(prefixStr).$$div__T__T("monitorSystem");
+  var x$6 = new $c_Lnathan_util_CommonUtil$SlashString().init___T(prefixStr$1).$$div__T__T("login");
+  $m_Lio_circe_Encoder$();
+  var inst$macro$16 = new $c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1().init___().inst$macro$1__Lio_circe_generic_encoding_DerivedObjectEncoder();
+  var t = new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this, inst$macro$16$1) {
+    return (function() {
+      return inst$macro$16$1
+    })
+  })(this, inst$macro$16));
+  var lv = new $c_Lshapeless_Lazy$$anon$1().init___F0(t);
+  var exported = $as_Lio_circe_ObjectEncoder(lv.value__O());
+  var this$8 = $f_Lio_circe_ObjectEncoder__apply__O__Lio_circe_Json(exported, user);
+  var s = $m_Lio_circe_Printer$().noSpaces$1.pretty__Lio_circe_Json__T(this$8);
+  var x$8 = $f_Lnathan_util_HttpHeadSupport__header__sci_Map(this);
+  var this$10 = $m_Lorg_scalajs_dom_ext_Ajax$();
+  return this$10.apply__T__T__Lorg_scalajs_dom_ext_Ajax$InputData__I__sci_Map__Z__T__s_concurrent_Future("POST", x$6, s, 0, x$8, false, "")
+});
+$c_Lnathan_service_UserService$.prototype.setAuth__s_Option__V = (function(authOption) {
   if ($is_s_Some(authOption)) {
     $m_Lorg_scalajs_dom_package$().window__Lorg_scalajs_dom_raw_Window().localStorage.setItem($m_Lnathan_util_CommonConst$().authHead$1, $as_T(authOption.get__O()))
   } else {
@@ -7655,13 +7802,13 @@ $c_Lnathan_UserService$.prototype.setAuth__s_Option__V = (function(authOption) {
     }
   }
 });
-$c_Lnathan_UserService$.prototype.$$js$exported$meth$setAuth__s_Option__O = (function(authOption) {
+$c_Lnathan_service_UserService$.prototype.$$js$exported$meth$setAuth__s_Option__O = (function(authOption) {
   this.setAuth__s_Option__V(authOption)
 });
-$c_Lnathan_UserService$.prototype.$$js$exported$meth$loginForm__Lorg_scalajs_dom_raw_HTMLFormElement__O = (function(form) {
+$c_Lnathan_service_UserService$.prototype.$$js$exported$meth$loginForm__Lorg_scalajs_dom_raw_HTMLFormElement__O = (function(form) {
   this.loginForm__Lorg_scalajs_dom_raw_HTMLFormElement__V(form)
 });
-$c_Lnathan_UserService$.prototype.testHc__Lorg_scalajs_jquery_JQuery = (function() {
+$c_Lnathan_service_UserService$.prototype.testHc__Lorg_scalajs_jquery_JQuery = (function() {
   var jsx$1 = $m_Lcom_highcharts_HighchartsUtils$HighchartsJQuery$();
   var jq = (0, $m_Lorg_scalajs_jquery_package$().jQuery$1)("#container");
   var $this = new ($a_Lcom_highcharts_config_HighchartsConfig())();
@@ -7670,56 +7817,45 @@ $c_Lnathan_UserService$.prototype.testHc__Lorg_scalajs_jquery_JQuery = (function
   $this.xAxis = null;
   $this.yAxis = null;
   $this.series = null;
-  var this$47 = $m_Lcom_highcharts_HighchartsUtils$();
-  var obj = $m_Lcom_highcharts_config_Chart$().apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_Chart((void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), "bar", (void 0), (void 0), (void 0));
-  $this.chart = $f_Lcom_highcharts_HighchartsImplicits__highchartsCfg__sjs_js_Object__sjs_js_UndefOr(this$47, obj);
-  var this$58 = $m_Lcom_highcharts_HighchartsUtils$();
+  $this.credits = null;
+  $this.legend = null;
+  var this$50 = $m_Lcom_highcharts_HighchartsUtils$();
+  var obj = $m_Lcom_highcharts_config_Chart$().apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_Chart((void 0), false, (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), "line", (void 0), (void 0), (void 0));
+  $this.chart = $f_Lcom_highcharts_HighchartsImplicits__highchartsCfg__sjs_js_Object__sjs_js_UndefOr(this$50, obj);
+  var this$61 = $m_Lcom_highcharts_HighchartsUtils$();
   var obj$1 = $m_Lcom_highcharts_config_Title$().apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_Title((void 0), (void 0), (void 0), (void 0), "Demo bar chart", (void 0), (void 0), (void 0), (void 0), (void 0));
-  $this.title = $f_Lcom_highcharts_HighchartsImplicits__highchartsCfg__sjs_js_Object__sjs_js_UndefOr(this$58, obj$1);
-  var this$123 = $m_Lcom_highcharts_HighchartsUtils$();
+  $this.title = $f_Lcom_highcharts_HighchartsImplicits__highchartsCfg__sjs_js_Object__sjs_js_UndefOr(this$61, obj$1);
+  var this$126 = $m_Lcom_highcharts_HighchartsUtils$();
   var value = ["Apples", "Bananas", "Oranges"];
   var obj$2 = [$m_Lcom_highcharts_config_XAxis$().apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_XAxis((void 0), (void 0), (void 0), value, (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0))];
-  var ev = $m_sjs_js_$bar$ReusableEvidence$();
-  $this.xAxis = $f_Lcom_highcharts_HighchartsImplicits__highchartsCleanData__sjs_js_Array__sjs_js_$bar$Evidence__sjs_js_UndefOr(this$123, obj$2, ev);
-  var this$205 = $m_Lcom_highcharts_HighchartsUtils$();
-  var this$134 = $m_Lcom_highcharts_HighchartsUtils$();
+  var ev$2 = $m_sjs_js_$bar$ReusableEvidence$();
+  $this.xAxis = $f_Lcom_highcharts_HighchartsImplicits__highchartsCleanData__sjs_js_Array__sjs_js_$bar$Evidence__sjs_js_UndefOr(this$126, obj$2, ev$2);
+  var this$208 = $m_Lcom_highcharts_HighchartsUtils$();
+  var this$137 = $m_Lcom_highcharts_HighchartsUtils$();
   var obj$3 = $m_Lcom_highcharts_config_YAxisTitle$().apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_YAxisTitle((void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), "Fruit eaten", (void 0), (void 0));
-  var x$85 = $f_Lcom_highcharts_HighchartsImplicits__highchartsCfg__sjs_js_Object__sjs_js_UndefOr(this$134, obj$3);
+  var x$85 = $f_Lcom_highcharts_HighchartsImplicits__highchartsCfg__sjs_js_Object__sjs_js_UndefOr(this$137, obj$3);
   var obj$4 = [$m_Lcom_highcharts_config_YAxis$().apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_YAxis((void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), x$85, (void 0), (void 0), (void 0), (void 0))];
-  var ev$1 = $m_sjs_js_$bar$ReusableEvidence$();
-  $this.yAxis = $f_Lcom_highcharts_HighchartsImplicits__highchartsCleanData__sjs_js_Array__sjs_js_$bar$Evidence__sjs_js_UndefOr(this$205, obj$4, ev$1);
-  var this$382 = $m_Lcom_highcharts_HighchartsAliases$();
+  var ev$3 = $m_sjs_js_$bar$ReusableEvidence$();
+  $this.yAxis = $f_Lcom_highcharts_HighchartsImplicits__highchartsCleanData__sjs_js_Array__sjs_js_$bar$Evidence__sjs_js_UndefOr(this$208, obj$4, ev$3);
+  var this$347 = $m_Lcom_highcharts_HighchartsAliases$();
   var obj$5 = [1.0, 0.0, 4.0];
-  var a = $m_Lcom_highcharts_config_SeriesBar$().apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__T__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_SeriesBar((void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), obj$5, (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), "Jane", (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), "bar", (void 0), (void 0), (void 0), (void 0), (void 0), (void 0));
+  var a = $m_Lcom_highcharts_config_SeriesLine$().apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__T__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_SeriesLine((void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), obj$5, (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), "Jane112", (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), "line", (void 0), (void 0), (void 0), (void 0), (void 0), (void 0));
   var obj$6 = [5.0, 7.0, 3.0];
-  var a$1 = $m_Lcom_highcharts_config_SeriesBar$().apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__T__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_SeriesBar((void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), obj$6, (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), "John", (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), "bar", (void 0), (void 0), (void 0), (void 0), (void 0), (void 0));
+  var a$1 = $m_Lcom_highcharts_config_SeriesLine$().apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__T__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_SeriesLine((void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), obj$6, (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), "John", (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), "line", (void 0), (void 0), (void 0), (void 0), (void 0), (void 0));
   var arr = [a, a$1];
-  $this.series = $f_Lcom_highcharts_AnySeriesDef__anySeriesArrayConvert__sjs_js_Array__sjs_js_UndefOr(this$382, arr);
+  $this.series = $f_Lcom_highcharts_AnySeriesDef__anySeriesArrayConvert__sjs_js_Array__sjs_js_UndefOr(this$347, arr);
+  var this$353 = $m_Lcom_highcharts_HighchartsUtils$();
+  var obj$7 = $m_Lcom_highcharts_config_Credits$().apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_Credits(false, (void 0), (void 0), (void 0), (void 0));
+  $this.credits = $f_Lcom_highcharts_HighchartsImplicits__highchartsCfg__sjs_js_Object__sjs_js_UndefOr(this$353, obj$7);
+  var this$391 = $m_Lcom_highcharts_HighchartsUtils$();
+  var obj$8 = $m_Lcom_highcharts_config_Legend$().apply__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__sjs_js_UndefOr__Lcom_highcharts_config_Legend((void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), "horizontal", (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0));
+  $this.legend = $f_Lcom_highcharts_HighchartsImplicits__highchartsCfg__sjs_js_Object__sjs_js_UndefOr(this$391, obj$8);
   return jsx$1.highcharts$extension1__Lorg_scalajs_jquery_JQuery__Lcom_highcharts_CleanJsObject__Lorg_scalajs_jquery_JQuery(jq, $m_Lcom_highcharts_CleanJsObject$().apply__sjs_js_Object__sjs_js_Object($this))
 });
-$c_Lnathan_UserService$.prototype.$$js$exported$meth$setAuth$default$1__s_Option = (function() {
+$c_Lnathan_service_UserService$.prototype.$$js$exported$meth$setAuth$default$1__s_Option = (function() {
   return $m_s_None$()
 });
-$c_Lnathan_UserService$.prototype.login__Lentity_LoginReq__s_concurrent_Future = (function(user) {
-  var prefixStr = $m_Lnathan_util_CommonConst$().baseUrl$1;
-  var prefixStr$1 = new $c_Lnathan_util_CommonUtil$SlashString().init___T(prefixStr).$$div__T__T("monitorSystem");
-  var x$6 = new $c_Lnathan_util_CommonUtil$SlashString().init___T(prefixStr$1).$$div__T__T("login");
-  $m_Lio_circe_Encoder$();
-  var inst$macro$16 = new $c_Lnathan_UserService$anon$importedEncoder$macro$15$1().init___().inst$macro$1__Lio_circe_generic_encoding_DerivedObjectEncoder();
-  var t = new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this, inst$macro$16$1) {
-    return (function() {
-      return inst$macro$16$1
-    })
-  })(this, inst$macro$16));
-  var lv = new $c_Lshapeless_Lazy$$anon$1().init___F0(t);
-  var exported = $as_Lio_circe_ObjectEncoder(lv.value__O());
-  var this$8 = $f_Lio_circe_ObjectEncoder__apply__O__Lio_circe_Json(exported, user);
-  var s = $m_Lio_circe_Printer$().noSpaces$1.pretty__Lio_circe_Json__T(this$8);
-  var x$8 = $f_Lnathan_util_HttpHeadSupport__header__sci_Map(this);
-  var this$10 = $m_Lorg_scalajs_dom_ext_Ajax$();
-  return this$10.apply__T__T__Lorg_scalajs_dom_ext_Ajax$InputData__I__sci_Map__Z__T__s_concurrent_Future("POST", x$6, s, 0, x$8, false, "")
-});
-$c_Lnathan_UserService$.prototype.loginForm__Lorg_scalajs_dom_raw_HTMLFormElement__V = (function(form) {
+$c_Lnathan_service_UserService$.prototype.loginForm__Lorg_scalajs_dom_raw_HTMLFormElement__V = (function(form) {
   var _inputs = form.getElementsByTagName("input");
   var end = $uI(_inputs.length);
   var isEmpty$4 = (end <= 0);
@@ -7799,7 +7935,7 @@ $c_Lnathan_UserService$.prototype.loginForm__Lorg_scalajs_dom_raw_HTMLFormElemen
   };
   var jsx$3 = b$4.result__sci_Vector().head__O().value;
   var type = $as_T(jsx$3);
-  this.login__Lentity_LoginReq__s_concurrent_Future(new $c_Lentity_LoginReq().init___T__T__T(username, password, type)).onComplete__F1__s_concurrent_ExecutionContext__V(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$6$1) {
+  this.login__Lnathan_entity_LoginReq__s_concurrent_Future(new $c_Lnathan_entity_LoginReq().init___T__T__T(username, password, type)).onComplete__F1__s_concurrent_ExecutionContext__V(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$6$1) {
     return (function(x0$1$2) {
       var x0$1 = $as_s_util_Try(x0$1$2);
       if ($is_s_util_Success(x0$1)) {
@@ -7810,11 +7946,11 @@ $c_Lnathan_UserService$.prototype.loginForm__Lorg_scalajs_dom_raw_HTMLFormElemen
         jsx$4.log(s);
         var this$17 = $m_Lio_circe_parser_package$();
         var input = $as_T(xhr.responseText);
-        var evidence$1 = $m_Lnathan_UserService$().retSuccessDecoder$1;
+        var evidence$1 = $m_Lnathan_service_UserService$().retSuccessDecoder$1;
         var x1$2 = $f_Lio_circe_Parser__decode__T__Lio_circe_Decoder__s_util_Either(this$17, input, evidence$1);
         if ($is_s_util_Right(x1$2)) {
           var x2$2 = $as_s_util_Right(x1$2);
-          var msg = $as_Lentity_RetMsg(x2$2.value$2);
+          var msg = $as_Lnathan_entity_RetMsg(x2$2.value$2);
           var jsx$5 = $m_Lorg_scalajs_dom_package$().console__Lorg_scalajs_dom_raw_Console();
           var s$1 = msg.code$1;
           jsx$5.log(s$1)
@@ -7841,14 +7977,14 @@ $c_Lnathan_UserService$.prototype.loginForm__Lorg_scalajs_dom_raw_HTMLFormElemen
     })
   })(this)), $m_sjs_concurrent_JSExecutionContext$Implicits$().queue$1)
 });
-$c_Lnathan_UserService$.prototype.testHc = (function() {
+$c_Lnathan_service_UserService$.prototype.testHc = (function() {
   return this.$$js$exported$meth$testHc__O()
 });
-$c_Lnathan_UserService$.prototype.loginForm = (function(arg$1) {
+$c_Lnathan_service_UserService$.prototype.loginForm = (function(arg$1) {
   var prep0 = arg$1;
   return this.$$js$exported$meth$loginForm__Lorg_scalajs_dom_raw_HTMLFormElement__O(prep0)
 });
-$c_Lnathan_UserService$.prototype.setAuth = (function() {
+$c_Lnathan_service_UserService$.prototype.setAuth = (function() {
   var jsx$1 = (arguments.length | 0);
   var jsx$2 = 0;
   var arg$rest = [];
@@ -7859,20 +7995,20 @@ $c_Lnathan_UserService$.prototype.setAuth = (function() {
   var prep0 = ((arg$rest[0] === (void 0)) ? this.$$js$exported$meth$setAuth$default$1__s_Option() : $as_s_Option(arg$rest[0]));
   return this.$$js$exported$meth$setAuth__s_Option__O(prep0)
 });
-var $d_Lnathan_UserService$ = new $TypeData().initClass({
-  Lnathan_UserService$: 0
-}, false, "nathan.UserService$", {
-  Lnathan_UserService$: 1,
+var $d_Lnathan_service_UserService$ = new $TypeData().initClass({
+  Lnathan_service_UserService$: 0
+}, false, "nathan.service.UserService$", {
+  Lnathan_service_UserService$: 1,
   O: 1,
   Lnathan_util_HttpHeadSupport: 1
 });
-$c_Lnathan_UserService$.prototype.$classData = $d_Lnathan_UserService$;
-var $n_Lnathan_UserService$ = (void 0);
-function $m_Lnathan_UserService$() {
-  if ((!$n_Lnathan_UserService$)) {
-    $n_Lnathan_UserService$ = new $c_Lnathan_UserService$().init___()
+$c_Lnathan_service_UserService$.prototype.$classData = $d_Lnathan_service_UserService$;
+var $n_Lnathan_service_UserService$ = (void 0);
+function $m_Lnathan_service_UserService$() {
+  if ((!$n_Lnathan_service_UserService$)) {
+    $n_Lnathan_service_UserService$ = new $c_Lnathan_service_UserService$().init___()
   };
-  return $n_Lnathan_UserService$
+  return $n_Lnathan_service_UserService$
 }
 /** @constructor */
 function $c_Lshapeless_Nat$() {
@@ -9374,6 +9510,59 @@ function $a_Lcom_highcharts_config_Chart() {
   };
   return $b_Lcom_highcharts_config_Chart
 }
+var $b_Lcom_highcharts_config_Credits = (void 0);
+function $a_Lcom_highcharts_config_Credits() {
+  if ((!$b_Lcom_highcharts_config_Credits)) {
+    /** @constructor */
+    var $c_Lcom_highcharts_config_Credits = (function $c_Lcom_highcharts_config_Credits() {
+      $g.Object.call(this);
+      $g.Object.defineProperty(this, "enabled", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "href", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "position", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "style", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "text", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      this.enabled = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.href = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.position = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.style = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.text = $m_sjs_js_package$().$undefined__sjs_js_UndefOr()
+    });
+    /** @constructor */
+    var $h_Lcom_highcharts_config_Credits = (function $h_Lcom_highcharts_config_Credits() {
+      /*<skip>*/
+    });
+    $h_Lcom_highcharts_config_Credits.prototype = $g.Object.prototype;
+    $c_Lcom_highcharts_config_Credits.prototype = new $h_Lcom_highcharts_config_Credits();
+    $c_Lcom_highcharts_config_Credits.prototype.constructor = $c_Lcom_highcharts_config_Credits;
+    $b_Lcom_highcharts_config_Credits = $c_Lcom_highcharts_config_Credits
+  };
+  return $b_Lcom_highcharts_config_Credits
+}
 var $b_Lcom_highcharts_config_HighchartsConfig = (void 0);
 function $a_Lcom_highcharts_config_HighchartsConfig() {
   if ((!$b_Lcom_highcharts_config_HighchartsConfig)) {
@@ -9567,25 +9756,19 @@ function $a_Lcom_highcharts_config_HighchartsConfig() {
   };
   return $b_Lcom_highcharts_config_HighchartsConfig
 }
-var $b_Lcom_highcharts_config_SeriesBar = (void 0);
-function $a_Lcom_highcharts_config_SeriesBar() {
-  if ((!$b_Lcom_highcharts_config_SeriesBar)) {
+var $b_Lcom_highcharts_config_Legend = (void 0);
+function $a_Lcom_highcharts_config_Legend() {
+  if ((!$b_Lcom_highcharts_config_Legend)) {
     /** @constructor */
-    var $c_Lcom_highcharts_config_SeriesBar = (function $c_Lcom_highcharts_config_SeriesBar() {
+    var $c_Lcom_highcharts_config_Legend = (function $c_Lcom_highcharts_config_Legend() {
       $g.Object.call(this);
-      $g.Object.defineProperty(this, "allowPointSelect", {
+      $g.Object.defineProperty(this, "align", {
         "configurable": true,
         "enumerable": true,
         "writable": true,
         "value": null
       });
-      $g.Object.defineProperty(this, "animation", {
-        "configurable": true,
-        "enumerable": true,
-        "writable": true,
-        "value": null
-      });
-      $g.Object.defineProperty(this, "animationLimit", {
+      $g.Object.defineProperty(this, "backgroundColor", {
         "configurable": true,
         "enumerable": true,
         "writable": true,
@@ -9609,6 +9792,271 @@ function $a_Lcom_highcharts_config_SeriesBar() {
         "writable": true,
         "value": null
       });
+      $g.Object.defineProperty(this, "enabled", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "floating", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "itemDistance", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "itemHiddenStyle", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "itemHoverStyle", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "itemMarginBottom", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "itemMarginTop", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "itemStyle", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "itemWidth", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "labelFormat", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "labelFormatter", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "layout", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "lineHeight", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "margin", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "maxHeight", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "navigation", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "padding", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "reversed", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "rtl", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "shadow", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "squareSymbol", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "style", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "symbolHeight", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "symbolPadding", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "symbolRadius", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "symbolWidth", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "title", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "useHTML", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "verticalAlign", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "width", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "x", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "y", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      this.align = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.backgroundColor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.borderColor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.borderRadius = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.borderWidth = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.enabled = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.floating = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.itemDistance = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.itemHiddenStyle = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.itemHoverStyle = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.itemMarginBottom = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.itemMarginTop = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.itemStyle = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.itemWidth = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.labelFormat = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.labelFormatter = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.layout = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.lineHeight = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.margin = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.maxHeight = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.navigation = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.padding = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.reversed = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.rtl = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.shadow = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.squareSymbol = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.style = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.symbolHeight = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.symbolPadding = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.symbolRadius = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.symbolWidth = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.title = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.useHTML = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.verticalAlign = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.width = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.x = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.y = $m_sjs_js_package$().$undefined__sjs_js_UndefOr()
+    });
+    /** @constructor */
+    var $h_Lcom_highcharts_config_Legend = (function $h_Lcom_highcharts_config_Legend() {
+      /*<skip>*/
+    });
+    $h_Lcom_highcharts_config_Legend.prototype = $g.Object.prototype;
+    $c_Lcom_highcharts_config_Legend.prototype = new $h_Lcom_highcharts_config_Legend();
+    $c_Lcom_highcharts_config_Legend.prototype.constructor = $c_Lcom_highcharts_config_Legend;
+    $b_Lcom_highcharts_config_Legend = $c_Lcom_highcharts_config_Legend
+  };
+  return $b_Lcom_highcharts_config_Legend
+}
+var $b_Lcom_highcharts_config_SeriesLine = (void 0);
+function $a_Lcom_highcharts_config_SeriesLine() {
+  if ((!$b_Lcom_highcharts_config_SeriesLine)) {
+    /** @constructor */
+    var $c_Lcom_highcharts_config_SeriesLine = (function $c_Lcom_highcharts_config_SeriesLine() {
+      $g.Object.call(this);
+      $g.Object.defineProperty(this, "allowPointSelect", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "animation", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "animationLimit", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
       $g.Object.defineProperty(this, "className", {
         "configurable": true,
         "enumerable": true,
@@ -9621,25 +10069,19 @@ function $a_Lcom_highcharts_config_SeriesBar() {
         "writable": true,
         "value": null
       });
-      $g.Object.defineProperty(this, "colorByPoint", {
-        "configurable": true,
-        "enumerable": true,
-        "writable": true,
-        "value": null
-      });
       $g.Object.defineProperty(this, "colorIndex", {
         "configurable": true,
         "enumerable": true,
         "writable": true,
         "value": null
       });
-      $g.Object.defineProperty(this, "colors", {
+      $g.Object.defineProperty(this, "connectEnds", {
         "configurable": true,
         "enumerable": true,
         "writable": true,
         "value": null
       });
-      $g.Object.defineProperty(this, "crisp", {
+      $g.Object.defineProperty(this, "connectNulls", {
         "configurable": true,
         "enumerable": true,
         "writable": true,
@@ -9657,6 +10099,12 @@ function $a_Lcom_highcharts_config_SeriesBar() {
         "writable": true,
         "value": null
       });
+      $g.Object.defineProperty(this, "dashStyle", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
       $g.Object.defineProperty(this, "data", {
         "configurable": true,
         "enumerable": true,
@@ -9669,25 +10117,7 @@ function $a_Lcom_highcharts_config_SeriesBar() {
         "writable": true,
         "value": null
       });
-      $g.Object.defineProperty(this, "depth", {
-        "configurable": true,
-        "enumerable": true,
-        "writable": true,
-        "value": null
-      });
       $g.Object.defineProperty(this, "description", {
-        "configurable": true,
-        "enumerable": true,
-        "writable": true,
-        "value": null
-      });
-      $g.Object.defineProperty(this, "edgeColor", {
-        "configurable": true,
-        "enumerable": true,
-        "writable": true,
-        "value": null
-      });
-      $g.Object.defineProperty(this, "edgeWidth", {
         "configurable": true,
         "enumerable": true,
         "writable": true,
@@ -9723,24 +10153,6 @@ function $a_Lcom_highcharts_config_SeriesBar() {
         "writable": true,
         "value": null
       });
-      $g.Object.defineProperty(this, "groupPadding", {
-        "configurable": true,
-        "enumerable": true,
-        "writable": true,
-        "value": null
-      });
-      $g.Object.defineProperty(this, "groupZPadding", {
-        "configurable": true,
-        "enumerable": true,
-        "writable": true,
-        "value": null
-      });
-      $g.Object.defineProperty(this, "grouping", {
-        "configurable": true,
-        "enumerable": true,
-        "writable": true,
-        "value": null
-      });
       $g.Object.defineProperty(this, "id", {
         "configurable": true,
         "enumerable": true,
@@ -9765,19 +10177,25 @@ function $a_Lcom_highcharts_config_SeriesBar() {
         "writable": true,
         "value": null
       });
+      $g.Object.defineProperty(this, "lineWidth", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "linecap", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
       $g.Object.defineProperty(this, "linkedTo", {
         "configurable": true,
         "enumerable": true,
         "writable": true,
         "value": null
       });
-      $g.Object.defineProperty(this, "maxPointWidth", {
-        "configurable": true,
-        "enumerable": true,
-        "writable": true,
-        "value": null
-      });
-      $g.Object.defineProperty(this, "minPointLength", {
+      $g.Object.defineProperty(this, "marker", {
         "configurable": true,
         "enumerable": true,
         "writable": true,
@@ -9819,31 +10237,13 @@ function $a_Lcom_highcharts_config_SeriesBar() {
         "writable": true,
         "value": null
       });
-      $g.Object.defineProperty(this, "pointPadding", {
-        "configurable": true,
-        "enumerable": true,
-        "writable": true,
-        "value": null
-      });
       $g.Object.defineProperty(this, "pointPlacement", {
         "configurable": true,
         "enumerable": true,
         "writable": true,
         "value": null
       });
-      $g.Object.defineProperty(this, "pointRange", {
-        "configurable": true,
-        "enumerable": true,
-        "writable": true,
-        "value": null
-      });
       $g.Object.defineProperty(this, "pointStart", {
-        "configurable": true,
-        "enumerable": true,
-        "writable": true,
-        "value": null
-      });
-      $g.Object.defineProperty(this, "pointWidth", {
         "configurable": true,
         "enumerable": true,
         "writable": true,
@@ -9898,6 +10298,12 @@ function $a_Lcom_highcharts_config_SeriesBar() {
         "value": null
       });
       $g.Object.defineProperty(this, "states", {
+        "configurable": true,
+        "enumerable": true,
+        "writable": true,
+        "value": null
+      });
+      $g.Object.defineProperty(this, "step", {
         "configurable": true,
         "enumerable": true,
         "writable": true,
@@ -9972,49 +10378,38 @@ function $a_Lcom_highcharts_config_SeriesBar() {
       this.allowPointSelect = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.animation = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.animationLimit = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
-      this.borderColor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
-      this.borderRadius = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
-      this.borderWidth = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.className = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.color = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
-      this.colorByPoint = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.colorIndex = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
-      this.colors = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
-      this.crisp = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.connectEnds = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.connectNulls = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.cropThreshold = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.cursor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.dashStyle = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.data = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.dataLabels = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
-      this.depth = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.description = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
-      this.edgeColor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
-      this.edgeWidth = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.enableMouseTracking = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.events = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.exposeElementToA11y = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.findNearestPointBy = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.getExtremesFromAll = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
-      this.groupPadding = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
-      this.groupZPadding = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
-      this.grouping = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.id = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.index = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.keys = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.legendIndex = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.lineWidth = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.linecap = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.linkedTo = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
-      this.maxPointWidth = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
-      this.minPointLength = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.marker = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.name = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.negativeColor = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.point = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.pointDescriptionFormatter = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.pointInterval = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.pointIntervalUnit = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
-      this.pointPadding = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.pointPlacement = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
-      this.pointRange = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.pointStart = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
-      this.pointWidth = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.selected = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.shadow = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.showCheckbox = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
@@ -10024,11 +10419,12 @@ function $a_Lcom_highcharts_config_SeriesBar() {
       this.stack = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.stacking = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.states = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
+      this.step = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.stickyTracking = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.threshold = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.tooltip = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.turboThreshold = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
-      this.type = "bar";
+      this.type = "line";
       this.visible = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.xAxis = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
       this.yAxis = $m_sjs_js_package$().$undefined__sjs_js_UndefOr();
@@ -10037,15 +10433,15 @@ function $a_Lcom_highcharts_config_SeriesBar() {
       this.zones = $m_sjs_js_package$().$undefined__sjs_js_UndefOr()
     });
     /** @constructor */
-    var $h_Lcom_highcharts_config_SeriesBar = (function $h_Lcom_highcharts_config_SeriesBar() {
+    var $h_Lcom_highcharts_config_SeriesLine = (function $h_Lcom_highcharts_config_SeriesLine() {
       /*<skip>*/
     });
-    $h_Lcom_highcharts_config_SeriesBar.prototype = $g.Object.prototype;
-    $c_Lcom_highcharts_config_SeriesBar.prototype = new $h_Lcom_highcharts_config_SeriesBar();
-    $c_Lcom_highcharts_config_SeriesBar.prototype.constructor = $c_Lcom_highcharts_config_SeriesBar;
-    $b_Lcom_highcharts_config_SeriesBar = $c_Lcom_highcharts_config_SeriesBar
+    $h_Lcom_highcharts_config_SeriesLine.prototype = $g.Object.prototype;
+    $c_Lcom_highcharts_config_SeriesLine.prototype = new $h_Lcom_highcharts_config_SeriesLine();
+    $c_Lcom_highcharts_config_SeriesLine.prototype.constructor = $c_Lcom_highcharts_config_SeriesLine;
+    $b_Lcom_highcharts_config_SeriesLine = $c_Lcom_highcharts_config_SeriesLine
   };
-  return $b_Lcom_highcharts_config_SeriesBar
+  return $b_Lcom_highcharts_config_SeriesLine
 }
 var $b_Lcom_highcharts_config_Title = (void 0);
 function $a_Lcom_highcharts_config_Title() {
@@ -12838,32 +13234,32 @@ function $m_Ljava_math_RoundingMode$() {
   return $n_Ljava_math_RoundingMode$
 }
 /** @constructor */
-function $c_Lnathan_UserService$anon$importedEncoder$macro$15$1() {
+function $c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1() {
   $c_O.call(this);
   this.inst$macro$10$1 = null;
   this.inst$macro$1$1 = null;
   this.bitmap$0$1 = 0
 }
-$c_Lnathan_UserService$anon$importedEncoder$macro$15$1.prototype = new $h_O();
-$c_Lnathan_UserService$anon$importedEncoder$macro$15$1.prototype.constructor = $c_Lnathan_UserService$anon$importedEncoder$macro$15$1;
+$c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1.prototype = new $h_O();
+$c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1.prototype.constructor = $c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1;
 /** @constructor */
-function $h_Lnathan_UserService$anon$importedEncoder$macro$15$1() {
+function $h_Lnathan_service_UserService$anon$importedEncoder$macro$15$1() {
   /*<skip>*/
 }
-$h_Lnathan_UserService$anon$importedEncoder$macro$15$1.prototype = $c_Lnathan_UserService$anon$importedEncoder$macro$15$1.prototype;
-$c_Lnathan_UserService$anon$importedEncoder$macro$15$1.prototype.init___ = (function() {
+$h_Lnathan_service_UserService$anon$importedEncoder$macro$15$1.prototype = $c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1.prototype;
+$c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1.prototype.init___ = (function() {
   return this
 });
-$c_Lnathan_UserService$anon$importedEncoder$macro$15$1.prototype.inst$macro$1__Lio_circe_generic_encoding_DerivedObjectEncoder = (function() {
+$c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1.prototype.inst$macro$1__Lio_circe_generic_encoding_DerivedObjectEncoder = (function() {
   return (((2 & this.bitmap$0$1) === 0) ? this.inst$macro$1$lzycompute__p1__Lio_circe_generic_encoding_DerivedObjectEncoder() : this.inst$macro$1$1)
 });
-$c_Lnathan_UserService$anon$importedEncoder$macro$15$1.prototype.inst$macro$10__Lio_circe_generic_encoding_ReprObjectEncoder = (function() {
+$c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1.prototype.inst$macro$10__Lio_circe_generic_encoding_ReprObjectEncoder = (function() {
   return (((1 & this.bitmap$0$1) === 0) ? this.inst$macro$10$lzycompute__p1__Lio_circe_generic_encoding_ReprObjectEncoder() : this.inst$macro$10$1)
 });
-$c_Lnathan_UserService$anon$importedEncoder$macro$15$1.prototype.inst$macro$1$lzycompute__p1__Lio_circe_generic_encoding_DerivedObjectEncoder = (function() {
+$c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1.prototype.inst$macro$1$lzycompute__p1__Lio_circe_generic_encoding_DerivedObjectEncoder = (function() {
   if (((2 & this.bitmap$0$1) === 0)) {
-    new $c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2().init___Lnathan_UserService$anon$importedEncoder$macro$15$1(this);
-    var gen = new $c_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1().init___Lnathan_UserService$anon$importedEncoder$macro$15$1(this);
+    new $c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$2().init___Lnathan_service_UserService$anon$importedEncoder$macro$15$1(this);
+    var gen = new $c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1().init___Lnathan_service_UserService$anon$importedEncoder$macro$15$1(this);
     $m_Lshapeless_ops_hlist$ZipWithKeys$();
     $m_Lshapeless_ops_hlist$ZipWithKeys$();
     $m_Lshapeless_ops_hlist$ZipWithKeys$();
@@ -12896,56 +13292,56 @@ $c_Lnathan_UserService$anon$importedEncoder$macro$15$1.prototype.inst$macro$1$lz
   };
   return this.inst$macro$1$1
 });
-$c_Lnathan_UserService$anon$importedEncoder$macro$15$1.prototype.inst$macro$10$lzycompute__p1__Lio_circe_generic_encoding_ReprObjectEncoder = (function() {
+$c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1.prototype.inst$macro$10$lzycompute__p1__Lio_circe_generic_encoding_ReprObjectEncoder = (function() {
   if (((1 & this.bitmap$0$1) === 0)) {
-    this.inst$macro$10$1 = new $c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1().init___Lnathan_UserService$anon$importedEncoder$macro$15$1(this);
+    this.inst$macro$10$1 = new $c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$1().init___Lnathan_service_UserService$anon$importedEncoder$macro$15$1(this);
     this.bitmap$0$1 = (1 | this.bitmap$0$1)
   };
   return this.inst$macro$10$1
 });
-var $d_Lnathan_UserService$anon$importedEncoder$macro$15$1 = new $TypeData().initClass({
-  Lnathan_UserService$anon$importedEncoder$macro$15$1: 0
-}, false, "nathan.UserService$anon$importedEncoder$macro$15$1", {
-  Lnathan_UserService$anon$importedEncoder$macro$15$1: 1,
+var $d_Lnathan_service_UserService$anon$importedEncoder$macro$15$1 = new $TypeData().initClass({
+  Lnathan_service_UserService$anon$importedEncoder$macro$15$1: 0
+}, false, "nathan.service.UserService$anon$importedEncoder$macro$15$1", {
+  Lnathan_service_UserService$anon$importedEncoder$macro$15$1: 1,
   O: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lnathan_UserService$anon$importedEncoder$macro$15$1.prototype.$classData = $d_Lnathan_UserService$anon$importedEncoder$macro$15$1;
+$c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1.prototype.$classData = $d_Lnathan_service_UserService$anon$importedEncoder$macro$15$1;
 /** @constructor */
-function $c_Lnathan_UserService$anon$lazy$macro$26$1() {
+function $c_Lnathan_service_UserService$anon$lazy$macro$26$1() {
   $c_O.call(this);
   this.inst$macro$24$1 = null;
   this.inst$macro$17$1 = null;
   this.bitmap$0$1 = 0
 }
-$c_Lnathan_UserService$anon$lazy$macro$26$1.prototype = new $h_O();
-$c_Lnathan_UserService$anon$lazy$macro$26$1.prototype.constructor = $c_Lnathan_UserService$anon$lazy$macro$26$1;
+$c_Lnathan_service_UserService$anon$lazy$macro$26$1.prototype = new $h_O();
+$c_Lnathan_service_UserService$anon$lazy$macro$26$1.prototype.constructor = $c_Lnathan_service_UserService$anon$lazy$macro$26$1;
 /** @constructor */
-function $h_Lnathan_UserService$anon$lazy$macro$26$1() {
+function $h_Lnathan_service_UserService$anon$lazy$macro$26$1() {
   /*<skip>*/
 }
-$h_Lnathan_UserService$anon$lazy$macro$26$1.prototype = $c_Lnathan_UserService$anon$lazy$macro$26$1.prototype;
-$c_Lnathan_UserService$anon$lazy$macro$26$1.prototype.init___ = (function() {
+$h_Lnathan_service_UserService$anon$lazy$macro$26$1.prototype = $c_Lnathan_service_UserService$anon$lazy$macro$26$1.prototype;
+$c_Lnathan_service_UserService$anon$lazy$macro$26$1.prototype.init___ = (function() {
   return this
 });
-$c_Lnathan_UserService$anon$lazy$macro$26$1.prototype.inst$macro$24$lzycompute__p1__Lio_circe_generic_decoding_ReprDecoder = (function() {
+$c_Lnathan_service_UserService$anon$lazy$macro$26$1.prototype.inst$macro$24$lzycompute__p1__Lio_circe_generic_decoding_ReprDecoder = (function() {
   if (((1 & this.bitmap$0$1) === 0)) {
-    this.inst$macro$24$1 = new $c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4().init___Lnathan_UserService$anon$lazy$macro$26$1(this);
+    this.inst$macro$24$1 = new $c_Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$4().init___Lnathan_service_UserService$anon$lazy$macro$26$1(this);
     this.bitmap$0$1 = (1 | this.bitmap$0$1)
   };
   return this.inst$macro$24$1
 });
-$c_Lnathan_UserService$anon$lazy$macro$26$1.prototype.inst$macro$24__Lio_circe_generic_decoding_ReprDecoder = (function() {
+$c_Lnathan_service_UserService$anon$lazy$macro$26$1.prototype.inst$macro$24__Lio_circe_generic_decoding_ReprDecoder = (function() {
   return (((1 & this.bitmap$0$1) === 0) ? this.inst$macro$24$lzycompute__p1__Lio_circe_generic_decoding_ReprDecoder() : this.inst$macro$24$1)
 });
-$c_Lnathan_UserService$anon$lazy$macro$26$1.prototype.inst$macro$17__Lio_circe_generic_decoding_DerivedDecoder = (function() {
+$c_Lnathan_service_UserService$anon$lazy$macro$26$1.prototype.inst$macro$17__Lio_circe_generic_decoding_DerivedDecoder = (function() {
   return (((2 & this.bitmap$0$1) === 0) ? this.inst$macro$17$lzycompute__p1__Lio_circe_generic_decoding_DerivedDecoder() : this.inst$macro$17$1)
 });
-$c_Lnathan_UserService$anon$lazy$macro$26$1.prototype.inst$macro$17$lzycompute__p1__Lio_circe_generic_decoding_DerivedDecoder = (function() {
+$c_Lnathan_service_UserService$anon$lazy$macro$26$1.prototype.inst$macro$17$lzycompute__p1__Lio_circe_generic_decoding_DerivedDecoder = (function() {
   if (((2 & this.bitmap$0$1) === 0)) {
-    new $c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3().init___Lnathan_UserService$anon$lazy$macro$26$1(this);
-    var gen = new $c_Lnathan_UserService$anon$lazy$macro$26$1$anon$macro$23$1().init___Lnathan_UserService$anon$lazy$macro$26$1(this);
+    new $c_Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$3().init___Lnathan_service_UserService$anon$lazy$macro$26$1(this);
+    var gen = new $c_Lnathan_service_UserService$anon$lazy$macro$26$1$anon$macro$23$1().init___Lnathan_service_UserService$anon$lazy$macro$26$1(this);
     $m_Lshapeless_ops_hlist$ZipWithKeys$();
     $m_Lshapeless_ops_hlist$ZipWithKeys$();
     var zipWithKeys = $m_Lshapeless_ops_hlist$ZipWithKeys$().hnilZipWithKeys$1;
@@ -12972,15 +13368,15 @@ $c_Lnathan_UserService$anon$lazy$macro$26$1.prototype.inst$macro$17$lzycompute__
   };
   return this.inst$macro$17$1
 });
-var $d_Lnathan_UserService$anon$lazy$macro$26$1 = new $TypeData().initClass({
-  Lnathan_UserService$anon$lazy$macro$26$1: 0
-}, false, "nathan.UserService$anon$lazy$macro$26$1", {
-  Lnathan_UserService$anon$lazy$macro$26$1: 1,
+var $d_Lnathan_service_UserService$anon$lazy$macro$26$1 = new $TypeData().initClass({
+  Lnathan_service_UserService$anon$lazy$macro$26$1: 0
+}, false, "nathan.service.UserService$anon$lazy$macro$26$1", {
+  Lnathan_service_UserService$anon$lazy$macro$26$1: 1,
   O: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lnathan_UserService$anon$lazy$macro$26$1.prototype.$classData = $d_Lnathan_UserService$anon$lazy$macro$26$1;
+$c_Lnathan_service_UserService$anon$lazy$macro$26$1.prototype.$classData = $d_Lnathan_service_UserService$anon$lazy$macro$26$1;
 /** @constructor */
 function $c_Lshapeless_ops_hlist$ZipWithKeys$() {
   $c_O.call(this);
@@ -18867,36 +19263,17 @@ var $d_Ljava_math_RoundingMode = new $TypeData().initClass({
 });
 $c_Ljava_math_RoundingMode.prototype.$classData = $d_Ljava_math_RoundingMode;
 /** @constructor */
-function $c_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1() {
+function $c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1() {
   $c_O.call(this)
 }
-$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype = new $h_O();
-$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype.constructor = $c_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1;
+$c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype = new $h_O();
+$c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype.constructor = $c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1;
 /** @constructor */
-function $h_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1() {
+function $h_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1() {
   /*<skip>*/
 }
-$h_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype = $c_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype;
-$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype.to__Lentity_LoginReq__Lshapeless_$colon$colon = (function(p) {
-  if ((p !== null)) {
-    var pat$macro$6 = p.username$1;
-    var pat$macro$7 = p.password$1;
-    var pat$macro$8 = p.type$1;
-    return new $c_Lshapeless_$colon$colon().init___O__Lshapeless_HList(pat$macro$6, new $c_Lshapeless_$colon$colon().init___O__Lshapeless_HList(pat$macro$7, new $c_Lshapeless_$colon$colon().init___O__Lshapeless_HList(pat$macro$8, $m_Lshapeless_HNil$())))
-  } else {
-    throw new $c_s_MatchError().init___O(p)
-  }
-});
-$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype.init___Lnathan_UserService$anon$importedEncoder$macro$15$1 = (function($$outer) {
-  return this
-});
-$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype.from__O__O = (function(r) {
-  return this.from__Lshapeless_$colon$colon__Lentity_LoginReq($as_Lshapeless_$colon$colon(r))
-});
-$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype.to__O__O = (function(t) {
-  return this.to__Lentity_LoginReq__Lshapeless_$colon$colon($as_Lentity_LoginReq(t))
-});
-$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype.from__Lshapeless_$colon$colon__Lentity_LoginReq = (function(p) {
+$h_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype = $c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype;
+$c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype.from__Lshapeless_$colon$colon__Lnathan_entity_LoginReq = (function(p) {
   if ((p !== null)) {
     var pat$macro$6 = $as_T(p.head$1);
     var p2 = $as_Lshapeless_$colon$colon(p.tail$1);
@@ -18908,44 +19285,63 @@ $c_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype.
         var p4 = $as_Lshapeless_HNil(p3.tail$1);
         var x = $m_Lshapeless_HNil$();
         if ((x === p4)) {
-          return new $c_Lentity_LoginReq().init___T__T__T(pat$macro$6, pat$macro$7, pat$macro$8)
+          return new $c_Lnathan_entity_LoginReq().init___T__T__T(pat$macro$6, pat$macro$7, pat$macro$8)
         }
       }
     }
   };
   throw new $c_s_MatchError().init___O(p)
 });
-var $d_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1 = new $TypeData().initClass({
-  Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1: 0
-}, false, "nathan.UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1", {
-  Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1: 1,
+$c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype.from__O__O = (function(r) {
+  return this.from__Lshapeless_$colon$colon__Lnathan_entity_LoginReq($as_Lshapeless_$colon$colon(r))
+});
+$c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype.to__O__O = (function(t) {
+  return this.to__Lnathan_entity_LoginReq__Lshapeless_$colon$colon($as_Lnathan_entity_LoginReq(t))
+});
+$c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype.init___Lnathan_service_UserService$anon$importedEncoder$macro$15$1 = (function($$outer) {
+  return this
+});
+$c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype.to__Lnathan_entity_LoginReq__Lshapeless_$colon$colon = (function(p) {
+  if ((p !== null)) {
+    var pat$macro$6 = p.username$1;
+    var pat$macro$7 = p.password$1;
+    var pat$macro$8 = p.type$1;
+    return new $c_Lshapeless_$colon$colon().init___O__Lshapeless_HList(pat$macro$6, new $c_Lshapeless_$colon$colon().init___O__Lshapeless_HList(pat$macro$7, new $c_Lshapeless_$colon$colon().init___O__Lshapeless_HList(pat$macro$8, $m_Lshapeless_HNil$())))
+  } else {
+    throw new $c_s_MatchError().init___O(p)
+  }
+});
+var $d_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1 = new $TypeData().initClass({
+  Lnathan_service_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1: 0
+}, false, "nathan.service.UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1", {
+  Lnathan_service_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1: 1,
   O: 1,
   Lshapeless_Generic: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype.$classData = $d_Lnathan_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1;
+$c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1.prototype.$classData = $d_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$anon$macro$9$1;
 /** @constructor */
-function $c_Lnathan_UserService$anon$lazy$macro$26$1$anon$macro$23$1() {
+function $c_Lnathan_service_UserService$anon$lazy$macro$26$1$anon$macro$23$1() {
   $c_O.call(this)
 }
-$c_Lnathan_UserService$anon$lazy$macro$26$1$anon$macro$23$1.prototype = new $h_O();
-$c_Lnathan_UserService$anon$lazy$macro$26$1$anon$macro$23$1.prototype.constructor = $c_Lnathan_UserService$anon$lazy$macro$26$1$anon$macro$23$1;
+$c_Lnathan_service_UserService$anon$lazy$macro$26$1$anon$macro$23$1.prototype = new $h_O();
+$c_Lnathan_service_UserService$anon$lazy$macro$26$1$anon$macro$23$1.prototype.constructor = $c_Lnathan_service_UserService$anon$lazy$macro$26$1$anon$macro$23$1;
 /** @constructor */
-function $h_Lnathan_UserService$anon$lazy$macro$26$1$anon$macro$23$1() {
+function $h_Lnathan_service_UserService$anon$lazy$macro$26$1$anon$macro$23$1() {
   /*<skip>*/
 }
-$h_Lnathan_UserService$anon$lazy$macro$26$1$anon$macro$23$1.prototype = $c_Lnathan_UserService$anon$lazy$macro$26$1$anon$macro$23$1.prototype;
-$c_Lnathan_UserService$anon$lazy$macro$26$1$anon$macro$23$1.prototype.init___Lnathan_UserService$anon$lazy$macro$26$1 = (function($$outer) {
+$h_Lnathan_service_UserService$anon$lazy$macro$26$1$anon$macro$23$1.prototype = $c_Lnathan_service_UserService$anon$lazy$macro$26$1$anon$macro$23$1.prototype;
+$c_Lnathan_service_UserService$anon$lazy$macro$26$1$anon$macro$23$1.prototype.init___Lnathan_service_UserService$anon$lazy$macro$26$1 = (function($$outer) {
   return this
 });
-$c_Lnathan_UserService$anon$lazy$macro$26$1$anon$macro$23$1.prototype.from__O__O = (function(r) {
-  return this.from__Lshapeless_$colon$colon__Lentity_RetMsg($as_Lshapeless_$colon$colon(r))
+$c_Lnathan_service_UserService$anon$lazy$macro$26$1$anon$macro$23$1.prototype.from__O__O = (function(r) {
+  return this.from__Lshapeless_$colon$colon__Lnathan_entity_RetMsg($as_Lshapeless_$colon$colon(r))
 });
-$c_Lnathan_UserService$anon$lazy$macro$26$1$anon$macro$23$1.prototype.to__O__O = (function(t) {
-  return this.to__Lentity_RetMsg__Lshapeless_$colon$colon($as_Lentity_RetMsg(t))
+$c_Lnathan_service_UserService$anon$lazy$macro$26$1$anon$macro$23$1.prototype.to__O__O = (function(t) {
+  return this.to__Lnathan_entity_RetMsg__Lshapeless_$colon$colon($as_Lnathan_entity_RetMsg(t))
 });
-$c_Lnathan_UserService$anon$lazy$macro$26$1$anon$macro$23$1.prototype.to__Lentity_RetMsg__Lshapeless_$colon$colon = (function(p) {
+$c_Lnathan_service_UserService$anon$lazy$macro$26$1$anon$macro$23$1.prototype.to__Lnathan_entity_RetMsg__Lshapeless_$colon$colon = (function(p) {
   if ((p !== null)) {
     var pat$macro$21 = p.code$1;
     var pat$macro$22 = p.entity$1;
@@ -18954,7 +19350,7 @@ $c_Lnathan_UserService$anon$lazy$macro$26$1$anon$macro$23$1.prototype.to__Lentit
     throw new $c_s_MatchError().init___O(p)
   }
 });
-$c_Lnathan_UserService$anon$lazy$macro$26$1$anon$macro$23$1.prototype.from__Lshapeless_$colon$colon__Lentity_RetMsg = (function(p) {
+$c_Lnathan_service_UserService$anon$lazy$macro$26$1$anon$macro$23$1.prototype.from__Lshapeless_$colon$colon__Lnathan_entity_RetMsg = (function(p) {
   if ((p !== null)) {
     var pat$macro$21 = $as_T(p.head$1);
     var p2 = $as_Lshapeless_$colon$colon(p.tail$1);
@@ -18963,22 +19359,22 @@ $c_Lnathan_UserService$anon$lazy$macro$26$1$anon$macro$23$1.prototype.from__Lsha
       var p3 = $as_Lshapeless_HNil(p2.tail$1);
       var x = $m_Lshapeless_HNil$();
       if ((x === p3)) {
-        return new $c_Lentity_RetMsg().init___T__T(pat$macro$21, pat$macro$22)
+        return new $c_Lnathan_entity_RetMsg().init___T__T(pat$macro$21, pat$macro$22)
       }
     }
   };
   throw new $c_s_MatchError().init___O(p)
 });
-var $d_Lnathan_UserService$anon$lazy$macro$26$1$anon$macro$23$1 = new $TypeData().initClass({
-  Lnathan_UserService$anon$lazy$macro$26$1$anon$macro$23$1: 0
-}, false, "nathan.UserService$anon$lazy$macro$26$1$anon$macro$23$1", {
-  Lnathan_UserService$anon$lazy$macro$26$1$anon$macro$23$1: 1,
+var $d_Lnathan_service_UserService$anon$lazy$macro$26$1$anon$macro$23$1 = new $TypeData().initClass({
+  Lnathan_service_UserService$anon$lazy$macro$26$1$anon$macro$23$1: 0
+}, false, "nathan.service.UserService$anon$lazy$macro$26$1$anon$macro$23$1", {
+  Lnathan_service_UserService$anon$lazy$macro$26$1$anon$macro$23$1: 1,
   O: 1,
   Lshapeless_Generic: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lnathan_UserService$anon$lazy$macro$26$1$anon$macro$23$1.prototype.$classData = $d_Lnathan_UserService$anon$lazy$macro$26$1$anon$macro$23$1;
+$c_Lnathan_service_UserService$anon$lazy$macro$26$1$anon$macro$23$1.prototype.$classData = $d_Lnathan_service_UserService$anon$lazy$macro$26$1$anon$macro$23$1;
 /** @constructor */
 function $c_Lshapeless_$und0() {
   $c_O.call(this)
@@ -21005,176 +21401,6 @@ function $m_Lcats_kernel_PartialOrder$() {
   return $n_Lcats_kernel_PartialOrder$
 }
 /** @constructor */
-function $c_Lentity_LoginReq() {
-  $c_O.call(this);
-  this.username$1 = null;
-  this.password$1 = null;
-  this.type$1 = null
-}
-$c_Lentity_LoginReq.prototype = new $h_O();
-$c_Lentity_LoginReq.prototype.constructor = $c_Lentity_LoginReq;
-/** @constructor */
-function $h_Lentity_LoginReq() {
-  /*<skip>*/
-}
-$h_Lentity_LoginReq.prototype = $c_Lentity_LoginReq.prototype;
-$c_Lentity_LoginReq.prototype.productPrefix__T = (function() {
-  return "LoginReq"
-});
-$c_Lentity_LoginReq.prototype.productArity__I = (function() {
-  return 3
-});
-$c_Lentity_LoginReq.prototype.equals__O__Z = (function(x$1) {
-  if ((this === x$1)) {
-    return true
-  } else if ($is_Lentity_LoginReq(x$1)) {
-    var LoginReq$1 = $as_Lentity_LoginReq(x$1);
-    return (((this.username$1 === LoginReq$1.username$1) && (this.password$1 === LoginReq$1.password$1)) && (this.type$1 === LoginReq$1.type$1))
-  } else {
-    return false
-  }
-});
-$c_Lentity_LoginReq.prototype.productElement__I__O = (function(x$1) {
-  switch (x$1) {
-    case 0: {
-      return this.username$1;
-      break
-    }
-    case 1: {
-      return this.password$1;
-      break
-    }
-    case 2: {
-      return this.type$1;
-      break
-    }
-    default: {
-      throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
-    }
-  }
-});
-$c_Lentity_LoginReq.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
-});
-$c_Lentity_LoginReq.prototype.init___T__T__T = (function(username, password, type) {
-  this.username$1 = username;
-  this.password$1 = password;
-  this.type$1 = type;
-  return this
-});
-$c_Lentity_LoginReq.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__I(this, (-889275714))
-});
-$c_Lentity_LoginReq.prototype.productIterator__sc_Iterator = (function() {
-  return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
-});
-function $is_Lentity_LoginReq(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lentity_LoginReq)))
-}
-function $as_Lentity_LoginReq(obj) {
-  return (($is_Lentity_LoginReq(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "entity.LoginReq"))
-}
-function $isArrayOf_Lentity_LoginReq(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lentity_LoginReq)))
-}
-function $asArrayOf_Lentity_LoginReq(obj, depth) {
-  return (($isArrayOf_Lentity_LoginReq(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lentity.LoginReq;", depth))
-}
-var $d_Lentity_LoginReq = new $TypeData().initClass({
-  Lentity_LoginReq: 0
-}, false, "entity.LoginReq", {
-  Lentity_LoginReq: 1,
-  O: 1,
-  s_Product: 1,
-  s_Equals: 1,
-  s_Serializable: 1,
-  Ljava_io_Serializable: 1
-});
-$c_Lentity_LoginReq.prototype.$classData = $d_Lentity_LoginReq;
-/** @constructor */
-function $c_Lentity_RetMsg() {
-  $c_O.call(this);
-  this.code$1 = null;
-  this.entity$1 = null
-}
-$c_Lentity_RetMsg.prototype = new $h_O();
-$c_Lentity_RetMsg.prototype.constructor = $c_Lentity_RetMsg;
-/** @constructor */
-function $h_Lentity_RetMsg() {
-  /*<skip>*/
-}
-$h_Lentity_RetMsg.prototype = $c_Lentity_RetMsg.prototype;
-$c_Lentity_RetMsg.prototype.init___T__T = (function(code, entity) {
-  this.code$1 = code;
-  this.entity$1 = entity;
-  return this
-});
-$c_Lentity_RetMsg.prototype.productPrefix__T = (function() {
-  return "RetMsg"
-});
-$c_Lentity_RetMsg.prototype.productArity__I = (function() {
-  return 2
-});
-$c_Lentity_RetMsg.prototype.equals__O__Z = (function(x$1) {
-  if ((this === x$1)) {
-    return true
-  } else if ($is_Lentity_RetMsg(x$1)) {
-    var RetMsg$1 = $as_Lentity_RetMsg(x$1);
-    return ((this.code$1 === RetMsg$1.code$1) && (this.entity$1 === RetMsg$1.entity$1))
-  } else {
-    return false
-  }
-});
-$c_Lentity_RetMsg.prototype.productElement__I__O = (function(x$1) {
-  switch (x$1) {
-    case 0: {
-      return this.code$1;
-      break
-    }
-    case 1: {
-      return this.entity$1;
-      break
-    }
-    default: {
-      throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
-    }
-  }
-});
-$c_Lentity_RetMsg.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
-});
-$c_Lentity_RetMsg.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__I(this, (-889275714))
-});
-$c_Lentity_RetMsg.prototype.productIterator__sc_Iterator = (function() {
-  return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
-});
-function $is_Lentity_RetMsg(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lentity_RetMsg)))
-}
-function $as_Lentity_RetMsg(obj) {
-  return (($is_Lentity_RetMsg(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "entity.RetMsg"))
-}
-function $isArrayOf_Lentity_RetMsg(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lentity_RetMsg)))
-}
-function $asArrayOf_Lentity_RetMsg(obj, depth) {
-  return (($isArrayOf_Lentity_RetMsg(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lentity.RetMsg;", depth))
-}
-var $d_Lentity_RetMsg = new $TypeData().initClass({
-  Lentity_RetMsg: 0
-}, false, "entity.RetMsg", {
-  Lentity_RetMsg: 1,
-  O: 1,
-  s_Product: 1,
-  s_Equals: 1,
-  s_Serializable: 1,
-  Ljava_io_Serializable: 1
-});
-$c_Lentity_RetMsg.prototype.$classData = $d_Lentity_RetMsg;
-/** @constructor */
 function $c_Lio_circe_CursorOp() {
   $c_O.call(this)
 }
@@ -22678,85 +22904,255 @@ $c_Ljava_io_FilterOutputStream.prototype.init___Ljava_io_OutputStream = (functio
   return this
 });
 /** @constructor */
-function $c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2() {
-  $c_O.call(this)
+function $c_Lnathan_entity_LoginReq() {
+  $c_O.call(this);
+  this.username$1 = null;
+  this.password$1 = null;
+  this.type$1 = null
 }
-$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2.prototype = new $h_O();
-$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2.prototype.constructor = $c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2;
+$c_Lnathan_entity_LoginReq.prototype = new $h_O();
+$c_Lnathan_entity_LoginReq.prototype.constructor = $c_Lnathan_entity_LoginReq;
 /** @constructor */
-function $h_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2() {
+function $h_Lnathan_entity_LoginReq() {
   /*<skip>*/
 }
-$h_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2.prototype = $c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2.prototype;
-$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2.prototype.init___Lnathan_UserService$anon$importedEncoder$macro$15$1 = (function($$outer) {
+$h_Lnathan_entity_LoginReq.prototype = $c_Lnathan_entity_LoginReq.prototype;
+$c_Lnathan_entity_LoginReq.prototype.productPrefix__T = (function() {
+  return "LoginReq"
+});
+$c_Lnathan_entity_LoginReq.prototype.productArity__I = (function() {
+  return 3
+});
+$c_Lnathan_entity_LoginReq.prototype.equals__O__Z = (function(x$1) {
+  if ((this === x$1)) {
+    return true
+  } else if ($is_Lnathan_entity_LoginReq(x$1)) {
+    var LoginReq$1 = $as_Lnathan_entity_LoginReq(x$1);
+    return (((this.username$1 === LoginReq$1.username$1) && (this.password$1 === LoginReq$1.password$1)) && (this.type$1 === LoginReq$1.type$1))
+  } else {
+    return false
+  }
+});
+$c_Lnathan_entity_LoginReq.prototype.productElement__I__O = (function(x$1) {
+  switch (x$1) {
+    case 0: {
+      return this.username$1;
+      break
+    }
+    case 1: {
+      return this.password$1;
+      break
+    }
+    case 2: {
+      return this.type$1;
+      break
+    }
+    default: {
+      throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
+    }
+  }
+});
+$c_Lnathan_entity_LoginReq.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
+});
+$c_Lnathan_entity_LoginReq.prototype.init___T__T__T = (function(username, password, type) {
+  this.username$1 = username;
+  this.password$1 = password;
+  this.type$1 = type;
   return this
 });
-var $d_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2 = new $TypeData().initClass({
-  Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2: 0
-}, false, "nathan.UserService$anon$importedEncoder$macro$15$1$$anon$2", {
-  Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2: 1,
+$c_Lnathan_entity_LoginReq.prototype.hashCode__I = (function() {
+  var this$2 = $m_s_util_hashing_MurmurHash3$();
+  return this$2.productHash__s_Product__I__I(this, (-889275714))
+});
+$c_Lnathan_entity_LoginReq.prototype.productIterator__sc_Iterator = (function() {
+  return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
+});
+function $is_Lnathan_entity_LoginReq(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lnathan_entity_LoginReq)))
+}
+function $as_Lnathan_entity_LoginReq(obj) {
+  return (($is_Lnathan_entity_LoginReq(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "nathan.entity.LoginReq"))
+}
+function $isArrayOf_Lnathan_entity_LoginReq(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lnathan_entity_LoginReq)))
+}
+function $asArrayOf_Lnathan_entity_LoginReq(obj, depth) {
+  return (($isArrayOf_Lnathan_entity_LoginReq(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lnathan.entity.LoginReq;", depth))
+}
+var $d_Lnathan_entity_LoginReq = new $TypeData().initClass({
+  Lnathan_entity_LoginReq: 0
+}, false, "nathan.entity.LoginReq", {
+  Lnathan_entity_LoginReq: 1,
+  O: 1,
+  s_Product: 1,
+  s_Equals: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_Lnathan_entity_LoginReq.prototype.$classData = $d_Lnathan_entity_LoginReq;
+/** @constructor */
+function $c_Lnathan_entity_RetMsg() {
+  $c_O.call(this);
+  this.code$1 = null;
+  this.entity$1 = null
+}
+$c_Lnathan_entity_RetMsg.prototype = new $h_O();
+$c_Lnathan_entity_RetMsg.prototype.constructor = $c_Lnathan_entity_RetMsg;
+/** @constructor */
+function $h_Lnathan_entity_RetMsg() {
+  /*<skip>*/
+}
+$h_Lnathan_entity_RetMsg.prototype = $c_Lnathan_entity_RetMsg.prototype;
+$c_Lnathan_entity_RetMsg.prototype.init___T__T = (function(code, entity) {
+  this.code$1 = code;
+  this.entity$1 = entity;
+  return this
+});
+$c_Lnathan_entity_RetMsg.prototype.productPrefix__T = (function() {
+  return "RetMsg"
+});
+$c_Lnathan_entity_RetMsg.prototype.productArity__I = (function() {
+  return 2
+});
+$c_Lnathan_entity_RetMsg.prototype.equals__O__Z = (function(x$1) {
+  if ((this === x$1)) {
+    return true
+  } else if ($is_Lnathan_entity_RetMsg(x$1)) {
+    var RetMsg$1 = $as_Lnathan_entity_RetMsg(x$1);
+    return ((this.code$1 === RetMsg$1.code$1) && (this.entity$1 === RetMsg$1.entity$1))
+  } else {
+    return false
+  }
+});
+$c_Lnathan_entity_RetMsg.prototype.productElement__I__O = (function(x$1) {
+  switch (x$1) {
+    case 0: {
+      return this.code$1;
+      break
+    }
+    case 1: {
+      return this.entity$1;
+      break
+    }
+    default: {
+      throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
+    }
+  }
+});
+$c_Lnathan_entity_RetMsg.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
+});
+$c_Lnathan_entity_RetMsg.prototype.hashCode__I = (function() {
+  var this$2 = $m_s_util_hashing_MurmurHash3$();
+  return this$2.productHash__s_Product__I__I(this, (-889275714))
+});
+$c_Lnathan_entity_RetMsg.prototype.productIterator__sc_Iterator = (function() {
+  return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
+});
+function $is_Lnathan_entity_RetMsg(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lnathan_entity_RetMsg)))
+}
+function $as_Lnathan_entity_RetMsg(obj) {
+  return (($is_Lnathan_entity_RetMsg(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "nathan.entity.RetMsg"))
+}
+function $isArrayOf_Lnathan_entity_RetMsg(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lnathan_entity_RetMsg)))
+}
+function $asArrayOf_Lnathan_entity_RetMsg(obj, depth) {
+  return (($isArrayOf_Lnathan_entity_RetMsg(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lnathan.entity.RetMsg;", depth))
+}
+var $d_Lnathan_entity_RetMsg = new $TypeData().initClass({
+  Lnathan_entity_RetMsg: 0
+}, false, "nathan.entity.RetMsg", {
+  Lnathan_entity_RetMsg: 1,
+  O: 1,
+  s_Product: 1,
+  s_Equals: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_Lnathan_entity_RetMsg.prototype.$classData = $d_Lnathan_entity_RetMsg;
+/** @constructor */
+function $c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$2() {
+  $c_O.call(this)
+}
+$c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$2.prototype = new $h_O();
+$c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$2.prototype.constructor = $c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$2;
+/** @constructor */
+function $h_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$2() {
+  /*<skip>*/
+}
+$h_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$2.prototype = $c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$2.prototype;
+$c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$2.prototype.init___Lnathan_service_UserService$anon$importedEncoder$macro$15$1 = (function($$outer) {
+  return this
+});
+var $d_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$2 = new $TypeData().initClass({
+  Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$2: 0
+}, false, "nathan.service.UserService$anon$importedEncoder$macro$15$1$$anon$2", {
+  Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$2: 1,
   O: 1,
   Lshapeless_DefaultSymbolicLabelling: 1,
   Lshapeless_package$DepFn0: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2.prototype.$classData = $d_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$2;
+$c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$2.prototype.$classData = $d_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$2;
 /** @constructor */
-function $c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3() {
+function $c_Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$3() {
   $c_O.call(this)
 }
-$c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3.prototype = new $h_O();
-$c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3.prototype.constructor = $c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3;
+$c_Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$3.prototype = new $h_O();
+$c_Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$3.prototype.constructor = $c_Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$3;
 /** @constructor */
-function $h_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3() {
+function $h_Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$3() {
   /*<skip>*/
 }
-$h_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3.prototype = $c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3.prototype;
-$c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3.prototype.init___Lnathan_UserService$anon$lazy$macro$26$1 = (function($$outer) {
+$h_Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$3.prototype = $c_Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$3.prototype;
+$c_Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$3.prototype.init___Lnathan_service_UserService$anon$lazy$macro$26$1 = (function($$outer) {
   return this
 });
-var $d_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3 = new $TypeData().initClass({
-  Lnathan_UserService$anon$lazy$macro$26$1$$anon$3: 0
-}, false, "nathan.UserService$anon$lazy$macro$26$1$$anon$3", {
-  Lnathan_UserService$anon$lazy$macro$26$1$$anon$3: 1,
+var $d_Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$3 = new $TypeData().initClass({
+  Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$3: 0
+}, false, "nathan.service.UserService$anon$lazy$macro$26$1$$anon$3", {
+  Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$3: 1,
   O: 1,
   Lshapeless_DefaultSymbolicLabelling: 1,
   Lshapeless_package$DepFn0: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3.prototype.$classData = $d_Lnathan_UserService$anon$lazy$macro$26$1$$anon$3;
+$c_Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$3.prototype.$classData = $d_Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$3;
 /** @constructor */
-function $c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4() {
+function $c_Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$4() {
   $c_Lio_circe_generic_decoding_ReprDecoder.call(this);
   this.fresh$macro$25$2 = null
 }
-$c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4.prototype = new $h_Lio_circe_generic_decoding_ReprDecoder();
-$c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4.prototype.constructor = $c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4;
+$c_Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$4.prototype = new $h_Lio_circe_generic_decoding_ReprDecoder();
+$c_Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$4.prototype.constructor = $c_Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$4;
 /** @constructor */
-function $h_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4() {
+function $h_Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$4() {
   /*<skip>*/
 }
-$h_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4.prototype = $c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4.prototype;
-$c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4.prototype.init___Lnathan_UserService$anon$lazy$macro$26$1 = (function($$outer) {
+$h_Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$4.prototype = $c_Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$4.prototype;
+$c_Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$4.prototype.init___Lnathan_service_UserService$anon$lazy$macro$26$1 = (function($$outer) {
   this.fresh$macro$25$2 = $m_Lio_circe_Decoder$().decodeString$1;
   return this
 });
-$c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4.prototype.apply__Lio_circe_HCursor__s_util_Either = (function(c) {
+$c_Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$4.prototype.apply__Lio_circe_HCursor__s_util_Either = (function(c) {
   return $as_s_util_Either($m_Lio_circe_generic_decoding_ReprDecoder$().consResults__O__O__Lcats_Apply__O(this.fresh$macro$25$2.tryDecode__Lio_circe_ACursor__s_util_Either(c.downField__T__Lio_circe_ACursor("code")), $m_Lio_circe_generic_decoding_ReprDecoder$().consResults__O__O__Lcats_Apply__O(this.fresh$macro$25$2.tryDecode__Lio_circe_ACursor__s_util_Either(c.downField__T__Lio_circe_ACursor("entity")), $m_Lio_circe_generic_decoding_ReprDecoder$().hnilResult$1, $m_Lio_circe_Decoder$().resultInstance$1), $m_Lio_circe_Decoder$().resultInstance$1))
 });
-var $d_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4 = new $TypeData().initClass({
-  Lnathan_UserService$anon$lazy$macro$26$1$$anon$4: 0
-}, false, "nathan.UserService$anon$lazy$macro$26$1$$anon$4", {
-  Lnathan_UserService$anon$lazy$macro$26$1$$anon$4: 1,
+var $d_Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$4 = new $TypeData().initClass({
+  Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$4: 0
+}, false, "nathan.service.UserService$anon$lazy$macro$26$1$$anon$4", {
+  Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$4: 1,
   Lio_circe_generic_decoding_ReprDecoder: 1,
   O: 1,
   Lio_circe_Decoder: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4.prototype.$classData = $d_Lnathan_UserService$anon$lazy$macro$26$1$$anon$4;
+$c_Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$4.prototype.$classData = $d_Lnathan_service_UserService$anon$lazy$macro$26$1$$anon$4;
 function $is_Lshapeless_HNil(obj) {
   return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lshapeless_HNil)))
 }
@@ -28740,18 +29136,18 @@ $c_Ljava_io_PrintStream.prototype.println__T__V = (function(s) {
   this.java$lang$JSConsoleBasedPrintStream$$printString__T__V("\n")
 });
 /** @constructor */
-function $c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1() {
+function $c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$1() {
   $c_Lio_circe_generic_encoding_ReprObjectEncoder.call(this);
   this.fresh$macro$11$2 = null
 }
-$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1.prototype = new $h_Lio_circe_generic_encoding_ReprObjectEncoder();
-$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1.prototype.constructor = $c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1;
+$c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$1.prototype = new $h_Lio_circe_generic_encoding_ReprObjectEncoder();
+$c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$1.prototype.constructor = $c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$1;
 /** @constructor */
-function $h_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1() {
+function $h_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$1() {
   /*<skip>*/
 }
-$h_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1.prototype = $c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1.prototype;
-$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1.prototype.encodeObject__Lshapeless_$colon$colon__Lio_circe_JsonObject = (function(a) {
+$h_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$1.prototype = $c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$1.prototype;
+$c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$1.prototype.encodeObject__Lshapeless_$colon$colon__Lio_circe_JsonObject = (function(a) {
   if ((a !== null)) {
     var fresh$macro$14 = $as_T(a.head$1);
     var p2 = $as_Lshapeless_$colon$colon(a.tail$1);
@@ -28787,17 +29183,17 @@ $c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1.prototype.encodeO
   };
   throw new $c_s_MatchError().init___O(a)
 });
-$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1.prototype.init___Lnathan_UserService$anon$importedEncoder$macro$15$1 = (function($$outer) {
+$c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$1.prototype.encodeObject__O__Lio_circe_JsonObject = (function(a) {
+  return this.encodeObject__Lshapeless_$colon$colon__Lio_circe_JsonObject($as_Lshapeless_$colon$colon(a))
+});
+$c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$1.prototype.init___Lnathan_service_UserService$anon$importedEncoder$macro$15$1 = (function($$outer) {
   this.fresh$macro$11$2 = $m_Lio_circe_Encoder$().encodeString$1;
   return this
 });
-$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1.prototype.encodeObject__O__Lio_circe_JsonObject = (function(a) {
-  return this.encodeObject__Lshapeless_$colon$colon__Lio_circe_JsonObject($as_Lshapeless_$colon$colon(a))
-});
-var $d_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1 = new $TypeData().initClass({
-  Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1: 0
-}, false, "nathan.UserService$anon$importedEncoder$macro$15$1$$anon$1", {
-  Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1: 1,
+var $d_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$1 = new $TypeData().initClass({
+  Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$1: 0
+}, false, "nathan.service.UserService$anon$importedEncoder$macro$15$1$$anon$1", {
+  Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$1: 1,
   Lio_circe_generic_encoding_ReprObjectEncoder: 1,
   O: 1,
   Lio_circe_ObjectEncoder: 1,
@@ -28806,7 +29202,7 @@ var $d_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1 = new $TypeDa
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1.prototype.$classData = $d_Lnathan_UserService$anon$importedEncoder$macro$15$1$$anon$1;
+$c_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$1.prototype.$classData = $d_Lnathan_service_UserService$anon$importedEncoder$macro$15$1$$anon$1;
 /** @constructor */
 function $c_Lorg_scalajs_dom_ext_AjaxException() {
   $c_jl_Exception.call(this);
@@ -38085,6 +38481,7 @@ var $d_scm_ArrayBuffer = new $TypeData().initClass({
 });
 $c_scm_ArrayBuffer.prototype.$classData = $d_scm_ArrayBuffer;
 $e.nathan = ($e.nathan || {});
-$e.nathan.UserService = $m_Lnathan_UserService$;
+$e.nathan.service = ($e.nathan.service || {});
+$e.nathan.service.UserService = $m_Lnathan_service_UserService$;
 }).call(this);
 //# sourceMappingURL=front-fastopt.js.map

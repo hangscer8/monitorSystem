@@ -22,7 +22,6 @@ package Protocols {
 
   case class NetInfoEntity(rxBytes: Long, txBytes: Long, create: Long = System.currentTimeMillis(), agentId: String) extends BaseAgentInfo //接收的字节数 发送的字节数
 
-  case class 
 }
 
 object akkaSystemConst {

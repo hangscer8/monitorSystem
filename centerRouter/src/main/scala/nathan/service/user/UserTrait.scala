@@ -6,6 +6,8 @@ import nathan.protocol.Protocol.{LoginReq, UserReq}
 import nathan.protocol._
 import io.circe.generic.auto._
 import io.circe.syntax._
+import nathan.util.s.com.eoi.util.Snowflake
+
 import scala.concurrent.Future
 import scala.util.{Failure, Success}
 

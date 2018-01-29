@@ -2,7 +2,7 @@ package nathan.actor
 
 import akka.actor.{Actor, ActorRef}
 import com.typesafe.config.ConfigFactory
-import nathan.OS
+import nathan.ec.OS
 import nathan.monitorSystem.Protocols.AgentMachineEntity
 import nathan.monitorSystem.akkaAction.AgentActorJoinCenter
 import nathan.monitorSystem.akkaSystemConst._

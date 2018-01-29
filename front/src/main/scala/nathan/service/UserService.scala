@@ -10,7 +10,8 @@ import io.circe.parser.decode
 import io.circe.syntax._
 import nathan.entity.{LoginReq, RetMsg}
 import nathan.util.CommonConst._
-import nathan.util.HttpHeadSupport
+import nathan.util.CommonUtil._
+import nathan.util.{HttpHeadSupport}
 import org.scalajs.dom._
 import org.scalajs.dom.ext.Ajax
 import org.scalajs.dom.ext.Ajax.InputData
@@ -67,7 +68,8 @@ object UserService extends HttpHeadSupport {
   def testHc() = {
     jQuery("#container").highcharts(new HighchartsConfig {
       // Chart config
-      override val chart: Cfg[Chart] = Chart(`type` = "bar")
+      override val chart: Cfg[Chart] = Chart(`type` = "line", animation = false)
+      //      override val chart: Cfg[Chart] = Chart()
 
       // Chart title
       override val title: Cfg[Title] = Title(text = "Demo bar chart")
@@ -80,9 +82,13 @@ object UserService extends HttpHeadSupport {
 
       // Series
       override val series: SeriesCfg = js.Array[AnySeries](
-        SeriesBar(name = "Jane", data = js.Array[Double](1, 0, 4)),
-        SeriesBar(name = "John", data = js.Array[Double](5, 7, 3))
+        SeriesLine(name = "Jane112", data = js.Array[Double](1, 0, 4)),
+        SeriesLine(name = "John", data = js.Array[Double](5, 7, 3))
       )
+
+      override val credits = Credits(false)
+
+      override val legend = Legend(layout = "horizontal")
     })
   }
 }

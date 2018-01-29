@@ -5,6 +5,7 @@ import akka.http.scaladsl.server.Route
 import nathan.dbentity.DbInit
 import nathan.ec.ExecutorService
 import nathan.router.{IndexRouter, UserRouter}
+import nathan.util.CorsSupport
 
 object Main extends App with CorsSupport {
   implicit val system = ExecutorService.system

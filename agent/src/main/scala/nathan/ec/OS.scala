@@ -1,4 +1,4 @@
-package nathan
+package nathan.ec
 
 import java.io.File
 import java.lang.management.ManagementFactory
