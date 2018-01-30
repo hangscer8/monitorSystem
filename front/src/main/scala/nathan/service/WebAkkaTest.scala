@@ -2,6 +2,7 @@ package nathan.service
 
 import akka.actor.{Actor, ActorSystem, Props}
 
+import scala.concurrent.Future
 import scala.concurrent.duration._
 import scala.scalajs.js.annotation.JSExport
 
@@ -21,7 +22,14 @@ object WebAkkaTest {
 }
 
 class WebActor extends Actor {
+
+  import akka.pattern._
+  import context.dispatcher
+
   override def receive: Receive = {
-    case any => println(any)
+    case (msg: String, "ok") =>
+      println(msg)
+    case str: String =>
+      Future(str).zip(Future("ok")).pipeTo(self)
   }
 }
