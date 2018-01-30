@@ -13,7 +13,7 @@ object WebAkkaTest {
 
   @JSExport
   def testAkka(): Unit = {
-    val webActor = system.actorOf(Props(new WebActor), "webActor")
+    val webActor = system.actorOf(Props(new WebActor), "webActor") //不可以是Props(classOf[WebActor])
     system.scheduler.schedule(2 seconds, 2 seconds) {
       webActor ! "hahah" + System.currentTimeMillis()
     }
