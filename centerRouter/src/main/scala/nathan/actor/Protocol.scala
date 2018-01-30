@@ -13,7 +13,7 @@ object Protocol {
 
   case class StoreMEMEntityAction(memEntity: MEMEntity) extends DaoAction
 
-  case class StoreSWAPEntityAction(swapEntity: SWAPEntity) extends DaoAction
+  case class StoreSWAPEntityActiont (swapEntity: SWAPEntity) extends DaoAction
 
   case class StoreLoadAvgEntityAction(loadAvgEntity: LoadAvgEntity) extends DaoAction
 
