@@ -6,7 +6,10 @@ object Protocol {
     val common = "common"
     val admin = "admin"
   }
-  object DefaultAuth{
-    val auth="qazwsxedc"
+
+  object DefaultAuth {
+    val auth = "qazwsxedc"
   }
+
+  val storeAgentMachine = "storeAgentMachine"
 }

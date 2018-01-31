@@ -1,18 +1,17 @@
 package nathan.actor
 
-import akka.actor.{Actor, ActorRef}
+import akka.actor.{Actor, Props}
+import nathan.actor.Protocol.StoreAgentMachineAction
+import nathan.ec.ExecutorService.daoActor
+import nathan.monitorSystem.akkaAction.AgentActorJoinCenter
+import nathan.monitorSystem.akkaSystemConst._
 
-class CenterRouterActor extends Actor with RouterActorTrait {
-  var agentOnLine = List.empty[ActorRef] //在线的agent
+class CenterRouterActor extends Actor {
   override def receive: Receive = {
-    case str: String =>
-      withMsg(str)
-  }
-}
-
-trait RouterActorTrait {
-  i: Actor =>
-  def withMsg(str: String) = {
-    
+    case AgentActorJoinCenter(agentActor, agentMachineEntity) =>
+      daoActor ! StoreAgentMachineAction(agentMachineEntity)
+      context.actorOf(Props(classOf[PeerToAgentActor])) ! (`agentActorJoined`, agentActor, agentMachineEntity)
+    case (`agentTimeout`, agentId: String) =>
+      println(agentId + "退出了")
   }
 }
