@@ -69,7 +69,7 @@ object UserService extends HttpHeadSupport {
     val newChart = (datas: js.Array[AnySeries]) =>
       new HighchartsConfig {
         // Chart config
-        override val chart: Cfg[Chart] = Chart(`type` = "line", animation = true)
+        override val chart: Cfg[Chart] = Chart(`type` = "line", animation = false)
         //      override val chart: Cfg[Chart] = Chart()
 
         // Chart title
@@ -83,18 +83,17 @@ object UserService extends HttpHeadSupport {
         // Series
         override val series: SeriesCfg = datas
         override val credits = Credits(false)
-
         override val legend = Legend(layout = "horizontal")
       }
     window.setInterval(() => {
       val now = System.currentTimeMillis()
       val data = js.Array[AnySeries](
-        SeriesLine(name = "蒋航122", data = js.Array[Double](2, 3, 8)),
-        SeriesLine(name = "是这样1221", data = js.Array[Double](10, 15, 7))
+        SeriesLine(name = "蒋航122", data = js.Array[Double](2, 3, 8), animation = false),
+        SeriesLine(name = "是这样1221", data = js.Array[Double](10, 15, 7), animation = false)
       )
       val data1 = js.Array[AnySeries](
-        SeriesLine(name = "Jane112", data = js.Array[Double](1, 0, 4)),
-        SeriesLine(name = "John", data = js.Array[Double](5, 7, 3))
+        SeriesLine(name = "Jane112", data = js.Array[Double](1, 0, 4), animation = false),
+        SeriesLine(name = "John", data = js.Array[Double](5, 7, 3), animation = false)
       )
       now % 2 == 0 match {
         case true =>
@@ -106,6 +105,7 @@ object UserService extends HttpHeadSupport {
     }, 3000.0)
   }
 }
+
 class Animation extends js.Object {
 
 }
