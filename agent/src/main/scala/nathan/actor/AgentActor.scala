@@ -1,24 +1,21 @@
 package nathan.actor
 
 import akka.actor.{Actor, ActorRef}
-import com.typesafe.config.ConfigFactory
 import nathan.ec.OS
-import nathan.monitorSystem.Protocols.AgentMachineEntity
+import nathan.monitorSystem.AkkaSystemConst
 import nathan.monitorSystem.akkaAction.AgentActorJoinCenter
-import nathan.monitorSystem.akkaSystemConst._
 
 import scala.concurrent.duration._
 
-class AgentActor extends Actor {
+class AgentActor extends Actor with AkkaSystemConst{
 
   import context.dispatcher
 
   val agentId = "myAgent123"
 
   override def preStart(): Unit = {
-    val config = ConfigFactory.load()
     val path = s"akka.tcp://$center_system_name@127.0.0.1:$center_port/user/$center_actor_name"
-    context.actorSelection(path) ! AgentActorJoinCenter(self, AgentMachineEntity(config.getString("akka.remote.netty.tcp.hostname"), config.getInt("akka.remote.netty.tcp.port"), agentId))
+    context.actorSelection(path) ! AgentActorJoinCenter(self, OS.getAgentInfo(agentId))
     context.system.scheduler.schedule(1 seconds, 2 seconds, self, "CPUPerc")
     context.system.scheduler.schedule(2 seconds, 2 seconds, self, "MEM")
     context.system.scheduler.schedule(3 seconds, 2 seconds, self, "SWAP")

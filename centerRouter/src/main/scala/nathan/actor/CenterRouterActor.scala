@@ -3,10 +3,10 @@ package nathan.actor
 import akka.actor.{Actor, Props}
 import nathan.actor.Protocol.StoreAgentMachineAction
 import nathan.ec.ExecutorService.daoActor
+import nathan.monitorSystem.AkkaSystemConst
 import nathan.monitorSystem.akkaAction.AgentActorJoinCenter
-import nathan.monitorSystem.akkaSystemConst._
 
-class CenterRouterActor extends Actor {
+class CenterRouterActor extends Actor with AkkaSystemConst{
   override def receive: Receive = {
     case AgentActorJoinCenter(agentActor, agentMachineEntity) =>
       daoActor ! StoreAgentMachineAction(agentMachineEntity)

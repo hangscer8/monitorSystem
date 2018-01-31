@@ -8,7 +8,7 @@ package Protocols {
 
   trait BaseAgentInfo
 
-  case class AgentMachineEntity(ip: String, akkaPort: Int, agentId: String) extends BaseAgentInfo
+  case class AgentMachineEntity(ip: String, akkaPort: Int, agentId: String, cacheSize: Long, vendor: String, mhz: Int, model: String) extends BaseAgentInfo //CacheSize KB , Model MacBookAir7,2 , Vendor 生产商 , Mhz 频率
 
   case class CPUPercEntity(user: Double, sys: Double, _wait: Double, idle: Double, combined: Double, create: Long = System.currentTimeMillis(), agentId: String) extends BaseAgentInfo //user用户使用率 sys系统使用率 _wait当前等待率 idle空闲率 combined 总的使用率
 
@@ -22,19 +22,6 @@ package Protocols {
 
   case class NetInfoEntity(rxBytes: Long, txBytes: Long, create: Long = System.currentTimeMillis(), agentId: String) extends BaseAgentInfo //接收的字节数 发送的字节数
 
-}
-
-object akkaSystemConst {
-  val center_port = 2551
-  val agent_port = 2552
-  val center_system_name = "centerRouterActor"
-  val center_actor_name = "centerSystem"
-  val dao_actor_name = "daoActor"
-  val agent_system_name = "agentSystem"
-  val agent_actor_name = "agentActor"
-  val agentActorJoined = "agentActor"
-  val peerToAgentActor = "peerToAgentActor"
-  val agentTimeout = "agentTimeout"
 }
 
 object akkaAction {

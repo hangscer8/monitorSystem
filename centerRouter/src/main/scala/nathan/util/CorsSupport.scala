@@ -1,17 +1,16 @@
 package nathan.util
 
-import akka.http.scaladsl.model.HttpMethods.{DELETE, GET, OPTIONS, POST, PUT}
+import akka.http.scaladsl.model.HttpMethods._
 import akka.http.scaladsl.model.HttpResponse
 import akka.http.scaladsl.model.StatusCodes.OK
-import akka.http.scaladsl.model.headers.CacheDirectives.{`max-age`, `no-cache`}
 import akka.http.scaladsl.model.headers._
 import akka.http.scaladsl.server.Directives.{complete, _}
 import akka.http.scaladsl.server.{Directive0, Route}
-import nathan.router.Protocol
+import nathan.monitorSystem.AkkaSystemConst
 
-trait CorsSupport {
+trait CorsSupport extends AkkaSystemConst{
   def addAccessControlHeaders: Directive0 = mapResponseHeaders { headers =>
-    `Access-Control-Allow-Headers`("Authorization", Protocol.authHead, "Content-Type", "X-Requested-With", "Origin", "X-Requested-With", "Accept", "Accept-Encoding", "Accept-Language", "Host", "Referer", "User-Agent", "kbn-version") +:
+    `Access-Control-Allow-Headers`("Authorization", "MONITORSYSTEM-AUTH", "Content-Type", "X-Requested-With", "Origin", "X-Requested-With", "Accept", "Accept-Encoding", "Accept-Language", "Host", "Referer", "User-Agent", "kbn-version") +:
       `Access-Control-Allow-Origin`.* +:
       headers
   }

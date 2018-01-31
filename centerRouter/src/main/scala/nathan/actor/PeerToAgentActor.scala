@@ -3,11 +3,12 @@ package nathan.actor
 import akka.actor.{Actor, ActorRef, ReceiveTimeout}
 import nathan.ec.ExecutorService.daoActor
 import nathan.monitorSystem.Protocols._
-import nathan.monitorSystem.akkaSystemConst._
 import nathan.actor.Protocol._
+import nathan.monitorSystem.AkkaSystemConst
+
 import scala.concurrent.duration._
 
-class PeerToAgentActor extends Actor {
+class PeerToAgentActor extends Actor with AkkaSystemConst{
   override def receive: Receive = {
     case (`agentActorJoined`, agent: ActorRef, agentMachine: AgentMachineEntity) =>
       agent ! (peerToAgentActor, self)

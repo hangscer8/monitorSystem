@@ -1,7 +1,6 @@
 package nathan.actor
 
-import nathan.monitorSystem.Protocols.AgentMachineEntity
-import nathan.monitorSystem.Protocols._
+import nathan.monitorSystem.Protocols.{AgentMachineEntity, _}
 
 object Protocol {
 

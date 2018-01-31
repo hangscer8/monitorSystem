@@ -6,11 +6,11 @@ import akka.actor.{ActorSystem, Props}
 import akka.stream.ActorMaterializer
 import com.typesafe.config.ConfigFactory
 import nathan.actor.{CenterRouterActor, DaoActor}
-import nathan.monitorSystem.akkaSystemConst._
+import nathan.monitorSystem.AkkaSystemConst
 
 import scala.concurrent.ExecutionContext
 
-object ExecutorService {
+object ExecutorService extends AkkaSystemConst{
   implicit val system = ActorSystem(center_system_name, ConfigFactory.load().withFallback(ConfigFactory.parseString(s"akka.remote.netty.tcp.port=$center_port")))
   private[this] lazy val ecFixThreadPoll = Executors.newFixedThreadPool(20)
   implicit lazy val ec = ExecutionContext.fromExecutor(ecFixThreadPoll)

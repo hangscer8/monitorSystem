@@ -4,6 +4,7 @@ import java.io.File
 import java.lang.management.ManagementFactory
 
 import com.sun.management.OperatingSystemMXBean
+import com.typesafe.config.ConfigFactory
 import nathan.monitorSystem.Protocols._
 
 object OS {
@@ -44,6 +45,14 @@ object OS {
     sigar.getNetInterfaceList.map(interface => sigar.getNetInterfaceStat(interface)).foldRight(NetInfoEntity(rxBytes = 0L, txBytes = 0L, agentId = agentId)) { (i, netInfo) =>
       NetInfoEntity(rxBytes = netInfo.rxBytes + i.getRxBytes, txBytes = netInfo.txBytes + i.getTxBytes, agentId = agentId)
     }
+  }
+
+  def getAgentInfo(agentId: String) = {
+    val config = ConfigFactory.load()
+    val ip = config.getString("akka.remote.netty.tcp.hostname")
+    val akkaPort = config.getInt("akka.remote.netty.tcp.port")
+    val cpuInfo = sigar.getCpuInfoList.head
+    AgentMachineEntity(ip = ip, akkaPort = akkaPort, agentId = agentId, cacheSize = cpuInfo.getCacheSize, vendor = cpuInfo.getVendor, mhz = cpuInfo.getMhz, model = cpuInfo.getModel)
   }
 }
 
