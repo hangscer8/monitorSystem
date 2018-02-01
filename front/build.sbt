@@ -16,6 +16,7 @@ libraryDependencies ++= Seq(
   "be.doeraene" %%% "scalajs-jquery" % "0.9.1",
   "com.github.karasiq" %%% "scalajs-highcharts" % "1.2.1",
   "org.akka-js" %%% "akkajsactor" % "1.2.5.9",
-  "org.akka-js" %%% "akkajsactorstream" % "1.2.5.9"
+  "org.akka-js" %%% "akkajsactorstream" % "1.2.5.9",
+  "com.github.karasiq" %%% "scalajs-bootstrap" % "2.3.1"
 )
 crossTarget in fastOptJS := baseDirectory.value / "frontWeb" / "js"
