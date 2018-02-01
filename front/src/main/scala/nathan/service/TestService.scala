@@ -1,12 +1,11 @@
 package nathan.service
 
-import io.circe.Decoder
-import io.circe.generic.semiauto._
 import io.circe.parser.decode
 import nathan.monitorSystem.AkkaSystemConst._
 import nathan.monitorSystem.Protocols._
 import nathan.util.CommonUtil._
 import nathan.util.HttpHeadSupport
+import nathan.util.implicitDecoder._
 import org.scalajs.dom._
 import org.scalajs.dom.ext.Ajax
 
@@ -28,5 +27,4 @@ object TestService extends HttpHeadSupport {
     }
   }
 
-  implicit val cpuPercEntityDecoder: Decoder[CPUPercEntity] = deriveDecoder[CPUPercEntity]
 }

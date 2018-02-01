@@ -3,21 +3,19 @@ package nathan.service
 import com.highcharts.HighchartsAliases._
 import com.highcharts.HighchartsUtils._
 import com.highcharts.config._
-import io.circe.Decoder
 import io.circe.generic.auto._
-import io.circe.generic.semiauto._
 import io.circe.parser.decode
 import io.circe.syntax._
 import nathan.entity.{LoginReq, RetMsg}
 import nathan.monitorSystem.AkkaSystemConst._
 import nathan.util.CommonUtil._
 import nathan.util.HttpHeadSupport
+import nathan.util.implicitDecoder._
 import org.scalajs.dom._
 import org.scalajs.dom.ext.Ajax
 import org.scalajs.dom.ext.Ajax.InputData
 import org.scalajs.dom.html.Input
 import org.scalajs.jquery.jQuery
-
 import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSExport
@@ -62,7 +60,6 @@ object UserService extends HttpHeadSupport {
     Ajax.post(url = baseUrl / "monitorSystem" / "login", data = InputData.str2ajax(user.asJson.noSpaces), headers = header)
   }
 
-  implicit val retSuccessDecoder: Decoder[RetMsg] = deriveDecoder[RetMsg]
 
   @JSExport
   def testHc() = {
@@ -104,8 +101,4 @@ object UserService extends HttpHeadSupport {
 
     }, 3000.0)
   }
-}
-
-class Animation extends js.Object {
-
 }
