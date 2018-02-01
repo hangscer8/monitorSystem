@@ -11,7 +11,7 @@ trait CpuPercDao {
     val start = startOPt.getOrElse(0L)
     val q = endOPt match {
       case Some(end) => cpuPercs.filter(_.create <= end).filter(_.create >= start).filter(_.agentId === agentId)
-      case None => cpuPercs.filter(_.create <= start).filter(_.agentId === agentId)
+      case None => cpuPercs.filter(_.create >= start).filter(_.agentId === agentId)
     }
     db.run(q.result)
   }
