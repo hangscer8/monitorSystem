@@ -3,7 +3,7 @@ package nathan.service
 import io.circe.Decoder
 import io.circe.generic.semiauto._
 import io.circe.parser.decode
-import nathan.monitorSystem.AkkaSystemConst
+import nathan.monitorSystem.AkkaSystemConst._
 import nathan.monitorSystem.Protocols._
 import nathan.util.CommonUtil._
 import nathan.util.HttpHeadSupport
@@ -15,7 +15,7 @@ import scala.scalajs.js.annotation.JSExport
 import scala.util.{Failure, Success}
 
 @JSExport
-object TestService extends HttpHeadSupport with AkkaSystemConst{
+object TestService extends HttpHeadSupport {
   @JSExport
   def test(): Unit = {
     UserService.setAuth()

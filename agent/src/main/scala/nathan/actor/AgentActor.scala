@@ -2,12 +2,11 @@ package nathan.actor
 
 import akka.actor.{Actor, ActorRef}
 import nathan.ec.OS
-import nathan.monitorSystem.AkkaSystemConst
 import nathan.monitorSystem.akkaAction.AgentActorJoinCenter
-
+import nathan.monitorSystem.AkkaSystemConst._
 import scala.concurrent.duration._
 
-class AgentActor extends Actor with AkkaSystemConst{
+class AgentActor extends Actor {
 
   import context.dispatcher
 

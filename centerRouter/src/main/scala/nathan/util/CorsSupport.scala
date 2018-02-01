@@ -6,11 +6,11 @@ import akka.http.scaladsl.model.StatusCodes.OK
 import akka.http.scaladsl.model.headers._
 import akka.http.scaladsl.server.Directives.{complete, _}
 import akka.http.scaladsl.server.{Directive0, Route}
-import nathan.monitorSystem.AkkaSystemConst
+import nathan.monitorSystem.AkkaSystemConst._
 
-trait CorsSupport extends AkkaSystemConst{
+trait CorsSupport {
   def addAccessControlHeaders: Directive0 = mapResponseHeaders { headers =>
-    `Access-Control-Allow-Headers`("Authorization", "MONITORSYSTEM-AUTH", "Content-Type", "X-Requested-With", "Origin", "X-Requested-With", "Accept", "Accept-Encoding", "Accept-Language", "Host", "Referer", "User-Agent", "kbn-version") +:
+    `Access-Control-Allow-Headers`("Authorization", s"$authHead", "Content-Type", "X-Requested-With", "Origin", "X-Requested-With", "Accept", "Accept-Encoding", "Accept-Language", "Host", "Referer", "User-Agent", "kbn-version") +:
       `Access-Control-Allow-Origin`.* +:
       headers
   }

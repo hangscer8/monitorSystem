@@ -9,7 +9,7 @@ import io.circe.generic.semiauto._
 import io.circe.parser.decode
 import io.circe.syntax._
 import nathan.entity.{LoginReq, RetMsg}
-import nathan.monitorSystem.AkkaSystemConst
+import nathan.monitorSystem.AkkaSystemConst._
 import nathan.util.CommonUtil._
 import nathan.util.HttpHeadSupport
 import org.scalajs.dom._
@@ -24,7 +24,7 @@ import scala.scalajs.js.annotation.JSExport
 import scala.util.{Failure, Success}
 
 @JSExport
-object UserService extends HttpHeadSupport with AkkaSystemConst{
+object UserService extends HttpHeadSupport {
   @JSExport
   def setAuth(authOption: Option[String] = None) = authOption match {
     case _: Some[_] =>

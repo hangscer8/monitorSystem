@@ -1,9 +1,9 @@
 package nathan.util
 
-import nathan.monitorSystem.AkkaSystemConst
+import nathan.monitorSystem.AkkaSystemConst._
 import org.scalajs.dom._
 
-trait HttpHeadSupport extends AkkaSystemConst{
+trait HttpHeadSupport {
   val `Content-Type` = "Content-Type"
   val `"application/json` = "application/json"
 

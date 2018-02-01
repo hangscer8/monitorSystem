@@ -1,6 +1,6 @@
 package nathan.monitorSystem
 
-trait AkkaSystemConst {
+object AkkaSystemConst {
   val center_port = 2551
   val agent_port = 2552
   val center_system_name = "centerRouterActor"

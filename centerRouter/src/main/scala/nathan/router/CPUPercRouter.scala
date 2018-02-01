@@ -1,10 +1,11 @@
 package nathan.router
 
 import akka.http.scaladsl.server.Directives._
-import nathan.monitorSystem.AkkaSystemConst
+import nathan.monitorSystem.AkkaSystemConst._
 import nathan.service.cpu.CpuPercDao
 import nathan.util.JsonUtil._
-class CPUPercRouter extends BaseRouterTrait with CpuPercDao with AkkaSystemConst{
+
+class CPUPercRouter extends BaseRouterTrait with CpuPercDao {
   val route = pathPrefix(prefix) {
     apiAuthentication { auth =>
       path("cpuPerc") {

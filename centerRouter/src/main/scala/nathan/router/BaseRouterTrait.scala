@@ -3,10 +3,10 @@ package nathan.router
 import akka.http.scaladsl.model.StatusCodes
 import akka.http.scaladsl.server.Directive1
 import akka.http.scaladsl.server.Directives.{complete, _}
-import nathan.monitorSystem.AkkaSystemConst
+import nathan.monitorSystem.AkkaSystemConst._
 import nathan.util.UserSupport
 
-trait BaseRouterTrait extends AkkaSystemConst {
+trait BaseRouterTrait {
 
   def apiAuthentication: Directive1[Option[String]] = {
     extractRequest.flatMap { case request =>
