@@ -1,29 +1,23 @@
 package nathan
 
-import org.scalajs.dom
-
+import com.thoughtworks.binding.Binding._
+import com.thoughtworks.binding._
+import org.scalajs.dom.html._
+import org.scalajs.dom.document
 import scala.scalajs.js.annotation.JSExport
-import scalatags.JsDom.all._
-import nathan.util.implicitDecoder._
-import org.scalajs.dom.html
-
 @JSExport
 object WebApp {
+  case class Contact(name: Var[String], email: Var[String])
+
+  val data = Vars.empty[Contact]
   @JSExport
   def fun() = {
-    val mainbody = div(
-      h1("This is my title"),
-      div(
-        p("This is my first paragraph"),
-        p("This is my second paragraph")
-      )
-    )
-    dom.document.body.appendChild(mainbody.render)
-    dom.document.body.appendChild(mainbody.render)
-    dom.window.setTimeout(()=>{
-      dom.document.childNodes.foreach{node=>
-        node.parentNode.removeChild(node)
-      }
-    },3000)
+    dom.render(document.body,table)
+  }
+  @dom
+  def table:Binding[Table]={
+    <table class="haha">
+      sdsa
+    </table>
   }
 }
