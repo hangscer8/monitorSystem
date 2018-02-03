@@ -1,5 +1,6 @@
 package nathan.util
 
+import com.thoughtworks.binding.Binding
 import io.circe.Decoder
 import io.circe.generic.semiauto.deriveDecoder
 import nathan.entity._
@@ -24,6 +25,13 @@ object implicitDecoder {
     def filter(apply: Node => Boolean): Seq[Node] = {
       map(i => (i, apply(i))).filter(_._2 == true).map(_._1)
     }
+  }
+
+  implicit def makeIntellijHappy[T <: org.scalajs.dom.raw.Node](x: scala.xml.Node): Binding[T] =
+    throw new AssertionError("This should never execute.")
+
+  implicit class AnyOps[T](t: T) {
+    def as[O]: O = t.asInstanceOf[O]
   }
 
 }

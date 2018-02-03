@@ -2,53 +2,59 @@ package nathan
 
 import com.thoughtworks.binding.Binding._
 import com.thoughtworks.binding._
+import nathan.util.implicitDecoder._
 import org.scalajs.dom.html._
-import org.scalajs.dom.{Event, Node, document, window}
+import org.scalajs.dom.{Event, document, html}
 
 import scala.scalajs.js.annotation.JSExport
 
 @JSExport
 object WebApp {
-  case class Contact(name: Var[String], email: Var[String])
 
-  val data = Vars.empty[Contact]
 
   @JSExport
   def fun() = {
-    dom.render(document.body, bindingTable(data))
+    dom.render(document.body, genRender())
   }
 
   @dom
-  def bindingTable(contacts:BindingSeq[Contact]):Binding[Table]={
-    <table>
-      <tbody>
-        {
-        contacts.map{contact=>bindingTr(contact)}
-        }
-      </tbody>
-    </table>
+  def genRender(): Binding[html.Div] = {
+    val tags = Vars("init-1", "init-2")
+    <div>
+      {tagPicker(tags).bind}<ol>
+      {for (tag <- tags) yield <li>
+        {tag}
+      </li>}
+    </ol>
+    </div>
   }
 
   @dom
-  def 修改联系人信息的按钮(contact: Contact): Binding[Button] = {
-    <button onclick={event: Event => {
-      contact.name.value = contact.name.value + 123
-    }}>
-    </button>
-  }
+  def tagPicker(tags: Vars[String]): Binding[html.Div] = {
+    val input = {
+      <input type="text"></input>
+    }.as[Input]
+    val addHandler = { _: Event => {
+      input.value match {
+        case str: String if str.trim != "" && !tags.value.contains(input.value) =>
+          tags.value += input.value
+          input.value = ""
+        case _ =>
 
-  @dom
-  def bindingTr(contact: Contact): Binding[TableRow] = {
-    <tr>
-      <td>
-        {contact.name.bind}
-      </td>
-      <td>
-        {contact.email.bind}
-      </td>
-      <td>
-        {修改联系人信息的按钮(contact).bind}
-      </td>
-    </tr>
+      }
+    }
+    }
+    <div>
+      <div>
+        {tags.map { tag =>
+        <p>
+          {tag}<button onclick={_: Event => tags.value -= tag}>x</button>
+        </p>
+      }}
+      </div>
+      <div>
+        {input}<button onclick={addHandler}>Add</button>
+      </div>
+    </div>
   }
 }
