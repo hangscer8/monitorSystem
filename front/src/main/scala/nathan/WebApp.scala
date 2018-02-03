@@ -4,7 +4,7 @@ import com.thoughtworks.binding.Binding._
 import com.thoughtworks.binding._
 import nathan.util.implicitDecoder._
 import org.scalajs.dom.html._
-import org.scalajs.dom.{Event, document, html}
+import org.scalajs.dom.{Event, document}
 
 import scala.scalajs.js.annotation.JSExport
 
@@ -18,43 +18,20 @@ object WebApp {
   }
 
   @dom
-  def genRender(): Binding[html.Div] = {
-    val tags = Vars("init-1", "init-2")
-    <div>
-      {tagPicker(tags).bind}<ol>
-      {for (tag <- tags) yield <li>
-        {tag}
-      </li>}
-    </ol>
-    </div>
-  }
-
-  @dom
-  def tagPicker(tags: Vars[String]): Binding[html.Div] = {
-    val input = {
-      <input type="text"></input>
-    }.as[Input]
-    val addHandler = { _: Event => {
-      input.value match {
-        case str: String if str.trim != "" && !tags.value.contains(input.value) =>
-          tags.value += input.value
-          input.value = ""
-        case _ =>
-
-      }
+  def genRender(): Binding[Form] = {
+    val logs = Vars("Input code:")
+    val input = <input type="text"/>.as[Input]
+    val submitHandler = { event: Event =>
+      event.preventDefault()
+      logs.value += input.value
+      input.value = ""//我也不知道为什么把这句话去掉后，则编译错误
     }
-    }
-    <div>
+    <form
+    onsubmit={submitHandler}>
+      {for (log <- logs) yield
       <div>
-        {tags.map { tag =>
-        <p>
-          {tag}<button onclick={_: Event => tags.value -= tag}>x</button>
-        </p>
-      }}
-      </div>
-      <div>
-        {input}<button onclick={addHandler}>Add</button>
-      </div>
-    </div>
+        {log}
+      </div>}{input}
+    </form>
   }
 }
