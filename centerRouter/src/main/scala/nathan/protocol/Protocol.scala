@@ -10,4 +10,6 @@ object Protocol {
 
   case class LoginReq(username: String, password: String, `type`: String)
 
+  case class RegisterReq(userName: String, password: String)
+
 }

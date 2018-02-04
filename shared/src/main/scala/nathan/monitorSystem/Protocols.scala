@@ -22,6 +22,10 @@ package Protocols {
 
   case class NetInfoEntity(rxBytes: Long, txBytes: Long, create: Long = System.currentTimeMillis(), agentId: String) extends BaseAgentInfo //接收的字节数 发送的字节数
 
+  case class UserEntity(username: String, password: String, lastActiveTime: Long, auth: Option[String]) //auth->authHead
+
+  case class RegisterReq(userName: String, password: String)
+
 }
 
 object akkaAction {

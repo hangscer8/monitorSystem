@@ -12,9 +12,10 @@ object AkkaSystemConst {
   val peerToAgentActor = "peerToAgentActor"
   val agentTimeout = "agentTimeout"
 
-  val akkaServerPort=8888
-  val akkaServerIp="127.0.0.1"
+  val akkaServerPort = 8888
+  val akkaServerIp = "127.0.0.1"
   val baseUrl = s"http://$akkaServerIp:$akkaServerPort"
   val prefix = "monitorSystem"
   val authHead = "MONITORSYSTEM-AUTH"
+  val userNameTkoen = "userName"
 }

@@ -27,7 +27,7 @@ object implicitUtil {
     }
   }
 
-  implicit def makeIntellijHappy[I, T](x: I): Binding[T] = //String=>Binding[String]等等，由dom宏完成，这里只是避免了idea的错误提示
+  implicit def makeIntellijHappy[I <: String, T](x: I): Binding[T] = //String=>Binding[String]等等，由dom宏完成，这里只是避免了idea的错误提示
     throw new AssertionError("This should never execute.")
 
   implicit class AnyOps[T](t: T) {

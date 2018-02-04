@@ -2,6 +2,7 @@ package nathan.service.user
 
 import nathan.dbentity.EntityTable._
 import nathan.dbentity.EntityTable.h2.api._
+import nathan.monitorSystem.Protocols.UserEntity
 import nathan.protocol.Protocol.LoginReq
 
 import scala.concurrent.ExecutionContextExecutor

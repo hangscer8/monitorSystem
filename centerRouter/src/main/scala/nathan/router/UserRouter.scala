@@ -16,15 +16,13 @@ class UserRouter extends BaseRouterTrait with UserTrait {
           entity(as[UserReq]) { userReq =>
             complete(createUser(userReq, auth))
           }
-        }
-      } ~
-        path("login") {
-          post {
-            entity(as[LoginReq]) { loginReq =>
-              complete(login(loginReq, auth))
+        } ~
+          get {
+            parameter("userName".as[String]) { userName =>
+              complete("")
             }
           }
-        }
+      }
     }
   }
 }
