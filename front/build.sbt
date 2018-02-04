@@ -15,8 +15,7 @@ libraryDependencies ++= Seq(
   "com.github.karasiq" %%% "scalajs-highcharts" % "1.2.1",
   "org.akka-js" %%% "akkajsactor" % "1.2.5.9",
   "com.thoughtworks.binding" %%% "binding" % "11.0.1",
-  "com.thoughtworks.binding" %%% "dom" % "11.0.1",
-  "com.thoughtworks.binding" %% "futurebinding" % "11.0.1"
+  "com.thoughtworks.binding" %%% "dom" % "11.0.1"
 )
 addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0" cross CrossVersion.full)
 crossTarget in fastOptJS := baseDirectory.value / "frontWeb" / "js"

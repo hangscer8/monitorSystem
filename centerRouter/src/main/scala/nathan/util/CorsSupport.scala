@@ -10,9 +10,9 @@ import nathan.monitorSystem.AkkaSystemConst._
 
 trait CorsSupport {
   def addAccessControlHeaders: Directive0 = mapResponseHeaders { headers =>
-    `Access-Control-Allow-Headers`("Authorization", s"$authHead", "Content-Type", "X-Requested-With", "Origin", "X-Requested-With", "Accept", "Accept-Encoding", "Accept-Language", "Host", "Referer", "User-Agent", "kbn-version") +:
-      `Access-Control-Allow-Origin`.* +:
-      headers
+    `Access-Control-Allow-Headers`("Authorization", s"$authHead", "Content-Type", "X-Requested-With", "Origin", "X-Requested-With",
+      "Accept", "Accept-Encoding", "Accept-Language",
+      "Host", "Referer", "User-Agent", "kbn-version") +: `Access-Control-Allow-Origin`.* +: headers
   }
 
   def preflightRequestHandler: Route = options {

@@ -2,9 +2,9 @@ package nathan.dbentity
 
 import nathan.dbentity.EntityTable._
 import nathan.dbentity.EntityTable.h2.api._
-import nathan.dbentity.Protocol.{DefaultAuth, UserTypeConst}
+import nathan.dbentity.Protocol.DefaultAuth
 import nathan.ec.ExecutorService.ec
-import nathan.util.s.com.eoi.util.Snowflake
+import nathan.monitorSystem.Protocols._
 
 import scala.concurrent.duration._
 import scala.concurrent.{Await, Future}
@@ -17,7 +17,7 @@ object DbInit {
     }
     val futures = Seq(
       users.schema.create >>
-        (users += UserEntity(Snowflake.nextId(), "jianghang", "password", UserTypeConst.admin, System.currentTimeMillis(), Some(DefaultAuth.auth))) >>
+        (users += UserEntity("jianghang", "password", System.currentTimeMillis(), Some(DefaultAuth.auth))) >>
         cpuPercs.schema.create >> agentMachines.schema.create
     ).map { action =>
       db.run(action.transactionally.asTry)

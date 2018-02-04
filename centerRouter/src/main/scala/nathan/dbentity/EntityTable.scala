@@ -1,6 +1,6 @@
 package nathan.dbentity
 
-import nathan.monitorSystem.Protocols.{AgentMachineEntity, CPUPercEntity, UserEntity}
+import nathan.monitorSystem.Protocols._
 
 object EntityTable {
   val h2 = slick.jdbc.H2Profile

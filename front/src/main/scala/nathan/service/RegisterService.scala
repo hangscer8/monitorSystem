@@ -1,11 +1,14 @@
 package nathan.service
 
 import com.thoughtworks.binding.{dom, _}
-import nathan.monitorSystem.Protocols._
+import io.circe.parser.decode
+import nathan.monitorSystem.AkkaSystemConst._
 import nathan.util.implicitUtil._
-import org.scalajs.dom.{document, _}
+import org.scalajs.dom.ext.Ajax
 import org.scalajs.dom.html.{Input, _}
+import org.scalajs.dom.{document, _}
 
+import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
 import scala.scalajs.js.annotation.JSExport
 
 @JSExport
@@ -24,7 +27,8 @@ object RegisterService {
       passwordConformInput.value == passwordInput.value match {
         case true => List(userNameInput.value, passwordInput.value).forall(_.nonEmpty) match {
           case true => //RegisterAction
-            println("asdsa")
+            Ajax.get(url = s"${baseUrl}/${prefix}/register/userName/${userNameInput.value}")
+              .map(response => decode[Boolean](response.responseText).right.get).map(result => println(result))
           case false => window.alert("用户名或者密码为空!")
         }
         case false =>

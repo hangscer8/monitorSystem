@@ -20,24 +20,32 @@ trait BaseRouterTrait {
               complete(StatusCodes.Forbidden)
           }
         case _ =>
-          optionalHeaderValueByName(authHead).flatMap {
-            case Some(auth) =>
-              UserSupport.isLoginUser(Some(auth)) match { //全部可以登陆(不用登陆)
-                case false =>
-                  complete(StatusCodes.Forbidden)
-                case _ =>
-                  provide(Some(auth))
-              }
-            case None =>
-              parameterMap.flatMap { paramsKV => //从get参数中获取
-                paramsKV.get(authHead) match {
-                  case Some(auth) =>
-                    provide(Some(auth))
-                  case None =>
-                    complete(StatusCodes.Forbidden)
-                }
+          List(
+            "/monitorSystem/register/userName/"
+          ).exists(pathStr => url.startsWith(pathStr)) match { //哪些url不需要验证登陆
+            case true =>
+              provide(None)
+            case false =>
+              optionalHeaderValueByName(authHead).flatMap {
+                case Some(auth) =>
+                  UserSupport.isLoginUser(Some(auth)) match { //全部可以登陆(不用登陆)
+                    case false =>
+                      complete(StatusCodes.Forbidden)
+                    case _ =>
+                      provide(Some(auth))
+                  }
+                case None =>
+                  parameterMap.flatMap { paramsKV => //从get参数中获取
+                    paramsKV.get(authHead) match {
+                      case Some(auth) =>
+                        provide(Some(auth))
+                      case None =>
+                        complete(StatusCodes.Forbidden)
+                    }
+                  }
               }
           }
+
       }
     }
   }

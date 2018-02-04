@@ -7,6 +7,7 @@ import nathan.dbentity.DbInit
 import nathan.ec.ExecutorService
 import nathan.router.{CPUPercRouter, IndexRouter, RegisterRouter, UserRouter}
 import nathan.util.CorsSupport
+import nathan.monitorSystem.AkkaSystemConst._
 
 object Main extends App with CorsSupport {
   implicit val system = ExecutorService.system
@@ -23,5 +24,5 @@ object Main extends App with CorsSupport {
     corsHandler(route)
   }
 
-  Http().bindAndHandle(route, "127.0.0.1", 8888)
+  Http().bindAndHandle(route, akkaServerIp, akkaServerPort)
 }
