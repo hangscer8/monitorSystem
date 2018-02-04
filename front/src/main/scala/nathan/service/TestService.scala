@@ -5,7 +5,7 @@ import nathan.monitorSystem.AkkaSystemConst._
 import nathan.monitorSystem.Protocols._
 import nathan.util.CommonUtil._
 import nathan.util.HttpHeadSupport
-import nathan.util.implicitDecoder._
+import nathan.util.implicitUtil._
 import org.scalajs.dom._
 import org.scalajs.dom.ext.Ajax
 

@@ -7,7 +7,7 @@ import nathan.entity._
 import nathan.monitorSystem.Protocols._
 import org.scalajs.dom.raw._
 
-object implicitDecoder {
+object implicitUtil {
   implicit val retSuccessDecoder: Decoder[RetMsg] = deriveDecoder[RetMsg]
   implicit val cpuPercEntityDecoder: Decoder[CPUPercEntity] = deriveDecoder[CPUPercEntity]
 
@@ -27,7 +27,7 @@ object implicitDecoder {
     }
   }
 
-  implicit def makeIntellijHappy[T <: org.scalajs.dom.raw.Node](x: scala.xml.Node): Binding[T] =
+  implicit def makeIntellijHappy[I, T](x: I): Binding[T] = //String=>Binding[String]等等，由dom宏完成，这里只是避免了idea的错误提示
     throw new AssertionError("This should never execute.")
 
   implicit class AnyOps[T](t: T) {
