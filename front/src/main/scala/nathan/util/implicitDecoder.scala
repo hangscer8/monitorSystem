@@ -8,9 +8,8 @@ import nathan.monitorSystem.Protocols._
 import org.scalajs.dom.raw._
 
 object implicitUtil {
-  implicit val retSuccessDecoder: Decoder[RetMsg] = deriveDecoder[RetMsg]
   implicit val cpuPercEntityDecoder: Decoder[CPUPercEntity] = deriveDecoder[CPUPercEntity]
-
+  
   implicit class NodeListOps(nodeList: NodeList) {
     def map[T](apply: Node => T): Seq[T] = {
       val length = nodeList.length

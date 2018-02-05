@@ -3,16 +3,27 @@ package nathan.service
 import com.thoughtworks.binding.{dom, _}
 import io.circe.parser.decode
 import nathan.monitorSystem.AkkaSystemConst._
+import nathan.monitorSystem.Protocols.{RegisterReq, UserEntity}
 import nathan.util.implicitUtil._
 import org.scalajs.dom.ext.Ajax
 import org.scalajs.dom.html.{Input, _}
 import org.scalajs.dom.{document, _}
+import io.circe.generic.auto._
+import io.circe.parser.decode
+import io.circe.syntax._
+import nathan.monitorSystem.MsgCode._
+import nathan.util.HttpHeadSupport
 
 import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
 import scala.scalajs.js.annotation.JSExport
+import org.scalajs.dom.ext.Ajax.InputData._
+
+import scala.concurrent.Future
 
 @JSExport
-object RegisterService {
+object RegisterService extends HttpHeadSupport {
+
+
   @JSExport
   def render() = {
     dom.render(document.body, genMainDiv)
@@ -28,7 +39,20 @@ object RegisterService {
         case true => List(userNameInput.value, passwordInput.value).forall(_.nonEmpty) match {
           case true => //RegisterAction
             Ajax.get(url = s"${baseUrl}/${prefix}/register/userName/${userNameInput.value}")
-              .map(response => decode[Boolean](response.responseText).right.get).map(result => println(result))
+              .map(response => decode[Boolean](response.responseText).right.get)
+              .flatMap { userNameExits =>
+                userNameExits match {
+                  case false =>
+                    Ajax.post(url = s"${baseUrl}/${prefix}/register", data = RegisterReq(userNameInput.value, passwordInput.value).asJson.spaces2, headers = Map(`Content-Type` -> `application/json`))
+                      .map(resp => decode[String](resp.responseText).right.get)
+                  case true => Future(failure)
+                }
+              }.map { code =>
+              code match {
+                case `success` => window.alert("成功")
+                case `failure` => window.alert("失败")
+              }
+            }
           case false => window.alert("用户名或者密码为空!")
         }
         case false =>

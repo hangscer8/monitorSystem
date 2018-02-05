@@ -25,7 +25,7 @@ package Protocols {
   case class UserEntity(username: String, password: String, lastActiveTime: Long, auth: Option[String]) //auth->authHead
 
   case class RegisterReq(userName: String, password: String)
-
+  
 }
 
 object akkaAction {
@@ -34,4 +34,9 @@ object akkaAction {
 
   case class AgentActorJoinCenter(agentActor: ActorRef, agentMachineEntity: AgentMachineEntity) extends AkkaEventAction
 
+}
+
+object MsgCode {
+  val success = "0000"
+  val failure = "0001"
 }
