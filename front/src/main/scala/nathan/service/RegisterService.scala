@@ -40,8 +40,8 @@ object RegisterService {
       passwordConformInput.value = ""
       passwordInput.value = ""
     }
-    val submitButton = <input onclick={submithandler} type="button" value="注册" class="col-md-1 col-md-offset-4 btn btn-primary"/>.as[Input]
-    val resetButton = <input onclick={resetHandler} type="button" value="清除" class="col-md-1 col-md-offset-1 btn btn-warning"/>.as[Input]
+    val submitButton = <input onclick={submithandler} type="button" value="注册" class="col-md-2 col-md-offset-2 btn btn-primary"/>.as[Input]
+    val resetButton = <input onclick={resetHandler} type="button" value="清除" class="col-md-2 col-md-offset-1 btn btn-warning"/>.as[Input]
     <div class="row">
       <div class="col-md-4 col-md-offset-4 text-center text-info">注册用户</div>
       <form class="col-md-4 col-md-offset-4">
