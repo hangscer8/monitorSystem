@@ -1,5 +1,6 @@
 package nathan.service
 
+import com.thoughtworks.binding.Binding.Var
 import com.thoughtworks.binding.{dom, _}
 import io.circe.parser.decode
 import nathan.monitorSystem.AkkaSystemConst._
@@ -23,7 +24,6 @@ import scala.concurrent.Future
 @JSExport
 object RegisterService extends HttpHeadSupport {
 
-
   @JSExport
   def render() = {
     dom.render(document.body, genMainDiv)
@@ -31,9 +31,15 @@ object RegisterService extends HttpHeadSupport {
 
   @dom
   def genMainDiv: Binding[Div] = {
+    val userName = Var("")
+    val password = Var("")
+    val startRegAction = Var(0) //为0时，表示从未点击过提交按钮
     val userNameInput = <input type="text" id="username" class="form-control" placeholder="input a user name"/>.as[Input]
+
     val passwordInput = <input type="password" id="password" class="form-control" placeholder="input a password"/>.as[Input]
+
     val passwordConformInput = <input type="password" id="passwordConform" class="form-control" placeholder="conform the password"/>.as[Input]
+
     val submithandler: Event => Unit = (event: Event) => {
       passwordConformInput.value == passwordInput.value match {
         case true => List(userNameInput.value, passwordInput.value).forall(_.nonEmpty) match {
@@ -59,15 +65,39 @@ object RegisterService extends HttpHeadSupport {
           window.alert("密码不一致!")
       }
     }
+
+
     val resetHandler: Event => Unit = (event: Event) => {
       userNameInput.value = ""
       passwordConformInput.value = ""
       passwordInput.value = ""
     }
-    val submitButton = <input onclick={submithandler} type="button" value="注册" class="col-md-2 col-md-offset-2 btn btn-primary"/>.as[Input]
-    val resetButton = <input onclick={resetHandler} type="button" value="清除" class="col-md-2 col-md-offset-1 btn btn-warning"/>.as[Input]
+
+
+    val submitButton = <input type="button"
+                              onclick={submithandler}
+                              onchange={_: Event =>
+                                userName.value = userNameInput.value
+                                password.value = passwordInput.value
+                                startRegAction.value = startRegAction.value + 1}
+                              value="注册"
+                              class="col-md-2 col-md-offset-2 btn btn-primary"/>.as[Input]
+
+    val resetButton = <input type="button"
+                             onclick={_: Event =>
+                               userNameInput.value = ""
+                               passwordConformInput.value = ""
+                               passwordInput.value = ""}
+                             value="清除"
+                             class="col-md-2 col-md-offset-1 btn btn-warning"/>.as[Input]
+
     <div class="row">
-      <div class="col-md-4 col-md-offset-4 text-center text-info">注册用户</div>
+      {startRegAction.bind match {
+      case 0 => <p>啊哈哈</p>
+      case _ => <p>吼吼吼
+        {startRegAction.bind.toString}
+      </p>
+    }}<div class="col-md-4 col-md-offset-4 text-center text-info">注册用户</div>
       <form class="col-md-4 col-md-offset-4">
         <div class="form-group">
           <label for="username" class="control-label ">
