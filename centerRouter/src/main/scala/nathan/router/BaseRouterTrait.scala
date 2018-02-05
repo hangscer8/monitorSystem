@@ -21,7 +21,7 @@ trait BaseRouterTrait {
           }
         case _ =>
           List(
-            "/monitorSystem/register/userName/"
+            "/monitorSystem/register"
           ).exists(pathStr => url.startsWith(pathStr)) match { //哪些url不需要验证登陆
             case true =>
               provide(None)
