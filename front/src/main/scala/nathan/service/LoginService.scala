@@ -14,7 +14,7 @@ import io.circe.parser.decode
 import io.circe.syntax._
 import nathan.monitorSystem.MsgCode._
 import nathan.util.HttpHeadSupport
-
+import nathan.util.CommonUtil.setAuth
 import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
 import scala.scalajs.js.annotation.JSExport
 import org.scalajs.dom.ext.Ajax.InputData._
@@ -22,9 +22,9 @@ import org.scalajs.dom.ext.Ajax.InputData._
 import scala.concurrent.Future
 
 @JSExport
-object LoginService {
+object LoginService extends HttpHeadSupport {
 
-  val loginActionFlag = Var(0) //0表示未请求
+  val isLogin = Var(false)
 
   @JSExport
   def render() = {
@@ -42,7 +42,20 @@ object LoginService {
                                class="form-control"
                                placeholder="input a password"/>.as[Input]
     val loginAction = (_: Event) => {
-      loginActionFlag.value = loginActionFlag.value + 1
+      (userNameInput.value.nonEmpty && passwordInput.value.nonEmpty) match {
+        case true =>
+          Ajax.post(url = s"${baseUrl}/${prefix}/user",
+            data = UserEntity(userNameInput.value, passwordInput.value, System.currentTimeMillis(), Option(setAuth)).asJson.spaces2
+            , headers = headerWithJson).map(_.responseText).map(decode[String](_).right.get)
+            .map {
+              case `success` =>
+                isLogin := true
+                window.confirm("登陆成功")
+              case _ => window.alert("登陆失败")
+            }
+        case false =>
+          window.alert("用户名或者密码有空值")
+      }
     }
 
     <div class="row">

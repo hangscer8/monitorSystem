@@ -38,7 +38,12 @@ trait BaseRouterTrait {
                   parameterMap.flatMap { paramsKV => //从get参数中获取
                     paramsKV.get(authHead) match {
                       case Some(auth) =>
-                        provide(Some(auth))
+                        UserSupport.isLoginUser(Some(auth)) match {
+                          case true =>
+                            provide(Some(auth))
+                          case false =>
+                            complete(StatusCodes.Forbidden)
+                        }
                       case None =>
                         complete(StatusCodes.Forbidden)
                     }
