@@ -24,13 +24,13 @@ import org.scalajs.dom.ext.Ajax.InputData._
 import scala.concurrent.Future
 
 @JSExport
-object IndexService {
+object AddAgentMachineService {
   @JSExport
-  def render(): Unit = {
-    dom.render(document.body, genMainDev)
+  def render(): Unit = { //空参数，但是()不能省略
+    dom.render(document.body, genAddAgentMachineHTML)
   }
 
-  @dom def genMainDev: Binding[Div] = {
+  @dom def genAddAgentMachineHTML: Binding[Node] = {
     <div>
       {NavBar.nav.bind}{AgentServiceUI.addAgentDivComponent.bind}
     </div>

@@ -25,7 +25,9 @@ package Protocols {
   case class UserEntity(username: String, password: String, lastActiveTime: Long, auth: Option[String]) //auth->authHead
 
   case class RegisterReq(userName: String, password: String)
-  
+
+  case class AddAgentReq(ip: String, port: String)
+
 }
 
 object akkaAction {
