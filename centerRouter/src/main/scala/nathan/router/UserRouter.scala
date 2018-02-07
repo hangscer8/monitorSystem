@@ -12,7 +12,7 @@ class UserRouter extends BaseRouterTrait with UserTrait {
   implicit val ec = ExecutorService.ec
   val route = pathPrefix(prefix) {
     apiAuthentication { auth =>
-      path("user") {
+      path("login") {
         post {
           entity(as[UserEntity]) { user =>
             complete(userLogin(user))

@@ -1,16 +1,13 @@
 package nathan.actor
 
 import akka.actor.{Actor, Props}
-import nathan.actor.Protocol.StoreAgentMachineAction
-import nathan.ec.ExecutorService.daoActor
 import nathan.monitorSystem.AkkaSystemConst._
-import nathan.monitorSystem.akkaAction.AgentActorJoinCenter
+import nathan.util.ImperativeRequestContext
 
 class CenterRouterActor extends Actor {
   override def receive: Receive = {
-    case AgentActorJoinCenter(agentActor, agentMachineEntity) =>
-      daoActor ! StoreAgentMachineAction(agentMachineEntity)
-      context.actorOf(Props(classOf[PeerToAgentActor])) ! (`agentActorJoined`, agentActor, agentMachineEntity)
+    case (ctx: ImperativeRequestContext, ip: String, port: Int) =>
+      context.actorOf(Props(classOf[PeerToAgentActor])) ! (ctx, ip, port) //转发
     case (`agentTimeout`, agentId: String) =>
       println(agentId + "退出了")
   }

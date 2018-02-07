@@ -16,11 +16,11 @@ import nathan.monitorSystem.MsgCode._
 import nathan.ui.{AgentServiceUI, NavBar}
 import nathan.util.HttpHeadSupport
 import nathan.util.CommonUtil.setAuth
-
+import nathan.monitorSystem.AkkaSystemConst._
 import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
 import scala.scalajs.js.annotation.JSExport
 import org.scalajs.dom.ext.Ajax.InputData._
-
+import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
 import scala.concurrent.Future
 
 @JSExport

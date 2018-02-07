@@ -7,6 +7,7 @@ import window.localStorage
 trait HttpHeadSupport {
   val `Content-Type` = "Content-Type"
   val `application/json` = "application/json"
+  val `text/plain` = "text/plain"
 
   def header = Map("Content-Type" -> "application/json", authHead -> localStorage.getItem(authHead))
 

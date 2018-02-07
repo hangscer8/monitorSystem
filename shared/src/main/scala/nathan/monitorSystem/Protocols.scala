@@ -26,7 +26,7 @@ package Protocols {
 
   case class RegisterReq(userName: String, password: String)
 
-  case class AddAgentReq(ip: String, port: String)
+  case class AddAgentReq(ip: String, port: Int)
 
 }
 

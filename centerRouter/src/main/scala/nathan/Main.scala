@@ -5,7 +5,7 @@ import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.Route
 import nathan.dbentity.DbInit
 import nathan.ec.ExecutorService
-import nathan.router.{CPUPercRouter, IndexRouter, RegisterRouter, UserRouter}
+import nathan.router._
 import nathan.util.CorsSupport
 import nathan.monitorSystem.AkkaSystemConst._
 
@@ -20,7 +20,8 @@ object Main extends App with CorsSupport {
     val userRouter = new UserRouter()
     val cpuPercRouter = new CPUPercRouter()
     val registerRouter = new RegisterRouter
-    val route = indexRouter.route ~ userRouter.route ~ cpuPercRouter.route ~ registerRouter.route
+    val agentRouter = new AgentRouter()
+    val route = indexRouter.route ~ userRouter.route ~ cpuPercRouter.route ~ registerRouter.route ~ agentRouter.route
     corsHandler(route)
   }
 

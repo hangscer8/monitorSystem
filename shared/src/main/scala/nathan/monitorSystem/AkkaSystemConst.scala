@@ -9,6 +9,7 @@ object AkkaSystemConst {
   val agent_system_name = "agentSystem"
   val agent_actor_name = "agentActor"
   val agentActorJoined = "agentActor"
+  val askAgent = "askAgent"
   val peerToAgentActor = "peerToAgentActor"
   val agentTimeout = "agentTimeout"
 

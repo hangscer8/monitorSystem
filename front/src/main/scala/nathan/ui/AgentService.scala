@@ -2,19 +2,34 @@ package nathan.ui
 
 import com.thoughtworks.binding.Binding.Var
 import com.thoughtworks.binding.{dom, _}
+import nathan.monitorSystem.Protocols.AddAgentReq
 import org.scalajs.dom.html._
 import nathan.util.implicitUtil._
 import org.scalajs.dom.raw.Event
+import org.scalajs.dom.window
+import io.circe.generic.auto._
+import io.circe.parser.decode
+import io.circe.syntax._
+import nathan.monitorSystem.AkkaSystemConst._
 
 import scala.scalajs.js.annotation.JSExport
 import scala.util.Try
+import nathan.util.implicitUtil._
+import org.scalajs.dom.ext.Ajax
+import nathan.monitorSystem.MsgCode._
+import nathan.util.HttpHeadSupport
+
+import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
 
 @JSExport
-object AgentServiceUI {
+object AgentServiceUI extends HttpHeadSupport {
   var ip = "" //这里为什么不需要@dom
   var port = 0
 
+  val isConnect = Var(true)
+
   //使用@dom注解，使之模块化
+
   @dom val ipInput: Binding[Input] = <input type="text"
                                             id="agentIP"
                                             onchange={e: Event =>
@@ -22,6 +37,7 @@ object AgentServiceUI {
                                               ip = target.value}
                                             class="form-control"
                                             placeholder="input the ip address of agent machine"/>
+
   @dom val portInput: Binding[Input] = <input type="number"
                                               id="agentPort"
                                               onchange={e: Event =>
@@ -33,6 +49,24 @@ object AgentServiceUI {
                                                 }}
                                               class="form-control"
                                               placeholder="input the machine target port"/>
+  val connectAgentAction = (e: Event) => {
+    (ip.count(ch => ch == '.') >= 3 && port != 0) match {
+      case true =>
+        println(AddAgentReq(ip, port).asJson.spaces2)
+        Ajax.get(url = s"${baseUrl}/${prefix}/agent?ip=${ip}&port=${port}", headers = Map(`Content-Type` -> `text/plain`, authHead -> window.localStorage.getItem(authHead)))
+          .map(resp => resp.responseText)
+          .map(decode[String](_).right.get)
+          .map {
+            case `success` =>
+              isConnect := true
+              window.confirm("添加成功")
+            case other =>
+              window.alert(s"$other,添加失败!")
+          }
+      case false =>
+        window.alert("ip地址或者端口填写错误")
+    }
+  }
 
   @dom def addAgentDivComponent: Binding[Div] = { //添加一个Agent的Form组件
     <div class="row">
@@ -52,11 +86,8 @@ object AgentServiceUI {
         </div>
         <input type="button"
                value="连接"
-               onclick={e: Event =>
-                 println(ip)
-                 println(port)}
+               onclick={connectAgentAction}
                class="col-md-2 col-md-offset-3 btn btn-primary"/>
-        <input type="button" value="清除" class="col-md-2 col-md-offset-1 btn btn-warning"/>
       </form>
     </div>
   }
