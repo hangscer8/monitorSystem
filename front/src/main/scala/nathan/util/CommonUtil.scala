@@ -10,8 +10,12 @@ object CommonUtil {
   }
 
   def setAuth: String = {
-    val key = scala.util.Random.alphanumeric.take(20).mkString
+    val key = scala.util.Random.alphanumeric.take(40).mkString
     window.localStorage.setItem(authHead, key)
     key
+  }
+
+  def getAuth: String = {
+    window.localStorage.getItem(authHead)
   }
 }
