@@ -55,7 +55,10 @@ object RegisterService extends HttpHeadSupport {
                 }
               }.map { code =>
               code match {
-                case `success` => window.alert("成功")
+                case `success` => window.confirm("登陆成功，是否转到登陆页面?") match {
+                  case true => window.location.href = "login.html"
+                  case _ =>
+                }
                 case `failure` => window.alert("失败")
               }
             }

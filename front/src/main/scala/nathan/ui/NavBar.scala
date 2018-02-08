@@ -23,7 +23,7 @@ object NavBar {
               <ul class="dropdown-menu">
                 <li>
                   <a href="addAgent.html">添加Agent</a>
-                  <a href="#">查看Agent</a>
+                  <a href="showAgent.html">查看Agent</a>
                 </li>
               </ul>
             </li>

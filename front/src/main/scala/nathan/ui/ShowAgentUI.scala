@@ -70,7 +70,7 @@ object ShowAgentUI extends HttpHeadSupport {
           {agent.model.toString}
         </td>
         <td class="text-center col-md-1 ">
-          {new Date(agent.joinedTime).toDateString()}
+          {Option(new Date(agent.joinedTime)).map(date => s"")}
         </td>
         <td class="text-center col-md-1 ">
           {agent.sendMsgNum.toString}

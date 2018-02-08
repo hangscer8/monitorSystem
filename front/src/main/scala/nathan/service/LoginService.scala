@@ -50,7 +50,10 @@ object LoginService extends HttpHeadSupport {
             .map {
               case `success` =>
                 isLogin := true
-                window.confirm("登陆成功")
+                window.confirm("登陆成功，是否转到首页") match {
+                  case true => window.location.href = "index.html"
+                  case _ =>
+                }
               case _ => window.alert("登陆失败")
             }
         case false =>
