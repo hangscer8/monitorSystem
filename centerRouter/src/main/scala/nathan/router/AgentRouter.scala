@@ -5,6 +5,7 @@ import nathan.ec.ExecutorService._
 import nathan.monitorSystem.AkkaSystemConst._
 import nathan.service.agent.AgentService
 import nathan.util.ImperativeRequestContext._
+import nathan.util.JsonUtil._
 
 class AgentRouter extends BaseRouterTrait with AgentService {
   val route = pathPrefix(prefix) {
@@ -15,7 +16,12 @@ class AgentRouter extends BaseRouterTrait with AgentService {
             centerRouterActor ! (ctx, ip, port)
           }
         }
-      }
+      } ~
+        path("agentList") {
+          get {
+            complete(getAgentList)
+          }
+        }
     }
   }
 }

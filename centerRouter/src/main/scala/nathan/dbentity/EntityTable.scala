@@ -36,15 +36,17 @@ object EntityTable {
   val cpuPercs = new TableQuery(tag => new CPUPerc(tag))
 
   class AgentMachine(_tableTag: Tag) extends Table[AgentMachineEntity](_tableTag, "agentMachine") {
-    def * = (ip, akkaPort, agentId, cacheSize, vendor, mhz, model) <> (AgentMachineEntity.tupled, AgentMachineEntity.unapply)
+    def * = (ip, akkaPort, agentId, cpuCacheSize, cpuVendor, cpuMhz, model, sendMsgNum, joinedTime) <> (AgentMachineEntity.tupled, AgentMachineEntity.unapply)
 
     val ip: Rep[String] = column[String]("ip")
     val akkaPort: Rep[Int] = column[Int]("akkaPort")
     val agentId: Rep[String] = column[String]("agentId", O.PrimaryKey)
-    val cacheSize: Rep[Long] = column[Long]("cacheSize")
-    val vendor: Rep[String] = column[String]("vendor")
-    val mhz: Rep[Int] = column[Int]("mhz")
+    val cpuCacheSize: Rep[Long] = column[Long]("cpuCacheSize")
+    val cpuVendor: Rep[String] = column[String]("cpuVendor")
+    val cpuMhz: Rep[Int] = column[Int]("cpuMhz")
     val model: Rep[String] = column[String]("model")
+    val sendMsgNum: Rep[Long] = column[Long]("sendMsgNum")
+    val joinedTime: Rep[Long] = column[Long]("joinedTime")
   }
 
   val agentMachines = new TableQuery(tag => new AgentMachine(tag))

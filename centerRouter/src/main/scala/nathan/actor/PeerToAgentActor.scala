@@ -1,12 +1,15 @@
 package nathan.actor
 
 import akka.actor.{Actor, ActorPaths, ActorRef, ReceiveTimeout}
-import nathan.ec.ExecutorService.daoActor
-import nathan.monitorSystem.Protocols._
 import nathan.actor.Protocol._
+import nathan.dbentity.EntityTable._
+import nathan.dbentity.EntityTable.h2.api._
+import nathan.ec.ExecutorService.daoActor
 import nathan.monitorSystem.AkkaSystemConst._
 import nathan.monitorSystem.MsgCode
+import nathan.monitorSystem.Protocols._
 import nathan.monitorSystem.akkaAction.AgentActorJoinCenter
+import nathan.util.FutureUtil.FutureOps
 import nathan.util.ImperativeRequestContext
 import nathan.util.JsonUtil._
 
@@ -33,8 +36,17 @@ class PeerToAgentActor extends Actor {
       ctx.complete("agent joined time out!")
       context.stop(self)
     case AgentActorJoinCenter(agentActor, agentMachineEntity) =>
-      ctx.complete(MsgCode.success)
-      context.become(running(agentActor, agentMachineEntity.agentId))
+      db.run((agentMachines += agentMachineEntity).asTry).exec match {
+        case Success(1) =>
+          ctx.complete(MsgCode.success)
+          context.become(running(agentActor, agentMachineEntity.agentId))
+        case Failure(ex) =>
+          ctx.complete(ex.getMessage)
+          context.stop(self)
+        case _ =>
+          ctx.complete("失败")
+          context.stop(self)
+      }
   }
 
   def running(agent: ActorRef, agentId: String): Receive = {

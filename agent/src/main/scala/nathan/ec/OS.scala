@@ -52,7 +52,7 @@ object OS {
     val ip = config.getString("akka.remote.netty.tcp.hostname")
     val akkaPort = config.getInt("akka.remote.netty.tcp.port")
     val cpuInfo = sigar.getCpuInfoList.head
-    AgentMachineEntity(ip = ip, akkaPort = akkaPort, agentId = agentId, cacheSize = cpuInfo.getCacheSize, vendor = cpuInfo.getVendor, mhz = cpuInfo.getMhz, model = cpuInfo.getModel)
+    AgentMachineEntity(ip = ip, akkaPort = akkaPort, agentId = agentId, cpuCacheSize = cpuInfo.getCacheSize, cpuVendor = cpuInfo.getVendor, cpuMhz = cpuInfo.getMhz, model = cpuInfo.getModel, sendMsgNum = 0L, joinedTime = System.currentTimeMillis())
   }
 }
 
