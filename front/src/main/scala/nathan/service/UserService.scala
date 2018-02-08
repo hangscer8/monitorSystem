@@ -63,25 +63,24 @@ object UserService extends HttpHeadSupport {
 
   @JSExport
   def testHc() = {
-    val newChart = (datas: js.Array[AnySeries]) =>
-      new HighchartsConfig {
-        // Chart config
-        override val chart: Cfg[Chart] = Chart(`type` = "line", animation = false)
-        //      override val chart: Cfg[Chart] = Chart()
+    val newChart = (datas: js.Array[AnySeries]) => new HighchartsConfig {
+      // Chart config
+      override val chart: Cfg[Chart] = Chart(`type` = "line", animation = false)
+      //      override val chart: Cfg[Chart] = Chart()
 
-        // Chart title
-        override val title: Cfg[Title] = Title(text = "Demo bar chart")
+      // Chart title
+      override val title: Cfg[Title] = Title(text = "Demo bar chart")
 
-        // X Axis settings
-        override val xAxis = js.Array(XAxis(categories = js.Array("Apples", "Bananas", "Oranges")))
+      // X Axis settings
+      override val xAxis = js.Array(XAxis(categories = js.Array("Apples", "Bananas", "Oranges")))
 
-        // Y Axis settings
-        override val yAxis = js.Array(YAxis(min = -.0, max = 20.0, title = YAxisTitle(text = "Fruit eaten")))
-        // Series
-        override val series: SeriesCfg = datas
-        override val credits = Credits(false)
-        override val legend = Legend(layout = "horizontal")
-      }
+      // Y Axis settings
+      override val yAxis = js.Array(YAxis(min = -.0, max = 20.0, title = YAxisTitle(text = "Fruit eaten")))
+      // Series
+      override val series: SeriesCfg = datas
+      override val credits = Credits(false)
+      override val legend = Legend(layout = "horizontal")
+    }
     window.setInterval(() => {
       val now = System.currentTimeMillis()
       val data = js.Array[AnySeries](

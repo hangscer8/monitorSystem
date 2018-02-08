@@ -14,7 +14,6 @@ object ShowAgentService {
   }
 
   @dom def genMainDiv: Binding[Node] = {
-
     <div>
       {NavBar.nav.bind}{ShowAgentUI.showAgentTableCom.bind}
     </div>
