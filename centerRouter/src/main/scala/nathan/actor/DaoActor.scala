@@ -16,21 +16,30 @@ class DaoActor extends Actor with DaoActorTrait {
 
 trait DaoActorTrait {
   self: Actor =>
-
+  import context.dispatcher
   def withDaoAction(action: DaoAction) = action match {
     case StoreAgentMachineAction(agentMachineEntity) =>
-      db.run(agentMachines += agentMachineEntity).exec
+      db.run(receiveMetricDBIO(agentMachines += agentMachineEntity, agentMachineEntity.agentId).asTry).exec
     case StoreCPUPercAction(cPUPercEntity) =>
-      db.run(cpuPercs += cPUPercEntity).exec
+      db.run(receiveMetricDBIO(cpuPercs += cPUPercEntity, cPUPercEntity.agentId).asTry).exec
     case StoreMEMEntityAction(memEntity) =>
-      db.run(mems += memEntity).exec
+      db.run(receiveMetricDBIO(mems += memEntity, memEntity.agentId).asTry).exec
     case StoreSWAPEntityAction(swapEntity) =>
-      db.run(swaps += swapEntity).exec
+      db.run(receiveMetricDBIO(swaps += swapEntity, swapEntity.agentId).asTry).exec
     case StoreLoadAvgEntityAction(loadAvgEntity) =>
-      db.run(loadAvgs += loadAvgEntity).exec
+      db.run(receiveMetricDBIO(loadAvgs += loadAvgEntity, loadAvgEntity.agentId).asTry).exec
     case StoreFileUsageEntityAction(fileUsageEntity) =>
-      db.run(fileUsages += fileUsageEntity).exec
+      db.run(receiveMetricDBIO(fileUsages += fileUsageEntity, fileUsageEntity.agentId).asTry).exec
     case StoreNetInfoEntityAction(netInfoEntity) =>
-      db.run(netInfos += netInfoEntity).exec
+      db.run(receiveMetricDBIO(netInfos += netInfoEntity, netInfoEntity.agentId).asTry).exec
+  }
+
+  def receiveMetricDBIO(dbio: DBIO[Int], agentId: String): DBIO[Int] = {
+    val q = for {
+      sendMsgNumOld <- agentMachines.filter(_.agentId === agentId).map(_.sendMsgNum).result.head
+      i <- dbio
+      _ <- agentMachines.filter(_.agentId === agentId).map(_.sendMsgNum).update(sendMsgNumOld + 1) //更新agent发送指标信息的数量
+    } yield i
+    q
   }
 }
