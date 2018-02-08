@@ -25,8 +25,12 @@ class CollectionMetricActor extends Actor {
 
   def running(agentId: String, peertoAgentActor: ActorRef): Receive = {
     case "CPUPerc" => peertoAgentActor ! OS.getCPUPerc(agentId)
+    case "MEM" => peertoAgentActor ! OS.getMEM(agentId)
+    case "SWAP" => peertoAgentActor ! OS.getSwap(agentId)
+    case "LoadAvg" => peertoAgentActor ! OS.getLoadAvg(agentId)
+    case "FileUsage" => peertoAgentActor ! OS.getFileUsage(agentId)
+    case "NetInfo" => peertoAgentActor ! OS.getNetInfo(agentId)
     case Terminated(`peertoAgentActor`) =>
       context.stop(self)
-    case _ =>
   }
 }

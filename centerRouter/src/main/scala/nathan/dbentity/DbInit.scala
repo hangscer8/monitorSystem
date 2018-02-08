@@ -12,13 +12,23 @@ import scala.util.Try
 
 object DbInit {
   def init = {
-    val future2 = Seq(users.schema.drop, cpuPercs.schema.drop, agentMachines.schema.drop).foreach { action =>
+    val future2 = Seq(
+      users.schema.drop,
+      cpuPercs.schema.drop,
+      agentMachines.schema.drop,
+      mems.schema.drop,
+      swaps.schema.drop,
+      loadAvgs.schema.drop,
+      fileUsages.schema.drop,
+      netInfos.schema.drop
+    ).foreach { action =>
       println(action.statements.mkString("") + " ,result:" + Try(Await.result(db.run(action), 3 seconds)))
     }
     val futures = Seq(
       users.schema.create >>
         (users += UserEntity("jianghang", "password", System.currentTimeMillis(), Some(DefaultAuth.auth))) >>
-        cpuPercs.schema.create >> agentMachines.schema.create
+        cpuPercs.schema.create >> agentMachines.schema.create >> mems.schema.create
+        >> swaps.schema.create >> loadAvgs.schema.create >> fileUsages.schema.create >> netInfos.schema.create
     ).map { action =>
       db.run(action.transactionally.asTry)
     }

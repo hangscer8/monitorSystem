@@ -50,4 +50,60 @@ object EntityTable {
   }
 
   val agentMachines = new TableQuery(tag => new AgentMachine(tag))
+
+  class Mem(_tabletag: Tag) extends Table[MEMEntity](_tabletag, "MEMEntity") {
+    def * = (total, used, create, agentId) <> (MEMEntity.tupled, MEMEntity.unapply)
+
+    val total: Rep[Double] = column[Double]("total")
+    val used: Rep[Double] = column[Double]("used")
+    val create: Rep[Long] = column[Long]("create")
+    val agentId: Rep[String] = column[String]("agentId")
+  }
+
+  val mems = new TableQuery(tag => new Mem(tag))
+
+  class Swap(_tableTag: Tag) extends Table[SWAPEntity](_tableTag, "SWAPEntity") {
+    def * = (total, used, create, agentId) <> (SWAPEntity.tupled, SWAPEntity.unapply)
+
+    val total: Rep[Double] = column[Double]("total")
+    val used: Rep[Double] = column[Double]("used")
+    val create: Rep[Long] = column[Long]("create")
+    val agentId: Rep[String] = column[String]("agentId")
+  }
+
+  val swaps = new TableQuery(tag => new Swap(tag))
+
+  class LoadAvg(_tableTag: Tag) extends Table[LoadAvgEntity](_tableTag, "LoadAvgEntity") {
+    def * = (`1min`, `5min`, `15min`, create, agentId) <> (LoadAvgEntity.tupled, LoadAvgEntity.unapply)
+
+    val `1min`: Rep[Double] = column[Double]("min1")
+    val `5min`: Rep[Double] = column[Double]("min5")
+    val `15min`: Rep[Double] = column[Double]("min15")
+    val create: Rep[Long] = column[Long]("create")
+    val agentId: Rep[String] = column[String]("agentId")
+  }
+
+  val loadAvgs = new TableQuery(tag => new LoadAvg(tag))
+
+  class FileUsage(_tableTag: Tag) extends Table[FileUsageEntity](_tableTag, "FileUsageEntity") {
+    def * = (total, used, create, agentId) <> (FileUsageEntity.tupled, FileUsageEntity.unapply)
+
+    val total: Rep[Double] = column[Double]("total")
+    val used: Rep[Double] = column[Double]("used")
+    val create: Rep[Long] = column[Long]("create")
+    val agentId: Rep[String] = column[String]("agentId")
+  }
+
+  val fileUsages = new TableQuery(tag => new FileUsage(tag))
+
+  class NetInfo(_tableTag: Tag) extends Table[NetInfoEntity](_tableTag, "NetInfoEntity") {
+    def * = (rxBytes, txBytes, create, agentId) <> (NetInfoEntity.tupled, NetInfoEntity.unapply)
+
+    val rxBytes: Rep[Long] = column[Long]("rxBytes")
+    val txBytes: Rep[Long] = column[Long]("txBytes")
+    val create: Rep[Long] = column[Long]("create")
+    val agentId: Rep[String] = column[String]("agentId")
+  }
+
+  val netInfos = new TableQuery(tag => new NetInfo(tag))
 }
