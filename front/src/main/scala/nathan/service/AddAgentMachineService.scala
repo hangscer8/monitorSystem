@@ -13,7 +13,7 @@ import io.circe.generic.auto._
 import io.circe.parser.decode
 import io.circe.syntax._
 import nathan.monitorSystem.MsgCode._
-import nathan.ui.{AgentServiceUI, NavBar}
+import nathan.ui.{AddAgentServiceUI, NavBar}
 import nathan.util.HttpHeadSupport
 import nathan.util.CommonUtil.setAuth
 import nathan.monitorSystem.AkkaSystemConst._
@@ -32,7 +32,7 @@ object AddAgentMachineService {
 
   @dom def genAddAgentMachineHTML: Binding[Node] = {
     <div>
-      {NavBar.nav.bind}{AgentServiceUI.addAgentDivComponent.bind}
+      {NavBar.nav.bind}{AddAgentServiceUI.addAgentDivComponent.bind}
     </div>
   }
 }

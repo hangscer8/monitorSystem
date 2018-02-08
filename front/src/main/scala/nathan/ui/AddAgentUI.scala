@@ -22,7 +22,7 @@ import nathan.util.HttpHeadSupport
 import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
 
 @JSExport
-object AgentServiceUI extends HttpHeadSupport {
+object AddAgentServiceUI extends HttpHeadSupport {
   var ip = "" //这里为什么不需要@dom
   var port = 0
 
@@ -52,7 +52,6 @@ object AgentServiceUI extends HttpHeadSupport {
   val connectAgentAction = (e: Event) => {
     (ip.count(ch => ch == '.') >= 3 && port != 0) match {
       case true =>
-        println(AddAgentReq(ip, port).asJson.spaces2)
         Ajax.get(url = s"${baseUrl}/${prefix}/agent?ip=${ip}&port=${port}", headers = Map(`Content-Type` -> `text/plain`, authHead -> window.localStorage.getItem(authHead)))
           .map(resp => resp.responseText)
           .map(decode[String](_).right.get)
