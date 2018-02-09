@@ -34,7 +34,7 @@ object CPUPercUI {
   }
 
   @dom def cpuChart(agentId: String): Binding[Node] = {
-    val _chartDivId = Var("chartDivId:" + scala.util.Random.alphanumeric.take(6).mkString(""))
+    val _chartDivId = Var("chartDivId" + scala.util.Random.alphanumeric.take(6).mkString(""))
     var chartDivId = _chartDivId.bind
     val cpuPercs = Vars.empty[CPUPercEntity]
     val isDynamic = Var(false) //是否实时加载数据
@@ -47,7 +47,7 @@ object CPUPercUI {
             SeriesLine(name = "蒋航122", data = js.Array[Double](2, 3, 8), animation = false),
             SeriesLine(name = "是这样1221", data = js.Array[Double](10, 15, 7), animation = false)
           )
-          jQuery(chartDivId).highcharts(newChart(data))
+          jQuery(s"#$chartDivId").highcharts(newChart(data))
         }, 1000)
     }
 
