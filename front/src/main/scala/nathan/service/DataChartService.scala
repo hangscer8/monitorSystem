@@ -26,9 +26,16 @@ import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
 import scala.concurrent.Future
 
 @JSExport
-object DataChartService { //数据报表
+object CPUDataChartService { //数据报表
   @JSExport
   def render(): Unit = {
-    dom.render(document.body, CPUPercUI.cpuChart("asd"))
+    dom.render(document.body, genMainDiv())
+  }
+
+  @dom
+  def genMainDiv(): Binding[Node] = {
+    <div>
+      {NavBar.nav.bind}{CPUPercUI.cpuChart().bind}
+    </div>
   }
 }

@@ -12,9 +12,21 @@ object NavBar {
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-left">
-            <li>
-              <a href="#">数据报表</a>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data:data-toggle="dropdown" data:role="button">数据报表
+                <span
+                class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="cpuChart.html">CPU</a>
+                  <a href="#">SWAP</a>
+                  <a href="#">MEM</a>
+                </li>
+              </ul>
             </li>
+
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data:data-toggle="dropdown" data:role="button">Agent Machine
                 <span
