@@ -28,7 +28,7 @@ object CPUPercUI {
     //      override val chart: Cfg[Chart] = Chart()
 
     // Chart title
-    override val title = Title(text = "Demo bar chart")
+    override val title = Title(text = "CPU占用率")
 
     // X Axis settings
     override val xAxis = js.Array(XAxis(categories = js.Array("Apples", "Bananas", "Oranges")))
@@ -43,14 +43,16 @@ object CPUPercUI {
 
   val agents = Vars.empty[AgentMachineEntity] //需要把vars此类变量放在全局
 
-  val _chartDivId = Var("chartDivId" + scala.util.Random.alphanumeric.take(6).mkString(""))
+  val agentChose = Var[scala.Option[AgentMachineEntity]](None) //左侧栏选择了哪个agent
+
+  val chartDivId = Var("chartDivId" + scala.util.Random.alphanumeric.take(6).mkString(""))
 
   val cpuPercs = Vars.empty[CPUPercEntity]
 
   val isDynamic = Var(false) //是否实时加载数据
 
   @dom def cpuChart(): Binding[Node] = {
-    var chartDivId = _chartDivId.bind
+    //    var chartDivId = _chartDivId.bind
 
 
     window.setTimeout(() => { //加载左侧agent列表
@@ -63,6 +65,12 @@ object CPUPercUI {
         }
     }, 300.0)
 
+    agentChose.bind match {
+      case None => //左侧仍然没选择哪个在线的agent
+
+      case Some(targetAgent) =>
+
+    }
 
     isDynamic.bind match {
       case true => println("true")
@@ -72,7 +80,7 @@ object CPUPercUI {
             SeriesLine(name = "蒋航122", data = js.Array[Double](2, 3, 8), animation = true),
             SeriesLine(name = "是这样1221", data = js.Array[Double](10, 15, 7), animation = true)
           )
-          jQuery(s"#$chartDivId").highcharts(newChart(data))
+          jQuery(s"#${chartDivId.value}").highcharts(newChart(data))
         }, 800)
     }
 
@@ -84,7 +92,7 @@ object CPUPercUI {
           <ul class="list-group">
             {for (agent <- agents) yield {
             <li class="list-group-item">
-              <a class="btn btn-sm">
+              <a class="btn btn-sm" onclick={e: Event => agentChose.value = Some(agent)}>
                 {s"${agent.ip}   ${agent.akkaPort}   ${DateShowUtil.show(agent.joinedTime)}"}
               </a>
             </li>
@@ -95,7 +103,7 @@ object CPUPercUI {
       <div class="panel panel-default col-md-9 col-md-offset-0">
         <div class="panel-heading">cpu数据展示</div>
         <div class="panel-body">
-          <div id={_chartDivId.bind}>
+          <div id={chartDivId.bind}>
           </div>
         </div>
       </div>

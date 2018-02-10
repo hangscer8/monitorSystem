@@ -17,7 +17,7 @@ object OS {
   def getCPUPerc(agentId: String): CPUPercEntity = {
     val cpuPerc = sigar.getCpuPerc
     sigar.getMem
-    CPUPercEntity(user = cpuPerc.getUser, sys = cpuPerc.getUser, _wait = cpuPerc.getWait, idle = cpuPerc.getIdle, combined = cpuPerc.getCombined, agentId = agentId)
+    CPUPercEntity(user = cpuPerc.getUser, sys = cpuPerc.getSys, _wait = cpuPerc.getWait, idle = cpuPerc.getIdle, combined = cpuPerc.getCombined, agentId = agentId)
   }
 
   def getMEM(agentId: String): MEMEntity = {
