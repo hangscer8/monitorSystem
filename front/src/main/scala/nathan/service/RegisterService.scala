@@ -55,11 +55,11 @@ object RegisterService extends HttpHeadSupport {
                 }
               }.map { code =>
               code match {
-                case `success` => window.confirm("登陆成功，是否转到登陆页面?") match {
+                case `success` => window.confirm("注册成功，是否转到登陆页面?") match {
                   case true => window.location.href = "login.html"
                   case _ =>
                 }
-                case `failure` => window.alert("失败")
+                case `failure` => window.alert("用户名可能已存在!")
               }
             }
           case false => window.alert("用户名或者密码为空!")
@@ -95,12 +95,7 @@ object RegisterService extends HttpHeadSupport {
                              class="col-md-2 col-md-offset-1 btn btn-warning"/>.as[Input]
 
     <div class="row">
-      {startRegAction.bind match {
-      case 0 => <p>啊哈哈</p>
-      case _ => <p>吼吼吼
-        {startRegAction.bind.toString}
-      </p>
-    }}<div class="col-md-4 col-md-offset-4 text-center text-info">注册用户</div>
+      <div class="col-md-4 col-md-offset-4 text-center text-info">注册用户</div>
       <form class="col-md-4 col-md-offset-4">
         <div class="form-group">
           <label for="username" class="control-label ">

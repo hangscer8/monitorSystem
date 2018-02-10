@@ -1,6 +1,6 @@
 package nathan.actor
 
-import akka.actor.{Actor, Props, Terminated}
+import akka.actor.{Actor, Props}
 import nathan.monitorSystem.AkkaSystemConst._
 
 class AgentActor extends Actor {

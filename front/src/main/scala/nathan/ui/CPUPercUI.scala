@@ -16,6 +16,8 @@ import org.scalajs.jquery.jQuery
 import io.circe.generic.auto._
 import io.circe.parser.decode
 import io.circe.syntax._
+import nathan.util.DateShowUtil
+
 import scala.scalajs.js
 import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
 
@@ -83,7 +85,7 @@ object CPUPercUI {
             {for (agent <- agents) yield {
             <li class="list-group-item">
               <a class="btn btn-sm">
-                {s"ip:${agent.ip},port:${agent.akkaPort}"}
+                {s"${agent.ip}   ${agent.akkaPort}   ${DateShowUtil.show(agent.joinedTime)}"}
               </a>
             </li>
           }}

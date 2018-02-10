@@ -17,7 +17,7 @@ import scala.util.Try
 import nathan.util.implicitUtil._
 import org.scalajs.dom.ext.Ajax
 import nathan.monitorSystem.MsgCode._
-import nathan.util.HttpHeadSupport
+import nathan.util.{DateShowUtil, HttpHeadSupport}
 
 import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
 import scala.scalajs.js.Date
@@ -70,7 +70,7 @@ object ShowAgentUI extends HttpHeadSupport {
           {agent.model.toString}
         </td>
         <td class="text-center col-md-1 ">
-          {Option(new Date(agent.joinedTime)).map(date => s"${date.getFullYear()}.${date.getMonth() + 1}.${date.getDate()}.${date.getHours()}.${date.getMinutes()}.${date.getSeconds()}").get}
+          {DateShowUtil.show(agent.joinedTime)}
         </td>
         <td class="text-center col-md-1 ">
           {agent.sendMsgNum.toString}
