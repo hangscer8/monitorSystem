@@ -6,13 +6,9 @@ import nathan.monitorSystem.Protocols._
 
 import scala.concurrent.Future
 
-trait CpuPercDao extends CpuPercTrait{
-  def getCPUPerc(agentId: String, startOPt: Option[Long], endOPt: Option[Long]): Future[Seq[CPUPercEntity]] = {
-    val start = startOPt.getOrElse(0L)
-    val q = endOPt match {
-      case Some(end) => cpuPercs.filter(_.create <= end).filter(_.create >= start).filter(_.agentId === agentId)
-      case None => cpuPercs.filter(_.create >= start).filter(_.agentId === agentId)
-    }
+trait CpuPercDao extends CpuPercTrait {
+  def getCPUPerc(agentId: String, size: Long): Future[Seq[CPUPercEntity]] = {
+    val q = cpuPercs.filter(_.agentId === agentId).sortBy(_.create.desc).take(size).sortBy(_.create.asc)
     db.run(q.result)
   }
 }

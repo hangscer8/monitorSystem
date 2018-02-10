@@ -9,8 +9,8 @@ class CPUPercRouter extends BaseRouterTrait with CpuPercDao {
   val route = pathPrefix(prefix) {
     apiAuthentication { auth =>
       path("cpuPerc") {
-        parameter("agentId".as[String], "start".as[Long] ?, "end".as[Long] ?) { (agentId, startOpt, endOpt) =>
-          complete(getCPUPerc(agentId, startOpt, endOpt))
+        parameter("agentId".as[String], "size".as[Long] ) { (agentId, size) =>
+          complete(getCPUPerc(agentId, size))
         }
       }
     }
