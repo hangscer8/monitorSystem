@@ -9,7 +9,7 @@ import nathan.router._
 import nathan.util.CorsSupport
 import nathan.monitorSystem.AkkaSystemConst._
 
-object Main extends App with CorsSupport {
+object CenterRouterMain extends App with CorsSupport {
   implicit val system = ExecutorService.system
   implicit val mat = ExecutorService.mat
   implicit val ec = ExecutorService.ec

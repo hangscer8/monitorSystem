@@ -31,15 +31,17 @@ object CPUPercUI {
     override val title = Title(text = "CPU占用率")
 
     // X Axis settings
-    override val xAxis = js.Array(XAxis(categories = js.Array("Apples", "Bananas", "Oranges")))
+    override val xAxis = js.Array(XAxis(categories = js.Array((1 to 20).map(_.toString): _*)))
 
     // Y Axis settings
-    override val yAxis = js.Array(YAxis(min = -.0, max = 20.0, title = YAxisTitle(text = "Fruit eaten")))
+    override val yAxis = js.Array(YAxis(min = -.0, max = 1.0, title = YAxisTitle(text = "CPU占用比")))
     // Series
     override val series = datas
     override val credits = Credits(false)
     override val legend = Legend(layout = "horizontal")
   }
+
+  //流程是，选择左侧栏的agent后，图表才会每秒刷新
 
   val agents = Vars.empty[AgentMachineEntity] //需要把vars此类变量放在全局
 
@@ -49,9 +51,11 @@ object CPUPercUI {
 
   val cpuPercList = Var(List.empty[CPUPercEntity]) //不一定非得使用Vars
 
-  val isDynamic = Var(false) //是否实时加载数据
+  val isDynamic = Var(true) //是否实时加载数据 每秒刷新
 
-  val loadSize = Var(1000) //加载cpu数据的信息的数量
+  val currentIntervalTask = Var[scala.Option[Int]](None) //agent被点击切换时，需要终止当前的循环任务
+
+  val loadSize = Var(20) //加载cpu数据的信息的数量
 
   @dom def cpuChart(): Binding[Node] = {
     //    var chartDivId = _chartDivId.bind
@@ -70,12 +74,27 @@ object CPUPercUI {
       case None => //左侧仍然没选择哪个在线的agent
 
       case Some(targetAgent) => //左侧点击事件，加载此agent收集的cpu相关数据
-        Ajax.get(url = s"${baseUrl}/${prefix}/cpuPerc?agentId=${targetAgent.agentId}&size=${loadSize.value}", headers = Map(authHead -> window.localStorage.getItem(authHead)))
-          .map(resp => resp.responseText).map(decode[List[CPUPercEntity]](_).right.get)
-          .map { _cpuPercs =>
-            cpuPercList.value = _cpuPercs
-          }
+        isDynamic.bind match {
+          case true =>
+            //清楚当前的循环任务
+            currentIntervalTask.value.map(taskId => window.clearInterval(taskId))
+            val taskId = window.setInterval(() => {
+              Ajax.get(url = s"${baseUrl}/${prefix}/cpuPerc?agentId=${targetAgent.agentId}&size=${loadSize.value}", headers = Map(authHead -> window.localStorage.getItem(authHead)))
+                .map(resp => resp.responseText).map(decode[List[CPUPercEntity]](_).right.get)
+                .map { _cpuPercs =>
+                  cpuPercList.value = _cpuPercs
+                }
+            }, 1000)
+            currentIntervalTask.value = Some(taskId)
+          case false =>
+            Ajax.get(url = s"${baseUrl}/${prefix}/cpuPerc?agentId=${targetAgent.agentId}&size=${loadSize.value}", headers = Map(authHead -> window.localStorage.getItem(authHead)))
+              .map(resp => resp.responseText).map(decode[List[CPUPercEntity]](_).right.get)
+              .map { _cpuPercs =>
+                cpuPercList.value = _cpuPercs
+              }
+        }
     }
+
 
     //    isDynamic.bind match {
     //      case true => println("true")
@@ -91,7 +110,16 @@ object CPUPercUI {
     cpuPercList.bind match { //绘制图表
       case Nil =>
       case cpuPercs: List[CPUPercEntity] =>
-        //todo
+        window.setTimeout(() => {
+          val data = js.Array[AnySeries](
+            SeriesLine(name = "用户占用", data = js.Array[Double](cpuPercs.map(_.user): _*), animation = false),
+            SeriesLine(name = "等待占用", data = js.Array[Double](cpuPercs.map(_._wait): _*), animation = false),
+            SeriesLine(name = "总共占用", data = js.Array[Double](cpuPercs.map(_.combined): _*), animation = false),
+            SeriesLine(name = "空闲", data = js.Array[Double](cpuPercs.map(_.idle): _*), animation = false),
+            SeriesLine(name = "系统占用", data = js.Array[Double](cpuPercs.map(_.sys): _*), animation = false)
+          )
+          jQuery(s"#${chartDivId.value}").highcharts(newChart(data))
+        }, 50)
     }
 
     <div class="row">
