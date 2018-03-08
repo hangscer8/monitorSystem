@@ -43,9 +43,7 @@ object ShowAgentUI extends HttpHeadSupport {
       <tr class="row">
         <th class="text-center col-md-1 ">ip</th>
         <th class="text-center col-md-1 ">port</th>
-        <th class="text-center col-md-1 ">cpu Cache</th>
         <th class="text-center col-md-1 ">cpu Vendor</th>
-        <th class="text-center col-md-1 ">cpu Mhz</th>
         <th class="text-center col-md-1 ">model</th>
         <th class="text-center col-md-1 ">joinedTime</th>
         <th class="text-center col-md-1 ">receivedMsg</th>
@@ -58,13 +56,7 @@ object ShowAgentUI extends HttpHeadSupport {
           {agent.akkaPort.toString}
         </td>
         <td class="text-center col-md-1 ">
-          {agent.cpuCacheSize.toString}
-        </td>
-        <td class="text-center col-md-1 ">
           {agent.cpuVendor.toString}
-        </td>
-        <td class="text-center col-md-1 ">
-          {agent.cpuMhz.toString}
         </td>
         <td class="text-center col-md-1 ">
           {agent.model.toString}

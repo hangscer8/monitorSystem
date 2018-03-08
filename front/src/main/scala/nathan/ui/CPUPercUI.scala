@@ -113,8 +113,6 @@ object CPUPercUI {
         window.setTimeout(() => {
           val data = js.Array[AnySeries](
             SeriesLine(name = "用户占用", data = js.Array[Double](cpuPercs.map(_.user): _*), animation = false),
-            SeriesLine(name = "等待占用", data = js.Array[Double](cpuPercs.map(_._wait): _*), animation = false),
-            SeriesLine(name = "总共占用", data = js.Array[Double](cpuPercs.map(_.combined): _*), animation = false),
             SeriesLine(name = "空闲", data = js.Array[Double](cpuPercs.map(_.idle): _*), animation = false),
             SeriesLine(name = "系统占用", data = js.Array[Double](cpuPercs.map(_.sys): _*), animation = false)
           )

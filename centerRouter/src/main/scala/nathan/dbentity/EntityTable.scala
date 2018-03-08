@@ -22,13 +22,11 @@ object EntityTable {
   val users = new TableQuery(tag => new User(tag))
 
   class CPUPerc(_tableTag: Tag) extends Table[CPUPercEntity](_tableTag, "cPUPerc") {
-    def * = (user, sys, _wait, idle, combined, create, agentId) <> (CPUPercEntity.tupled, CPUPercEntity.unapply)
+    def * = (user, sys, idle, create, agentId) <> (CPUPercEntity.tupled, CPUPercEntity.unapply)
 
     val user: Rep[Double] = column[Double]("user")
     val sys: Rep[Double] = column[Double]("sys")
-    val _wait: Rep[Double] = column[Double]("_wait")
     val idle: Rep[Double] = column[Double]("idle")
-    val combined: Rep[Double] = column[Double]("combined")
     val create: Rep[Long] = column[Long]("create")
     val agentId: Rep[String] = column[String]("agentId")
   }
@@ -36,14 +34,12 @@ object EntityTable {
   val cpuPercs = new TableQuery(tag => new CPUPerc(tag))
 
   class AgentMachine(_tableTag: Tag) extends Table[AgentMachineEntity](_tableTag, "agentMachine") {
-    def * = (ip, akkaPort, agentId, cpuCacheSize, cpuVendor, cpuMhz, model, sendMsgNum, joinedTime) <> (AgentMachineEntity.tupled, AgentMachineEntity.unapply)
+    def * = (ip, akkaPort, agentId, cpuVendor, model, sendMsgNum, joinedTime) <> (AgentMachineEntity.tupled, AgentMachineEntity.unapply)
 
     val ip: Rep[String] = column[String]("ip")
     val akkaPort: Rep[Int] = column[Int]("akkaPort")
     val agentId: Rep[String] = column[String]("agentId", O.PrimaryKey)
-    val cpuCacheSize: Rep[Long] = column[Long]("cpuCacheSize")
     val cpuVendor: Rep[String] = column[String]("cpuVendor")
-    val cpuMhz: Rep[Int] = column[Int]("cpuMhz")
     val model: Rep[String] = column[String]("model")
     val sendMsgNum: Rep[Long] = column[Long]("sendMsgNum")
     val joinedTime: Rep[Long] = column[Long]("joinedTime")
@@ -97,10 +93,9 @@ object EntityTable {
   val fileUsages = new TableQuery(tag => new FileUsage(tag))
 
   class NetInfo(_tableTag: Tag) extends Table[NetInfoEntity](_tableTag, "NetInfoEntity") {
-    def * = (rxBytes, txBytes, create, agentId) <> (NetInfoEntity.tupled, NetInfoEntity.unapply)
+    def * = (netSpeed, create, agentId) <> (NetInfoEntity.tupled, NetInfoEntity.unapply)
 
-    val rxBytes: Rep[Long] = column[Long]("rxBytes")
-    val txBytes: Rep[Long] = column[Long]("txBytes")
+    val netSpeed: Rep[Long] = column[Long]("netSpeed")
     val create: Rep[Long] = column[Long]("create")
     val agentId: Rep[String] = column[String]("agentId")
   }
