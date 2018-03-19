@@ -26,7 +26,10 @@ libraryDependencies ++= Seq(
   "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.9.2",
   "com.typesafe.akka" %% "akka-http-jackson" % "10.0.10",
   "org.ensime" %% "api" % "2.0.0",
-  "org.typelevel" %% "cats-core" % "1.0.0-RC1"
+  "org.typelevel" %% "cats-core" % "1.0.0-RC1",
+  "com.vmunier" %% "scalajs-scripts" % "1.1.1",
+  "com.dripower" %% "play-circe" % "2609.1",
+  guice
 )
 lazy val commonSettings = Seq(
   version := "0.1",
@@ -34,10 +37,10 @@ lazy val commonSettings = Seq(
   scalaVersion := "2.12.3",
   test in assembly := {}
 )
-lazy val app = (project in file("centerRouter")).
+lazy val centerRouter = project.
   settings(commonSettings: _*).
   settings(
     mainClass in assembly := Some("nathan.Main"),
     assemblyJarName in assembly := "centerRouter.jar"
-  )
+  ).enablePlugins(PlayScala)
 cancelable in Global := true

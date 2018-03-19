@@ -33,7 +33,7 @@ lazy val commonSettings = Seq(
   test in assembly := {}
 )
 
-lazy val app = (project in file("agent")).
+lazy val app = project.
   settings(commonSettings: _*).
   settings(
     mainClass in assembly := Some("nathan.Main"),
