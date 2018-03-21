@@ -24,6 +24,6 @@ object CenterRouterMain extends CorsSupport {
     val route = indexRouter.route ~ userRouter.route ~ cpuPercRouter.route ~ registerRouter.route ~ agentRouter.route
     corsHandler(route)
   }
-
+  
   Http().bindAndHandle(route, akkaServerIp, akkaServerPort)
 }
