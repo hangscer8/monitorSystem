@@ -13,6 +13,7 @@ import scala.scalajs.js.timers
 
 @JSExport
 object WebApp {
+  nathan.monitorSystem.MsgCode.failure
 
   @JSExport
   def fun() = {
