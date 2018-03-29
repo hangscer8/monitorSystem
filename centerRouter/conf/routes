@@ -12,4 +12,4 @@ GET         /register               controllers.register.RegisterController.inde
 
 POST        /register               controllers.register.RegisterController.registerUser
 
-POST        /register/upload        controllers.register.RegisterController.upload()
+POST        /register/upload        controllers.register.RegisterController.upload

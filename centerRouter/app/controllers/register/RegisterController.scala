@@ -1,6 +1,9 @@
 package controllers.register
 
+import java.io.File
 import javax.inject._
+
+import conf.PlayConf
 import io.circe.Printer
 import nathan.monitorSystem.Protocols.RegisterReq
 import play.api.libs.circe.Circe
@@ -22,6 +25,8 @@ class RegisterController @Inject()(cc: ControllerComponents) extends AbstractCon
   }
 
   def upload() = LoggingAction(parse.multipartFormData) { request =>
+    request.body.file("file").map(file => file.ref.moveTo(new File(PlayConf.uploadDir, file.filename), true))
+    println("asdasasdasd")
     Ok("asdasd")
   }
 }

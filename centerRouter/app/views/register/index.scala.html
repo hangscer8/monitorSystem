@@ -28,12 +28,16 @@
                 </div>
 
 
-                <input type="file" id="file" name="file"/>
-
                 <input type="button" value="注册" id="registerButton" class="col-md-2 col-md-offset-2 btn btn-primary"/>
                 <input type="button" value="清除" id="resetButton" class="col-md-2 col-md-offset-1 btn btn-warning"/>
             </form>
         </div>
+
+        <form enctype="multipart/form-data" id="pictureForm">
+            <input type="file" id="file" name="file"/>
+            <button id="uploadButton">上传</button>
+        </form>
+        
         <script type="text/javascript">
                 nathan.WebApp().registerService()
         </script>
