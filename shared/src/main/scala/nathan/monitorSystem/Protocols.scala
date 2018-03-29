@@ -22,7 +22,7 @@ package Protocols {
 
   case class NetInfoEntity(netSpeed: Long, create: Long = System.currentTimeMillis(), agentId: String) extends BaseAgentInfo //网络速度 KB/S
 
-  case class UserEntity(username: String, password: String, lastActiveTime: Long, auth: Option[String]) //auth->authHead
+  case class UserEntity(username: String, password: String, lastActiveTime: Long) //auth->authHead
 
   case class RegisterReq(userName: String, password: String)
 

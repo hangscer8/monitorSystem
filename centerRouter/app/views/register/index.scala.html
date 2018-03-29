@@ -1,1 +1,41 @@
-<h2>asdasdssdsadas</h2>
+@(title: String)
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <title>@title</title>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="@routes.Assets.versioned("javascripts/jquery-2.2.0.min.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.versioned("bootstrap/js/bootstrap.min.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.versioned("javascripts/front-fastopt.js")"></script>
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("bootstrap/css/bootstrap.min.css")">
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 text-center text-info">Cluster Monitor System 注册用户</div>
+            <form class="col-md-4 col-md-offset-4" id="registerForm">
+                <div class="form-group">
+                    <label for="username" class="control-label "><span class="glyphicon glyphicon-user"/>UserName</label>
+                    <input type="text" id="username" class="form-control" placeholder="input a user name"/>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="control-label"><span class="glyphicon glyphicon-sunglasses"/>Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="input a password"/>
+                </div>
+                <div class="form-group">
+                    <label for="passwordConform" class="control-label"><span class="glyphicon glyphicon-sunglasses"/>
+                        Password</label>
+                    <input type="password" id="passwordConform" class="form-control" placeholder="conform the password"/>
+                </div>
+
+
+                <input type="file" id="file" name="file"/>
+
+                <input type="button" value="注册" id="registerButton" class="col-md-2 col-md-offset-2 btn btn-primary"/>
+                <input type="button" value="清除" id="resetButton" class="col-md-2 col-md-offset-1 btn btn-warning"/>
+            </form>
+        </div>
+        <script type="text/javascript">
+                nathan.WebApp().registerService()
+        </script>
+    </body>
+</html>

@@ -45,7 +45,7 @@ object LoginService extends HttpHeadSupport {
       (userNameInput.value.nonEmpty && passwordInput.value.nonEmpty) match {
         case true =>
           Ajax.post(url = s"${baseUrl}/${prefix}/login",
-            data = UserEntity(userNameInput.value, passwordInput.value, System.currentTimeMillis(), Option(setAuth)).asJson.spaces2
+            data = UserEntity(userNameInput.value, passwordInput.value, System.currentTimeMillis()).asJson.spaces2
             , headers = headerWithJson).map(_.responseText).map(decode[String](_).right.get)
             .map {
               case `success` =>
