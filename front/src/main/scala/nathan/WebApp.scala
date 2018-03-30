@@ -2,7 +2,7 @@ package nathan
 
 import io.circe.generic.auto._
 import io.circe.syntax._
-import nathan.monitorSystem.Protocols.RegisterReq
+import nathan.monitorSystem.Protocols.{RegisterReq, UserEntity}
 import org.scalajs.dom._
 import org.scalajs.dom.ext.Ajax
 import org.scalajs.dom.ext.Ajax.InputData
@@ -16,6 +16,7 @@ import scala.util.{Failure, Success}
 import io.circe.generic.auto._
 import io.circe.parser.decode
 import io.circe.syntax._
+import nathan.util.Snowflake
 
 @JSExport
 object WebApp {
@@ -28,13 +29,17 @@ object WebApp {
     val userNameInput = document.getElementById("username").as[Input]
     val passwordInput = document.getElementById("password").as[Input]
     val passwordConformInput = document.getElementById("passwordConform").as[Input]
+    val aliasInput = document.getElementById("alias").as[Input]
+    val emailInput = document.getElementById("email").as[Input]
+    val avatarInput = document.getElementById("avatarInput").as[Input]
     val registerButton = document.getElementById("registerButton").as[Button]
     val resetButton = document.getElementById("resetButton").as[Button]
 
     registerButton.onclick = _ => { //用户注册的按钮
       passwordConformInput.value == passwordInput.value match {
         case true =>
-          val data = RegisterReq(userNameInput.value, passwordInput.value).asJson.spaces2
+          val newUser = UserEntity(id = Snowflake.nextId(), username = userNameInput.value, password = passwordInput.value, alias = aliasInput.value, email = emailInput.value, lastActiveTime = System.currentTimeMillis())
+          val data = newUser.asJson.spaces2
           Ajax.post(url = "register", data = data, headers = Map(`Content-Type` -> `application/json`)).map(_.responseText).onComplete(a => window.alert(a.toString))
         //json序列化
         case false => window.alert(s"密码不一致，请确认!")
@@ -45,6 +50,9 @@ object WebApp {
       userNameInput.value = ""
       passwordInput.value = ""
       passwordConformInput.value = ""
+      aliasInput.value = ""
+      emailInput.value = ""
+      avatarInput.value = ""
     }
 
     //**************

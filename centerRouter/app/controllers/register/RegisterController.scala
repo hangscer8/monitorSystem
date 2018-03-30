@@ -7,7 +7,7 @@ import conf.PlayConf
 import io.circe.Printer
 import io.circe.generic.auto._
 import io.circe.syntax._
-import nathan.monitorSystem.Protocols.RegisterReq
+import nathan.monitorSystem.Protocols.{RegisterReq, UserEntity}
 import play.api.libs.circe.Circe
 import play.api.mvc._
 import service.register.RegisterServiceTrait
@@ -22,7 +22,7 @@ class RegisterController @Inject()(cc: ControllerComponents) extends AbstractCon
     Ok(views.html.register.index("注册页面"))
   }
 
-  def registerUser() = LoggingAction(circe.json[RegisterReq]) { request => //json反序列化
+  def registerUser() = LoggingAction(circe.json[UserEntity]) { request => //json反序列化
     Ok("hahahsa" + request.body)
   }
 
