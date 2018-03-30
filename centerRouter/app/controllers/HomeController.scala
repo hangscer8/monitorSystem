@@ -12,6 +12,6 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
   implicit val customPrinter = Printer.spaces2.copy(dropNullValues = false)
 
   def index() = LoggingAction { request =>
-    Ok(views.html.main("asda"))
+    Ok(views.html.main("asda")).withSession(("isLogin", "true"))
   }
 }

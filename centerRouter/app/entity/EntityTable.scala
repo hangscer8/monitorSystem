@@ -7,8 +7,9 @@ class EntityTable {
   import EntityTable.h2.api._
 
   class User(_tableTag: Tag) extends Table[UserEntity](_tableTag, "user") {
-    def * = (username, password, lastActiveTime) <> (UserEntity.tupled, UserEntity.unapply)
+    def * = (id, username, password, lastActiveTime) <> (UserEntity.tupled, UserEntity.unapply)
 
+    val id: Rep[Long] = column[Long]("id", O.Unique)
     val username: Rep[String] = column[String]("username", O.Unique)
     val password: Rep[String] = column[String]("password")
     val lastActiveTime: Rep[Long] = column[Long]("lastActiveTime") //最后活动时间
@@ -18,8 +19,9 @@ class EntityTable {
   val users = new TableQuery(tag => new User(tag))
 
   class CPUPerc(_tableTag: Tag) extends Table[CPUPercEntity](_tableTag, "cPUPerc") {
-    def * = (user, sys, idle, create, agentId) <> (CPUPercEntity.tupled, CPUPercEntity.unapply)
+    def * = (id, user, sys, idle, create, agentId) <> (CPUPercEntity.tupled, CPUPercEntity.unapply)
 
+    val id: Rep[Long] = column[Long]("id", O.Unique)
     val user: Rep[Double] = column[Double]("user")
     val sys: Rep[Double] = column[Double]("sys")
     val idle: Rep[Double] = column[Double]("idle")
@@ -30,8 +32,9 @@ class EntityTable {
   val cpuPercs = new TableQuery(tag => new CPUPerc(tag))
 
   class AgentMachine(_tableTag: Tag) extends Table[AgentMachineEntity](_tableTag, "agentMachine") {
-    def * = (ip, akkaPort, agentId, cpuVendor, model, sendMsgNum, joinedTime) <> (AgentMachineEntity.tupled, AgentMachineEntity.unapply)
+    def * = (id, ip, akkaPort, agentId, cpuVendor, model, sendMsgNum, joinedTime) <> (AgentMachineEntity.tupled, AgentMachineEntity.unapply)
 
+    val id: Rep[Long] = column[Long]("id", O.Unique)
     val ip: Rep[String] = column[String]("ip")
     val akkaPort: Rep[Int] = column[Int]("akkaPort")
     val agentId: Rep[String] = column[String]("agentId", O.PrimaryKey)
@@ -44,8 +47,9 @@ class EntityTable {
   val agentMachines = new TableQuery(tag => new AgentMachine(tag))
 
   class Mem(_tabletag: Tag) extends Table[MEMEntity](_tabletag, "MEMEntity") {
-    def * = (total, used, create, agentId) <> (MEMEntity.tupled, MEMEntity.unapply)
+    def * = (id, total, used, create, agentId) <> (MEMEntity.tupled, MEMEntity.unapply)
 
+    val id: Rep[Long] = column[Long]("id", O.Unique)
     val total: Rep[Double] = column[Double]("total")
     val used: Rep[Double] = column[Double]("used")
     val create: Rep[Long] = column[Long]("create")
@@ -55,8 +59,9 @@ class EntityTable {
   val mems = new TableQuery(tag => new Mem(tag))
 
   class Swap(_tableTag: Tag) extends Table[SWAPEntity](_tableTag, "SWAPEntity") {
-    def * = (total, used, create, agentId) <> (SWAPEntity.tupled, SWAPEntity.unapply)
+    def * = (id, total, used, create, agentId) <> (SWAPEntity.tupled, SWAPEntity.unapply)
 
+    val id: Rep[Long] = column[Long]("id", O.Unique)
     val total: Rep[Double] = column[Double]("total")
     val used: Rep[Double] = column[Double]("used")
     val create: Rep[Long] = column[Long]("create")
@@ -66,8 +71,9 @@ class EntityTable {
   val swaps = new TableQuery(tag => new Swap(tag))
 
   class LoadAvg(_tableTag: Tag) extends Table[LoadAvgEntity](_tableTag, "LoadAvgEntity") {
-    def * = (`1min`, `5min`, `15min`, create, agentId) <> (LoadAvgEntity.tupled, LoadAvgEntity.unapply)
+    def * = (id, `1min`, `5min`, `15min`, create, agentId) <> (LoadAvgEntity.tupled, LoadAvgEntity.unapply)
 
+    val id: Rep[Long] = column[Long]("id", O.Unique)
     val `1min`: Rep[Double] = column[Double]("min1")
     val `5min`: Rep[Double] = column[Double]("min5")
     val `15min`: Rep[Double] = column[Double]("min15")
@@ -78,8 +84,9 @@ class EntityTable {
   val loadAvgs = new TableQuery(tag => new LoadAvg(tag))
 
   class FileUsage(_tableTag: Tag) extends Table[FileUsageEntity](_tableTag, "FileUsageEntity") {
-    def * = (total, used, create, agentId) <> (FileUsageEntity.tupled, FileUsageEntity.unapply)
+    def * = (id, total, used, create, agentId) <> (FileUsageEntity.tupled, FileUsageEntity.unapply)
 
+    val id: Rep[Long] = column[Long]("id", O.Unique)
     val total: Rep[Double] = column[Double]("total")
     val used: Rep[Double] = column[Double]("used")
     val create: Rep[Long] = column[Long]("create")
@@ -89,8 +96,9 @@ class EntityTable {
   val fileUsages = new TableQuery(tag => new FileUsage(tag))
 
   class NetInfo(_tableTag: Tag) extends Table[NetInfoEntity](_tableTag, "NetInfoEntity") {
-    def * = (netSpeed, create, agentId) <> (NetInfoEntity.tupled, NetInfoEntity.unapply)
+    def * = (id, netSpeed, create, agentId) <> (NetInfoEntity.tupled, NetInfoEntity.unapply)
 
+    val id: Rep[Long] = column[Long]("id", O.Unique)
     val netSpeed: Rep[Long] = column[Long]("netSpeed")
     val create: Rep[Long] = column[Long]("create")
     val agentId: Rep[String] = column[String]("agentId")
