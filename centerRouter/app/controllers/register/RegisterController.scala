@@ -31,4 +31,7 @@ class RegisterController @Inject()(cc: ControllerComponents) extends AbstractCon
     Ok("asdasd")
   }
 
+  import javax.net.ssl.SSLSocketFactory
+  import javax.net.SocketFactory
+  
 }
