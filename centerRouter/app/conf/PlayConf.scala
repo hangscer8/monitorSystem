@@ -14,4 +14,5 @@ object PlayConf {
       ConfigFactory.parseString(Source.fromInputStream(this.getClass.getResourceAsStream("/play.conf")).mkString)
 
   val uploadDir: String = playConfig.getString("uploadDir")
+  val akkaPort: Int = playConfig.getInt("akkaPort")
 }

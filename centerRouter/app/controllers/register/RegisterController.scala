@@ -10,6 +10,7 @@ import play.api.libs.circe.Circe
 import play.api.mvc._
 import util.ActionHelper
 import io.circe.generic.auto._
+import util.ExecutorService._
 
 @Singleton
 class RegisterController @Inject()(cc: ControllerComponents) extends AbstractController(cc) with Circe with ActionHelper {
@@ -29,4 +30,5 @@ class RegisterController @Inject()(cc: ControllerComponents) extends AbstractCon
     println("asdasasdasd")
     Ok("asdasd")
   }
+
 }
