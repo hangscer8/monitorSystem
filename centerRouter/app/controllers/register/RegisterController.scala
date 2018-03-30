@@ -11,10 +11,10 @@ import nathan.monitorSystem.Protocols.RegisterReq
 import play.api.libs.circe.Circe
 import play.api.mvc._
 import service.register.RegisterServiceTrait
-import util.ActionHelper
+import util.{ActionHelper, UtilTrait}
 
 @Singleton
-class RegisterController @Inject()(cc: ControllerComponents) extends AbstractController(cc) with Circe with ActionHelper with RegisterServiceTrait {
+class RegisterController @Inject()(cc: ControllerComponents) extends AbstractController(cc) with Circe with ActionHelper with RegisterServiceTrait with UtilTrait {
   implicit val codec = Codec.utf_8
   implicit val customPrinter = Printer.spaces2.copy(dropNullValues = false)
 
@@ -27,7 +27,14 @@ class RegisterController @Inject()(cc: ControllerComponents) extends AbstractCon
   }
 
   def upload() = LoggingAction(parse.multipartFormData) { request =>
-    request.body.file("file").map(file => file.ref.moveTo(new File(PlayConf.uploadDir, file.filename), true))
-    Ok(Map("code" -> "haha", "message" -> "上传成功!").asJson.noSpaces).as(JSON) //json序列化
+    request.body.file("file").map { file =>
+      val newName = reNameFile(file.filename)
+      (newName, file.ref.moveTo(new File(PlayConf.uploadDir, newName), true))
+    } match {
+      case None =>
+        Ok(Map("code" -> "0001", "message" -> "没有上传文件!!").asJson.noSpaces).as(JSON)
+      case Some((newFileName, _)) =>
+        Ok(Map("code" -> "0000", "newFileName" -> newFileName).asJson.noSpaces).as(JSON) //json序列化
+    }
   }
 }

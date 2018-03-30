@@ -26,17 +26,32 @@
                         Password</label>
                     <input type="password" id="passwordConform" class="form-control" placeholder="conform the password"/>
                 </div>
-
-
+                <div class="form-group">
+                    <label for="alias" class="control-label"><span class="glyphicon glyphicon-tags"/>Alias</label>
+                    <input type="text" id="alias" class="form-control" placeholder="enter user alias"/>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="control-label"><span class="glyphicon glyphicon-modal-window"/>E-mail</label>
+                    <input type="email" id="email" class="form-control" placeholder="enter user email"/>
+                </div>
+                @*头像*@
+                <input type="hidden" id="avatarInput" value="">
+            </form>
+            @*上传组件*@
+            <form enctype="multipart/form-data" id="pictureForm" class="col-md-2 col-md-offset-4">
+                <input type="file" id="file" name="file"/>
+                <p class="help-block">请上传你的头像👦</p>
+                <button class="btn btn-primary" id="uploadButton">上传</button>
+            </form>
+            <img class="col-md-2" id="avatarShowImg"/>
+        </div>
+        @*柵格系统的前套*@
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
                 <input type="button" value="注册" id="registerButton" class="col-md-2 col-md-offset-2 btn btn-primary"/>
                 <input type="button" value="清除" id="resetButton" class="col-md-2 col-md-offset-1 btn btn-warning"/>
-            </form>
+            </div>
         </div>
-
-        <form enctype="multipart/form-data" id="pictureForm">
-            <input type="file" id="file" name="file"/>
-            <button id="uploadButton">上传</button>
-        </form>
 
         <script type="text/javascript">
                 nathan.WebApp().registerService()

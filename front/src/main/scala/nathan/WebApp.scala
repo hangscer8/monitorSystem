@@ -7,8 +7,9 @@ import org.scalajs.dom._
 import org.scalajs.dom.ext.Ajax
 import org.scalajs.dom.ext.Ajax.InputData
 import org.scalajs.dom.ext.Ajax.InputData._
-import org.scalajs.dom.html.{Button, Form, Input}
+import org.scalajs.dom.html.{Button, Form, Image, Input}
 import nathan.util.CommonUtil._
+
 import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
 import scala.scalajs.js.annotation.JSExport
 import scala.util.{Failure, Success}
@@ -53,7 +54,17 @@ object WebApp {
       val formData = new FormData(pictureForm)
 
       Ajax.post(url = "register/upload", data = InputData.formdata2ajax(formData)).onComplete {
-        case Success(a) => window.alert(decode[Map[String, String]](a.responseText).toString) //json反序列化
+        case Success(a) => //json反序列化
+          val result = decode[Map[String, String]](a.responseText).right.get
+          result("code") match {
+            case "0000" =>
+              val avatarShowImg = document.getElementById("avatarShowImg").as[Image]
+              avatarShowImg.src = s"stream/${result("newFileName")}"
+              val avatarInput = document.getElementById("avatarInput").as[Input]
+              avatarInput.value = result("newFileName")
+            case "0001" =>
+              window.alert(result("message"))
+          }
         case Failure(ex) => window.alert(ex.getMessage)
       }
       e.preventDefault() //防止页面跳转(对于form里的button，跳转是默认行为)
