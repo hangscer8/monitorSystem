@@ -1,7 +1,10 @@
 package nathan.util
 
-object CommonUtil {
+trait CommonUtilTrait {
+  val `Content-Type` = "Content-Type"
 
+  val `application/json` = "application/json"
+  
   implicit class SlashString(prefixStr: String) {
     def /(string: String) = prefixStr + "/" + string
   }

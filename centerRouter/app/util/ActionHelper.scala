@@ -7,8 +7,7 @@ import play.api.mvc._
 import scala.concurrent.Await
 import scala.concurrent.duration._
 
-trait ActionHelper {
-  private[this] val loginKey = "isLogin"
+trait ActionHelper extends UtilTrait {
 
   def LoggingAction(f: Request[AnyContent] => Result): Action[AnyContent] = {
     Action { implicit request =>

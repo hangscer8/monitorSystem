@@ -7,23 +7,32 @@ import conf.PlayConf
 import io.circe.Printer
 import io.circe.generic.auto._
 import io.circe.syntax._
-import nathan.monitorSystem.Protocols.{RegisterReq, UserEntity}
+import nathan.monitorSystem.Protocols.UserEntity
 import play.api.libs.circe.Circe
 import play.api.mvc._
 import service.register.RegisterServiceTrait
 import util.{ActionHelper, UtilTrait}
+import entity.EntityTable._
+import h2.api._
+import util.ExecutorService._
+import scala.util.{Failure, Success}
 
 @Singleton
 class RegisterController @Inject()(cc: ControllerComponents) extends AbstractController(cc) with Circe with ActionHelper with RegisterServiceTrait with UtilTrait {
   implicit val codec = Codec.utf_8
   implicit val customPrinter = Printer.spaces2.copy(dropNullValues = false)
 
-  def index = LoginAction { request =>
+  def index = LoggingAction { request =>
     Ok(views.html.register.index("注册页面"))
   }
 
   def registerUser() = LoggingAction(circe.json[UserEntity]) { request => //json反序列化
-    Ok("hahahsa" + request.body)
+    db.run(registerUserDBIO(request.body).transactionally.asTry).map {
+      case Success(userEntity) =>
+        Ok(Map("code" -> "0000", "entityJson" -> userEntity.asJson.noSpaces).asJson.noSpaces).as(JSON).withSession((loginKey, "true"))
+      case Failure(ex) =>
+        Ok(Map("code" -> "0001", "errorMsg" -> s"${ex}").asJson.noSpaces).as(JSON).withNewSession
+    }.exe
   }
 
   def upload() = LoggingAction(parse.multipartFormData) { request =>

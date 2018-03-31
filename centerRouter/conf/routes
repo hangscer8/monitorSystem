@@ -16,3 +16,7 @@ GET         /register               controllers.register.RegisterController.inde
 POST        /register               controllers.register.RegisterController.registerUser
 
 POST        /register/upload        controllers.register.RegisterController.upload
+
+GET         /login                  controllers.login.LoginController.index
+
+POST        /login                  controllers.login.LoginController.loginAction

@@ -1,29 +1,22 @@
-package nathan
+package nathan.service.register
 
 import io.circe.generic.auto._
+import io.circe.parser.decode
 import io.circe.syntax._
-import nathan.monitorSystem.Protocols.{RegisterReq, UserEntity}
+import nathan.monitorSystem.Protocols.UserEntity
+import nathan.util.{CommonUtilTrait, Snowflake}
 import org.scalajs.dom._
 import org.scalajs.dom.ext.Ajax
 import org.scalajs.dom.ext.Ajax.InputData
 import org.scalajs.dom.ext.Ajax.InputData._
 import org.scalajs.dom.html.{Button, Form, Image, Input}
-import nathan.util.CommonUtil._
 
 import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
 import scala.scalajs.js.annotation.JSExport
 import scala.util.{Failure, Success}
-import io.circe.generic.auto._
-import io.circe.parser.decode
-import io.circe.syntax._
-import nathan.util.Snowflake
 
 @JSExport
-object WebApp {
-
-  val `Content-Type` = "Content-Type"
-  val `application/json` = "application/json"
-
+object RegisterService extends CommonUtilTrait {
   @JSExport
   def registerService() = { //用户注册
     val userNameInput = document.getElementById("username").as[Input]
@@ -40,8 +33,18 @@ object WebApp {
         case true =>
           val newUser = UserEntity(id = Snowflake.nextId(), username = userNameInput.value, password = passwordInput.value, alias = aliasInput.value, email = emailInput.value, lastActiveTime = System.currentTimeMillis())
           val data = newUser.asJson.spaces2
-          Ajax.post(url = "register", data = data, headers = Map(`Content-Type` -> `application/json`)).map(_.responseText).onComplete(a => window.alert(a.toString))
-        //json序列化
+          Ajax.post(url = "register", data = data, headers = Map(`Content-Type` -> `application/json`))
+            .map { r =>
+              decode[Map[String, String]](r.responseText).right.get
+            }.map { result =>
+            result("code") match {
+              case "0000" =>
+                println(decode[UserEntity](result("entityJson")).right.get.copy(password = "xxxxxxxx"))
+                window.alert("注册成功!")
+              case "0001" =>
+                window.alert(s"注册失败,${result("errorMsg")}")
+            }
+          }
         case false => window.alert(s"密码不一致，请确认!")
       }
     }

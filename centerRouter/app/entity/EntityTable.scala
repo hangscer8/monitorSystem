@@ -1,17 +1,25 @@
 package entity
 
+import conf.PlayConf
 import nathan.monitorSystem.Protocols._
+import util.UtilTrait
 
-class EntityTable {
+object EntityTable extends UtilTrait {
 
-  import EntityTable.h2.api._
+  val h2 = slick.jdbc.H2Profile
+
+  import h2.api._
+
+  val db = Database.forConfig("h2local")
 
   class User(_tableTag: Tag) extends Table[UserEntity](_tableTag, "user") {
-    def * = (id, username, password, lastActiveTime) <> (UserEntity.tupled, UserEntity.unapply)
+    def * = (id, username, password, alias, email, lastActiveTime) <> (UserEntity.tupled, UserEntity.unapply)
 
     val id: Rep[Long] = column[Long]("id", O.Unique)
     val username: Rep[String] = column[String]("username", O.Unique)
     val password: Rep[String] = column[String]("password")
+    val alias: Rep[String] = column[String]("alias")
+    val email: Rep[String] = column[String]("email")
     val lastActiveTime: Rep[Long] = column[Long]("lastActiveTime") //最后活动时间
     val pk = primaryKey("username_pk", (username))
   }
@@ -105,12 +113,16 @@ class EntityTable {
   }
 
   val netInfos = new TableQuery(tag => new NetInfo(tag))
-}
 
-object EntityTable {
-  val h2 = slick.jdbc.H2Profile
 
-  import h2.api._
-
-  val db = Database.forConfig("h2local")
+  {
+    if (PlayConf.initDataBase) {
+      println("init database:start!!")
+      List(users, cpuPercs, agentMachines, mems, swaps, loadAvgs, fileUsages, netInfos).foreach { tableQuery =>
+        db.run(tableQuery.schema.drop.asTry).exe
+        db.run(tableQuery.schema.create.asTry).exe
+      }
+      println("init database:success!!")
+    }
+  }
 }
