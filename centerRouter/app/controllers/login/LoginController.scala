@@ -21,7 +21,7 @@ import scala.util.{Failure, Success}
 
 @Singleton
 class LoginController @Inject()(cc: ControllerComponents) extends AbstractController(cc) with LoginServiceTrait with Circe with ActionHelper with UtilTrait {
-  def index = LoggingAction { request =>
+  def index = LoginAction { request =>
     Ok(views.html.login.index("登陆页面"))
   }
 

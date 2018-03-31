@@ -1,0 +1,19 @@
+@(title: String)
+@*首页*@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <title>@title</title>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="@routes.Assets.versioned("javascripts/jquery-2.2.0.min.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.versioned("bootstrap/js/bootstrap.min.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.versioned("javascripts/front-fastopt.js")"></script>
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("bootstrap/css/bootstrap.min.css")">
+    </head>
+    <body>
+        @layout.navbar()
+        <script type="text/javascript">
+                nathan.service.login.LoginService().loginService()
+        </script>
+    </body>
+</html>

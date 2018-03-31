@@ -12,11 +12,10 @@ GET         /assets/*file           controllers.Assets.versioned(path="/public",
 GET         /stream/*file           controllers.stream.StreamFileController.streamFile(file:String)
 
 GET         /register               controllers.register.RegisterController.index
-
 POST        /register               controllers.register.RegisterController.registerUser
-
 POST        /register/upload        controllers.register.RegisterController.upload
 
 GET         /login                  controllers.login.LoginController.index
-
 POST        /login                  controllers.login.LoginController.loginAction
+
+GET         /index                  controllers.index.IndexController.index()
