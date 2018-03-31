@@ -1,5 +1,18 @@
 package service.agent
 
-trait AgentServiceTrait {
+import entity.EntityTable._
+import entity.EntityTable.h2.api._
+import nathan.monitorSystem.Protocols.AgentMachineEntity
+import util.ExecutorService._
 
+trait AgentServiceTrait {
+  def createAgentDBIO(agentMachineEntity: AgentMachineEntity): DBIO[AgentMachineEntity] = {
+    for {
+      _ <- agentMachines += agentMachineEntity
+    } yield agentMachineEntity
+  }
+
+  def deleteAgentDBIO(id: Long): DBIO[Int] = {
+    agentMachines.filter(_.id === id).delete
+  }
 }

@@ -5,16 +5,11 @@ import javax.inject._
 import play.api.libs.circe.Circe
 import play.api.mvc._
 import service.index.IndexServiceTrait
-import util.{ActionContext, ActionHelper}
+import util.{ActionContext}
 
 @Singleton
-class IndexController @Inject()(cc: ControllerComponents) extends AbstractController(cc) with Circe with ActionHelper with IndexServiceTrait {
-  //  def index() = LoginAction { request =>
-  //    Ok(views.html.index.index("首页"))
-  //  }
+class IndexController @Inject()(cc: ControllerComponents) extends AbstractController(cc) with Circe with IndexServiceTrait {
   def index = ActionContext.imperativelyComplete { ctx =>
-    println(ctx.request)
-    Thread.sleep(2000)
     ctx.complete(Ok(views.html.index.index("首页")))
   }
 }

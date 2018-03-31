@@ -2,6 +2,7 @@ package util
 
 import java.util.concurrent.Executors
 
+import actor.SupervisorActor
 import akka.actor.{ActorSystem, Props}
 import akka.stream.ActorMaterializer
 import com.typesafe.config.ConfigFactory
@@ -35,5 +36,5 @@ object ExecutorService {
   private[this] val ecFixThreadPoll = Executors.newFixedThreadPool(20)
   implicit val ec = ExecutionContext.fromExecutor(ecFixThreadPoll)
   implicit val mat = ActorMaterializer()
-  val managerActor = system.actorOf(Props[ManagerActor], "managerActor")
+  val supervisorActor = system.actorOf(Props[SupervisorActor], "supervisorActor")
 }

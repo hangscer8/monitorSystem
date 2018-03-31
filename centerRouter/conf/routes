@@ -19,3 +19,6 @@ GET         /login                  controllers.login.LoginController.index
 POST        /login                  controllers.login.LoginController.loginAction
 
 GET         /index                  controllers.index.IndexController.index()
+
+GET         /addAgent               controllers.agent.AddAgentController.index
+POST        /addAgent               controllers.agent.AddAgentController.addAgent()
