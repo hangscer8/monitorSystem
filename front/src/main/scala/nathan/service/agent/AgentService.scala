@@ -41,4 +41,9 @@ object AgentService extends CommonUtilTrait {
       e.preventDefault()
     }
   }
+
+  @JSExport
+  def showAgentService(): Unit = {
+
+  }
 }

@@ -1,0 +1,51 @@
+@import nathan.monitorSystem.Protocols.AgentMachineEntity
+
+@import java.util.Date
+
+@(title: String, agentList: Seq[AgentMachineEntity])
+
+@timeShow(time: Long) = @{
+    val date = new Date(time)
+    s"${date.getYear + 1900}.${date.getMonth() + 1}.${date.getDate()}.${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}"
+}
+
+@*展示agent*@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <title>@title</title>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="@routes.Assets.versioned("javascripts/jquery-2.2.0.min.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.versioned("bootstrap/js/bootstrap.min.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.versioned("javascripts/front-fastopt.js")"></script>
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("bootstrap/css/bootstrap.min.css")">
+    </head>
+    <body>
+
+        @layout.navbar()
+        <table class="table table-hover table-condensed row table-striped">
+            <tr class="row col-md-6 col-md-offset-3">
+                <td class="col-md-1">ip</td>
+                <td class="col-md-1">port</td>
+                <td class="col-md-1">cpuVendor</td>
+                <td class="col-md-1">model</td>
+                <td class="col-md-1">sendMsgNum</td>
+                <td class="col-md-1">joinedTime</td>
+            </tr>
+            @for(agent <- agentList) {
+                <tr class="row col-md-6 col-md-offset-3">
+                    <td class="col-md-1">@agent.ip</td>
+                    <td class="col-md-1">@agent.akkaPort</td>
+                    <td class="col-md-1">@agent.cpuVendor</td>
+                    <td class="col-md-1">@agent.model</td>
+                    <td class="col-md-1">@agent.sendMsgNum</td>
+                    <td class="col-md-1">@timeShow(agent.joinedTime)</td>
+                </tr>
+            }
+        </table>
+
+        <script type="text/javascript">
+                nathan.service.agent.AgentService().showAgentService()
+        </script>
+    </body>
+</html>

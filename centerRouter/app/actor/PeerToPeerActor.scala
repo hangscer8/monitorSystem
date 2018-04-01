@@ -59,7 +59,9 @@ class PeerToPeerActor extends Actor with ActorLogging with AgentServiceTrait wit
       }
     case x: BaseAgentInfo =>
       createMetric(x) match {
-        case Success(v) => log.info(s"${Console.BLUE}success insert metric:${Console.RESET}:$v")
+        case Success(v) =>
+          db.run(increaseReceiveMsgNumberDBIO(v.agentId).transactionally.asTry).exe
+          log.info(s"${Console.BLUE}success insert metric:${Console.RESET}:$v")
         case Failure(ex) => log.error(s"${Console.RED}failure insert metric:${Console.RESET}:$ex")
       }
   }

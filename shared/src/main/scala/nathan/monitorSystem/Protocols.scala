@@ -6,9 +6,11 @@ import nathan.monitorSystem.Protocols.AgentMachineEntity
 
 package Protocols {
 
-  trait BaseAgentInfo
+  trait BaseAgentInfo {
+    val agentId: String
+  }
 
-  case class AgentMachineEntity(id: Long, ip: String, akkaPort: Int, agentId: String, cpuVendor: String, model: String, sendMsgNum: Long = 0L, joinedTime: Long = System.currentTimeMillis()) extends BaseAgentInfo //CacheSize KB , Model MacBookAir7,2 , Vendor 生产商 , Mhz 频率，sendMsgNum 已经发送的指标信息的数量,joinedTime agent添加时间
+  case class AgentMachineEntity(id: Long, ip: String, akkaPort: Int, agentId: String, cpuVendor: String, model: String, sendMsgNum: Long = 0L, joinedTime: Long) extends BaseAgentInfo //CacheSize KB , Model MacBookAir7,2 , Vendor 生产商 , Mhz 频率，sendMsgNum 已经发送的指标信息的数量,joinedTime agent添加时间
 
   case class CPUPercEntity(id: Long, user: Double, sys: Double, idle: Double, create: Long = System.currentTimeMillis(), agentId: String) extends BaseAgentInfo //user用户使用率 sys系统使用率 _wait当前等待率 idle空闲率 combined 总的使用率
 

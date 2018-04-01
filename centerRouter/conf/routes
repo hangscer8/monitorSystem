@@ -22,3 +22,5 @@ GET         /index                  controllers.index.IndexController.index()
 
 GET         /addAgent               controllers.agent.AddAgentController.index
 POST        /addAgent               controllers.agent.AddAgentController.addAgent()
+
+GET         /showAgent              controllers.agent.ShowAgentController.index()

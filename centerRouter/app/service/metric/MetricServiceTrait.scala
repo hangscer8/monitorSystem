@@ -64,4 +64,5 @@ trait MetricServiceTrait extends UtilTrait {
     }
     executeMetricAction(io)
   }
+
 }
