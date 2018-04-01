@@ -12,13 +12,14 @@ import org.scalajs.dom.ext.Ajax.InputData._
 import org.scalajs.dom.html.{Button, Form, Image, Input}
 
 import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
-import scala.scalajs.js.annotation.JSExport
+import scala.scalajs.js
+import scala.scalajs.js.annotation._
 import scala.util.{Failure, Success}
 
 @JSExport
 object MetricService extends CommonUtilTrait {
   @JSExport
   def cpuService(): Unit = {
-
+    
   }
 }
