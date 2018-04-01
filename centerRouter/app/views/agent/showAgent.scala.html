@@ -1,13 +1,12 @@
 @import nathan.monitorSystem.Protocols.AgentMachineEntity
-
-@import java.util.Date
-
+@import util.HtmlUtil.timeShow
 @(title: String, agentList: Seq[AgentMachineEntity])
-
+@*
 @timeShow(time: Long) = @{
-    val date = new Date(time)
-    s"${date.getYear + 1900}.${date.getMonth() + 1}.${date.getDate()}.${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}"
+val date = new Date(time)
+s"${date.getYear + 1900}.${date.getMonth() + 1}.${date.getDate()}.${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}"
 }
+*@
 
 @*展示agent*@
 <!DOCTYPE html>
@@ -21,7 +20,6 @@
         <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("bootstrap/css/bootstrap.min.css")">
     </head>
     <body>
-
         @layout.navbar()
         <table class="table table-hover table-condensed row table-striped">
             <tr class="row col-md-6 col-md-offset-3">
@@ -32,14 +30,14 @@
                 <td class="col-md-1">sendMsgNum</td>
                 <td class="col-md-1">joinedTime</td>
             </tr>
-            @for(agent <- agentList) {
+            @for(ag <- agentList) {
                 <tr class="row col-md-6 col-md-offset-3">
-                    <td class="col-md-1">@agent.ip</td>
-                    <td class="col-md-1">@agent.akkaPort</td>
-                    <td class="col-md-1">@agent.cpuVendor</td>
-                    <td class="col-md-1">@agent.model</td>
-                    <td class="col-md-1">@agent.sendMsgNum</td>
-                    <td class="col-md-1">@timeShow(agent.joinedTime)</td>
+                    <td class="col-md-1">@ag.ip</td>
+                    <td class="col-md-1">@ag.akkaPort</td>
+                    <td class="col-md-1">@ag.cpuVendor</td>
+                    <td class="col-md-1">@ag.model</td>
+                    <td class="col-md-1">@ag.sendMsgNum</td>
+                    <td class="col-md-1">@timeShow(ag.joinedTime)</td>
                 </tr>
             }
         </table>
