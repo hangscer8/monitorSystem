@@ -4,17 +4,19 @@ import akka.actor.{Actor, ActorLogging, ActorPaths, ActorRef, ReceiveTimeout, Te
 import entity.EntityTable._
 import entity.EntityTable.h2.api._
 import nathan.monitorSystem.AkkaSystemConst.{agent_actor_name, agent_system_name, _}
-import nathan.monitorSystem.Protocols.{AddAgentReq, AgentMachineEntity}
+import nathan.monitorSystem.Protocols.{AddAgentReq, AgentMachineEntity, BaseAgentInfo}
 import nathan.monitorSystem.akkaAction.AgentActorJoinCenter
 import play.api.http.ContentTypes
 import play.api.mvc.{AnyContent, Codec, Results}
 import service.agent.AgentServiceTrait
 import util.{ActionContext, UtilTrait}
 import io.circe.syntax._
+import service.metric.MetricServiceTrait
+
 import scala.concurrent.duration._
 import scala.util.{Failure, Success, Try}
 
-class PeerToPeerActor extends Actor with ActorLogging with AgentServiceTrait with UtilTrait {
+class PeerToPeerActor extends Actor with ActorLogging with AgentServiceTrait with UtilTrait with MetricServiceTrait {
   implicit val codec = Codec.utf_8
 
   override def receive: Receive = {
@@ -23,7 +25,7 @@ class PeerToPeerActor extends Actor with ActorLogging with AgentServiceTrait wit
       Try(ActorPaths.fromString(agentPathStr)) match {
         case Success(path) =>
           context.actorSelection(path) ! askAgent //向目标agent发起ask请求
-          context.setReceiveTimeout(3 seconds) //3秒内需要收到目标agent的回复，不然向前台返回超时提示
+          context.setReceiveTimeout(1.8 seconds) //1.8秒内需要收到目标agent的回复，不然向前台返回超时提示
           context.become(waitForAgent(ctx, addAgent))
         case Failure(ex) =>
           ctx.complete(Results.Ok(Map("code" -> "0001", "errorMsg" -> s"${ex}").asJson.noSpaces).as(ContentTypes.JSON))
@@ -54,6 +56,11 @@ class PeerToPeerActor extends Actor with ActorLogging with AgentServiceTrait wit
         log.error(s"${agentMachineEntity.ip}:${agentMachineEntity.akkaPort}已经退出连接!")
         db.run(deleteAgentDBIO(agentMachineEntity.id).transactionally.asTry).exe
         context.stop(self)
+      }
+    case x: BaseAgentInfo =>
+      createMetric(x) match {
+        case Success(v) => log.info(s"${Console.BLUE}success insert metric:${Console.RESET}:$v")
+        case Failure(ex) => log.error(s"${Console.RED}failure insert metric:${Console.RESET}:$ex")
       }
   }
 }
