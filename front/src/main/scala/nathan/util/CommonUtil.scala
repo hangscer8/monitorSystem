@@ -39,7 +39,7 @@ trait CommonUtilTrait {
     s"[${strList.mkString(",")}]"
   }
 
-  case class Serie(`type`: String, name: String, list: List[(TimeStamp, Double)])
+  case class Serie(`type`: String, name: String, list: Seq[(TimeStamp, Double)])
 
   type TimeStamp = Long
 }

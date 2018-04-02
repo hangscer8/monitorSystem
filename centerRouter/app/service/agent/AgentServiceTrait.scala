@@ -24,7 +24,7 @@ trait AgentServiceTrait {
   def increaseReceiveMsgNumberDBIO(agentId: String): DBIO[Int] = {
     for {
       oldNumber <- agentMachines.filter(_.agentId === agentId).map(_.sendMsgNum).result.head
-      e <- agentMachines.filter(_.agentId === agentId).map(_.sendMsgNum).update(oldNumber + 1)
+      e <- agentMachines.filter(_.agentId === agentId).map(a => (a.sendMsgNum, a.lastReceiveMsgTime)).update((oldNumber + 1, System.currentTimeMillis()))
     } yield e
   }
 }

@@ -65,4 +65,7 @@ trait MetricServiceTrait extends UtilTrait {
     executeMetricAction(io)
   }
 
+  def cpuPercSeqDBIO(agentId: String, size: Int): DBIO[Seq[CPUPercEntity]] = {
+    cpuPercs.filter(_.agentId === agentId).sortBy(_.create.desc).take(size).result
+  }
 }

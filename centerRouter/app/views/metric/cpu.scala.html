@@ -14,7 +14,7 @@
     <body>
         @layout.navbar()
     <div class="row">
-        <div class="col-md-3">@layout.sideNavAgentList()</div>
+        <div class="col-md-3">@layout.sideNavAgentList(s"""nathan.service.metric.MetricService().cpuService(this.getAttribute("agentid"))""")</div>
         <div class="col-md-9">
             <div id="con"></div>
         </div>
@@ -95,7 +95,6 @@
                     })
                 }
 
-                nathan.service.metric.MetricService().cpuService()
         </script>
     </body>
 </html>

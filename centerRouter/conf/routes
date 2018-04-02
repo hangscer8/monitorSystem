@@ -26,3 +26,4 @@ POST        /addAgent               controllers.agent.AddAgentController.addAgen
 GET         /showAgent              controllers.agent.ShowAgentController.index()
 
 GET         /cpu                    controllers.metric.CPUController.index()
+POST        /cpu                    controllers.metric.CPUController.cpuData()
