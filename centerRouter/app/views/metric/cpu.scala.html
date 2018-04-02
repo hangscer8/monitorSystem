@@ -1,5 +1,5 @@
 @(title: String)
-@*cpu数据展示*@
+    @*cpu数据展示*@
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head>
@@ -13,11 +13,15 @@
     </head>
     <body>
         @layout.navbar()
-        <div class="row">
-            <div class="col-md-3">@layout.sideNavAgentList()</div>
+    <div class="row">
+        <div class="col-md-3">@layout.sideNavAgentList()</div>
+        <div class="col-md-9">
+            <div id="con"></div>
         </div>
-        <script type="text/javascript">
-                function showChart(id,data,title) {
+
+    </div>
+    <script type="text/javascript">
+                function showChart(id, data, title, yAxisTitle) { //data是String eval
                     Highcharts.chart(id, {
                         chart: {
                             zoomType: 'x' //缩放的关键
@@ -55,11 +59,11 @@
                         },
                         yAxis: {
                             title: {
-                                text: '汇率'
+                                text: yAxisTitle
                             }
                         },
                         legend: {
-                            enabled: false
+                            enabled: true
                         },
                         plotOptions: {
                             area: {
@@ -87,9 +91,10 @@
                                 threshold: null
                             }
                         },
-                        series:data
+                        series: eval(data)
                     })
                 }
+
                 nathan.service.metric.MetricService().cpuService()
         </script>
     </body>
