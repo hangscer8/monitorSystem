@@ -27,12 +27,14 @@ object EntityTable extends UtilTrait {
   val users = new TableQuery(tag => new User(tag))
 
   class CPUPerc(_tableTag: Tag) extends Table[CPUPercEntity](_tableTag, "cPUPerc") {
-    def * = (id, user, sys, idle, create, agentId) <> (CPUPercEntity.tupled, CPUPercEntity.unapply)
+    def * = (id, user, sys, _wait, idle, combined, create, agentId) <> (CPUPercEntity.tupled, CPUPercEntity.unapply)
 
     val id: Rep[Long] = column[Long]("id", O.Unique)
     val user: Rep[Double] = column[Double]("user")
     val sys: Rep[Double] = column[Double]("sys")
+    val _wait: Rep[Double] = column[Double]("_wait")
     val idle: Rep[Double] = column[Double]("idle")
+    val combined: Rep[Double] = column[Double]("combined")
     val create: Rep[Long] = column[Long]("create")
     val agentId: Rep[String] = column[String]("agentId")
   }
@@ -105,16 +107,16 @@ object EntityTable extends UtilTrait {
   val fileUsages = new TableQuery(tag => new FileUsage(tag))
 
   class NetInfo(_tableTag: Tag) extends Table[NetInfoEntity](_tableTag, "NetInfoEntity") {
-    def * = (id, netSpeed, create, agentId) <> (NetInfoEntity.tupled, NetInfoEntity.unapply)
+    def * = (id, rxBytes, txBytes, create, agentId) <> (NetInfoEntity.tupled, NetInfoEntity.unapply)
 
     val id: Rep[Long] = column[Long]("id", O.Unique)
-    val netSpeed: Rep[Long] = column[Long]("netSpeed")
+    val rxBytes: Rep[Long] = column[Long]("rxBytes")
+    val txBytes: Rep[Long] = column[Long]("txBytes")
     val create: Rep[Long] = column[Long]("create")
     val agentId: Rep[String] = column[String]("agentId")
   }
 
   val netInfos = new TableQuery(tag => new NetInfo(tag))
-
 
   {
     if (PlayConf.initDataBase) {

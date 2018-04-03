@@ -6,36 +6,31 @@ import java.lang.management.ManagementFactory
 import com.sun.management.OperatingSystemMXBean
 import com.typesafe.config.ConfigFactory
 import nathan.monitorSystem.Protocols._
-import nathan.util.Snowflake
-import oshi.SystemInfo
+import nathan.util.{SigarUtil, Snowflake}
 
 object OS {
 
-  val si = new SystemInfo()
-  val hw = si.getHardware
+  val sigar = SigarUtil.sigarInstance
   val osBean = ManagementFactory.getPlatformMXBean(classOf[OperatingSystemMXBean])
   val cpuNum = osBean.getAvailableProcessors
 
   def getCPUPerc(agentId: String): CPUPercEntity = {
-    val (_user, _system, _idle, total) = hw.getProcessor.getProcessorCpuLoadTicks.foldLeft((0L, 0L, 0L, 0L)) { case ((user, sys, idle, total), loadArray) =>
-      val _user :: _nice :: _system :: _idle :: _iOwait :: _iRQ :: _softIRQ :: _steal :: Nil = loadArray.toList
-      (user + _user, sys + _system, idle + _idle, total + (_user + _nice + _system + _idle + _iOwait + _iRQ + _softIRQ + _steal))
-    }
-    CPUPercEntity(Snowflake.nextId(), user = _user * 1.0 / total, sys = _system * 1.0 / total, idle = _idle * 1.0 / total, agentId = agentId)
+    val cpuPerc = sigar.getCpuPerc
+    CPUPercEntity(Snowflake.nextId(), user = cpuPerc.getUser, sys = cpuPerc.getSys, _wait = cpuPerc.getWait, idle = cpuPerc.getIdle, combined = cpuPerc.getCombined, agentId = agentId)
   }
 
   def getMEM(agentId: String): MEMEntity = {
-    val mem = hw.getMemory
-    MEMEntity(Snowflake.nextId(), total = mem.getTotal * 1.0 / 1024 / 1024, used = (mem.getTotal - mem.getAvailable) * 1.0 / 1024 / 1024, agentId = agentId)
+    val mem = sigar.getMem
+    MEMEntity(Snowflake.nextId(), total = mem.getTotal * 1.0 / 1024 / 1024, used = mem.getUsed * 1.0 / 1024 / 1024, agentId = agentId)
   }
 
   def getSwap(agentId: String): SWAPEntity = {
-    val swap = hw.getMemory
-    SWAPEntity(Snowflake.nextId(), total = swap.getTotal * 1.0 / 1024 / 1024, used = swap.getSwapUsed * 1.0 / 1024 / 1024, agentId = agentId)
+    val swap = sigar.getSwap
+    SWAPEntity(Snowflake.nextId(), total = swap.getTotal * 1.0 / 1024 / 1024, used = swap.getUsed * 1.0 / 1024 / 1024, agentId = agentId)
   }
 
   def getLoadAvg(agentId: String): LoadAvgEntity = {
-    val avg = hw.getProcessor.getSystemLoadAverage(3)
+    val avg = sigar.getLoadAverage
     LoadAvgEntity(Snowflake.nextId(), `1min` = avg(0) / cpuNum, `5min` = avg(1) / cpuNum, `15min` = avg(2) / cpuNum, agentId = agentId)
   }
 
@@ -46,9 +41,8 @@ object OS {
   }
 
   def getNetInfo(agentId: String): NetInfoEntity = {
-    val netInterface = hw.getNetworkIFs
-    netInterface.foldRight(NetInfoEntity(Snowflake.nextId(), netSpeed = 0L, agentId = agentId)) { (interface, netInfo) =>
-      NetInfoEntity(Snowflake.nextId(), netSpeed = netInfo.netSpeed + (interface.getSpeed) / 8 / 1024, agentId = agentId)
+    sigar.getNetInterfaceList.map(interface => sigar.getNetInterfaceStat(interface)).foldRight(NetInfoEntity(Snowflake.nextId(), rxBytes = 0L, txBytes = 0L, agentId = agentId)) { (i, netInfo) =>
+      NetInfoEntity(Snowflake.nextId(), rxBytes = netInfo.rxBytes + i.getRxBytes, txBytes = netInfo.txBytes + i.getTxBytes, agentId = agentId)
     }
   }
 
@@ -56,8 +50,7 @@ object OS {
     val config = ConfigFactory.load()
     val ip = config.getString("akka.remote.netty.tcp.hostname")
     val akkaPort = config.getInt("akka.remote.netty.tcp.port")
-    val cpuInfo = hw.getProcessor
-    si.getHardware
+    val cpuInfo = sigar.getCpuInfoList.head
     AgentMachineEntity(Snowflake.nextId(), ip = ip, akkaPort = akkaPort, agentId = agentId, cpuVendor = cpuInfo.getVendor, model = cpuInfo.getModel, sendMsgNum = 0L, joinedTime = System.currentTimeMillis(), lastReceiveMsgTime = System.currentTimeMillis())
   }
 }

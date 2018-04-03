@@ -46,6 +46,7 @@ lazy val centerRouter = (project in file("centerRouter"))
 
 lazy val agent = (project in file("agent"))
   .settings(scalaVersion := "2.12.4",
+    resolvers += "type safe" at "http://repo.typesafe.com/typesafe/maven-releases/",
     libraryDependencies ++= Seq(
       "com.typesafe.akka" % "akka-actor_2.12" % "2.4.19",
       "com.typesafe.akka" % "akka-stream_2.12" % "2.4.19",
@@ -63,7 +64,7 @@ lazy val agent = (project in file("agent"))
       "com.fasterxml.jackson.core" % "jackson-databind" % "2.9.2",
       "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.9.2",
       "org.typelevel" %% "cats-core" % "1.0.0-RC1",
-      //  "org.hyperic" % "sigar" % "1.6.4",
+      "org.hyperic" % "sigar" % "1.6.4",
       "com.github.oshi" % "oshi-parent" % "3.4.4",
       "com.github.oshi" % "oshi-core" % "3.4.4"
     ),
