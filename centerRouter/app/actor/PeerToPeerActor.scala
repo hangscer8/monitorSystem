@@ -38,7 +38,7 @@ class PeerToPeerActor extends Actor with ActorLogging with AgentServiceTrait wit
       ctx.complete(Results.Ok(Map("code" -> "0001", "errorMsg" -> s"添加agent超时，有可能目标地址(${addAgentReq.ip}:${addAgentReq.port})不存在agent服务!!").asJson.noSpaces).as(ContentTypes.JSON))
       context.stop(self)
     case AgentActorJoinCenter(agentActor, agentMachineEntity) =>
-      db.run(createAgentDBIO(agentMachineEntity).transactionally.asTry).exe match {
+      db.run(createOrSetOnLineAgentDBIO(agentMachineEntity).transactionally.asTry).exe match {
         case Success(_) =>
           context.watch(agentActor)
           log.info(s"已经与${addAgentReq.ip}:${addAgentReq.port}建立连接!!")
@@ -51,10 +51,10 @@ class PeerToPeerActor extends Actor with ActorLogging with AgentServiceTrait wit
   }
 
   def connected(agentActor: ActorRef, agentMachineEntity: AgentMachineEntity): Receive = {
-    case Terminated(actor) =>
+    case Terminated(actor) => //agent离线了
       if (actor == agentActor) {
         log.error(s"${agentMachineEntity.ip}:${agentMachineEntity.akkaPort}已经退出连接!")
-        db.run(deleteAgentDBIO(agentMachineEntity.id).transactionally.asTry).exe
+        db.run(setAgentOffLine(agentMachineEntity.agentId)).exe //设置离线状态
         context.stop(self)
       }
     case x: BaseAgentInfo =>

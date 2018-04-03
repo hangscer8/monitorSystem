@@ -42,9 +42,8 @@ object EntityTable extends UtilTrait {
   val cpuPercs = new TableQuery(tag => new CPUPerc(tag))
 
   class AgentMachine(_tableTag: Tag) extends Table[AgentMachineEntity](_tableTag, "agentMachine") {
-    def * = (id, ip, akkaPort, agentId, cpuVendor, model, sendMsgNum, joinedTime, lastReceiveMsgTime) <> (AgentMachineEntity.tupled, AgentMachineEntity.unapply)
+    def * = (ip, akkaPort, agentId, cpuVendor, model, sendMsgNum, joinedTime, lastReceiveMsgTime, isOnLine) <> (AgentMachineEntity.tupled, AgentMachineEntity.unapply)
 
-    val id: Rep[Long] = column[Long]("id", O.Unique)
     val ip: Rep[String] = column[String]("ip")
     val akkaPort: Rep[Int] = column[Int]("akkaPort")
     val agentId: Rep[String] = column[String]("agentId", O.PrimaryKey)
@@ -53,6 +52,7 @@ object EntityTable extends UtilTrait {
     val sendMsgNum: Rep[Long] = column[Long]("sendMsgNum")
     val lastReceiveMsgTime: Rep[Long] = column[Long]("lastReceiveMsgTime")
     val joinedTime: Rep[Long] = column[Long]("joinedTime")
+    val isOnLine: Rep[Int] = column[Int]("isOnLine")
   }
 
   val agentMachines = new TableQuery(tag => new AgentMachine(tag))

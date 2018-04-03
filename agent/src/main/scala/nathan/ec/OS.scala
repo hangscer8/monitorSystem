@@ -51,7 +51,7 @@ object OS {
     val ip = config.getString("akka.remote.netty.tcp.hostname")
     val akkaPort = config.getInt("akka.remote.netty.tcp.port")
     val cpuInfo = sigar.getCpuInfoList.head
-    AgentMachineEntity(Snowflake.nextId(), ip = ip, akkaPort = akkaPort, agentId = agentId, cpuVendor = cpuInfo.getVendor, model = cpuInfo.getModel, sendMsgNum = 0L, joinedTime = System.currentTimeMillis(), lastReceiveMsgTime = System.currentTimeMillis())
+    AgentMachineEntity(ip = ip, akkaPort = akkaPort, agentId = agentId, cpuVendor = cpuInfo.getVendor, model = cpuInfo.getModel, sendMsgNum = 0L, joinedTime = System.currentTimeMillis(), lastReceiveMsgTime = System.currentTimeMillis(), isOnLine = 1)
   }
 }
 
