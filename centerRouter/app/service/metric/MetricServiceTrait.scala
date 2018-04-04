@@ -68,4 +68,12 @@ trait MetricServiceTrait extends UtilTrait {
   def cpuPercSeqDBIO(agentId: String, size: Int): DBIO[Seq[CPUPercEntity]] = {
     cpuPercs.filter(_.agentId === agentId).sortBy(_.create.desc).take(size).result
   }
+
+  def swapSeqDBIO(agentId: String, size: Int): DBIO[Seq[SWAPEntity]] = {
+    swaps.filter(_.agentId === agentId).sortBy(_.create.desc).take(size).result
+  }
+
+  def memSeqDBIO(agentId: String, size: Int): DBIO[Seq[MEMEntity]] = {
+    mems.filter(_.agentId === agentId).sortBy(_.create.desc).take(size).result
+  }
 }
