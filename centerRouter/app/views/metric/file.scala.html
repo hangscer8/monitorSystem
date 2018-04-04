@@ -1,5 +1,5 @@
 @(title: String)
-@*系统负载数据展示*@
+@*file数据展示*@
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head>
@@ -15,7 +15,7 @@
     <body>
         @com.navbar()
         <div class="row">
-            <div class="col-md-3">@com.sideNavAgentList(s"""nathan.service.metric.MetricService().loadAvgService(this.getAttribute("agentid"))""")</div>
+            <div class="col-md-3">@com.sideNavAgentList(s"""nathan.service.metric.MetricService().fileService(this.getAttribute("agentid"))""")</div>
             <div class="col-md-9">
                 <div id="con"></div>
             </div>

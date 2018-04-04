@@ -10,13 +10,13 @@ import service.metric.MetricServiceTrait
 import util.{ActionContext, UtilTrait}
 
 @Singleton
-class LoadAvgController @Inject()(cc: ControllerComponents) extends AbstractController(cc) with MetricServiceTrait with Circe with UtilTrait {
+class FileController @Inject()(cc: ControllerComponents) extends AbstractController(cc) with MetricServiceTrait with Circe with UtilTrait {
   def index() = ActionContext.imperativelyComplete { ctx =>
-    ctx.complete(Ok(views.html.metric.loadAvg("系统负载")))
+    ctx.complete(Ok(views.html.metric.file("文件信息")))
   }
 
-  def loadAvgData() = ActionContext.imperativelyComplete(circe.json[Map[String, String]]) { ctx =>
-    val seq = db.run(loadAvgSeqDBIO(ctx.request.body("agentId"), ctx.request.body("size").toInt)).exe
+  def fileData() = ActionContext.imperativelyComplete(circe.json[Map[String, String]]) { ctx =>
+    val seq = db.run(fileSeqDBIO(ctx.request.body("agentId"), ctx.request.body("size").toInt)).exe
     ctx.complete(Ok(seq.asJson.noSpaces).as(JSON))
   }
 }

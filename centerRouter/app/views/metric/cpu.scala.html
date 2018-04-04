@@ -13,9 +13,9 @@
         <script type="text/javascript" src="@routes.Assets.versioned("javascripts/util.js")"></script>
     </head>
     <body>
-        @layout.navbar()
+        @com.navbar()
         <div class="row">
-            <div class="col-md-3">@layout.sideNavAgentList(s"""nathan.service.metric.MetricService().cpuService(this.getAttribute("agentid"))""")</div>
+            <div class="col-md-3">@com.sideNavAgentList(s"""nathan.service.metric.MetricService().cpuService(this.getAttribute("agentid"))""")</div>
             <div class="col-md-9">
                 <div id="con"></div>
             </div>

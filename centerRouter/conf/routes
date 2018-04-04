@@ -34,4 +34,8 @@ POST        /swap                   controllers.metric.SWAPController.swapData()
 GET         /mem                    controllers.metric.MEMController.index()
 POST        /mem                    controllers.metric.MEMController.memData()
 
-GET /loadAvg controllers
+GET         /loadAvg                controllers.metric.LoadAvgController.index()
+POST        /loadAvg                controllers.metric.LoadAvgController.loadAvgData()
+
+GET         /file                   controllers.metric.FileController.index()
+POST        /file                   controllers.metric.FileController.fileData()

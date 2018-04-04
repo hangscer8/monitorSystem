@@ -42,12 +42,6 @@ trait MetricServiceTrait extends UtilTrait {
     } yield fileUsageEntity
   }
 
-  def createNetInfo(netInfoEntity: NetInfoEntity): DBIO[NetInfoEntity] = {
-    for {
-      _ <- netInfos += netInfoEntity
-    } yield netInfoEntity
-  }
-
   /** ******/
   def executeMetricAction(io: DBIO[BaseAgentInfo]): Try[BaseAgentInfo] = {
     db.run(io.transactionally.asTry).exe
@@ -60,7 +54,6 @@ trait MetricServiceTrait extends UtilTrait {
       case x: SWAPEntity => createSWAPDBIO(x)
       case x: LoadAvgEntity => createLoadAvgDBIO(x)
       case x: FileUsageEntity => createFileUsageDBIO(x)
-      case x: NetInfoEntity => createNetInfo(x)
     }
     executeMetricAction(io)
   }
@@ -75,5 +68,13 @@ trait MetricServiceTrait extends UtilTrait {
 
   def memSeqDBIO(agentId: String, size: Int): DBIO[Seq[MEMEntity]] = {
     mems.filter(_.agentId === agentId).sortBy(_.create.desc).take(size).result
+  }
+
+  def loadAvgSeqDBIO(agentId: String, size: Int): DBIO[Seq[LoadAvgEntity]] = {
+    loadAvgs.filter(_.agentId === agentId).sortBy(_.create.desc).take(size).result
+  }
+
+  def fileSeqDBIO(agentId: String, size: Int): DBIO[Seq[FileUsageEntity]] = {
+    fileUsages.filter(_.agentId === agentId).sortBy(_.create.desc).take(size).result
   }
 }

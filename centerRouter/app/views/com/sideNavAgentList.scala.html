@@ -1,0 +1,8 @@
+@import util.HtmlUtil.{listOfAgent, timeShow}
+@(itemOnClick: String = """console.log(this.getAttribute("agentid"))""")
+@*侧边栏 为了显示在线的agent 列表*@
+<ul>
+    @for(ag <- listOfAgent) {
+        <li class="list-group-item @if(ag.isOnLine == 1) {list-group-item-info} else {list-group-item-warning}" agentid="@ag.agentId" onclick="@itemOnClick">at @ag.ip:@ag.akkaPort @timeShow(ag.joinedTime)</li>
+    }
+</ul>

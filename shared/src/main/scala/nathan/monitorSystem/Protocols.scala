@@ -22,13 +22,21 @@ package Protocols {
 
   case class FileUsageEntity(id: Long, total: Double, used: Double, create: Long = System.currentTimeMillis(), agentId: String) extends BaseAgentInfo //文件系统 GB
 
-  case class NetInfoEntity(id: Long, rxBytes: Long, txBytes: Long, create: Long = System.currentTimeMillis(), agentId: String) extends BaseAgentInfo //网络速度 KB/S
-
   case class UserEntity(id: Long, username: String, password: String, alias: String, email: String, lastActiveTime: Long) //alias别名(显示名)
 
   case class RegisterReq(userName: String, password: String)
 
   case class AddAgentReq(ip: String, port: Int)
+
+  case class AlarmRule(id: Long, agentId: String, `type`: String, threshold: Int, unit: String, condition: String)
+
+  //告警规则与agent是多对一关系
+  //threshold:阈值
+  //condition:lt和gt
+  //unit:percent或者number
+  //type:cpuAlarm memAlarm swapAlarm loadAvg1MinAlarm loadAvg5MinAlarm loadAvg15MinAlarm
+
+  case class AlarmEvent(id: Long, alarmRuleId: String, message: String, eventValue: Int, unit: String)
 
 }
 

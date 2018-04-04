@@ -18,7 +18,6 @@ class CollectionMetricActor extends Actor with ActorLogging {
       context.system.scheduler.schedule(3 seconds, 2 seconds, self, "SWAP")
       context.system.scheduler.schedule(4 seconds, 2 seconds, self, "LoadAvg")
       context.system.scheduler.schedule(5 seconds, 2 seconds, self, "FileUsage")
-      context.system.scheduler.schedule(6 seconds, 2 seconds, self, "NetInfo")
       context.watch(peertoAgentActor) //如果与自己接头的actor挂了，也注销自己
       context.become(running(agentId, peertoAgentActor))
   }
@@ -29,7 +28,6 @@ class CollectionMetricActor extends Actor with ActorLogging {
     case "SWAP" => peertoAgentActor ! OS.getSwap(agentId)
     case "LoadAvg" => peertoAgentActor ! OS.getLoadAvg(agentId)
     case "FileUsage" => peertoAgentActor ! OS.getFileUsage(agentId)
-    case "NetInfo" => peertoAgentActor ! OS.getNetInfo(agentId)
     case Terminated(`peertoAgentActor`) =>
       log.warning(s"${peertoAgentActor}挂了，本actor即将被销毁")
       context.stop(self)

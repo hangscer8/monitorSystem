@@ -11,6 +11,6 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
   implicit val customPrinter = Printer.spaces2.copy(dropNullValues = false)
 
   def index() = Action { request =>
-    Ok(views.html.layout.sideNavAgentList())
+    Ok(views.html.com.sideNavAgentList())
   }
 }

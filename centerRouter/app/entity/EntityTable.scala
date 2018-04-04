@@ -106,22 +106,11 @@ object EntityTable extends UtilTrait {
 
   val fileUsages = new TableQuery(tag => new FileUsage(tag))
 
-  class NetInfo(_tableTag: Tag) extends Table[NetInfoEntity](_tableTag, "NetInfoEntity") {
-    def * = (id, rxBytes, txBytes, create, agentId) <> (NetInfoEntity.tupled, NetInfoEntity.unapply)
-
-    val id: Rep[Long] = column[Long]("id", O.Unique)
-    val rxBytes: Rep[Long] = column[Long]("rxBytes")
-    val txBytes: Rep[Long] = column[Long]("txBytes")
-    val create: Rep[Long] = column[Long]("create")
-    val agentId: Rep[String] = column[String]("agentId")
-  }
-
-  val netInfos = new TableQuery(tag => new NetInfo(tag))
 
   {
     if (PlayConf.initDataBase) {
       println("init database:start!!")
-      List(users, cpuPercs, agentMachines, mems, swaps, loadAvgs, fileUsages, netInfos).foreach { tableQuery =>
+      List(users, cpuPercs, agentMachines, mems, swaps, loadAvgs, fileUsages).foreach { tableQuery =>
         db.run(tableQuery.schema.drop.asTry).exe
         db.run(tableQuery.schema.create.asTry).exe
       }

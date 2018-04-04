@@ -40,12 +40,6 @@ object OS {
     FileUsageEntity(Snowflake.nextId(), total = total * 1.0 / 1024 / 1024 / 1024, used = (total - free) * 1.0 / 1024 / 1024 / 1024, agentId = agentId)
   }
 
-  def getNetInfo(agentId: String): NetInfoEntity = {
-    sigar.getNetInterfaceList.map(interface => sigar.getNetInterfaceStat(interface)).foldRight(NetInfoEntity(Snowflake.nextId(), rxBytes = 0L, txBytes = 0L, agentId = agentId)) { (i, netInfo) =>
-      NetInfoEntity(Snowflake.nextId(), rxBytes = netInfo.rxBytes + i.getRxBytes, txBytes = netInfo.txBytes + i.getTxBytes, agentId = agentId)
-    }
-  }
-
   def getAgentInfo(agentId: String) = {
     val config = ConfigFactory.load()
     val ip = config.getString("akka.remote.netty.tcp.hostname")
