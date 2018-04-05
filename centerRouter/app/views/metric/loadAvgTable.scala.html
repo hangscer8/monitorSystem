@@ -1,0 +1,20 @@
+@import nathan.monitorSystem.Protocols.LoadAvgEntity
+@(loadAvg: LoadAvgEntity)
+<table class="table table-hover table-condensed row table-striped">
+    <tr class="row col-md-6 col-md-offset-3">
+        <td class="col-md-2">1 min</td>
+        <td class="col-md-2">5 min</td>
+        <td class="col-md-2">15 min</td>
+    </tr>
+    <tr class="row col-md-6 col-md-offset-3">
+        <td class="col-md-2">@{
+            loadAvg.`1min`
+        }</td>
+        <td class="col-md-2">@{
+            loadAvg.`5min`
+        }</td>
+        <td class="col-md-2">@{
+            loadAvg.`15min`
+        }</td>
+    </tr>
+</table>

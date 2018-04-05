@@ -11,16 +11,28 @@ import org.scalajs.dom.ext.Ajax.InputData
 import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
+import org.scalajs.dom._
+import org.scalajs.dom.html.Div
+
+import scala.concurrent.Future
 
 @JSExport
 object MetricService extends CommonUtilTrait {
   @JSExport
   def cpuService(agentid: String): Unit = { //传入agentId 拉取数据 并展示
     val showLineChart = js.Dynamic.global.showLineChart.as[js.Function4[String, String, String, String, Unit]]
-    Ajax.post(url = "cpu", data = InputData.str2ajax(Map("agentId" -> agentid, "size" -> "500").asJson.noSpaces), headers = Map(`Content-Type` -> `application/json`))
+    Ajax.post(url = "/cpu", data = InputData.str2ajax(Map("agentId" -> agentid, "size" -> "500").asJson.noSpaces), headers = Map(`Content-Type` -> `application/json`))
       .map(r => decode[Seq[CPUPercEntity]](r.responseText).right.get)
       .map { seq =>
         showLineChart("con", genSeries(List(Serie("area", "idle占比", seq.map(c => (c.create, c.idle))), Serie("area", "cpu使用总占比", seq.map(c => (c.create, c.combined))), Serie("area", "sys占比", seq.map(c => (c.create, c.sys))), Serie("area", "user占比", seq.map(c => (c.create, c.user))))), "CPU数据图表", "cpu性能指标")
+      }.flatMap(_ => appendDataTable(agentid, "showCpuData", "/cpu/tableData"))
+  }
+
+  private[this] def appendDataTable(agentId: String, divId: String, url: String): Future[Unit] = {
+    val div = document.getElementById(divId).as[Div]
+    Ajax.post(url = url, data = InputData.str2ajax(Map("agentId" -> agentId).asJson.noSpaces), headers = Map(`Content-Type` -> `application/json`))
+      .map { r =>
+        div.innerHTML = r.responseText
       }
   }
 
@@ -51,7 +63,7 @@ object MetricService extends CommonUtilTrait {
       .map(r => decode[Seq[LoadAvgEntity]](r.responseText).right.get)
       .map { seq =>
         showLineChart("con", genSeries(List(Serie("area", "1min", seq.map(c => (c.create, c.`1min`))), Serie("area", "5min", seq.map(c => (c.create, c.`5min`))), Serie("area", "15min", seq.map(c => (c.create, c.`15min`))))), "System Load Avg", "系统负载")
-      }
+      }.flatMap(_ => appendDataTable(agentid, "showLoadAvgData", "/loadAvg/tableData"))
   }
 
   @JSExport
@@ -61,6 +73,6 @@ object MetricService extends CommonUtilTrait {
       .map(r => decode[Seq[FileUsageEntity]](r.responseText).right.get)
       .map { seq =>
         showLineChart("con", genSeries(List(Serie("area", "total", seq.map(c => (c.create, c.total))), Serie("area", "used", seq.map(c => (c.create, c.used))))), "系统存储", "磁盘使用情况")
-      }
+      }.flatMap(_ => appendDataTable(agentid, "showFileData", "/file/tableData"))
   }
 }

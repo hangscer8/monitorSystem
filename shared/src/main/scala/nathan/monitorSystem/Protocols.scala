@@ -30,15 +30,16 @@ package Protocols {
 
   case class AddAgentReq(ip: String, port: Int)
 
-  case class AlarmRule(id: Long, agentId: String, `type`: String, threshold: Int, unit: String, condition: String)
+  case class AlarmRuleEntity(id: Long, agentId: String, `type`: String, threshold: Int, unit: String, condition: String, appearTimes: Int)
 
   //告警规则与agent是多对一关系
   //threshold:阈值
   //condition:lt和gt
   //unit:percent或者number
+  //appearTimes:连续出现次数 为1时，则每一次超过阈值都会触发告警 ，为2时，需要连续两次触发告警，才会产生一次告警
   //type:cpuAlarm memAlarm swapAlarm loadAvg1MinAlarm loadAvg5MinAlarm loadAvg15MinAlarm
 
-  case class AlarmEvent(id: Long, alarmRuleId: String, message: String, eventValue: Int, unit: String)
+  case class AlarmEventEntity(id: Long, alarmRuleId: Long, message: String, eventValue: Double, unit: String)
 
 }
 

@@ -1,0 +1,16 @@
+@import nathan.monitorSystem.Protocols.CPUPercEntity
+@(cpu: CPUPercEntity)
+<table class="table table-hover table-condensed row table-striped">
+    <tr class="row col-md-4 col-md-offset-3">
+        <td class="col-md-1">idle占比</td>
+        <td class="col-md-1">sys占比</td>
+        <td class="col-md-1">user占比</td>
+        <td class="col-md-1">使用总占比</td>
+    </tr>
+    <tr class="row col-md-4 col-md-offset-3">
+        <td class="col-md-1">@cpu.idle</td>
+        <td class="col-md-1">@cpu.sys</td>
+        <td class="col-md-1">@cpu.user</td>
+        <td class="col-md-1">@cpu.combined</td>
+    </tr>
+</table>

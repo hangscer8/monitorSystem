@@ -1,5 +1,5 @@
 @(title: String)
-@*cpu数据展示*@
+    @*cpu数据展示*@
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head>
@@ -14,13 +14,15 @@
     </head>
     <body>
         @com.navbar()
-        <div class="row">
-            <div class="col-md-3">@com.sideNavAgentList(s"""nathan.service.metric.MetricService().cpuService(this.getAttribute("agentid"))""")</div>
-            <div class="col-md-9">
-                <div id="con"></div>
+    <div class="row">
+        <div class="col-md-3">@com.sideNavAgentList(s"""nathan.service.metric.MetricService().cpuService(this.getAttribute("agentid"))""")</div>
+        <div class="col-md-9">
+            <div id="con"></div> @*显示图表*@
+            <div class="row" id="showCpuData">
             </div>
         </div>
-        <script type="text/javascript">
-        </script>
+    </div>
+    <script type="text/javascript">
+    </script>
     </body>
 </html>

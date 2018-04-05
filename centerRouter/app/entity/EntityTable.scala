@@ -106,15 +106,41 @@ object EntityTable extends UtilTrait {
 
   val fileUsages = new TableQuery(tag => new FileUsage(tag))
 
+  class AlarmRule(_tableTag: Tag) extends Table[AlarmRuleEntity](_tableTag, "AlarmRuleEntity") {
+    def * = (id, agentId, `type`, threshold, unit, condition, appearTimes) <> (AlarmRuleEntity.tupled, AlarmRuleEntity.unapply)
+
+    val id: Rep[Long] = column[Long]("id", O.Unique)
+    val agentId: Rep[String] = column[String]("agentId")
+    val `type`: Rep[String] = column[String]("type")
+    val threshold: Rep[Int] = column[Int]("threshold")
+    val unit: Rep[String] = column[String]("unit")
+    val condition: Rep[String] = column[String]("condition")
+    val appearTimes: Rep[Int] = column[Int]("appearTimes")
+  }
+
+  val alarmRules = new TableQuery(tag => new AlarmRule(tag))
+
+  class AlarmEvent(tag: Tag) extends Table[AlarmEventEntity](tag, "AlarmEventEntity") {
+    def * = (id, alarmRuleId, message, eventValue, unit) <> (AlarmEventEntity.tupled, AlarmEventEntity.unapply)
+
+    val id: Rep[Long] = column[Long]("id", O.Unique)
+    val alarmRuleId: Rep[Long] = column[Long]("alarmRuleId")
+    val message: Rep[String] = column[String]("message")
+    val eventValue: Rep[Double] = column[Double]("eventValue")
+    val unit: Rep[String] = column[String]("unit")
+  }
+
+  val alarmEvents = new TableQuery(tag => new AlarmEvent(tag))
 
   {
     if (PlayConf.initDataBase) {
       println("init database:start!!")
-      List(users, cpuPercs, agentMachines, mems, swaps, loadAvgs, fileUsages).foreach { tableQuery =>
+      List(users, cpuPercs, agentMachines, mems, swaps, loadAvgs, fileUsages, alarmRules).foreach { tableQuery =>
         db.run(tableQuery.schema.drop.asTry).exe
         db.run(tableQuery.schema.create.asTry).exe
       }
       println("init database:success!!")
     }
   }
+
 }
