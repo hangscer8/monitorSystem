@@ -24,6 +24,8 @@ package Protocols {
 
   case class UserEntity(id: Long, username: String, password: String, alias: String, email: String, lastActiveTime: Long) //alias别名(显示名)
 
+  case class AdminEntity(username: String, password: String)
+
   case class RegisterReq(userName: String, password: String)
 
   case class AddAgentReq(ip: String, port: Int)

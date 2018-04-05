@@ -6,7 +6,7 @@ import java.lang.management.ManagementFactory
 import com.sun.management.OperatingSystemMXBean
 import com.typesafe.config.ConfigFactory
 import nathan.monitorSystem.Protocols._
-import nathan.util.{SigarUtil, Snowflake}
+import nathan.util.{AgentConf, SigarUtil, Snowflake}
 
 object OS {
 
@@ -41,7 +41,7 @@ object OS {
   }
 
   def getAgentInfo(agentId: String) = {
-    val config = ConfigFactory.load()
+    val config = AgentConf.applicationConf
     val ip = config.getString("akka.remote.netty.tcp.hostname")
     val akkaPort = config.getInt("akka.remote.netty.tcp.port")
     val cpuInfo = sigar.getCpuInfoList.head
