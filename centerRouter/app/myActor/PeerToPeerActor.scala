@@ -1,4 +1,4 @@
-package actor
+package myActor
 
 import akka.actor.{Actor, ActorLogging, ActorPaths, ActorRef, ReceiveTimeout, Terminated}
 import entity.EntityTable._

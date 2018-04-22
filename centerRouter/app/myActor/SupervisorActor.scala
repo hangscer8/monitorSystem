@@ -1,4 +1,4 @@
-package actor
+package myActor
 
 import akka.actor.{Actor, ActorLogging, Props, Terminated}
 import nathan.monitorSystem.Protocols.AddAgentReq

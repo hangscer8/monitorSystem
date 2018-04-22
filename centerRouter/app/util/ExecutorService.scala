@@ -2,7 +2,7 @@ package util
 
 import java.util.concurrent.Executors
 
-import actor.SupervisorActor
+import myActor.SupervisorActor
 import akka.actor.{ActorSystem, Props}
 import akka.stream.ActorMaterializer
 import com.typesafe.config.ConfigFactory
