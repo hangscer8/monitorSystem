@@ -30,7 +30,7 @@ package Protocols {
 
   case class AddAgentReq(ip: String, port: Int)
 
-  case class AlarmRuleEntity(id: Long, agentId: String, `type`: String, threshold: Int, unit: String, condition: String, appearTimes: Int)
+  case class AlarmRuleEntity(id: Long, agentId: String, `type`: String, threshold: Int, condition: String, appearTimes: Int)
 
   //告警规则与agent是多对一关系
   //threshold:阈值
@@ -39,7 +39,15 @@ package Protocols {
   //appearTimes:连续出现次数 为1时，则每一次超过阈值都会触发告警 ，为2时，需要连续两次触发告警，才会产生一次告警
   //type:cpuAlarm memAlarm swapAlarm loadAvg1MinAlarm loadAvg5MinAlarm loadAvg15MinAlarm
 
-  case class AlarmEventEntity(id: Long, alarmRuleId: Long, message: String, eventValue: Double, unit: String)
+  case class AlarmEventEntity(id: Long, alarmRuleId: Long, message: String, eventValue: Double, created: Long)
+
+  object AlarmRuleType {
+    val 内存使用告警 = "内存告警"
+    val `系统负载告警(1min)` = "系统负载告警(1min)"
+    val `系统负载告警(5min)` = "系统负载告警(5min)"
+    val `系统负载告警(15min)` = "系统负载告警(15min)"
+    val `cpu总占用率告警` = "cpu总占用率告警"
+  }
 
 }
 
