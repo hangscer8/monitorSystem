@@ -45,3 +45,5 @@ POST        /file/tableData           controllers.metric.FileController.fileData
 
 GET         /alarmRule                controllers.alarm.AlarmRuleController.index()
 POST        /alarmRule                controllers.alarm.AlarmRuleController.createRule()
+
+GET         /alarmEvent               controllers.alarm.AlarmEventController.index()

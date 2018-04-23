@@ -12,7 +12,9 @@ import service.agent.AgentServiceTrait
 import util.{ActionContext, UtilTrait}
 import io.circe.syntax._
 import service.metric.MetricServiceTrait
+import util.ExecutorService._
 
+import scala.concurrent.Future
 import scala.concurrent.duration._
 import scala.util.{Failure, Success, Try}
 
@@ -61,8 +63,8 @@ class PeerToPeerActor extends Actor with ActorLogging with AgentServiceTrait wit
       createMetric(x) match {
         case Success(v) =>
           db.run(increaseReceiveMsgNumberDBIO(v.agentId).transactionally.asTry).exe
-          createAlarmEventDetail()
           log.info(s"${Console.BLUE}success insert metric:${Console.RESET}:$v")
+          Future(createAlarmEventDetail(x.agentId))
         case Failure(ex) => log.error(s"${Console.RED}failure insert metric:${Console.RESET}:$ex")
       }
   }

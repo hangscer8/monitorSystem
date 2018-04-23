@@ -80,13 +80,14 @@ trait MetricServiceTrait extends UtilTrait with AlarmServiceTrait {
     fileUsages.filter(_.agentId === agentId).sortBy(_.create.desc).take(size).result
   }
 
-  def createAlarmEventDetail() = {
-    db.run(alarmRules.result).exe.foreach { rule =>
+  def createAlarmEventDetail(agentId: String) = {
+    db.run(alarmRules.filter(_.agentId === agentId).result).exe.foreach { rule =>
       createAlarmEvent(rule) match {
         case (true, _type) =>
           val message = s"${_type}连续${rule.appearTimes}${rule.condition}${rule.threshold}"
           val entity = AlarmEventEntity(Snowflake.nextId(), rule.id, message, System.currentTimeMillis())
           db.run(alarmEvents += entity).exe
+          println("alarmEvent新建记录")
         case _ =>
       }
     }
