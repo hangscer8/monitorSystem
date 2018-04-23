@@ -3,12 +3,14 @@ package service.metric
 import entity.EntityTable._
 import h2.api._
 import nathan.monitorSystem.Protocols._
+import nathan.util.Snowflake
+import service.alarm.AlarmServiceTrait
 import util.ExecutorService._
 import util.UtilTrait
 
 import scala.util.Try
 
-trait MetricServiceTrait extends UtilTrait {
+trait MetricServiceTrait extends UtilTrait with AlarmServiceTrait {
   /** *
     * create metric
     */
@@ -76,5 +78,17 @@ trait MetricServiceTrait extends UtilTrait {
 
   def fileSeqDBIO(agentId: String, size: Int): DBIO[Seq[FileUsageEntity]] = {
     fileUsages.filter(_.agentId === agentId).sortBy(_.create.desc).take(size).result
+  }
+
+  def createAlarmEventDetail() = {
+    db.run(alarmRules.result).exe.foreach { rule =>
+      createAlarmEvent(rule) match {
+        case (true, _type) =>
+          val message = s"${_type}连续${rule.appearTimes}${rule.condition}${rule.threshold}"
+          val entity = AlarmEventEntity(Snowflake.nextId(), rule.id, message, System.currentTimeMillis())
+          db.run(alarmEvents += entity).exe
+        case _ =>
+      }
+    }
   }
 }

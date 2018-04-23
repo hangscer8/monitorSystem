@@ -107,12 +107,13 @@ object EntityTable extends UtilTrait {
   val fileUsages = new TableQuery(tag => new FileUsage(tag))
 
   class AlarmRule(_tableTag: Tag) extends Table[AlarmRuleEntity](_tableTag, "AlarmRuleEntity") {
-    def * = (id, agentId, `type`, threshold, condition, appearTimes) <> (AlarmRuleEntity.tupled, AlarmRuleEntity.unapply)
+    def * = (id, agentId, title, `type`, threshold, condition, appearTimes) <> (AlarmRuleEntity.tupled, AlarmRuleEntity.unapply)
 
     val id: Rep[Long] = column[Long]("id", O.Unique)
     val agentId: Rep[String] = column[String]("agentId")
+    val title: Rep[String] = column[String]("title")
     val `type`: Rep[String] = column[String]("type")
-    val threshold: Rep[Int] = column[Int]("threshold")
+    val threshold: Rep[Double] = column[Double]("threshold")
     val condition: Rep[String] = column[String]("condition")
     val appearTimes: Rep[Int] = column[Int]("appearTimes")
   }
@@ -120,13 +121,11 @@ object EntityTable extends UtilTrait {
   val alarmRules = new TableQuery(tag => new AlarmRule(tag))
 
   class AlarmEvent(tag: Tag) extends Table[AlarmEventEntity](tag, "AlarmEventEntity") {
-    def * = (id, alarmRuleId, message, eventValue, created) <> (AlarmEventEntity.tupled, AlarmEventEntity.unapply)
+    def * = (id, alarmRuleId, message, created) <> (AlarmEventEntity.tupled, AlarmEventEntity.unapply)
 
     val id: Rep[Long] = column[Long]("id", O.Unique)
     val alarmRuleId: Rep[Long] = column[Long]("alarmRuleId")
     val message: Rep[String] = column[String]("message")
-    val eventValue: Rep[Double] = column[Double]("eventValue")
-    val unit: Rep[String] = column[String]("unit")
     val created: Rep[Long] = column[Long]("created")
   }
 

@@ -61,6 +61,7 @@ class PeerToPeerActor extends Actor with ActorLogging with AgentServiceTrait wit
       createMetric(x) match {
         case Success(v) =>
           db.run(increaseReceiveMsgNumberDBIO(v.agentId).transactionally.asTry).exe
+          createAlarmEventDetail()
           log.info(s"${Console.BLUE}success insert metric:${Console.RESET}:$v")
         case Failure(ex) => log.error(s"${Console.RED}failure insert metric:${Console.RESET}:$ex")
       }
