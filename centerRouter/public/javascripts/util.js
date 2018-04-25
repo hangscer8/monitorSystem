@@ -71,3 +71,74 @@ function showLineChart(id, data, title, yAxisTitle) { //data是String eval
         series: eval(data)
     })
 }
+
+function pipeChart(id, data, title, yAxisTitle) {
+    var chart = null;
+    $(function () {
+        $('#' + id).highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                spacing: [100, 0, 40, 0]
+            },
+            title: {
+                floating: true,
+                // text: '圆心显示的标题'
+                text: title
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                    },
+                    point: {
+                        events: {
+                            mouseOver: function (e) {  // 鼠标滑过时动态更新标题
+                                // 标题更新函数，API 地址：https://api.hcharts.cn/highcharts#Chart.setTitle
+                                chart.setTitle({
+                                    text: e.target.name + '\t' + e.target.y + ' %'
+                                });
+                            }
+                            //,
+                            // click: function(e) { // 同样的可以在点击事件里处理
+                            //     chart.setTitle({
+                            //         text: e.point.name+ '\t'+ e.point.y + ' %'
+                            //     });
+                            // }
+                        }
+                    },
+                }
+            },
+            series: [{
+                type: 'pie',
+                innerSize: '80%',
+                // name: '市场份额',
+                name: yAxisTitle,
+                // data: [
+                //     ['IE', 26.8],
+                //     ['Safari', 8.5],
+                //     ['Opera', 6.2]
+                // ]
+                data: eval(data)
+            }]
+        }, function (c) {
+            // 环形图圆心
+            var centerY = c.series[0].center[1],
+                titleHeight = parseInt(c.title.styles.fontSize);
+            c.setTitle({
+                y: centerY + titleHeight / 2
+            });
+            chart = c;
+        });
+    });
+}

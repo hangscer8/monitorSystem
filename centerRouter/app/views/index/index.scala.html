@@ -1,4 +1,5 @@
-@(title: String)
+@import nathan.monitorSystem.Protocols.AgentMachineEntity
+@(title: String, agentList: List[AgentMachineEntity], unhealthAgentLit: List[String])
 @*首页*@
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -9,9 +10,29 @@
         <script type="text/javascript" src="@routes.Assets.versioned("bootstrap/js/bootstrap.min.js")"></script>
         <script type="text/javascript" src="@routes.Assets.versioned("javascripts/front-fastopt.js")"></script>
         <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("bootstrap/css/bootstrap.min.css")">
+        <script type="text/javascript" src="@routes.Assets.versioned("javascripts/highcharts.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.versioned("javascripts/util.js")"></script>
     </head>
     <body>
         @com.navbar()
+        <div class="container">
+            <div class="row">
+            @for((item, i) <- agentList.zipWithIndex) {
+                <div class="row">
+                    <div class="col-md-5 table-bordered">
+                        <div id="cpu@i"></div>
+                    </div>
+                    <div class="col-md-5">
+                        <p class="h4">agent:<span class="text-primary">@item.ip:@item.akkaPort</span>
+                            <span class="badge"> @if(unhealthAgentLit.contains(item.agentId)) {不健康} else {健康} </span></p>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    nathan.service.index.IndexService().drawPipeChart('@item.agentId', "cpu@i")
+                </script>
+            }
+            </div>
+        </div>
         <script type="text/javascript">
                 nathan.service.index.IndexService().indexService()
         </script>

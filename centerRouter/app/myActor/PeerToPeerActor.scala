@@ -42,7 +42,8 @@ class PeerToPeerActor extends Actor with ActorLogging with AgentServiceTrait wit
     case AgentActorJoinCenter(agentActor, agentMachineEntity) =>
       db.run(createOrSetOnLineAgentDBIO(agentMachineEntity).transactionally.asTry).exe match {
         case Success(_) =>
-          context.watch(agentActor)
+          //          context.watch(agentActor)使用超时机制即可
+          context.setReceiveTimeout(2.2 seconds)
           log.info(s"已经与${addAgentReq.ip}:${addAgentReq.port}建立连接!!")
           context.become(connected(agentActor, agentMachineEntity))
           ctx.complete(Results.Ok(Map("code" -> "0000", "successMsg" -> s"添加agent成功，目标地址(${addAgentReq.ip}:${addAgentReq.port})存在agent服务!!").asJson.noSpaces).as(ContentTypes.JSON))
@@ -59,12 +60,18 @@ class PeerToPeerActor extends Actor with ActorLogging with AgentServiceTrait wit
         db.run(setAgentOffLine(agentMachineEntity.agentId)).exe //设置离线状态
         context.stop(self)
       }
+    case ReceiveTimeout =>
+      log.error(s"${agentMachineEntity.ip}:${agentMachineEntity.akkaPort}已经退出连接!")
+      db.run(setAgentOffLine(agentMachineEntity.agentId)).exe //设置离线状态
+      context.stop(self)
     case x: BaseAgentInfo =>
       createMetric(x) match {
         case Success(v) =>
           db.run(increaseReceiveMsgNumberDBIO(v.agentId).transactionally.asTry).exe
           log.info(s"${Console.BLUE}success insert metric:${Console.RESET}:$v")
-          Future(createAlarmEventDetail(x.agentId))
+          Future(createAlarmEventDetail(x.agentId)).map { _ =>
+            
+          }
         case Failure(ex) => log.error(s"${Console.RED}failure insert metric:${Console.RESET}:$ex")
       }
   }

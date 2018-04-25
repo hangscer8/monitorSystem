@@ -15,7 +15,7 @@ import entity.EntityTable.h2.api._
 @Singleton
 class AlarmEventController @Inject()(cc: ControllerComponents) extends AbstractController(cc) with Circe with AlarmServiceTrait with UtilTrait {
   def index() = ActionContext.imperativelyComplete { ctx =>
-    val r = db.run(alarmEvents.sortBy(_.created.desc).take(15).result).exe
-    ctx.complete(Ok(views.html.alarm.alarmEvent("查看告警信息", r)))
+    val agentList = db.run(alarmEvents.sortBy(_.created.desc).take(15).result).exe
+    ctx.complete(Ok(views.html.alarm.alarmEvent("查看告警信息", agentList)))
   }
 }
