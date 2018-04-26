@@ -104,17 +104,10 @@ function pipeChart(id, data, title, yAxisTitle) {
                     point: {
                         events: {
                             mouseOver: function (e) {  // 鼠标滑过时动态更新标题
-                                // 标题更新函数，API 地址：https://api.hcharts.cn/highcharts#Chart.setTitle
                                 chart.setTitle({
-                                    text: e.target.name + '\t' + e.target.y + ' %'
+                                    text: e.target.name + '\t' + (e.target.y*100) + ' %'
                                 });
                             }
-                            //,
-                            // click: function(e) { // 同样的可以在点击事件里处理
-                            //     chart.setTitle({
-                            //         text: e.point.name+ '\t'+ e.point.y + ' %'
-                            //     });
-                            // }
                         }
                     },
                 }

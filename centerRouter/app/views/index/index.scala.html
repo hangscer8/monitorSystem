@@ -2,8 +2,9 @@
 @import nathan.monitorSystem.Protocols.LoadAvgEntity
 @import nathan.monitorSystem.Protocols.FileUsageEntity
 @import nathan.monitorSystem.Protocols.MEMEntity
+@import nathan.monitorSystem.Protocols.CPUPercEntity
 @import util.HtmlUtil
-@(title: String, agentList: List[AgentMachineEntity], unhealthAgentLit: List[String], someInfos: List[(String, Option[LoadAvgEntity], Option[FileUsageEntity], Option[MEMEntity])])
+@(title: String, agentList: List[AgentMachineEntity], unhealthAgentLit: List[String], someInfos: List[(String, Option[LoadAvgEntity], Option[FileUsageEntity], Option[MEMEntity], Option[CPUPercEntity])])
 @*首页*@
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -31,19 +32,39 @@
                                 &ensp;
                             agent:
                             <span class="text-primary">@item.ip:@item.akkaPort</span>
-                            <span class="badge"> @if(unhealthAgentLit.contains(item.agentId)) {不健康} else {健康} </span>
+                            <span class="badge" id="badge@i"></span> @*这个span里面写健康或者不健康*@
                         </p>
+                        <script type="text/javascript">
+                                nathan.service.index.IndexService().getAgentHealthStatus('@item.agentId', "badge@i")
+                        </script>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <p class="text-primary">cpu总占比</p>
+                            </div>
+                            <div class="col-md-10">
+                                <div class="progress" id="progressDivCpu@i">
+                                    @*<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 20%;" >*@
+                                    @*20%*@
+                                    @*</div>*@
+                                </div>
+                                <script type="text/javascript">
+                                        nathan.service.index.IndexService().getCpuStatus('@item.agentId', "progressDivCpu@i")
+                                </script>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-md-2">
                                 <p class="text-primary">系统负载</p>
                             </div>
                             <div class="col-md-10">
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: @someInfos.filter(_._1 == item.agentId).head._2.map(_.`1min` * 1.0 / item.coresPerCpu * 100).map(_.toInt).getOrElse(0.0)%;" >
-                                        @someInfos.filter(_._1 == item.agentId).head._2.map(_.`1min` * 1.0 / item.coresPerCpu * 100).map(_.toInt).getOrElse(0.0)
-                                        %
-                                    </div>
+                                <div class="progress" id="progressDivLoad@i">
+                                    @*<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: @someInfos.filter(_._1 == item.agentId).head._2.map(_.`1min` * 1.0 / item.coresPerCpu * 100).map(_.toInt).getOrElse(0.0)%;" >*@
+                                    @*%*@
+                                    @*</div>*@
                                 </div>
+                                <script type="text/javascript">
+                                        nathan.service.index.IndexService().getSystemLoadStatus('@item.agentId', "progressDivLoad@i",'tableLoad@i')
+                                </script>
                             </div>
                         </div>
                         <div class="row">
@@ -61,31 +82,33 @@
                         </div>
                         <div class="row">
                             <div class="col-md-2">
-                                <p class="text-primary">物理内存</p>
+                                <p class="text-primary">物理内存使用</p>
                             </div>
                             <div class="col-md-10">
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: @someInfos.filter(_._1 == item.agentId).head._4.map(m => m.used * 1.0 / m.total * 100).map(_.toInt).getOrElse(0.0)%;" >
-                                        @someInfos.filter(_._1 == item.agentId).head._4.map(m => m.used * 1.0 / m.total * 100).map(_.toInt).getOrElse(0.0)
-                                        %
-                                    </div>
+                                <div class="progress" id="progressDivMem@i">
+                                    @*<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: @someInfos.filter(_._1 == item.agentId).head._4.map(m => m.used * 1.0 / m.total * 100).map(_.toInt).getOrElse(0.0)%;" >*@
+                                    @*%*@
+                                    @*</div>*@
                                 </div>
+                                <script type="text/javascript">
+                                        nathan.service.index.IndexService().getMemStatus('@item.agentId', "progressDivMem@i")
+                                </script>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-2">
                                 <p class="text-primary">负载详情</p>
                             </div>
-                            <div class="col-md-10">
-                                <table class="table table-striped table-hover">
-                                    <tr><td>1minute</td>
-                                        <td>5minute</td>
-                                        <td>15minute</td></tr>
-                                    <tr><td> @someInfos.filter(_._1 == item.agentId).head._2.map(_.`1min`).getOrElse(0.0) </td>
-                                        <td>@someInfos.filter(_._1 == item.agentId).head._2.map(_.`5min`).getOrElse(0.0) </td>
-                                        <td>@someInfos.filter(_._1 == item.agentId).head._2.map(_.`15min`).getOrElse(0.0) </td>
-                                    </tr>
-                                </table>
+                            <div class="col-md-10" id="tableLoad@i">
+                                @*<table class="table table-striped table-hover">*@
+                                    @*<tr><td>1minute</td>*@
+                                        @*<td>5minute</td>*@
+                                        @*<td>15minute</td></tr>*@
+                                    @*<tr><td> @someInfos.filter(_._1 == item.agentId).head._2.map(_.`1min`).getOrElse(0.0) </td>*@
+                                        @*<td>@someInfos.filter(_._1 == item.agentId).head._2.map(_.`5min`).getOrElse(0.0) </td>*@
+                                        @*<td>@someInfos.filter(_._1 == item.agentId).head._2.map(_.`15min`).getOrElse(0.0) </td>*@
+                                    @*</tr>*@
+                                @*</table>*@
                             </div>
                         </div>
                         <div class="row">
@@ -93,8 +116,11 @@
                                 <p class="text-primary">最后心跳时间</p>
                             </div>
                             <div class="col-md-10">
-                                <p class="text-info">@HtmlUtil.timeShow(item.lastReceiveMsgTime) </p>
+                                <p class="text-info" id="lastHeartBeat@i"></p>
                             </div>
+                            <script type="text/javascript">
+                                    nathan.service.index.IndexService().getLastHeartBeat('@item.agentId', "lastHeartBeat@i")
+                            </script>
                         </div>
                     </div>
                 </div>

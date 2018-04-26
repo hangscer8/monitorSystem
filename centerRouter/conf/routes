@@ -3,47 +3,52 @@
 # ~~~~
 
 # Home page
-GET         /                         controllers.HomeController.index
+GET         /                           controllers.HomeController.index
 
 # Map static resources from the /public folder to the /assets URL path
-GET         /assets/*file             controllers.Assets.versioned(path="/public", file: Asset)
+GET         /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
 # 获取用户上传的文件
-GET         /stream/*file             controllers.stream.StreamFileController.streamFile(file:String)
+GET         /stream/*file               controllers.stream.StreamFileController.streamFile(file:String)
 
-GET         /register                 controllers.register.RegisterController.index
-POST        /register                 controllers.register.RegisterController.registerUser
-POST        /register/upload          controllers.register.RegisterController.upload
+GET         /register                   controllers.register.RegisterController.index
+POST        /register                   controllers.register.RegisterController.registerUser
+POST        /register/upload            controllers.register.RegisterController.upload
 
-GET         /login                    controllers.login.LoginController.index
-POST        /login                    controllers.login.LoginController.loginAction
+GET         /login                      controllers.login.LoginController.index
+POST        /login                      controllers.login.LoginController.loginAction
 
-GET         /index                    controllers.index.IndexController.index()
+GET         /index                      controllers.index.IndexController.index()
 
-GET         /addAgent                 controllers.agent.AddAgentController.index
-POST        /addAgent                 controllers.agent.AddAgentController.addAgent()
+GET         /addAgent                   controllers.agent.AddAgentController.index
+POST        /addAgent                   controllers.agent.AddAgentController.addAgent()
+GET         /agent/health               controllers.index.IndexController.agentHealthStatus(agentId:String)
+GET         /cpu/health                 controllers.index.IndexController.cpuHealthStatus(agentId:String)
+GET         /sysLoad/health             controllers.index.IndexController.sysLoadHealthStatus(agentId: String)
+GET         /mem/health                 controllers.index.IndexController.memStatus(agentId: String)
+GET         /agent/lastHeartBeat        controllers.index.IndexController.getlastHeartBeat(agentId: String)
 
-GET         /showAgent                controllers.agent.ShowAgentController.index()
+GET         /showAgent                  controllers.agent.ShowAgentController.index()
 
-GET         /cpu                      controllers.metric.CPUController.index()
-POST        /cpu                      controllers.metric.CPUController.cpuData()
-POST        /cpu/tableData            controllers.metric.CPUController.cpuDataTable()
+GET         /cpu                        controllers.metric.CPUController.index()
+POST        /cpu                        controllers.metric.CPUController.cpuData()
+POST        /cpu/tableData              controllers.metric.CPUController.cpuDataTable()
 
-GET         /swap                     controllers.metric.SWAPController.index()
-POST        /swap                     controllers.metric.SWAPController.swapData()
+GET         /swap                       controllers.metric.SWAPController.index()
+POST        /swap                       controllers.metric.SWAPController.swapData()
 
-GET         /mem                      controllers.metric.MEMController.index()
-POST        /mem                      controllers.metric.MEMController.memData()
+GET         /mem                        controllers.metric.MEMController.index()
+POST        /mem                        controllers.metric.MEMController.memData()
 
-GET         /loadAvg                  controllers.metric.LoadAvgController.index()
-POST        /loadAvg                  controllers.metric.LoadAvgController.loadAvgData()
-POST        /loadAvg/tableData        controllers.metric.LoadAvgController.loadAvgDataTable()
+GET         /loadAvg                    controllers.metric.LoadAvgController.index()
+POST        /loadAvg                    controllers.metric.LoadAvgController.loadAvgData()
+POST        /loadAvg/tableData          controllers.metric.LoadAvgController.loadAvgDataTable()
 
-GET         /file                     controllers.metric.FileController.index()
-POST        /file                     controllers.metric.FileController.fileData()
-POST        /file/tableData           controllers.metric.FileController.fileDataTable()
+GET         /file                       controllers.metric.FileController.index()
+POST        /file                       controllers.metric.FileController.fileData()
+POST        /file/tableData             controllers.metric.FileController.fileDataTable()
 
-GET         /alarmRule                controllers.alarm.AlarmRuleController.index()
-POST        /alarmRule                controllers.alarm.AlarmRuleController.createRule()
+GET         /alarmRule                  controllers.alarm.AlarmRuleController.index()
+POST        /alarmRule                  controllers.alarm.AlarmRuleController.createRule()
 
-GET         /alarmEvent               controllers.alarm.AlarmEventController.index()
+GET         /alarmEvent                 controllers.alarm.AlarmEventController.index()

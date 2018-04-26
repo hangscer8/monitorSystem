@@ -87,7 +87,7 @@ trait MetricServiceTrait extends UtilTrait with AlarmServiceTrait {
           val message = s"${_type}连续${rule.appearTimes}${rule.condition}${rule.threshold}"
           val entity = AlarmEventEntity(Snowflake.nextId(), rule.id, message, System.currentTimeMillis())
           db.run(alarmEvents += entity).exe
-          println("alarmEvent新建记录")
+          println("alarmEvent新建记录! " + entity)
         case _ =>
       }
     }
