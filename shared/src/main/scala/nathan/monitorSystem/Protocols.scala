@@ -42,11 +42,12 @@ package Protocols {
   case class AlarmEventEntity(id: Long, alarmRuleId: Long, message: String, created: Long)
 
   object AlarmRuleType {
-    val `内存使用告警` = "内存告警"
+    val `内存使用告警` = "内存使用告警"
     val `系统负载告警(1min)` = "系统负载告警(1min)"
     val `系统负载告警(5min)` = "系统负载告警(5min)"
     val `系统负载告警(15min)` = "系统负载告警(15min)"
     val `cpu总占用率告警` = "cpu总占用率告警"
+    val `文件系统使用告警` = "文件系统使用告警"
   }
 
   object AlarmRuleCondition {

@@ -23,4 +23,19 @@ class AlarmRuleController @Inject()(cc: ControllerComponents) extends AbstractCo
     val agentList = db.run(agentMachines.result).exe.toList
     ctx.complete(Ok(views.html.alarm.AlarmRule("创建告警规则", agentList)))
   }
+
+  def showAlarmRuleIndex() = Action { implicit request =>
+    Ok(views.html.alarm.showAlarmRule("查看告警规则"))
+  }
+
+  def getAlarmRuleAction(agentId: String) = Action { request =>
+    val seq = db.run(alarmRules.filter(_.agentId === agentId).result).exe
+    Ok(Map("code" -> "0000", "entity" -> seq.asJson.noSpaces).asJson.noSpaces).as(JSON)
+  }
+
+  def deleteAlarmRuleAction(ruleId: Long) = Action { request =>
+    db.run(alarmEvents.filter(_.alarmRuleId === ruleId).delete).exe
+    db.run(alarmRules.filter(_.id === ruleId).delete).exe
+    Ok(Map("code" -> "0000").asJson.noSpaces).as(JSON)
+  }
 }

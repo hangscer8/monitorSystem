@@ -16,6 +16,32 @@ import scala.scalajs.js.annotation.JSExport
 @JSExport
 object AlarmRuleService extends CommonUtilTrait {
   @JSExport
+  def showAlarmRule(agentId: String, divId: String): Unit = {
+    Ajax.get(url = s"/getAlarmRule?agentId=$agentId")
+      .map(r => decode[Map[String, String]](r.responseText).right.get)
+      .map(r => decode[Seq[AlarmRuleEntity]](r("entity")).right.get)
+      .map { seq =>
+        s"""
+           |<table class="table table-striped table-condensed table-hover">
+           |  <tr><td>规则名</td><td>类型</td><td>阈值</td><td>条件</td><td>操作</td></tr>
+           |  ${seq.map { item => val trId = "tr" + scala.util.Random.alphanumeric.take(20).mkString;s"""<tr id="${trId}"><td>${item.title}</td><td>${item.`type`}</td><td>${item.threshold}</td><td>${item.condition}</td><td><button class="btn btn-sm" onclick="nathan.service.alarm.AlarmRuleService().deleteAlarmRuleService('${item.id}','$trId')">删除</button></td></tr>""" }.mkString}
+           |</table>
+       """.stripMargin
+      }.map(tableData => document.getElementById(divId).innerHTML = tableData)
+  }
+
+  @JSExport
+  def deleteAlarmRuleService(ruleIdStr: String, trId: String): Unit = {
+    Ajax.get(url = s"/deleteAlarmRule?ruleId=$ruleIdStr").map(r => decode[Map[String, String]](r.responseText).right.get)
+      .map(result => result("code") match {
+        case "0000" =>
+          val targetNode = document.getElementById(trId)
+          val parentNode = targetNode.parentNode
+          parentNode.removeChild(targetNode)
+      })
+  }
+
+  @JSExport
   def alarmRuleService(): Unit = {
     document.getElementById("createAlarmRuleButton").as[Button].onclick = e => {
       e.preventDefault()

@@ -52,3 +52,9 @@ GET         /alarmRule                  controllers.alarm.AlarmRuleController.in
 POST        /alarmRule                  controllers.alarm.AlarmRuleController.createRule()
 
 GET         /alarmEvent                 controllers.alarm.AlarmEventController.index()
+
+GET         /showAlarmRule              controllers.alarm.AlarmRuleController.showAlarmRuleIndex()
+
+GET         /getAlarmRule               controllers.alarm.AlarmRuleController.getAlarmRuleAction(agentId:String)
+
+GET         /deleteAlarmRule            controllers.alarm.AlarmRuleController.deleteAlarmRuleAction(ruleId:Long)

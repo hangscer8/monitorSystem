@@ -37,5 +37,10 @@ trait AlarmServiceTrait extends UtilTrait {
         case (result, AlarmRuleCondition.`小于`) => (result.forall(_.combined < rule.threshold), AlarmRuleType.`cpu总占用率告警`)
         case (result, AlarmRuleCondition.`大于`) => (result.forall(_.combined > rule.threshold), AlarmRuleType.`cpu总占用率告警`)
       }
+    case AlarmRuleType.`文件系统使用告警` =>
+      (db.run(fileUsages.sortBy(_.create.desc).take(rule.appearTimes).result).exe, rule.condition) match {
+        case (result, AlarmRuleCondition.`小于`) => (result.forall(_.used < rule.threshold), AlarmRuleType.`文件系统使用告警`)
+        case (result, AlarmRuleCondition.`大于`) => (result.forall(_.used > rule.threshold), AlarmRuleType.`文件系统使用告警`)
+      }
   }
 }
