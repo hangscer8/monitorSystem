@@ -13,32 +13,32 @@ trait AlarmServiceTrait extends UtilTrait {
 
   def createAlarmEvent(rule: AlarmRuleEntity): (Boolean, String) = rule.`type` match {
     case AlarmRuleType.`内存使用告警` =>
-      (db.run(mems.sortBy(_.create.desc).take(rule.appearTimes).result).exe, rule.condition) match {
+      (db.run(mems.filter(_.agentId === rule.agentId).sortBy(_.create.desc).take(rule.appearTimes).result).exe, rule.condition) match {
         case (result, AlarmRuleCondition.`小于`) => (result.forall(_.used < rule.threshold), AlarmRuleType.`内存使用告警`)
         case (result, AlarmRuleCondition.`大于`) => (result.forall(_.used > rule.threshold), AlarmRuleType.`内存使用告警`)
       }
     case AlarmRuleType.`系统负载告警(15min)` =>
-      (db.run(loadAvgs.sortBy(_.create.desc).take(rule.appearTimes).result).exe, rule.condition) match {
+      (db.run(loadAvgs.filter(_.agentId === rule.agentId).sortBy(_.create.desc).take(rule.appearTimes).result).exe, rule.condition) match {
         case (result, AlarmRuleCondition.`小于`) => (result.forall(_.`15min` < rule.threshold), AlarmRuleType.`系统负载告警(15min)`)
         case (result, AlarmRuleCondition.`大于`) => (result.forall(_.`15min` > rule.threshold), AlarmRuleType.`系统负载告警(15min)`)
       }
     case AlarmRuleType.`系统负载告警(5min)` =>
-      (db.run(loadAvgs.sortBy(_.create.desc).take(rule.appearTimes).result).exe, rule.condition) match {
+      (db.run(loadAvgs.filter(_.agentId === rule.agentId).sortBy(_.create.desc).take(rule.appearTimes).result).exe, rule.condition) match {
         case (result, AlarmRuleCondition.`小于`) => (result.forall(_.`5min` < rule.threshold), AlarmRuleType.`系统负载告警(5min)`)
         case (result, AlarmRuleCondition.`大于`) => (result.forall(_.`5min` > rule.threshold), AlarmRuleType.`系统负载告警(5min)`)
       }
     case AlarmRuleType.`系统负载告警(1min)` =>
-      (db.run(loadAvgs.sortBy(_.create.desc).take(rule.appearTimes).result).exe, rule.condition) match {
+      (db.run(loadAvgs.filter(_.agentId === rule.agentId).sortBy(_.create.desc).take(rule.appearTimes).result).exe, rule.condition) match {
         case (result, AlarmRuleCondition.`小于`) => (result.forall(_.`1min` < rule.threshold), AlarmRuleType.`系统负载告警(1min)`)
         case (result, AlarmRuleCondition.`大于`) => (result.forall(_.`1min` > rule.threshold), AlarmRuleType.`系统负载告警(1min)`)
       }
     case AlarmRuleType.`cpu总占用率告警` =>
-      (db.run(cpuPercs.sortBy(_.create.desc).take(rule.appearTimes).result).exe, rule.condition) match {
+      (db.run(cpuPercs.filter(_.agentId === rule.agentId).sortBy(_.create.desc).take(rule.appearTimes).result).exe, rule.condition) match {
         case (result, AlarmRuleCondition.`小于`) => (result.forall(_.combined < rule.threshold), AlarmRuleType.`cpu总占用率告警`)
         case (result, AlarmRuleCondition.`大于`) => (result.forall(_.combined > rule.threshold), AlarmRuleType.`cpu总占用率告警`)
       }
     case AlarmRuleType.`文件系统使用告警` =>
-      (db.run(fileUsages.sortBy(_.create.desc).take(rule.appearTimes).result).exe, rule.condition) match {
+      (db.run(fileUsages.filter(_.agentId === rule.agentId).sortBy(_.create.desc).take(rule.appearTimes).result).exe, rule.condition) match {
         case (result, AlarmRuleCondition.`小于`) => (result.forall(_.used < rule.threshold), AlarmRuleType.`文件系统使用告警`)
         case (result, AlarmRuleCondition.`大于`) => (result.forall(_.used > rule.threshold), AlarmRuleType.`文件系统使用告警`)
       }
