@@ -1,4 +1,6 @@
-## writen in scala(my favourite language)
+### writen in scala(my favourite language)
+
+#### some helpful util
 
 ```scala
 import play.api.mvc._
@@ -25,6 +27,16 @@ object ActionContext {
       inner(new ActionContext(request, p))
       p.future
     }
+  }
+}
+```
+
+```scala
+@Singleton
+class AlarmEventController @Inject()(cc: ControllerComponents) extends AbstractController(cc) with Circe with AlarmServiceTrait with UtilTrait {
+  def index() = ActionContext.imperativelyComplete { ctx =>
+    val agentList = db.run(alarmEvents.sortBy(_.created.desc).take(15).result).exe
+    ctx.complete(Ok(views.html.alarm.alarmEvent("查看告警信息", agentList)))
   }
 }
 ```
