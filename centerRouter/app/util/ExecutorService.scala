@@ -21,7 +21,7 @@ object ExecutorService {
        |  remote {
        |    enabled-transports = ["akka.remote.netty.tcp"]
        |    netty.tcp {
-       |      hostname = "127.0.0.1"
+       |      hostname = "10.211.55.2"
        |      port = ${PlayConf.akkaPort}
        |      message-frame-size = 30000000b
        |      send-buffer-size = 30000000b

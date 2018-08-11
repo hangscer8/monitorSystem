@@ -14,7 +14,7 @@ class ActionContext[A](val request: Request[A], private[this] val p: Promise[Res
 
 object ActionContext {
   def imperativelyComplete[A](bp: BodyParser[A])(inner: ActionContext[A] => Unit): Action[A] = {
-    Action.async(bp) { request =>
+    Action.async(bp) { implicit request =>
       val p = Promise[Result]
       inner(new ActionContext(request, p))
       p.future
@@ -22,7 +22,7 @@ object ActionContext {
   }
 
   def imperativelyComplete(inner: ActionContext[AnyContent] => Unit): Action[AnyContent] = {
-    Action.async { request =>
+    Action.async { implicit request =>
       val p = Promise[Result]
       inner(new ActionContext(request, p))
       p.future
